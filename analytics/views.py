@@ -1,3 +1,7 @@
 from django.shortcuts import render
+from models import Category
 
-# Create your views here.
+def main(request):
+    data = Category.objects.all()
+    return data
+

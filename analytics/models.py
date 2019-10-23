@@ -7,6 +7,7 @@ from django.conf import settings
 class Category(models.Model):
     name = models.CharField('Название',max_length=100)  
     slug = models.SlugField('Ссылка')
+    is_active = models.BooleanField(default=True, verbose_name='Видимость для пользователя')
     
     def __str__(self):
         return self.name
@@ -20,18 +21,17 @@ class Category(models.Model):
 
 class Article(models.Model):
     id = models.AutoField(primary_key=True)
-    category = models.ForeignKey(Category,verbose_name="Категория",on_delete=models.CASCADE)
-    title = models.CharField('Заголовок',max_length=120)
+    category = models.ForeignKey(Category, verbose_name="Категория", on_delete=models.CASCADE)
+    title = models.CharField('Заголовок', max_length=120)
     slug = models.SlugField("Ссылка")
     image = models.ImageField("Фотография")#,upload_to=generate_filename)
     content = models.TextField("Контент")
-    author = models.TextField("Автор", default='')
-    like = models.PositiveIntegerField("Лайки", default=0)
-    users_reaction = models.ManyToManyField(settings.AUTH_USER_MODEL, verbose_name='Кто отреагировал на пост', blank=True)
+    author = models.TextField("Автор")
     created = models.DateTimeField(default=timezone.now)
-     
+    is_active = models.BooleanField(default=True, verbose_name='Видимость для пользователя')
+
     def __str__(self):
-        return self.title
+        return "{0}: создано {1}".format(self.title, self.created)
     
     def get_absolute_url(self):
         return reverse('article_detail', kwargs={'category': self.category.slug, 'id': self.id})
