@@ -3,15 +3,34 @@ from .models import *
 
 def main(request):
     context = []
-    data_cat = Category.objects.all()
-    data_art = Article.objects.all()
+    data_cat = Category.objects.filter(is_active=True)
+    data_art = Article.objects.filter(is_active=True)
+    data_art_by_cat = Article.objects.filter()
     context.append({'data_cat': data_cat, 'data_art': data_art})
-    print(context)
-    return context
+    return render(request, 'analytics/index.html', locals())
 
+"""
 def show_categ(request):
     data_cat = Category.objects.filter(is_active=True)
     context = []
     context.append({'data_cat': data_cat})
     print(context)
-    return context
+    return render(request, 'analytics/list_category.html', locals())
+"""
+def article_by_categ(request, *args, **kwargs):
+    print(*args)
+    print(**kwargs)
+    category_by_url = kwargs.get('slug')    
+    data_art = Article.objects.filter(is_active=True, category=category_by_url)
+    context = []
+    context.append({'data_art': data_art})
+    print(context)
+    return render(request, 'analytics/article_by_categ.html', locals())
+
+def article(request, *args, **kwargs):
+    id_by_kwargs = kwargs.get('id')
+    data_art = Article.objects.filter(id=id_by_kwargs)
+    context = []
+    context.append({'data_art': data_art})
+    print(context)
+    return render(request, 'analytics/article.html', locals())
