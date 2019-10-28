@@ -24,7 +24,6 @@ def article_by_categ(request, *args, **kwargs):
     data_art = Article.objects.filter(is_active=True, category=category_by_url)
     context = []
     context.append({'data_art': data_art})
-    print(context)
     return render(request, 'analytics/article_by_categ.html', locals())
 
 def article(request, *args, **kwargs):
@@ -32,5 +31,4 @@ def article(request, *args, **kwargs):
     data_art = Article.objects.filter(id=id_by_kwargs)
     context = []
     context.append({'data_art': data_art})
-    print(context)
-    return render(request, 'analytics/article.html', locals())
+    return render(request, 'analytics/article_detail.html', locals())
