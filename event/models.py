@@ -8,14 +8,16 @@ class Event(models.Model):
     day = models.DateField('День события', help_text='День события')
     start_time = models.TimeField('Начало', help_text='Начало')
     end_time = models.TimeField('Конец', help_text='Окончание')
-    place = models.CharField('Место',max_length=120, default='')
+    place = models.CharField('Место', max_length=300)
     image = models.ImageField('Фотография')#,upload_to=generate_filename, default='')
     notes = models.TextField('Заметки', help_text='Заметки', blank=True, null=True)
     created = models.DateTimeField(default=timezone.now)
+    is_active = models.BooleanField(default=True, verbose_name='Видимость для пользователя')
+
 
     
     def __str__(self):
-        return self.title
+        return "{0}: создано {1}".format(self.title, self.created)
 
     class Meta:
         verbose_name = 'Событие'
