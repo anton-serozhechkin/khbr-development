@@ -27,7 +27,6 @@ class Article(models.Model):
     id = models.AutoField(primary_key=True)
     category = models.ForeignKey(Category, verbose_name="Категория", on_delete=models.CASCADE)
     title = models.CharField('Заголовок', max_length=120)
-    slug = models.SlugField("Ссылка", unique=True)
     image = models.ImageField("Фотография", upload_to=upload_article_images_folder)
     content = models.TextField("Контент")
     author = models.TextField("Автор")

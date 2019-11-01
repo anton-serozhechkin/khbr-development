@@ -17,11 +17,6 @@ class Migration(migrations.Migration):
             field=models.ImageField(upload_to=analytics.models.upload_article_images_folder, verbose_name='Фотография'),
         ),
         migrations.AlterField(
-            model_name='article',
-            name='slug',
-            field=models.SlugField(unique=True, verbose_name='Ссылка'),
-        ),
-        migrations.AlterField(
             model_name='category',
             name='slug',
             field=models.SlugField(unique=True, verbose_name='Ссылка'),
