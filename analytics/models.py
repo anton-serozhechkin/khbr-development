@@ -27,9 +27,9 @@ class Article(models.Model):
     id = models.AutoField(primary_key=True)
     category = models.ForeignKey(Category, verbose_name="Категория", on_delete=models.CASCADE)
     title = models.CharField('Заголовок', max_length=120)
-    image = models.ImageField("Фотография", upload_to=upload_article_images_folder)
+    image = models.ImageField("Фотография", blank=True, upload_to=upload_article_images_folder)
     content = models.TextField("Контент")
-    author = models.TextField("Автор")
+    author = models.TextField("Автор", blank=True)
     created = models.DateTimeField(default=timezone.now)
     is_active = models.BooleanField(default=True, verbose_name='Видимость для пользователя')
 

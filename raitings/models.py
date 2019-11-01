@@ -10,8 +10,8 @@ class Raiting(models.Model):
     id = models.AutoField(primary_key=True)
     title = models.CharField('Заголовок',max_length=200)
     content = models.TextField('Контент')
-    author = models.TextField('Автор')
-    image = models.ImageField('Фотография',upload_to=upload_raiting_images_folder)
+    author = models.TextField('Автор', blank=True)
+    image = models.ImageField('Фотография', blank=True, upload_to=upload_raiting_images_folder)
     created = models.DateTimeField(default=timezone.now)
     is_active = models.BooleanField(default=True, verbose_name='Видимость для пользователя')
 
