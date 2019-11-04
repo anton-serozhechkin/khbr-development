@@ -217,6 +217,46 @@ body {
     font-size: 1.5em;
 }
 
+.rating-list {
+    margin: 100px 10vw;
+}
+.rating-box {
+    background-color: #C4C4C4;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    padding: 32px 24px;
+    align-items: center;
+    margin: 2vh 0;
+
+}
+.rating-box-author {
+    font-size: 26px;
+    font-weight: 500;
+    color: #413939;
+}
+.rating-box-date {
+    font-size: 0.9em;
+    font-weight: 300;
+    color: #413939;
+    margin: 2vh 0;
+}
+.rating-box-title {
+    font-size: 36px;
+    font-weight: 500;
+    margin: 2vh 0;
+}
+.rating-box-main_link {
+    color:#202020;
+    text-decoration: none;
+}
+.rating-box-left-side {
+    flex: 1;
+}
+.rating-box-right-side img {
+    height: 300px;
+    width: 350px;
+}
 
 .videoview-cat-title {
     text-align: center;
