@@ -23,7 +23,7 @@ class Event(models.Model):
         verbose_name_plural = 'События'
     
     def __str__(self):
-        return "{0}: создано {1}".format(self.title, self.created)
+        return "{} создано {}".format(self.title, self.created.strftime('%Y-%m-%d %H:%M'))
 
     def get_absolute_url(self):
         return reverse('event_detail', kwargs={'id': self.id})

@@ -1,12 +1,13 @@
 {% extends 'base.html' %}
 {% block content %}
 <section class="article_categ" id="article_categ-anchor">
+    {% for article in data_art %}
     <div class="article_categ-box">
         <img src="../../static/img/article-categ/5763e26658000.jpg" alt="" class="article_categ-image">
-        <h2 class="article_categ-title">Рубрика</h2>
-        <p class="article_categ-text">Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+        <h2 class="article_categ-title">{{ article.category }}</h2>
+        <p class="article_categ-text">{{ article.title }}</p>
     </div>
-    <div class="article_categ-box">
+    <!--<div class="article_categ-box">
         <img src="../../static/img/article-categ/Эдита%20Вилкевичуте%20фото.jpg" alt="" class="article_categ-image">
         <h2 class="article_categ-title">Рубрика</h2>
         <p class="article_categ-text">Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
@@ -17,7 +18,8 @@
         <h2 class="article_categ-title">Рубрика</h2>
         <p class="article_categ-text">Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
 
-    </div>
+    </div>-->
+    {% endfor %}
 </section>
 <h2 class="article_categ-main-title">Убийство</h2>
 

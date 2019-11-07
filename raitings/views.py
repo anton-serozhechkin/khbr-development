@@ -3,7 +3,7 @@ from .models import *
 
 def main(request):
     context = []
-    list_rait = Raiting.objects.filter(is_active=True)
+    list_rait = Raiting.objects.filter(is_active=True).order_by('-created')
     context.append({'list_rait': list_rait})
     return render(request, 'raitings/index.html', locals())
 

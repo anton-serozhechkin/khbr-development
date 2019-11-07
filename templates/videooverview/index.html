@@ -1,44 +1,26 @@
+{% extends 'base.html' %}
+{% load embed_video_tags %}
+{% block content %}
 <div class="container">
     <section class="videoview" id="videoview-anchor">
         <h2 class="videoview-cat-title">Видеообзоры</h2>
-
+        {% for video in data_video %}
         <div class="videoview-publication">
-            <span class="video-publication-author">Максим Серпухов,</span>
-            <span class="video-publication-date">23 августа 2029</span>
             <div class="videoview-content">
                 <div class="videoview-content-video">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/lh_zcQHavfs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe width="560" height="315" src="{{ video.video }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
                 <div class="videoview-content-text">
-                    <h2 class="videoview-content-text-title">Название видео</h2>
+                    <a href="{{ video.url }}">
+                        <h2 class="videoview-content-text-title">{{ video.title }}</h2>
+                    </a>
                     <p class="videoview-content-main-text">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos dolorem ea fugiat officia. Blanditiis deleniti, eaque eius exercitationem in inventore iste iure magni nulla voluptates?
+                        {{ video.notes|truncatechars:50 }}
                     </p>
                 </div>
             </div>
-            <div class="videoview-publication">
-                <span class="video-publication-author">Максим Серпухов,</span>
-                <span class="video-publication-date">23 августа 2029</span>
-                <div class="videoview-content">
-                    <div class="videoview-content-video">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/lh_zcQHavfs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                    <div class="videoview-content-text">
-                        <h2 class="videoview-content-text-title">Название видео</h2>
-                        <p class="videoview-content-main-text">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos dolorem ea fugiat officia. Blanditiis deleniti, eaque eius exercitationem in inventore iste iure magni nulla voluptates?
-                        </p>
-                    </div>
-                </div>
-
-            </div>
-
-
-
-
         </div>
-
-
-
+        {% endfor %}
     </section>
 </div>
+{% endblock content %}

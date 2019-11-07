@@ -1,20 +1,5 @@
-<div class="container">
-    <div class="header" id="header-anchor">
-        <img src="../../static/img/logotype-khbr.jpg" alt="">
-    </div>
-    <div class="search__menu">
-        <a href=""> <i class="fa fa-search search__icon" aria-hidden="true"></i> </a>
-
-        <input type="search">
-    </div>
-    <div class="heading">
-        <a href="#" class="heading-links">Аналитика</a>
-        <a href="#" class="heading-links">Рейтинги</a>
-        <a href="#" class="heading-links">События</a>
-        <a href="#" class="heading-links">Видео</a>
-        <a href="#" class="heading-links">Рубрика</a>
-    </div>
-
+{% extends 'base.html' %}
+{% block content %}
     <section class="rating-list" id="rating-list">
         <div class="rating-box">
             <div class="rating-box-left-side">
@@ -45,7 +30,7 @@
             </div>
         </div>
     </section>
-
+{% endblock content %}
 
 
 
