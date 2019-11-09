@@ -3,10 +3,10 @@ from .models import *
 
 def main(request):
     context = []
-    data_cat = Category.objects.filter(is_active=True).order_by('-created')
+    data_cat = Category.objects.filter(is_active=True)
     data_art = Article.objects.filter(is_active=True).order_by('-created')
-    data_art_by_cat = Article.objects.filter().order_by('-created')
-    context.append({'data_cat': data_cat, 'data_art': data_art})
+    data_art_by_cat = Article.objects.filter(category=4)
+    context.append({'data_cat': data_cat, 'data_art': data_art, 'data_art_by_cat': data_art_by_cat})
     return render(request, 'analytics/index.html', locals())
 
 

@@ -7,40 +7,16 @@
         <h2 class="article_categ-title">{{ article.category }}</h2>
         <p class="article_categ-text">{{ article.title }}</p>
     </div>
-    <!--<div class="article_categ-box">
-        <img src="../../static/img/article-categ/Эдита%20Вилкевичуте%20фото.jpg" alt="" class="article_categ-image">
-        <h2 class="article_categ-title">Рубрика</h2>
-        <p class="article_categ-text">Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
-
-    </div>
-    <div class="article_categ-box">
-        <img src="../../static/img/article-categ/Аня%20Рубик%20%20Anja%20Rubik%20фото.jpg" alt="" class="article_categ-image">
-        <h2 class="article_categ-title">Рубрика</h2>
-        <p class="article_categ-text">Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
-
-    </div>-->
     {% endfor %}
 </section>
-<h2 class="article_categ-main-title">Убийство</h2>
-
+{% for article_by_cat in data_art_by_cat %}
+<h2 class="article_categ-main-title">{{ article_by_cat.category }}</h2>
 <section class="article_by_cat" id="article_by_cat">
-
-    <img src="../../static/img/article-categ/936003569.jpg" alt="" class="article_by_cat-image">
     <div class="article_categ-box">
         <img src="../../static/img/article-categ/5763e26658000.jpg" alt="" class="article_categ-image">
-        <h2 class="article_categ-title">Рубрика</h2>
-        <p class="article_categ-text">Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+        <h2 class="article_categ-title">{{ article_by_cat.title }}</h2>
+        <p class="article_categ-text">{{ article_by_cat.content|truncatechars:20 }}</p>
     </div>
-    <div class="article_categ-box">
-        <img src="../../static/img/article-categ/5763e26658000.jpg" alt="" class="article_categ-image">
-        <h2 class="article_categ-title">Рубрика</h2>
-        <p class="article_categ-text">Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
-    </div>
-    <div class="article_categ-box">
-        <img src="../../static/img/article-categ/5763e26658000.jpg" alt="" class="article_categ-image">
-        <h2 class="article_categ-title">Рубрика</h2>
-        <p class="article_categ-text">Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
-    </div>
-
 </section>
+{% endfor %}
 {% endblock content %}
