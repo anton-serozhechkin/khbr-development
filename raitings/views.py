@@ -8,9 +8,9 @@ def main(request):
     return render(request, 'raitings/index.html', locals())
 
     
-def raiting_detail(request, *args, **kwargs):
-    id_by_kwargs = kwargs.get('id')
-    data_rait = Raiting.objects.filter(id=id_by_kwargs)
+def raiting_detail(request, id):
+    print('ok')
+    data_rait = Raiting.objects.filter(id=id)
     context = []
     context.append({'data_rait': data_rait})
     return render(request, 'raitings/raiting_detail.html', locals())
