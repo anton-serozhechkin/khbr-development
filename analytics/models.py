@@ -34,7 +34,7 @@ class Article(models.Model):
     is_active = models.BooleanField(default=True, verbose_name='Видимость для пользователя')
 
     def __str__(self):
-        return "{} из категории {} создано {}".format(self.title, self.category.name, self.created)
+        return "{} из категории {} создано {}".format(self.title, self.category.name, self.created.strftime('%Y-%m-%d %H:%M'))
     
     def get_absolute_url(self):
         return reverse('article', kwargs={'category': self.category.slug, 'id': self.id})

@@ -20,7 +20,7 @@ class Raiting(models.Model):
         verbose_name_plural = 'Рейтинги'
     
     def __str__(self):
-        return "{}: создано {}".format(self.title, self.created)
+        return "{} создано {}".format(self.title, self.created.strftime('%Y-%m-%d %H:%M'))
     
     def get_absolute_url(self):
         return reverse('raiting_detail', kwargs={'id': self.id})

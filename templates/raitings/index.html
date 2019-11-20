@@ -1,51 +1,25 @@
-<div class="container">
-    <div class="header" id="header-anchor">
-        <img src="../../static/img/logotype-khbr.jpg" alt="">
-    </div>
-    <div class="search__menu">
-        <a href=""> <i class="fa fa-search search__icon" aria-hidden="true"></i> </a>
-
-        <input type="search">
-    </div>
-    <div class="heading">
-        <a href="#" class="heading-links">Аналитика</a>
-        <a href="#" class="heading-links">Рейтинги</a>
-        <a href="#" class="heading-links">События</a>
-        <a href="#" class="heading-links">Видео</a>
-        <a href="#" class="heading-links">Рубрика</a>
-    </div>
-
+{% extends 'base.html' %}
+{% block content %}
+{% for raiting in list_rait %}
     <section class="rating-list" id="rating-list">
         <div class="rating-box">
             <div class="rating-box-left-side">
-                <span class="rating-box-author">Максим Серпухов</span>
-                <span class="rating-box-date">, 23 февраля 2139</span>
+                <span class="rating-box-author">{{ raiting.author }}</span>
+                <span class="rating-box-date">{{ raiting.created }}</span>
                 <a href="#" class="rating-box-main_link">
-                    <h1 class="rating-box-title">Куда поступать, чтобы не допустить ошибку? Рынок IT.
-                        Информация</h1>
-                    <p class="rating-box-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aut dignissimos earum, itaque necessitatibus odio quasi quia quis ullam vel. Officia, perspiciatis.</p>
+                    <a href="{{ raiting.get_absolute_url }}">
+                        <h1 class="rating-box-title">{{ raiting.title }}</h1>
+                    </a>
+                    <p class="rating-box-text">{{ raiting.content|truncatechars:50}}</p>
                 </a>
             </div>
             <div class="rating-box-right-side">
                 <img src="../../static/img/1494104729_apswyqzjlju.jpg" alt="">
             </div>
-        </div>
-        <div class="rating-box">
-            <div class="rating-box-left-side">
-                <span class="rating-box-author">Максим Серпухов</span>
-                <span class="rating-box-date">, 23 февраля 2139</span>
-                <a href="#" class="rating-box-main_link">
-                    <h1 class="rating-box-title">Куда поступать, чтобы не допустить ошибку? Рынок IT.
-                        Информация</h1>
-                    <p class="rating-box-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aut dignissimos earum, itaque necessitatibus odio quasi quia quis ullam vel. Officia, perspiciatis.</p>
-                </a>
-            </div>
-            <div class="rating-box-right-side">
-                <img src="../../static/img/derch-1226086-unsplash.jpg" alt="">
-            </div>
-        </div>
+        </div>        
     </section>
-
+    {% endfor %}
+{% endblock content %}
 
 
 

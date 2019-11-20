@@ -1,104 +1,22 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="https://use.fontawesome.com/44959e12e1.js"></script>
-    <link rel="stylesheet" href="../../static/css/main.css">
-    <link href="https://fonts.googleapis.com/css?family=Merriweather&display=swap" rel="stylesheet">
-    <title>Document</title>
-</head>
-<body>
-<div class="container">
-    <div class="header" id="header-anchor">
-        <img src="../../static/img/logotype-khbr.jpg" alt="">
+{% extends 'base.html' %}
+{% block content %}
+<section class="article_categ" id="article_categ-anchor">
+    {% for article in data_art %}
+    <div class="article_categ-box">
+        <img src="../../static/img/article-categ/5763e26658000.jpg" alt="" class="article_categ-image">
+        <h2 class="article_categ-title">{{ article.category }}</h2>
+        <p class="article_categ-text">{{ article.title }}</p>
     </div>
-    <div class="search__menu">
-        <a href=""> <i class="fa fa-search search__icon" aria-hidden="true"></i> </a>
-
-        <input type="search">
+    {% endfor %}
+</section>
+{% for article_by_cat in data_art_by_cat %}
+<h2 class="article_categ-main-title">{{ article_by_cat.category }}</h2>
+<section class="article_by_cat" id="article_by_cat">
+    <div class="article_categ-box">
+        <img src="../../static/img/article-categ/5763e26658000.jpg" alt="" class="article_categ-image">
+        <h2 class="article_categ-title">{{ article_by_cat.title }}</h2>
+        <p class="article_categ-text">{{ article_by_cat.content|truncatechars:20 }}</p>
     </div>
-    <div class="heading">
-        <a href="#" class="heading-links">Аналитика</a>
-        <a href="#" class="heading-links">Рейтинги</a>
-        <a href="#" class="heading-links">События</a>
-        <a href="#" class="heading-links">Видео</a>
-        <a href="#" class="heading-links">Рубрика</a>
-    </div>
-
-
-    <section class="article_categ" id="article_categ-anchor">
-        <div class="article_categ-box">
-            <img src="../../static/img/article-categ/5763e26658000.jpg" alt="" class="article_categ-image">
-            <h2 class="article_categ-title">Рубрика</h2>
-            <p class="article_categ-text">Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
-        </div>
-        <div class="article_categ-box">
-            <img src="../../static/img/article-categ/Эдита%20Вилкевичуте%20фото.jpg" alt="" class="article_categ-image">
-            <h2 class="article_categ-title">Рубрика</h2>
-            <p class="article_categ-text">Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
-
-        </div>
-        <div class="article_categ-box">
-            <img src="../../static/img/article-categ/Аня%20Рубик%20%20Anja%20Rubik%20фото.jpg" alt="" class="article_categ-image">
-            <h2 class="article_categ-title">Рубрика</h2>
-            <p class="article_categ-text">Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
-
-        </div>
-    </section>
-    <h2 class="article_categ-main-title">Убийство</h2>
-
-    <section class="article_by_cat" id="article_by_cat">
-
-        <img src="../../static/img/article-categ/936003569.jpg" alt="" class="article_by_cat-image">
-        <div class="article_categ-box">
-            <img src="../../static/img/article-categ/5763e26658000.jpg" alt="" class="article_categ-image">
-            <h2 class="article_categ-title">Рубрика</h2>
-            <p class="article_categ-text">Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
-        </div>
-        <div class="article_categ-box">
-            <img src="../../static/img/article-categ/5763e26658000.jpg" alt="" class="article_categ-image">
-            <h2 class="article_categ-title">Рубрика</h2>
-            <p class="article_categ-text">Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
-        </div>
-        <div class="article_categ-box">
-            <img src="../../static/img/article-categ/5763e26658000.jpg" alt="" class="article_categ-image">
-            <h2 class="article_categ-title">Рубрика</h2>
-            <p class="article_categ-text">Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
-        </div>
-
-    </section>
-
-    <footer class="footer" id="footer-anchor">
-        <div class="left-side-footer">
-        <ul>
-            <li>Рубрика</li>
-            <li><a href="">number1</a></li>
-            <li><a href="">number2</a></li>
-            <li><a href="">number3</a></li>
-            <li><a href="">number4</a></li>
-        </ul>
-        </div>
-        <div class="central-side-footer">
-        <img src="../../static/img/logotype-footer.png" alt="">
-            <i class="fa fa-book" aria-hidden="true"></i>
-            <h2 class="footer-title">KHBR News</h2>
-            <input type="email" class="footer-email" placeholder="E-mail">
-            <button class="footer-submit">Подписаться</button>
-        </div>
-        <div class="right-side-footer">
-        <ul>
-            <li>Рубрика</li>
-            <li><a href="">number1</a></li>
-            <li><a href="">number2</a></li>
-            <li><a href="">number3</a></li>
-            <li><a href="">number4</a></li>
-        </ul>
-        </div>
-    </footer>
-</div>
-
-</body>
-</html>
+</section>
+{% endfor %}
+{% endblock content %}

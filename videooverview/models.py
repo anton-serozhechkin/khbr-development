@@ -12,7 +12,7 @@ class VideoDownloading(models.Model):
     is_active = models.BooleanField(default=True, verbose_name='Видимость для пользователя')
 
     def __str__(self):
-        return "{0}: создано {1}".format(self.title, self.created)
+        return "{} создано {}".format(self.title, self.created.strftime('%Y-%m-%d %H:%M'))
                     
     class Meta:
         verbose_name = 'Видеообзор'

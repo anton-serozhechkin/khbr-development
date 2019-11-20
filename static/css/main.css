@@ -16,14 +16,10 @@ body {
     margin: 0 12.5vw;
     background-color: #F9F1F1;
 }
-.header {
+.header .logo {
     display: flex;
     flex-direction: row;
     justify-content: center;
-
-}
-.header img {
-
 }
 .header__login__btn {
     background-color: #6CA4C3;
@@ -85,7 +81,6 @@ body {
 .article_categ-title{
     font-size: 18px;
     margin-top: 12px;
-    color:#202020;
 }
 .article_categ-text {
     margin: 12px 15% 0 15%;
