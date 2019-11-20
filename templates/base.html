@@ -12,11 +12,13 @@
 </head>
 <body>
     <!-- include header -->
-    {% include 'header.html' %}
-    <!-- content block -->
+    <div class="container">
+        {% include 'header.html' %}
+        <!-- content block -->
 
-    {% block content %}
-    {% endblock %}
+        {% block content %}
+        {% endblock %}
+    </div>
 
     <!-- include footer -->
     {% include 'footer.html' %}
