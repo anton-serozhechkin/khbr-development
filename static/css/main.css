@@ -16,14 +16,10 @@ body {
     margin: 0 12.5vw;
     background-color: #F9F1F1;
 }
-.header {
+.header .logo {
     display: flex;
     flex-direction: row;
     justify-content: center;
-
-}
-.header img {
-
 }
 .header__login__btn {
     background-color: #6CA4C3;
