@@ -1,3 +1,27 @@
 # Python.
 venv/
 __pycache__/
+
+# Emacs.
+*~
+\#*\#
+.\#*
+
+# Mac.
+.DS_Store
+
+# IDE
+.idea
+.vscode
+
+# caches
+pycache
+
+# collectstatic files
+/static/admin
+
+# migration files
+/**/migrations/*.py
+
+# temp storage (reports etc.)
+/temp
