@@ -12,15 +12,15 @@ class Raiting(models.Model):
     content = models.TextField('Контент')
     author = models.TextField('Автор', blank=True)
     image = models.ImageField('Фотография', blank=True, upload_to=upload_raiting_images_folder)
-    created = models.DateTimeField(default=timezone.now)
+    created = models.DateTimeField('Дата создания', default=timezone.now)
     is_active = models.BooleanField(default=True, verbose_name='Видимость для пользователя')
 
     class Meta:
         verbose_name = 'Рейтинг'
         verbose_name_plural = 'Рейтинги'
-    
+
     def __str__(self):
-        return "{} создано {}".format(self.title, self.created.strftime('%Y-%m-%d %H:%M'))
+        return self.title
     
     def get_absolute_url(self):
         return reverse('raiting_detail', kwargs={'id': self.id})

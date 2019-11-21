@@ -15,7 +15,7 @@ class Event(models.Model):
     place = models.CharField('Место', blank=True, max_length=300)
     image = models.ImageField('Фотография', blank=True, upload_to=upload_event_images_folder)
     notes = models.TextField('Заметки', blank=True, null=True)
-    created = models.DateTimeField(default=timezone.now)
+    created = models.DateTimeField('Дата создания', default=timezone.now)
     is_active = models.BooleanField(default=True, verbose_name='Видимость для пользователя')
     
     class Meta:
@@ -23,7 +23,7 @@ class Event(models.Model):
         verbose_name_plural = 'События'
     
     def __str__(self):
-        return "{} создано {}".format(self.title, self.created.strftime('%Y-%m-%d %H:%M'))
-
+        return self.title
+    
     def get_absolute_url(self):
         return reverse('event_detail', kwargs={'id': self.id})
