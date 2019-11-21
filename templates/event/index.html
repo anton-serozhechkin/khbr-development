@@ -5,7 +5,7 @@
     {% for event in list_event %}
     <div class="calendar-event-box">
         <img src="../../static/img/calendar-event/rossiya_harkov_park_vecher_lavochka_879_1920x1080.jpg" alt="" class="calendar-event-box-image">
-        <p class="calendar-event-box-date">{{ event.day }}, {{ event.start_time }} - {{ event.end_time }}</p>
+        <p class="calendar-event-box-date">{{ event.day }}<br>{{ event.start_time }} - {{ event.end_time }}</p>
         <div class="calendar-event-box-log">
             <p class="calendar-event-box-log-type">{{ event.title }}</p>
             <p class="calendar-event-box-log-loc">{{ event.place }}</p>
