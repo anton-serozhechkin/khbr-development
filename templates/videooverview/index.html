@@ -1,26 +1,24 @@
 {% extends 'base.html' %}
 {% load embed_video_tags %}
 {% block content %}
-<div class="container">
-    <section class="videoview" id="videoview-anchor">
-        <h2 class="videoview-cat-title">Видеообзоры</h2>
-        {% for video in data_video %}
-        <div class="videoview-publication">
-            <div class="videoview-content">
-                <div class="videoview-content-video">
-                    <iframe width="560" height="315" src="{{ video.video }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-                <div class="videoview-content-text">
-                    <a href="{{ video.url }}">
-                        <h2 class="videoview-content-text-title">{{ video.title }}</h2>
-                    </a>
-                    <p class="videoview-content-main-text">
-                        <tr>{{ video.notes|truncatechars:25}} </tr>
-                    </p>
-                </div>
+<section class="videoview" id="videoview-anchor">
+    <h2 class="videoview-cat-title">Видеообзоры</h2>
+    {% for video in data_video %}
+    <div class="videoview-publication">
+        <div class="videoview-content">
+            <div class="videoview-content-video">
+                <iframe width="560" height="315" src="{{ video.video }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="videoview-content-text">
+                <a href="{{ video.url }}">
+                    <h2 class="videoview-content-text-title">{{ video.title }}</h2>
+                </a>
+                <p class="videoview-content-main-text">
+                    <tr>{{ video.notes|truncatechars:25}} </tr>
+                </p>
             </div>
         </div>
-        {% endfor %}
-    </section>
-</div>
+    </div>
+    {% endfor %}
+</section>
 {% endblock content %}
