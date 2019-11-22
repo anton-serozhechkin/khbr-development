@@ -30,12 +30,12 @@ class Article(models.Model):
     image = models.ImageField("Фотография", blank=True, upload_to=upload_article_images_folder)
     content = models.TextField("Контент")
     author = models.TextField("Автор", blank=True)
-    created = models.DateTimeField(default=timezone.now)
+    created = models.DateTimeField('Дата создания', default=timezone.now)
     is_active = models.BooleanField(default=True, verbose_name='Видимость для пользователя')
 
     def __str__(self):
-        return "{} из категории {} создано {}".format(self.title, self.category.name, self.created.strftime('%Y-%m-%d %H:%M'))
-    
+        return self.title
+            
     def get_absolute_url(self):
         return reverse('article', kwargs={'category': self.category.slug, 'id': self.id})
     
