@@ -245,6 +245,10 @@ body {
     color:#202020;
     text-decoration: none;
 }
+.rating-box-text {
+    word-break: break-all;
+
+}
 .rating-box-left-side {
     flex: 1;
 }
@@ -275,7 +279,6 @@ body {
 .videoview-content {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
     margin: 5vh 5vw;
 }
 .videoview-content-text {
@@ -284,6 +287,9 @@ body {
 }
 .videoview-content-text-title {
     margin-bottom: 4vh;
+}
+.videoview-content-main-text {
+    word-break: break-all;
 }
 
 
@@ -308,10 +314,12 @@ body {
     height: 100px;
     width: 100px;
 }
-.calendar-event-box-date {
-    margin-right: 5vw;
+.calendar-event-box-title {
+    text-align: center;
     font-weight: 700;
-    font-size: 22px;
+    font-size: 16px;
+}
+.calendar-event-box-date {
 }
 .calendar-event-box-log {
     background-color: #C9BCBC;
@@ -319,6 +327,12 @@ body {
     padding: 8px 18px;
     font-weight: 700;
     font-size: 20px;
+
+}
+.calendar-event-box-log-type {
+    text-align: center;
+    font-weight: 1000;
+    font-size: 22px;
 
 }
 .calendar-event-box-more {
