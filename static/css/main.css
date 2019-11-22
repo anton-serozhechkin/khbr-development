@@ -279,7 +279,6 @@ body {
 .videoview-content {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
     margin: 5vh 5vw;
 }
 .videoview-content-text {
@@ -288,6 +287,9 @@ body {
 }
 .videoview-content-text-title {
     margin-bottom: 4vh;
+}
+.videoview-content-main-text {
+    word-break: break-all;
 }
 
 
