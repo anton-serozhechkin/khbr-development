@@ -245,6 +245,10 @@ body {
     color:#202020;
     text-decoration: none;
 }
+.rating-box-text {
+    word-break: break-all;
+
+}
 .rating-box-left-side {
     flex: 1;
 }
