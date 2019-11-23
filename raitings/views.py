@@ -9,7 +9,6 @@ def main(request):
 
     
 def raiting_detail(request, id):
-    print('ok')
     data_rait = Raiting.objects.filter(id=id)
     context = []
     context.append({'data_rait': data_rait})

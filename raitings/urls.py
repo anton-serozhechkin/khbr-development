@@ -4,5 +4,5 @@ from .views import *
 
 urlpatterns = [
     path('', main, name='raitings'),
-    path('<int:id>', raiting_detail, name='raiting_detail'),
+    re_path('(?P<id>\d+)', raiting_detail, name='raiting_detail'),
 ]

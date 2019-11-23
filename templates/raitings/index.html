@@ -7,7 +7,7 @@
                 <span class="rating-box-author">{{ raiting.author }}</span>
                 <span class="rating-box-date">{{ raiting.created }}</span>
                 <a href="#" class="rating-box-main_link">
-                    <a href="{{ raiting.get_absolute_url }}">
+                    <a href="{% url 'raiting_detail' id=raiting.id %}">
                         <h1 class="rating-box-title">{{ raiting.title }}</h1>
                     </a>
                     <p class="rating-box-text">{{ raiting.content|truncatechars:200}}</p>

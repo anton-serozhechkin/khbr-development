@@ -4,5 +4,5 @@ from .views import *
 
 urlpatterns = [
     path('', main, name='events'),
-    re_path('(?P<id>\d+)', event_detail),
+    re_path('(?P<id>\d+)', event_detail, name='event_detail'),
 ]

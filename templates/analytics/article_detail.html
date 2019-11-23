@@ -1,11 +1,12 @@
 {% extends 'base.html' %}
 {% block content %}
+{% for article in data_art %}
 <div class="container-detail">
 
     <section class="article-detail">
         <div class="article-detail-top">
             <div class="article-detail-top-left_side">
-                <h1 class="article-detail-title">Убийтво возле ХНЭУ</h1>
+                <h1 class="article-detail-title">{{ article.title }}</h1>
                 <span class="article-detail-author">Максим Серпухов,</span> <span class="article-detail-date">12 сентября 2023</span>
                 <p class="article-detail-short-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, autem consequuntur dignissimos dolor doloremque, error facere, fuga fugiat illo ipsum minima modi nesciunt nihil nostrum odio quos ratione rem repellat unde veritatis vitae voluptatibus voluptatum.</p>
             </div>
@@ -40,4 +41,5 @@
     </section>
 
 </div>
+{% endfor %}
 {% endblock content %}

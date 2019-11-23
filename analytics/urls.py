@@ -4,6 +4,5 @@ from . import views
 
 urlpatterns = [
     path('', views.main, name='analytics'),
-    re_path('(?P<slug>\d+)', views.article_by_categ),
-    re_path('(?P<slug>\<id>\d+)', views.article)
+    re_path('(?P<id>\d+)', views.article, name='article_detail')
 ]
