@@ -463,7 +463,8 @@ body {
     outline: none;
     color:gray;
     text-align: center;
-    margin-bottom: 24px;
+    margin-top: 16px;
+    margin-bottom: 8px;
     font-size: 24px;
 }
 .footer button {
