@@ -18,7 +18,7 @@ def main(request):
     return render(request, 'analytics/article_by_categ.html', locals())'''
 
 
-def article(request,id):
+def article_detail(request, id):
     data_art = Article.objects.filter(id=id)
     context = []
     context.append({'data_art': data_art})
