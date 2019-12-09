@@ -1,8 +1,8 @@
 from django.contrib import admin
 from django.urls import path, re_path
-from .views import *
+from . import views
 
 urlpatterns = [
-    path('', main),
-    re_path('(?P<id>\d+)', event_detail),
+    path('', views.main, name='events'),
+    re_path('(?P<slug>\d+)', views.event_detail, name='event_detail'),
 ]

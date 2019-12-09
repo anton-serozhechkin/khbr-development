@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container-detail">
+    {% for event in data_event %}
+    <section class="event-detail">
+        <div class="event-detail-detail-top">
+                <h1 class="event-detail-title">{{ event.title }}</h1>
+        </div>
+        <p class="event-detail-short-text">{{ event.day }}</p>
+        <p class="event-detail-short-text">Начало: {{ event.start_time}}</p>
+        <p class="event-detail-short-text">Конец: {{ event.end_time}}</p>
+        <img src="" alt="" class="event-detail-publication-image">
+        <p class="event-detail-paragraph">{{ event.notes }}</p>
+        <img src="" alt="" class="event-detail-publication-image">
+    </section>
+    {% endfor %}
+</div>
+{% endblock content %}

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container-detail">
+    {% for raiting_data in data_rait %}
+    <section class="article-detail">
+        <div class="article-detail-top">
+            <div class="article-detail-top-left_side">
+                <h1 class="article-detail-title">{{ raiting_data.tittle }}</h1>
+                <span class="article-detail-author">{{ raiting_data.author }}</span> <span class="article-detail-date">{{ raiting_data.created }}</span>
+                <p class="article-detail-short-text">{{ raiting_data.content }}</p>
+            </div>
+
+        </div>
+        <!--<img src="../../static/img/article-detail/vgrom.com_1453714360_3.jpg" alt="" class="article-detail-publication-image">
+        <h2 class="article-detail-paragraph-title">Заголовок параграфа</h2>
+        <p class="article-detail-paragraph"></p>
+        <img src="../../static/img/article-detail/1028d97df8a620ec152579780b10e407.jpg" alt="" class="article-detail-publication-image">
+        <h2 class="article-detail-paragraph-title">Заголовок параграфа</h2>
+
+        <p class="article-detail-paragraph">
+        </p>-->
+
+    </section>
+    {% endfor %}
+</div>
+{% endblock content %}

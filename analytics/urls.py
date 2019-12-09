@@ -3,7 +3,6 @@ from django.urls import path, re_path
 from . import views
 
 urlpatterns = [
-    path('', views.main),
-    re_path('(?P<category>\d+)', views.article_by_categ),
-    re_path('(?P<category>&<id>\d+)', views.article)
+    path('', views.main, name='analytics'),
+    re_path('(?P<id>\d+)', views.article_detail, name='article_detail')
 ]

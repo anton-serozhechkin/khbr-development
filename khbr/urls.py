@@ -21,7 +21,7 @@ urlpatterns = [
     path('', include('analytics.urls')),
     path('login/', include('authorization.urls')),
     path('register/', include('register.urls')),
-    path('event/', include('event.urls')),
-    path('videooverview/', include('videooverview.urls')),
+    path('events/', include('event.urls')),
+    path('videooverviews/', include('videooverview.urls')),
     path('raitings/', include('raitings.urls')),
 ]
