@@ -16,10 +16,36 @@ body {
     margin: 0 12.5vw;
     background-color: #F9F1F1;
 }
+.header {
+    padding: 12px;
+    height: 88px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    background: rgba(196, 196, 196, 0.5);
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.header .heading {
+    margin: auto 0px;
+
+    font-family: 'Noto Sans JP', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 52px;
+    line-height: 75px;
+    color: black;
+}
 .header .logo {
     display: flex;
     flex-direction: row;
     justify-content: center;
+}
+.header .logo img {
+    padding: 8px;
+    margin-right: 3.0vw;
+    width: 228px;
+    height: 75px;
 }
 .header__login__btn {
     background-color: #6CA4C3;
@@ -55,7 +81,7 @@ body {
     justify-content: center;
 }
 .heading-links, .heading-links a {
-    margin: 0 2.4vw;
+    margin: 0 1.8vw;
     color:#000000;
     font-size: 26px;
     text-decoration: none;
