@@ -42,10 +42,11 @@ body {
     justify-content: center;
 }
 .header .logo img {
-    padding: 8px;
-    margin-right: 3.0vw;
-    width: 228px;
-    height: 75px;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 2.0vw;
+    width: 16.8vw;
+    height: 5.5vw;
 }
 .header__login__btn {
     background-color: #6CA4C3;
