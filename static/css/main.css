@@ -2,7 +2,7 @@ body {
     margin: 0;
     padding: 0;
     background-image: url(../img/background-body.png);
-    font-family: 'Merriweather', serif;
+    font-family: 'Noto Sans JP', sans-serif;
 }
 * {
     margin: 0;
@@ -29,7 +29,6 @@ body {
 .header .heading {
     margin: auto 0px;
 
-    font-family: 'Noto Sans JP', sans-serif;
     font-style: normal;
     font-weight: 300;
     font-size: 52px;
@@ -261,7 +260,6 @@ body {
     float: right;
 }
 .rating-cat-title {
-    font-family: 'Noto Sans JP', sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 52px;
@@ -270,50 +268,56 @@ body {
     vertical-align: center;
 }
 .rating-list {
-    margin: 100px 10vw;
+    margin: 112px 10vw;
 }
 .rating-box {
-    background-color: #C4C4C4;
+    background: rgba(0, 154, 61, 0.1);
+    margin: 2vh 0;
+    display: flex;
+    flex-flow: row;
+    align-items: stretch;
+}
+.rating-box-column {
+    display: flex;
+    flex-flow: column;
+    align-items: stretch;
+}
+.rating-box-content {
+    padding: 4px 4px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    padding: 32px 24px;
     align-items: center;
-    margin: 2vh 0;
-
 }
-.rating-box-author {
-    font-size: 26px;
-    font-weight: 500;
-    color: #413939;
-}
-.rating-box-date {
-    font-size: 0.9em;
-    font-weight: 300;
-    color: #413939;
-    margin: 2vh 0;
+.rating-box-title-href {
+    color: black;
+    margin-left: 32px;
 }
 .rating-box-title {
-    font-size: 36px;
-    font-weight: 500;
-    margin: 2vh 0;
-}
-.rating-box-main_link {
-    color:#202020;
-    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+    margin: 6px auto;
 }
 .rating-box-text {
+    margin: 0px 32px;
     word-break: break-all;
-
+    text-align: left;
 }
-.rating-box-left-side {
-    flex: 1;
+.rating-box-top-line {
+    width: 25%;
+    border: 2px solid #009A3D;
 }
-.rating-box-right-side img {
-    height: 300px;
-    width: 350px;
+.rating-box-left-line {
+    border: 2px solid #009A3D;
 }
-
+.rating-box-right-line {
+    border: 2px solid #009A3D;
+}
+.rating-box-bottom-line {
+    margin-left: 75%;
+    border: 2px solid #009A3D;
+}
 .videoview-cat-title {
     text-align: center;
     background-color: #F6E9E9;
