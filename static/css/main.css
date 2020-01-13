@@ -268,7 +268,7 @@ body {
     vertical-align: center;
 }
 .rating-list {
-    margin: 112px 10vw;
+    padding: 112px 10vw;
 }
 .rating-box {
     background: rgba(0, 154, 61, 0.1);
