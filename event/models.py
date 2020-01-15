@@ -7,7 +7,6 @@ def upload_event_images_folder(instance, filename):
     return "{}/{}".format(instance.id, filename)
 
 class Event(models.Model):
-    id = models.AutoField(primary_key=True)
     title = models.CharField('Заголовок',max_length=120)
     slug = models.SlugField()
     day = models.DateField('День события')
@@ -26,5 +25,5 @@ class Event(models.Model):
     def __str__(self):
         return self.title
     
-    #def get_absolute_url(self):
-     #   return reverse('event_detail', kwargs={'slug': self.slug})
+    def get_absolute_url(self):
+        return reverse('event_detail', kwargs={'slug': self.slug})

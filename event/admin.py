@@ -2,14 +2,16 @@ from django.contrib import admin
 from .models import Event
 
 class EventAdmin(admin.ModelAdmin):
-    list_display = ('id', 'title',  'day', 'place', )
+    list_display = ('title', 'slug', 'day', 'place', )
     list_editable = ('day', 'place', )
     list_filter = ('place', 'created', 'is_active')
-    search_fields = ('id', 'title', 'notes', 'day', 'place')
+    search_fields = ('title', 'slug', 'notes', 'day', 'place')
+    prepopulated_fields = {'slug': ('title', )}
     fieldsets = (
         (None, {
             'fields':(
                 'title',
+                'slug',
                 'day',
                 'place',
                 'notes',
