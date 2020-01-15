@@ -244,14 +244,13 @@ body {
     color:#564F4F;
     font-size: 1.5em;
 }
-
-.rating-cat-title-topline {
+.cat-title-topline {
     border-bottom: 1px solid #000000;
     height: 1px;
     margin-top: 50px;
     width: 75%;
 }
-.rating-cat-title-botline {
+.cat-title-botline {
     border-bottom: 1px solid #000000;
     height: 1px;
     margin-top: 4px;
@@ -259,13 +258,13 @@ body {
     width: 75%;
     float: right;
 }
-.rating-cat-title {
+.cat-title {
     font-style: normal;
     font-weight: 500;
     font-size: 52px;
     line-height: 52px;
-    text-align: center;
-    vertical-align: center;
+    text-align: vertical;
+    center-align: center;
 }
 .rating-list {
     padding: 112px 10vw;
