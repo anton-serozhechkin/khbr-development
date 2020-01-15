@@ -1,25 +1,18 @@
 <footer class="footer" id="footer-anchor">
-    <div class="left-side-footer">
-        <ul>
-            <li>Рубрика</li>
-            <li><a href="">number1</a></li>
-            <li><a href="">number2</a></li>
-            <li><a href="">number3</a></li>
-            <li><a href="">number4</a></li>
-        </ul>
+  <div class="footer-categories">
+    <a href="{% url 'analytics' %}">Аналитика</a>
+    <a href="{% url 'events' %}">События</a>
+    <a href="{% url 'raitings' %}">Рейтинги</a>
+    <a href="{% url 'videooverview' %}">Видео</a>
+  </div>
+  <div class="footer-logo">
+    <img src="../static/img/logo.png" alt="">
+  </div>
+  <div class="footer-contacts">
+    <div>Мы в соцсетях:</div>
+    <div class="footer-contacts-socials">
     </div>
-    <div class="central-side-footer">
-        <img src="../static/img/logotype-footer.png" alt="">
-        <input type="email" class="footer-email" placeholder="E-mail">
-        <button class="footer-submit">Подписаться</button>
-    </div>
-    <div class="right-side-footer">
-        <ul>
-            <li>Рубрика</li>
-            <li><a href="">number1</a></li>
-            <li><a href="">number2</a></li>
-            <li><a href="">number3</a></li>
-            <li><a href="">number4</a></li>
-        </ul>
-    </div>
+    <div>Обратная связь</div>
+    <div>Контакты</div>
+  </div>
 </footer>

@@ -9,14 +9,16 @@ class CategoryAdmin(admin.ModelAdmin):
     search_fields = ('name', 'slug')
 
 class ArticleAdmin(admin.ModelAdmin):
-    list_display = ('id', 'title',  'category', 'created', 'is_active',)
+    list_display = ('title', 'slug', 'category', 'created', 'is_active',)
     list_editable = ('is_active', )
     list_filter = ('category', 'created', 'is_active')
-    search_fields = ('id', 'title', 'content', 'author',  'category')
+    search_fields = ('title', 'slug', 'content', 'author',  'category')
+    prepopulated_fields = {'slug': ('title', )}
     fieldsets = (
         (None, {
             'fields':(
                 'title',
+                'slug',
                 'category',
                 'content',
             )

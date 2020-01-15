@@ -19,14 +19,16 @@ class Category(models.Model):
         verbose_name = 'Категория'
         verbose_name_plural = 'Категории'
 
+
 def upload_article_images_folder(instance, filename):
     filename = instance.slug + '.' + filename.split('.')[-1]
     return "{}/{}".format(instance.slug, filename)
 
+
 class Article(models.Model):
-    id = models.AutoField(primary_key=True)
     category = models.ForeignKey(Category, verbose_name="Категория", on_delete=models.CASCADE)
     title = models.CharField('Заголовок', max_length=120)
+    slug = models.SlugField('Ссылка')
     image = models.ImageField("Фотография", blank=True, upload_to=upload_article_images_folder)
     content = models.TextField("Контент")
     author = models.TextField("Автор", blank=True)
@@ -37,7 +39,7 @@ class Article(models.Model):
         return self.title
             
     def get_absolute_url(self):
-        return reverse('article_detail', kwargs={'id': self.id})
+        return reverse('article_detail', kwargs={'slug': self.slug})
     
     class Meta:
         verbose_name = 'Пост'

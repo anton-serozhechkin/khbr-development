@@ -7,8 +7,8 @@ def upload_raiting_images_folder(instance, filename):
     return "{}/{}".format(instance.id, filename)
 
 class Raiting(models.Model):
-    id = models.AutoField(primary_key=True)
     title = models.CharField('Заголовок',max_length=200)
+    slug = models.SlugField('Ссылка')
     content = models.TextField('Контент')
     author = models.TextField('Автор', blank=True)
     image = models.ImageField('Фотография', blank=True, upload_to=upload_raiting_images_folder)
@@ -23,4 +23,4 @@ class Raiting(models.Model):
         return self.title
     
     def get_absolute_url(self):
-        return reverse('raiting_detail', kwargs={'id': self.id})
+        return reverse('raiting_detail', kwargs={'slug': self.slug})

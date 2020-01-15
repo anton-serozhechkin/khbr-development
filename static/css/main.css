@@ -244,14 +244,13 @@ body {
     color:#564F4F;
     font-size: 1.5em;
 }
-
-.rating-cat-title-topline {
+.cat-title-topline {
     border-bottom: 1px solid #000000;
     height: 1px;
     margin-top: 50px;
     width: 75%;
 }
-.rating-cat-title-botline {
+.cat-title-botline {
     border-bottom: 1px solid #000000;
     height: 1px;
     margin-top: 4px;
@@ -259,16 +258,16 @@ body {
     width: 75%;
     float: right;
 }
-.rating-cat-title {
+.cat-title {
     font-style: normal;
     font-weight: 500;
     font-size: 52px;
     line-height: 52px;
     text-align: center;
-    vertical-align: center;
+    center-align: center;
 }
 .rating-list {
-    margin: 112px 10vw;
+    padding: 112px 10vw;
 }
 .rating-box {
     background: rgba(0, 154, 61, 0.1);
@@ -476,66 +475,39 @@ body {
 }
 
 .footer {
-    background-color: #202020;
+    margin: 0 12.5vw;
+    padding: 4vh 10vw;
+    background-color: #e5e5e5;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+}
+
+.footer-categories {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+.footer-logo {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
-
+    justify-content: center;
+}
+.footer-logo img {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 2.0vw;
+    width: 16.8vw;
+    height: 5.5vw;
 }
 
-.footer img {
-    height: 15vh;
-    display: block;
-
-}
-.footer ul {
-    list-style-type: none;
-    text-align: center;
-}
-.footer ul li a {
-    color:#fff;
-    text-decoration: none;
-    font-size: 20px;
-}
-.footer ul li:first-of-type {
-    font-size: 26px;
-    color:#fff;
-    margin-bottom: 15px;
-    padding-bottom: 7px;
-    border-bottom: solid 3px #FDFDFD;
-}
-.central-side-footer {
-    padding: 10px 0;
-    text-align: center;
+.footer-contacts {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
-.central-side-footer i {
-    font-size: 32px;
-    color: #FDFDFD;
-    margin: 10px 0;
-}
-.footer input {
-    display: block;
-    padding: 12px 24px;
-    outline: none;
-    color:gray;
-    text-align: center;
-    margin-top: 16px;
-    margin-bottom: 8px;
-    font-size: 24px;
-}
-.footer button {
-    background-color: #534E4E;
-    text-align: center;
-    border: none;
-    padding: 12px 24px;
-    font-size: 24px;
-    margin-bottom: 24px;
-}
+
 input:focus::-webkit-input-placeholder { color:transparent; }
 input:focus:-moz-placeholder { color:transparent; } /* FF 4-18 */
 input:focus::-moz-placeholder { color:transparent; } /* FF 19+ */

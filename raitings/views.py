@@ -8,8 +8,8 @@ def main(request):
     return render(request, 'raitings/index.html', locals())
 
     
-def raiting_detail(request, id):
-    data_rait = Raiting.objects.filter(id=id)
+def raiting_detail(request, slug):
+    data_rait = Raiting.objects.filter(slug=slug)
     context = []
     context.append({'data_rait': data_rait})
     return render(request, 'raitings/raiting_detail.html', locals())
