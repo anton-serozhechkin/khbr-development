@@ -5,21 +5,11 @@
     {% for article in data_art %}
     <div class="article_categ-box">
         <img src="../../static/img/article-categ/5763e26658000.jpg" alt="" class="article_categ-image">
-        <a href="{% url 'article_detail' id=article.id %}">        
+        <a href="{% url 'article_detail' slug=article.slug %}">        
             <h2 class="article_categ-title">{{ article.title }}</h2>
         </a>
         <p class="article_categ-text">{{ article.category }}</p>
     </div>
     {% endfor %}
 </section>
-{% for article_by_cat in data_art_by_cat %}
-<h2 class="article_categ-main-title">{{ article_by_cat.category }}</h2>
-<section class="article_by_cat" id="article_by_cat">
-    <div class="article_categ-box">
-        <img src="../../static/img/article-categ/5763e26658000.jpg" alt="" class="article_categ-image">
-            <h2 class="article_categ-title">{{ article_by_cat.title }}</h2>
-        <p class="article_categ-text">{{ article_by_cat.content|truncatechars:20 }}</p>
-    </div>
-</section>
-{% endfor %}
 {% endblock content %}

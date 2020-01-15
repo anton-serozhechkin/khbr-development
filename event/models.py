@@ -8,7 +8,7 @@ def upload_event_images_folder(instance, filename):
 
 class Event(models.Model):
     title = models.CharField('Заголовок',max_length=120)
-    slug = models.SlugField()
+    slug = models.SlugField('Ссылка')
     day = models.DateField('День события')
     start_time = models.TimeField('Начало', blank=True)
     end_time = models.TimeField('Конец', blank=True)

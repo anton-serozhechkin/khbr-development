@@ -4,5 +4,5 @@ from . import views
 
 urlpatterns = [
     path('', views.main, name='events'),
-    re_path('(?P<slug>[\w-]+)/$', views.event_detail, name='event_detail'),
+    re_path('(?P<slug>[\w-]+)', views.event_detail, name='event_detail'),
 ]

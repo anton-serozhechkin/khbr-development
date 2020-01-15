@@ -10,9 +10,11 @@
       <div class="rating-box-column">
         <div class="rating-box-top-line"></div>
         <div class="rating-box-content">
+          <a href="{% url 'raiting_detail' slug=raiting.slug %}"> 
             <span class="rating-box-title">{{ raiting.title }}</span>
+          </a>
             <p class="rating-box-text">{{ raiting.content|truncatechars:130}}</p>
-            <a class="rating-box-title-href" href="{% url 'raiting_detail' id=raiting.id %}">Читать далее</a>
+            <a class="rating-box-title-href" href="{% url 'raiting_detail' slug=raiting.slug %}">Читать далее</a>
         </div>
         <div class="rating-box-bottom-line"></div>
       </div>
