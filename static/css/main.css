@@ -317,42 +317,43 @@ body {
     margin-left: 75%;
     border: 2px solid #009A3D;
 }
-.videoview-cat-title {
+.videoview {
+    margin: auto;
+    padding: 12px 0;
     text-align: center;
-    background-color: #F6E9E9;
-    font-size: 48px;
-    padding: 15px 0;
-    font-weight: 300;
-    margin: 5vh 0;
 }
-.video-publication-author {
-    font-size: 26px;
-    font-weight: 500;
-    color: #413939;
-    margin: 0 0 0 5vw;
-}
-.video-publication-date {
-    font-size: 0.9em;
-    font-weight: 300;
-    color: #413939;
+.videoview-grid {
+    margin: auto;
+    display: inline-grid;
+    grid-template-columns: 30vw 30vw;
+    grid-gap: 64px;
+    align-items: center;
 }
 .videoview-content {
+    height: 40vh;
     display: flex;
-    flex-direction: row;
-    margin: 5vh 5vw;
+    flex-direction: column;
+    margin: auto;
+}
+.videoview-content-video {
+    display: flex;
+    align-items: center;
+}
+.videoview-content-video iframe {
+    margin: auto;
+    width: 25vw;
+    height: 20vh;
 }
 .videoview-content-text {
-    margin: 0 0 3vh 3vw;
-    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
 }
 .videoview-content-text-title {
-    margin-bottom: 4vh;
 }
 .videoview-content-main-text {
     word-break: break-all;
 }
-
-
 .calendar-cat-title {
     text-align: center;
     background-color: #F6E9E9;
