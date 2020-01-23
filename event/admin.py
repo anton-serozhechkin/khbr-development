@@ -1,7 +1,7 @@
 from django.contrib import admin
 from .models import Event
 
-class EventAdmin(admin.ModelAdmin):
+"""class EventAdmin(admin.ModelAdmin):
     list_display = ('title', 'slug', 'day', 'place', )
     list_editable = ('day', 'place', )
     list_filter = ('place', 'created', 'is_active')
@@ -24,5 +24,5 @@ class EventAdmin(admin.ModelAdmin):
             }
             )
     )
-
-admin.site.register(Event, EventAdmin)
+"""
+admin.site.register(Event)#, EventAdmin)

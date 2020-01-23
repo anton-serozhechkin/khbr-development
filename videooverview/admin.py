@@ -1,7 +1,7 @@
 from django.contrib import admin
-from .models import VideoDownloading
+from .models import Video
 
-class VideoDownloadingAdmin(admin.ModelAdmin):
+"""class VideoDownloadingAdmin(admin.ModelAdmin):
     list_display = ('title', 'notes', 'created', 'is_active', )
     list_filter = ('created', 'is_active')
     search_fields = ('title', 'notes')
@@ -20,6 +20,6 @@ class VideoDownloadingAdmin(admin.ModelAdmin):
             }
             )
     )
+"""
 
-
-admin.site.register(VideoDownloading, VideoDownloadingAdmin)
+admin.site.register(Video)#, VideoDownloadingAdmin)

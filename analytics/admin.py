@@ -1,7 +1,7 @@
 from django.contrib import admin
 from .models import Category, Article
 
-class CategoryAdmin(admin.ModelAdmin):
+"""class CategoryAdmin(admin.ModelAdmin):
     list_display = ('name', 'slug', 'is_active',)
     prepopulated_fields = {'slug': ('name', )}
     list_editable = ('is_active', )
@@ -30,6 +30,6 @@ class ArticleAdmin(admin.ModelAdmin):
             }
             )
     )
-
-admin.site.register(Category, CategoryAdmin)
-admin.site.register(Article, ArticleAdmin)
+"""
+admin.site.register(Category)#, CategoryAdmin)
+admin.site.register(Article)#, ArticleAdmin)

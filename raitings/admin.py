@@ -1,7 +1,7 @@
 from django.contrib import admin
 from .models import Raiting
 
-class RaitingAdmin(admin.ModelAdmin):
+"""class RaitingAdmin(admin.ModelAdmin):
     list_display = ('title', 'slug', 'created', 'is_active', )
     list_editable = ('is_active', )
     list_filter = ('created', 'is_active')
@@ -22,4 +22,5 @@ class RaitingAdmin(admin.ModelAdmin):
             }
             )
     )
-admin.site.register(Raiting, RaitingAdmin)
+"""
+admin.site.register(Raiting)#, RaitingAdmin)
