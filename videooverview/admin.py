@@ -1,25 +1,29 @@
 from django.contrib import admin
 from .models import Video
 
-"""class VideoDownloadingAdmin(admin.ModelAdmin):
-    list_display = ('title', 'notes', 'created', 'is_active', )
+class VideoDownloadingAdmin(admin.ModelAdmin):
+    list_display = ('title', 'author', 'created', 'is_active', )
     list_filter = ('created', 'is_active')
     search_fields = ('title', 'notes')
     fieldsets = (
-        (None, {
+        ('Основная информация', {
             'fields':(
                 'title',
+                'slug',
+                'overview',
                 'url',
-                'video'
+                'video',
+                'content',
+                'author'
             )
         }),
         ('Дополнительные опции',
             {
             'classes': ('collapse', ),
-            'fields': ('notes', 'is_active', 'created')
+            'fields': ('is_active', 'created', 'previous_video', 'next_video')
             }
             )
     )
-"""
 
-admin.site.register(Video)#, VideoDownloadingAdmin)
+
+admin.site.register(Video, VideoDownloadingAdmin)

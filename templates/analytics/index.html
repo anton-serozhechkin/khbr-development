@@ -4,7 +4,7 @@
 <section class="article_categ" id="article_categ-anchor">
     {% for article in data_art %}
     <div class="article_categ-box">
-        <img src="../../static/img/article-categ/5763e26658000.jpg" alt="" class="article_categ-image">
+        <img src="{{ article.thubmnail.url }}" alt="" class="article_categ-image">
         <a href="{% url 'article_detail' slug=article.slug %}">        
             <h2 class="article_categ-title">{{ article.title }}</h2>
         </a>
@@ -12,4 +12,24 @@
     </div>
     {% endfor %}
 </section>
+<section class="newsletter no-padding-top">    
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h2>Подпишись на рассылку</h2>
+        </div>
+        <div class="col-md-8">
+          <div class="form-holder">
+            <form action="." method="POST">
+              {% csrf_token %}
+              <div class="form-group">
+                <input type="email" name="email" id="email" placeholder="Email адрес">
+                <button type="submit" class="submit">Подписаться</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 {% endblock content %}

@@ -1,35 +1,48 @@
 from django.contrib import admin
-from .models import Category, Article
+from .models import *
 
-"""class CategoryAdmin(admin.ModelAdmin):
-    list_display = ('name', 'slug', 'is_active',)
+class SignupAdmin(admin.ModelAdmin):
+    list_display = ('email', 'timestamp', )
+    list_filter = ('timestamp', )
+    search_fields = ('email', )
+
+class CategoryAdmin(admin.ModelAdmin):
+    list_display = ('name', 'slug',)
     prepopulated_fields = {'slug': ('name', )}
-    list_editable = ('is_active', )
-    list_filter = ('name', 'is_active')
+    list_filter = ('name', )
     search_fields = ('name', 'slug')
 
 class ArticleAdmin(admin.ModelAdmin):
-    list_display = ('title', 'slug', 'category', 'created', 'is_active',)
+    list_display = ('title', 'author', 'created', 'is_active', )
     list_editable = ('is_active', )
-    list_filter = ('category', 'created', 'is_active')
-    search_fields = ('title', 'slug', 'content', 'author',  'category')
+    list_filter = ('categories', 'created', 'is_active')
+    search_fields = ('title', 'slug', 'content', 'author', 'categories')
     prepopulated_fields = {'slug': ('title', )}
     fieldsets = (
-        (None, {
+        ('Основная информация', {
             'fields':(
                 'title',
                 'slug',
-                'category',
+                'categories',
+                'overview',
                 'content',
+                'thubmnail',
             )
         }),
         ('Дополнительные опции',
             {
             'classes': ('collapse', ),
-            'fields': ('author', 'image', 'is_active', 'created')
+            'fields': ('author', 'is_active',
+                        'created', 'previous_post',
+                        'next_post')
             }
             )
     )
-"""
-admin.site.register(Category)#, CategoryAdmin)
-admin.site.register(Article)#, ArticleAdmin)
+class AuthorAdmin(admin.ModelAdmin):
+    list_display = ('user', )
+    search_fields = ('user',)
+
+admin.site.register(Category, CategoryAdmin)
+admin.site.register(Article, ArticleAdmin)
+admin.site.register(Signup, SignupAdmin)
+admin.site.register(Author, AuthorAdmin)

@@ -28,14 +28,10 @@ class PostView(models.Model):
     def __str__(self):
         return self.user.username
 
-    class Meta:
-        verbose_name = 'Просмотры поста'
-        verbose_name_plural = 'Просмотры постов'
-
 
 class Author(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-    profile_picture = models.ImageField()
+    user = models.OneToOneField(User, verbose_name='Выберите пользователя', on_delete=models.CASCADE)
+    profile_picture = models.ImageField(verbose_name='Фотография пользователя')
 
     def __str__(self):
         return self.user.username
@@ -69,11 +65,11 @@ class Article(models.Model):
     categories = models.ManyToManyField(Category, verbose_name="Категория",)
     content = HTMLField("Контент")
     thubmnail = models.ImageField("Фотография", blank=True)
-    author = models.ForeignKey(Author, on_delete=models.CASCADE)
+    author = models.ForeignKey(Author, verbose_name='Автор статьи', on_delete=models.CASCADE)
     created = models.DateTimeField('Дата создания', default=timezone.now)
     is_active = models.BooleanField(default=True, verbose_name='Видимость для пользователя')
-    previous_post = models.ForeignKey('self', related_name='previous', on_delete=models.SET_NULL, null=True, blank=True)
-    next_post = models.ForeignKey('self', related_name='next', on_delete=models.SET_NULL, null=True, blank=True)
+    previous_post = models.ForeignKey('self', verbose_name='Предыдущий пост', related_name='previous', on_delete=models.SET_NULL, null=True, blank=True)
+    next_post = models.ForeignKey('self', verbose_name='Следующий пост', related_name='next', on_delete=models.SET_NULL, null=True, blank=True)
 
     def __str__(self):
         return self.title
@@ -97,3 +93,14 @@ class Article(models.Model):
     class Meta:
         verbose_name = 'Пост'
         verbose_name_plural = 'Посты'
+
+class Signup(models.Model):
+    email = models.EmailField('Электронный адрес подписчика')
+    timestamp = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.email
+
+    class Meta:
+        verbose_name = 'Подписчик'
+        verbose_name_plural = 'Подписчики'

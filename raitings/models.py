@@ -15,22 +15,18 @@ class RaitingView(models.Model):
     def __str__(self):
         return self.user.username
 
-    class Meta:
-        verbose_name = 'Просмотры рейтинга'
-        verbose_name_plural = 'Просмотры рейтингов'
-
 
 class Raiting(models.Model):
     title = models.CharField('Заголовок',max_length=200)
     slug = models.SlugField('Ссылка')
     overview = models.TextField('Краткий обзор рейтинга')
     content = HTMLField('Контент')
-    author = models.ForeignKey(Author, on_delete=models.CASCADE)
-    thubmnail = models.ImageField('Фотография', blank=True)
+    author = models.ForeignKey(Author, verbose_name='Автор', on_delete=models.CASCADE)
+    thubmnail = models.ImageField('Заставка', blank=True)
     created = models.DateTimeField('Дата создания', default=timezone.now)
     is_active = models.BooleanField(default=True, verbose_name='Видимость для пользователя')
-    previous_raiting = models.ForeignKey('self', related_name='raiting_previous', on_delete=models.SET_NULL, null=True, blank=True)
-    next_raiting = models.ForeignKey('self', related_name='raiting_next', on_delete=models.SET_NULL, null=True, blank=True)
+    previous_raiting = models.ForeignKey('self', verbose_name='Предыдущий рейтинг', related_name='raiting_previous', on_delete=models.SET_NULL, null=True, blank=True)
+    next_raiting = models.ForeignKey('self', verbose_name='Следующий рейтинг', related_name='raiting_next', on_delete=models.SET_NULL, null=True, blank=True)
 
     class Meta:
         verbose_name = 'Рейтинг'
@@ -40,7 +36,9 @@ class Raiting(models.Model):
         return self.title
     
     def get_absolute_url(self):
-        return reverse('raiting_detail', kwargs={'slug': self.slug})
+        return reverse('raiting_detail', kwargs={
+            'slug': self.slug
+            })
 
     @property
     def view_count(self):

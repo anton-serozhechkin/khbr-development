@@ -15,22 +15,19 @@ class VideoView(models.Model):
     def __str__(self):
         return self.user.username
 
-    class Meta:
-        verbose_name = 'Просмотры видео'
-        verbose_name_plural = 'Просмотры видео'
 
 class Video(models.Model):
-    title = models.CharField('Заголовок',max_length=120, blank=True)
-    slug = models.SlugField('Ссылка')
+    title = models.CharField('Заголовок',max_length=120)
+    slug = models.SlugField('Ссылка внутри сайта')
     overview = models.TextField('Краткий обзор видео')
-    url = models.CharField('Ссылка', max_length=200, help_text='URL-страницы')
+    url = models.CharField('Ссылка на видео из источника', max_length=200, help_text='URL-страницы')
     content = HTMLField("Контент")
-    author = models.ForeignKey(Author, on_delete=models.CASCADE)
+    author = models.ForeignKey(Author, verbose_name='Автор видео', on_delete=models.CASCADE)
     video = EmbedVideoField('Загрузить видео', help_text='Заходим на страницу видео-Поделиться-Встроить-Копируем link, содержащий строку embeded')
     created = models.DateTimeField('Дата создания', default=timezone.now)
     is_active = models.BooleanField(default=True, verbose_name='Видимость для пользователя')
-    previous_video = models.ForeignKey('self', related_name='video_previous', on_delete=models.SET_NULL, null=True, blank=True)
-    next_video = models.ForeignKey('self', related_name='video_next', on_delete=models.SET_NULL, null=True, blank=True)
+    previous_video = models.ForeignKey('self', verbose_name='Предыдущее видео', related_name='video_previous', on_delete=models.SET_NULL, null=True, blank=True)
+    next_video = models.ForeignKey('self', verbose_name='Следующее видео', related_name='video_next', on_delete=models.SET_NULL, null=True, blank=True)
 
     class Meta:
         verbose_name = 'Видеообзор'
