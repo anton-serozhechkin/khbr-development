@@ -7,17 +7,18 @@
 <section class="videoview">
   <div class="videoview-grid">
     {% for video in data_video %}
-    <div class="videoview-content">
-        <div class="videoview-content-video">
-            <iframe src="{{ video.video }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-        <div class="videoview-content-text">
-            <a href="{{ video.url }}">
+    <div class="videoview-item">
+        <div class="videoview-separator"></div>
+        <div class="videoview-content">
+            <div class="videoview-content-video">
+                <iframe src="{{ video.video }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="videoview-content-text">
                 <h2 class="videoview-content-text-title">{{ video.title }}</h2>
-            </a>
-            <p class="videoview-content-main-text">
-                <tr>{{ video.notes|truncatechars:330 }} </tr>
-            </p>
+                <p class="videoview-content-main-text">
+                    <tr>{{ video.notes|truncatechars:100 }} </tr>
+                </p>
+            </div>
         </div>
     </div>
     {% endfor %}
