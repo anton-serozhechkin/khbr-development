@@ -7,20 +7,6 @@ from django.contrib.auth import get_user_model
 
 User = get_user_model()
 
-"""class Comment(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    timestamp = models.DateTimeField(auto_now_add=True)
-    content = models.TextField()
-    article = models.ForeignKey('Article', related_name='comments', on_delete=models.CASCADE)
-
-    def __str__(self):
-        return self.user.username
-    
-    class Meta:
-        verbose_name = 'Коментарии к посту'
-        verbose_name_plural = 'Коментарии к постам'
-"""
-
 class PostView(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     article = models.ForeignKey('Article', on_delete=models.CASCADE)
@@ -78,18 +64,11 @@ class Article(models.Model):
         return reverse('article_detail', kwargs={
             'slug': self.slug
         })
-    #@property
-    #def get_comments(self):
-    #    return self.comments.all().order_by('-created')
-    
+
     @property
     def view_count(self):
         return PostView.objects.filter(article=self).count()
 
-    #@property
-    #def comment_count(self):
-    #    return Comment.objects.filter(article=self).count()
-    
     class Meta:
         verbose_name = 'Пост'
         verbose_name_plural = 'Посты'

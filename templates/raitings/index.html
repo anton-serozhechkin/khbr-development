@@ -13,7 +13,7 @@
           <a href="{% url 'raiting_detail' slug=raiting.slug %}"> 
             <span class="rating-box-title">{{ raiting.title }}</span>
           </a>
-            <p class="rating-box-text">{{ raiting.content|truncatechars:130}}</p>
+            <p class="rating-box-text">{{ raiting.overview|truncatechars:130}}</p>
             <a class="rating-box-title-href" href="{% url 'raiting_detail' slug=raiting.slug %}">Читать далее</a>
         </div>
         <div class="rating-box-bottom-line"></div>

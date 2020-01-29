@@ -1,18 +1,17 @@
 {% extends 'base.html' %}
 {% block content %}
 <div class="container-detail">
-    {% for event in data_event %}
-    <section class="event-detail">
-        <div class="event-detail-detail-top">
-                <h1 class="event-detail-title">{{ event.title }}</h1>
-        </div>
-        <p class="event-detail-short-text">{{ event.day }}</p>
-        <p class="event-detail-short-text">Начало: {{ event.start_time}}</p>
-        <p class="event-detail-short-text">Конец: {{ event.end_time}}</p>
-        <img src="" alt="" class="event-detail-publication-image">
-        <p class="event-detail-paragraph">{{ event.notes }}</p>
-        <img src="" alt="" class="event-detail-publication-image">
-    </section>
-    {% endfor %}
+  <section class="event-detail">
+    <div class="event-detail-detail-top">
+        <h1 class="event-detail-title">{{ data_event.title }}</h1>
+    </div>
+    <img src="{{ data_event.thubmnail.url }}" alt="" class="event-detail-publication-image">
+    <p class="event-detail-short-text">{{ data_event.day }}</p>
+    <p class="event-detail-short-text">Начало: {{ data_event.start_time}}</p>
+    <p class="event-detail-short-text">Конец: {{ data_event.end_time}}</p>
+    <img src="" alt="" class="event-detail-publication-image">
+    <p class="event-detail-paragraph">{{ data_event.overview }}</p>
+    <p>{{ data_event.content|safe }}</p>
+  </section>
 </div>
 {% endblock content %}

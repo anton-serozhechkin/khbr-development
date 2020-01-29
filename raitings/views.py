@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import *
+from analytics.views import not_found_redirect
 
 def main(request):
     context = []
@@ -9,7 +10,8 @@ def main(request):
 
     
 def raiting_detail(request, slug):
-    data_rait = Raiting.objects.filter(slug=slug)
-    context = []
-    context.append({'data_rait': data_rait})
+    try:
+        data_rait = get_object_or_404(Raiting, slug=slug)
+    except:
+        return redirect('404-not-found', kwargs={'name': 'рейтинг'})
     return render(request, 'raitings/raiting_detail.html', locals())

@@ -1,29 +1,35 @@
 {% extends 'base.html' %}
 {% block content %}
-{% for article in data_art %}
 <div class="container-detail">
-
-    <section class="article-detail">
-        <div class="article-detail-top">
-            <div class="article-detail-top-left_side">
-                <h1 class="article-detail-title">{{ article.title }}</h1>
-                <span class="article-detail-author">{{ article.category }}</span> <span class="article-detail-date">12 сентября 2023</span>
-                <p class="article-detail-short-text"></p>
+    <section class="data_art-detail">
+        <div class="data_art-detail-top">
+            <div class="data_art-detail-top-left_side">
+                <h1 class="data_art-detail-title">{{ data_art.title }}</h1>
+                <span class="data_art-detail-author">{{ data_art.categories }}</span> <span class="data_art-detail-date">{{ data_art.created }}</span>
+                <p class="data_art-detail-short-text"></p>
             </div>
-        <img src="../../static/img/article-detail/vgrom.com_1453714360_3.jpg" alt="" class="article-detail-publication-image">
-        <h2 class="article-detail-paragraph-title">{{ article.content }}</h2>
-        <p class="article-detail-paragraph"></p>
-        <img src="../../static/img/article-detail/1028d97df8a620ec152579780b10e407.jpg" alt="" class="article-detail-publication-image">
-        <h2 class="article-detail-paragraph-title">Заголовок параграфа</h2>
-        <p class="article-detail-paragraph"></p>
-        <h2 class="article-detail-readmore">Читайте также: </h2>
-        <ul class="article-detail-readmore_list">
-            <li><a href="#"> </a></li>
-            <li><a href="#"> </a></li>
-            <li><a href="#"> </a></li>
-        </ul>
+        <img src="{{ data_art.thubmnail.url }}" alt="" class="data_art-detail-publication-image">
+        <h2 class="data_art-detail-paragraph-title">{{ data_art.content|safe }}</h2>
+        <p class="data_art-detail-paragraph">
+        </p>
+        <div class="posts-nav d-flex justify-content-between align-items-stretch flex-column flex-md-row">
+            {% if data_art.previous_post %}
+            <a href="{{ data_art.previous_post.get_absolute_url }}" class="prev-post text-left d-flex align-items-center">
+              <div class="icon prev"><i class="fa fa-angle-left"></i></div>
+              <div class="text"><strong class="text-primary">Предыдущий пост </strong>
+                <h6>{{ data_art.previous_post.title }}</h6>
+              </div>
+            </a>
+            {% endif %}
+            {% if data_art.next_post %}
+            <a href="{{ data_art.next_post.get_absolute_url }}" class="next-post text-right d-flex align-items-center justify-content-end">
+              <div class="text"><strong class="text-primary">Следующий пост</strong>
+                <h6>{{ data_art.next_post.title }}</h6>
+              </div>
+              <div class="icon next"><i class="fa fa-angle-right">   </i></div>
+            </a>
+            {% endif %}
+        </div>
     </section>
-
 </div>
-{% endfor %}
 {% endblock content %}

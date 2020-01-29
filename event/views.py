@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import *
+from analytics.views import not_found_redirect
 
 def main(request):
     context = []
@@ -8,7 +9,8 @@ def main(request):
     return render(request, 'event/index.html', locals())
 
 def event_detail(request, slug):
-    data_event = Event.objects.filter(slug=slug)
-    context = []
-    context.append({'data_event': data_event})
+    try:
+        data_event = get_object_or_404(Event, slug=slug)
+    except:
+        return redirect('404-not-found', kwargs={'name': 'событие'})
     return render(request, 'event/event_detail.html', locals())
