@@ -1,12 +1,12 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import *
 from analytics.views import not_found_redirect
+from khbr.urls import not_found_redirect
 
 def main(request):
-    context = []
     list_event = Event.objects.filter(is_active=True).order_by('-created')
-    context.append({'list_event': list_event})
-    return render(request, 'event/index.html', locals())
+    context = {'list_event': list_event}
+    return render(request, 'event/index.html', context)
 
 def event_detail(request, slug):
     try:

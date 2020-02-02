@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container-detail">
+    <section class="article-detail">
+        <div class="article-detail-top">
+            <div class="article-detail-top-left_side">
+                <h1 class="article-detail-title">{{ data_video.tittle }}</h1>
+                <span class="article-detail-author">{{ data_video.author }}</span> 
+                <span class="article-detail-date">{{ data_video.created }}</span>
+                <span class="article-detail-date">{{ data_video.overview }}</span>
+                <p class="article-detail-short-text">{{ data_video.content|safe }}</p>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock content %}

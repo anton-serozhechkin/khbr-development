@@ -31,6 +31,5 @@ def article_detail(request, slug):
     return render(request, 'analytics/article_detail.html', locals())
 
 def not_found_redirect(request, **kwargs):
-    print(**kwargs)
-    name = '**kwargs('
-    return render(request, '404.html', name)
+    not_found_name = kwargs.get('name')
+    return render(request, '404.html', not_found_name)

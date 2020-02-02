@@ -5,6 +5,7 @@ class VideoDownloadingAdmin(admin.ModelAdmin):
     list_display = ('title', 'author', 'created', 'is_active', )
     list_filter = ('created', 'is_active')
     search_fields = ('title', 'notes')
+    prepopulated_fields = {'slug': ('title', )}
     fieldsets = (
         ('Основная информация', {
             'fields':(
