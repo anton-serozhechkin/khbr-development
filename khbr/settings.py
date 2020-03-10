@@ -41,9 +41,7 @@ INSTALLED_APPS = [
     'raitings',
     'videooverview',
     'event',
-    'authorization',
     'analytics',
-    'register'
 ]
 
 MIDDLEWARE = [

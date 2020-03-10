@@ -19,9 +19,12 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('analytics.urls')),
-    path('login/', include('authorization.urls')),
-    path('register/', include('register.urls')),
     path('events/', include('event.urls')),
     path('videooverviews/', include('videooverview.urls')),
     path('raitings/', include('raitings.urls')),
 ]
+
+handler404 = 'analytics.views.not_found_view'
+handler500 = 'analytics.views.error_view'
+handler403 = 'analytics.views.permission_denied_view'
+handler400 = 'analytics.views.bad_request_view'
