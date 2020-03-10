@@ -4,7 +4,10 @@ from django.shortcuts import get_object_or_404
 
 def main(request):
     list_event = Event.objects.filter(is_active=True).order_by('-created')
-    context = {'list_event': list_event}
+    if list_event:
+        context = {'list_event': list_event}
+    else:
+        context = {'blank': 'К сожалению, ничего не найдено'}
     return render(request, 'event/index.html', context)
 
 def event_detail(request, slug):

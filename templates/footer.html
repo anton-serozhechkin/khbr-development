@@ -11,6 +11,11 @@
   <div class="footer-contacts">
     <div>Мы в соцсетях:</div>
     <div class="footer-contacts-socials">
+      {% for link in links %}
+        <a href="{{ link.link }}">
+          <li>{{ link.name }}</li>
+        </a>
+      {% endfor %}
     </div>
     <div>Обратная связь</div>
     <div>Контакты</div>

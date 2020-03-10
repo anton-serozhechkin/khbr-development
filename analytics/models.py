@@ -44,3 +44,14 @@ class Article(models.Model):
     class Meta:
         verbose_name = 'Пост'
         verbose_name_plural = 'Посты'
+
+class Links(models.Model):
+    name = models.CharField('Название соц.сети', max_length=50)
+    link = models.CharField('Ссылка', max_length=150)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = 'Соц.сеть'
+        verbose_name_plural = 'Соц.сети'

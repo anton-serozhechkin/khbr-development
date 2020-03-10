@@ -4,7 +4,10 @@ from django.shortcuts import get_object_or_404
 
 def main(request):
     list_rait = Raiting.objects.filter(is_active=True).order_by('-created')
-    context = {'list_rait': list_rait}
+    if list_rait:
+        context = {'list_rait': list_rait}
+    else:
+        context = {'blank': 'К сожалению, ничего не найдено'}
     return render(request, 'raitings/index.html', context)
 
     

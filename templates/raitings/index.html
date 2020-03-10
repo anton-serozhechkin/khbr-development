@@ -4,6 +4,7 @@
 <h2 class="cat-title">Рейтинги</h2>
 <div class="cat-title-botline"></div>
 <section class="rating-list" id="rating-list">
+  {% if list_rait %}
     {% for raiting in list_rait %}
     <div class="rating-box">
       <div class="rating-box-left-line"></div>
@@ -21,5 +22,8 @@
       <div class="rating-box-right-line"></div>
     </div>
     {% endfor %}
+  {% else %}
+    {{ blank }}
+  {% endif %}
 </section>
 {% endblock content %}

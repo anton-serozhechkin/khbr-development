@@ -1,5 +1,9 @@
 from django.contrib import admin
-from .models import Category, Article
+from .models import Category, Article, Links
+
+class LinksAdmin(admin.ModelAdmin):
+    list_display = ('name', 'link', )
+    list_editable = ('link', )
 
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ('name', 'slug', 'is_active',)
@@ -33,3 +37,4 @@ class ArticleAdmin(admin.ModelAdmin):
 
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(Article, ArticleAdmin)
+admin.site.register(Links, LinksAdmin)

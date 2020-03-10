@@ -5,7 +5,10 @@ from .models import *
 def main(request):
     data_cat = Category.objects.filter(is_active=True)
     data_art = Article.objects.filter(is_active=True).order_by('-created')
-    context = {'data_cat': data_cat, 'data_art': data_art}
+    if data_art:
+        context = {'data_cat': data_cat, 'data_art': data_art}
+    else:
+        context = {'blank': 'К сожалению, ничего не найдено'}
     return render(request, 'analytics/index.html', context)
 
 
@@ -14,6 +17,9 @@ def article_detail(request, slug):
     context = {'data_art': data_art}
     return render(request, 'analytics/article_detail.html', context)
 
+def links(request):
+    links = Links,objects.all()
+    return render(request, 'footer.html', {'links': links})
 
 def not_found_view(request, exception):
     return render(request, '404.html')
