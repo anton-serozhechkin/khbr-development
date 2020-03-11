@@ -17,10 +17,6 @@ def article_detail(request, slug):
     context = {'data_art': data_art}
     return render(request, 'analytics/article_detail.html', context)
 
-def links(request):
-    links = Links,objects.all()
-    return render(request, 'footer.html', {'links': links})
-
 def not_found_view(request, exception):
     return render(request, '404.html')
 
