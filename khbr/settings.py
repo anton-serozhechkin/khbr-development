@@ -37,11 +37,17 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
     'embed_video',
     'raitings',
     'videooverview',
     'event',
     'analytics',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    #'allauth.socialaccount.providers.facebook',
+    'allauth.socialaccount.providers.google'
 ]
 
 MIDDLEWARE = [
@@ -132,4 +138,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
 )
-#добавить медиа юрл и рут, рут для статики
+
+SITE_ID = 1
+
+LOGIN_REDIRECT_URL = "/"
