@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
 {% block content %}
-<h2 class="article-cat-title">Аналитика</h2>
+<div class="cat-title-topline"></div>
+<h2 class="cat-title">Аналитика</h2>
+<div class="cat-title-botline"></div>
 <section class="article_categ" id="article_categ-anchor">
   {% if data_art %}
     {% for article in data_art %}
