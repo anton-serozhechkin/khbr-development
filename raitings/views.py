@@ -1,15 +1,17 @@
 from django.shortcuts import render
 from .models import *
+from django.shortcuts import get_object_or_404
 
 def main(request):
-    context = []
     list_rait = Raiting.objects.filter(is_active=True).order_by('-created')
-    context.append({'list_rait': list_rait})
-    return render(request, 'raitings/index.html', locals())
+    if list_rait:
+        context = {'list_rait': list_rait}
+    else:
+        context = {'blank': 'К сожалению, ничего не найдено'}
+    return render(request, 'raitings/index.html', context)
 
     
 def raiting_detail(request, slug):
-    data_rait = Raiting.objects.filter(slug=slug)
-    context = []
-    context.append({'data_rait': data_rait})
-    return render(request, 'raitings/raiting_detail.html', locals())
+    data_rait = get_object_or_404(Raiting, slug=slug)
+    context = {'data_rait': data_rait}
+    return render(request, 'raitings/raiting_detail.html', context)

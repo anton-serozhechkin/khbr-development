@@ -9,9 +9,16 @@
     <img src="../static/img/logo.png" alt="">
   </div>
   <div class="footer-contacts">
+    {% if links %}
     <div>Мы в соцсетях:</div>
     <div class="footer-contacts-socials">
+      {% for link in links %}
+        <a href="{{ link.link }}">
+          <li>{{ link.name }}</li>
+        </a>
+      {% endfor %}
     </div>
+    {% endif %}
     <div>Обратная связь</div>
     <div>Контакты</div>
   </div>

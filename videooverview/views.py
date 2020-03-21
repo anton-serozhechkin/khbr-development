@@ -2,7 +2,10 @@ from django.shortcuts import render
 from .models import *
 
 def main(request):
-    context = []
     data_video = VideoDownloading.objects.filter(is_active=True)
-    context.append({'data_video': data_video})
-    return render(request, 'videooverview/index.html', locals())
+    
+    if data_video:
+        context = {'data_video': data_video}
+    else:
+        context = {'blank': 'К сожалению, ничего не найдено'}
+    return render(request, 'videooverview/index.html', context)

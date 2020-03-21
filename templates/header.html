@@ -1,3 +1,5 @@
+{% load socialaccount %}
+{% providers_media_js %}
 <header class="header" id="header-anchor">
     <div class="logo">
         <img src="../static/img/logo.png" alt="">
@@ -8,6 +10,8 @@
         <a href="{% url 'events' %}" class="heading-links">События</a>
         <a href="{% url 'raitings' %}" class="heading-links">Рейтинги</a>
         <a href="{% url 'videooverview' %}" class="heading-links">Видео</a>
+        <button><a href="{% provider_login_url 'google' %}">Google Login</a></button>
+
     </div>
 </header>
 <!--<div class="search__menu">

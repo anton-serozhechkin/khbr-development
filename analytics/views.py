@@ -1,16 +1,30 @@
 from django.shortcuts import render
+from django.shortcuts import get_object_or_404
 from .models import *
 
 def main(request):
-    context = []
     data_cat = Category.objects.filter(is_active=True)
     data_art = Article.objects.filter(is_active=True).order_by('-created')
-    context.append({'data_cat': data_cat, 'data_art': data_art, })
-    return render(request, 'analytics/index.html', locals())
+    if data_art:
+        context = {'data_cat': data_cat, 'data_art': data_art}
+    else:
+        context = {'blank': 'К сожалению, ничего не найдено'}
+    return render(request, 'analytics/index.html', context)
 
 
 def article_detail(request, slug):
-    data_art = Article.objects.filter(slug=slug)
-    context = []
-    context.append({'data_art': data_art})
-    return render(request, 'analytics/article_detail.html', locals())
+    data_art = get_object_or_404(Article, slug=slug)
+    context = {'data_art': data_art}
+    return render(request, 'analytics/article_detail.html', context)
+
+def not_found_view(request, exception):
+    return render(request, '404.html')
+
+def error_view(request):
+    return render(request, '500.html')
+
+def permission_denied_view(request, exception):
+    return render(request, '403.html')
+
+def bad_request_view(request, exception):
+    return render(request, '400.html')

@@ -1,7 +1,10 @@
 {% extends 'base.html' %}
 {% block content %}
-<h2 class="article-cat-title">Аналитика</h2>
+<div class="cat-title-topline"></div>
+<h2 class="cat-title">Аналитика</h2>
+<div class="cat-title-botline"></div>
 <section class="article_categ" id="article_categ-anchor">
+  {% if data_art %}
     {% for article in data_art %}
     <div class="article_categ-box">
         <img src="../../static/img/article-categ/5763e26658000.jpg" alt="" class="article_categ-image">
@@ -11,5 +14,8 @@
         <p class="article_categ-text">{{ article.category }}</p>
     </div>
     {% endfor %}
+  {% else %}
+    {{ blank }}
+  {% endif %}
 </section>
 {% endblock content %}

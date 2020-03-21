@@ -1,14 +1,16 @@
 from django.shortcuts import render
 from .models import *
+from django.shortcuts import get_object_or_404
 
 def main(request):
-    context = []
     list_event = Event.objects.filter(is_active=True).order_by('-created')
-    context.append({'list_event': list_event})
-    return render(request, 'event/index.html', locals())
+    if list_event:
+        context = {'list_event': list_event}
+    else:
+        context = {'blank': 'К сожалению, ничего не найдено'}
+    return render(request, 'event/index.html', context)
 
 def event_detail(request, slug):
-    data_event = Event.objects.filter(slug=slug)
-    context = []
-    context.append({'data_event': data_event})
-    return render(request, 'event/event_detail.html', locals())
+    data_event = get_object_or_404(Event, slug=slug)
+    context = {'data_event': data_event}
+    return render(request, 'event/event_detail.html', context)
