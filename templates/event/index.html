@@ -1,28 +1,62 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="cat-title-topline"></div>
-<h2 class="cat-title">Календарь событий</h2>
-<div class="cat-title-botline"></div>
-<section class="calendar-list">
-  {% if list_event %}
-    {% for event in list_event %}
-    <div class="calendar-event-box">
-        <img src="../../static/img/calendar-event/rossiya_harkov_park_vecher_lavochka_879_1920x1080.jpg" alt="" class="calendar-event-box-image">
-        <div class="calendar-event-box-title">                
-            <a href="{% url 'event_detail' slug=event.slug %}">        
-                <p class="calendar-event-box-log-type">{{ event.title }}</p>
-            </a>
-            <p class="calendar-event-box-date">{{ event.day }}</p>
-            <p class="calendar-eveng-box-time">{{ event.start_time }} - {{ event.end_time }}</p>
-        </div>
-        <div class="calendar-event-box-log">
-            <p class="calendar-event-box-log-loc">{{ event.place }}</p>
-        </div>
-        <a href=""> <i class="fa fa-exclamation calendar-event-box-more" aria-hidden="true"></i></a>
+<div class="page_title-box">
+    <div class="page_title-top_line">
     </div>
-    {% endfor %}
-  {% else %}
-    {{ blank }}
-  {% endif %}
-</section>
+    <div class="page_title-title">
+        <h1>События</h1>
+    </div>
+    <div class="page_title-bottom_line">
+    </div>
+</div>
+{% if list_event %}
+    <div class="event-wrapper">
+        <div class="container-index">
+                <div class="event-post-box">
+                  {% for event in list_event %}
+                    <div class="event-post-image">
+                        <img src="static/img/index-banner-bgi.png" alt="">
+                    </div>
+                    <div class="event-post-content">
+                        <div class="event-post-title">
+                            <a href="{% url 'event_detail' slug=event.slug %}">
+                                {{ event.title }}
+                            </a>
+                        </div>
+                        <div class="event-post-content-text">
+                            {{ event.notes }}
+                        </div>
+                        <div class="analytics-box-info">
+                            <p class="analytics-box-place">Где? - {{ event.place }}</p>
+                            <p class="analytics-box-time">Когда? - {{ event.day }}</p>
+                            <p class="analytics-box-start">Во сколько начало? - {{ event.start_time }}</p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+        </div>
+    </div>
+    <section class="pages-carousel">
+        <div class="pages-carousel-button" id="prev">
+
+            <div class="pages-carousel-top"></div>
+            <button>Предыдущая</button>
+            <div class="pages-carousel-bottom"></div>
+
+        </div>
+        <div class="pages-carousel-pages">
+            <span class="pages-carousel-active">1</span>
+            <span>2</span>
+            <span>3</span>
+            <span>4</span>
+        </div>
+        <div class="pages-carousel-button " id="next">
+            <div class="pages-carousel-top"></div>
+            <button>Следующая</button>
+            <div class="pages-carousel-bottom"></div>
+        </div>
+    </section>
+{% else %}
+  {{ blank }}
+{% endif %}
 {% endblock content %}
