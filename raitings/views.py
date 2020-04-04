@@ -8,7 +8,7 @@ def main(request):
         context = {'list_rait': list_rait}
     else:
         context = {'blank': 'К сожалению, ничего не найдено'}
-    return render(request, 'raitings/index.html', context)
+    return render(request, 'raitings/analytic_detail.html', context)
 
     
 def raiting_detail(request, slug):
