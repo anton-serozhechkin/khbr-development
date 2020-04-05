@@ -22,7 +22,6 @@ body {
 }
 .header {
     padding: 12px;
-    height: 88px;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -1141,3 +1140,4 @@ input:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
     font-size: 20px;
     margin: 15px 0;
 }
+

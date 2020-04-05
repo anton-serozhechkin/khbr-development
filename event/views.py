@@ -8,7 +8,7 @@ def main(request):
         context = {'list_event': list_event}
     else:
         context = {'blank': 'К сожалению, ничего не найдено'}
-    return render(request, 'event/analytic_detail.html', context)
+    return render(request, 'event/index.html', context)
 
 def event_detail(request, slug):
     data_event = get_object_or_404(Event, slug=slug)
