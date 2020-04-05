@@ -23,16 +23,16 @@ def article_detail(request, slug):
     return render(request, 'analytics/article_detail.html', locals())
 
 def not_found_view(request, exception):
-    return render(request, '404.html')
+    return render(request, 'errors/404.html')
 
 def error_view(request):
-    return render(request, '500.html')
+    return render(request, 'errors/500.html')
 
 def permission_denied_view(request, exception):
-    return render(request, '403.html')
+    return render(request, 'errors/403.html')
 
 def bad_request_view(request, exception):
-    return render(request, '400.html')
+    return render(request, 'errors/400.html')
 
 def signup(request):
     return render(request, 'user/signup.html')
