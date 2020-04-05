@@ -3,19 +3,24 @@ from django.shortcuts import get_object_or_404
 from .models import *
 
 def main(request):
-    data_cat = Category.objects.filter(is_active=True)
     data_art = Article.objects.filter(is_active=True).order_by('-created')
     if data_art:
-        context = {'data_cat': data_cat, 'data_art': data_art}
+        context = {'data_art': data_art}
     else:
         context = {'blank': 'К сожалению, ничего не найдено'}
     return render(request, 'analytics/index.html', context)
 
+def article_index(request):
+    data_art = Article.objects.filter(is_active=True).order_by('-created')
+    if data_art:
+        context = {'data_art': data_art}
+    else:
+        context = {'blank': 'К сожалению, ничего не найдено'}
+    return render(request, 'analytics/article_index.html', context)
 
 def article_detail(request, slug):
-    data_art = get_object_or_404(Article, slug=slug)
-    context = {'data_art': data_art}
-    return render(request, 'analytics/article_detail.html', context)
+    article = get_object_or_404(Article, slug=slug)
+    return render(request, 'analytics/article_detail.html', locals())
 
 def not_found_view(request, exception):
     return render(request, '404.html')
