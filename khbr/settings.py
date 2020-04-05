@@ -38,11 +38,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
-    'embed_video',
     'raitings',
     'videooverview',
     'event',
     'analytics',
+    'widget_tweaks'
+    'embed_video',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
