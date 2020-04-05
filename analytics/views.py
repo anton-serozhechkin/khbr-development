@@ -33,3 +33,9 @@ def permission_denied_view(request, exception):
 
 def bad_request_view(request, exception):
     return render(request, '400.html')
+
+def signup(request):
+    return render(request, 'user/signup.html')
+
+def signin(request):
+    return render(request, 'user/signin.html')
