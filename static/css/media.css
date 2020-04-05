@@ -60,6 +60,17 @@
         .event-detail-title {
             margin-top:0;
         }
+        .video-wrapper {
+            flex-flow: wrap column;
+            align-items:center;
+        }
+        .video-index-box {
+            width:100%;
+            margin-bottom:35px;
+        }
+        .video-index-box-title {
+        text-align:center;
+        }
 }
 
 
@@ -156,6 +167,17 @@
         .rating-post-title {
             margin-bottom:12px;
         }
+        .video-wrapper {
+            flex-flow: wrap column;
+            align-items:center;
+        }
+        .video-index-box {
+            width:100%;
+            margin-bottom:35px;
+        }
+        .video-index-box-title {
+        text-align:center;
+        }
 }
 
 /* IPHONE 6/7/8 PLUS */
@@ -199,6 +221,17 @@
         }
         .rating-post-title {
             margin-bottom:12px;
+        }
+        .video-wrapper {
+            flex-flow: wrap column;
+            align-items:center;
+        }
+        .video-index-box {
+            width:100%;
+            margin-bottom:35px;
+        }
+        .video-index-box-title {
+        text-align:center;
         }
 }
 
@@ -259,6 +292,17 @@
         }
         .rating-post-title {
             margin-bottom:12px;
+        }
+        .video-wrapper {
+            flex-flow: wrap column;
+            align-items:center;
+        }
+        .video-index-box {
+            width:100%;
+            margin-bottom:35px;
+        }
+        .video-index-box-title {
+        text-align:center;
         }
 }
 

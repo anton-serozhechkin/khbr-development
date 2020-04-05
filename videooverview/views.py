@@ -8,4 +8,4 @@ def main(request):
         context = {'data_video': data_video}
     else:
         context = {'blank': 'К сожалению, ничего не найдено'}
-    return render(request, 'videooverview/analytic_detail.html', context)
+    return render(request, 'videooverview/index.html', context)
