@@ -1,25 +1,58 @@
-<footer class="footer" id="footer-anchor">
-  <div class="footer-categories">
-    <a href="{% url 'analytics' %}">Аналитика</a>
-    <a href="{% url 'events' %}">События</a>
-    <a href="{% url 'raitings' %}">Рейтинги</a>
-    <a href="{% url 'videooverview' %}">Видео</a>
-  </div>
-  <div class="footer-logo">
-    <img src="../static/img/logo.png" alt="">
-  </div>
-  <div class="footer-contacts">
-    {% if links %}
-    <div>Мы в соцсетях:</div>
-    <div class="footer-contacts-socials">
-      {% for link in links %}
-        <a href="{{ link.link }}">
-          <li>{{ link.name }}</li>
-        </a>
-      {% endfor %}
-    </div>
-    {% endif %}
-    <div>Обратная связь</div>
-    <div>Контакты</div>
-  </div>
-</footer>
+ <footer class="footer-style" id="footer-anchor">
+        <div class="footer-wrapper">
+            <ul class="footer-list">
+                <li class="footer-list-item">
+                    <a href="#" class="footer-link">
+                        Аналитика
+                    </a>
+                </li>
+                <li class="footer-list-item">
+                    <a href="#" class="footer-link">
+                        события
+                    </a>
+                </li>
+                <li class="footer-list-item">
+                    <a href="#" class="footer-link">
+                        рейтинги
+                    </a>
+                </li>
+                <li class="footer-list-item">
+                    <a href="#" class="footer-link">
+                        видео
+                    </a>
+                </li>
+            </ul>
+            <div class="footer-logo">
+                <a href="#" class="footer-logo-link"><img src="../static/img/logo.png" alt=""></a>
+
+            </div>
+            <ul class="footer-list">
+                <li class="footer-list-item">
+                    <a href="#" class="footer-link">
+                        мы в соцсетях
+                    </a>
+                </li>
+                <li class="footer-list-item" style="text-align: center">
+                    <a href="#" class="footer-link">
+                        <i class="fa fa-facebook"></i>
+                    </a><a href="#" class="footer-link">
+                        <i class="fa fa-twitter-square"></i>
+                    </a><a href="#" class="footer-link">
+                        <i class="fa fa-linkedin-square"></i>
+                    </a><a href="#" class="footer-link">
+                        <i class="fa fa-instagram"></i>
+                    </a>
+                </li>
+                <li class="footer-list-item">
+                    <a href="#" class="footer-link">
+                        обратная связь
+                    </a>
+                </li>
+                <li class="footer-list-item">
+                    <a href="#" class="footer-link">
+                        контакты
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </footer>

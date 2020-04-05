@@ -1,38 +1,68 @@
 {% extends 'base.html' %}
 {% load embed_video_tags %}
 {% block content %}
-<div class="cat-title-topline"></div>
-<h2 class="cat-title">Видео</h2>
-<div class="cat-title-botline"></div>
-<section class="videoview" id="videoview-anchor">
-  {% if data_video %}
-    {% for video in data_video %}
-    <div class="videoview-publication">
-        <div class="videoview-content">
-            <div class="videoview-content-video">
-                <iframe width="560" height="315" src="{{ video.video }}"
-                        frameborder="0" allow="accelerometer; autoplay;
-                        encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen>
-                </iframe>
-            </div>
-            <div class="videoview-content-text">
-                <a href="{{ video.url }}">
-                    <h2 class="videoview-content-text-title">
-                        {{ video.title }}
+<div class="page_title-box">
+    <div class="page_title-top_line">
+    </div>
+    <div class="page_title-title">
+        <h1>Видео</h1>
+    </div>
+    <div class="page_title-bottom_line">
+    </div>
+</div>
+{% if data_video %}
+    
+    <div class="container-index">
+        <div class="video-wrapper">
+            {% for video in data_video %}
+            <div class="video-index-box">
+                <div class="video-index-box-image">
+                    <iframe width="200px" height="235px" src="{{ video.video }}"
+                    frameborder="0" allow="accelerometer; autoplay;
+                    encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>           
+                </div>
+                <div class="video-index-box-title">
+                    <h2>
+                        <a href="{{ video.url }}">
+                            {{ video.title }}
+                        </a>
                     </h2>
-                </a>
-                <p class="videoview-content-main-text">
-                    <tr>
-                        {{ video.notes|truncatechars:330 }} 
-                    </tr>
-                </p>
+                </div>
+                <div class="analytics-box-info">
+                    <p class="analytics-box-author">Максим Серпухов</p>
+                    <p class="analytics-box-time">{{ video.created }}</p>
+                </div>
+
+                <div class="video-index-box-description">
+                    <p>{{ video.notes|truncatechars:10 }}</p>
+                </div>
             </div>
+            {% endfor %}
         </div>
     </div>
-    {% endfor %}
-  {% else %}
-    {{ blank }}
-  {% endif %}
-</section>
-{% endblock content %}
+    <section class="pages-carousel">
+        <div class="pages-carousel-button" id="prev">
+
+            <div class="pages-carousel-top"></div>
+            <button>Предыдущая</button>
+            <div class="pages-carousel-bottom"></div>
+
+        </div>
+        <div class="pages-carousel-pages">
+            <span class="pages-carousel-active">1</span>
+            <span>2</span>
+            <span>3</span>
+            <span>4</span>
+        </div>
+        <div class="pages-carousel-button " id="next">
+            <div class="pages-carousel-top"></div>
+            <button>Следующая</button>
+            <div class="pages-carousel-bottom"></div>
+        </div>
+    </section>
+    {% else %}
+      {{ blank }}
+    {% endif %}
+  {% endblock content %}

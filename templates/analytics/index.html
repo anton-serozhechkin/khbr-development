@@ -1,21 +1,211 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="cat-title-topline"></div>
-<h2 class="cat-title">Аналитика</h2>
-<div class="cat-title-botline"></div>
-<section class="article_categ" id="article_categ-anchor">
-  {% if data_art %}
-    {% for article in data_art %}
-    <div class="article_categ-box">
-        <img src="../../static/img/article-categ/5763e26658000.jpg" alt="" class="article_categ-image">
-        <a href="{% url 'article_detail' slug=article.slug %}">        
-            <h2 class="article_categ-title">{{ article.title }}</h2>
-        </a>
-        <p class="article_categ-text">{{ article.category }}</p>
-    </div>
-    {% endfor %}
-  {% else %}
-    {{ blank }}
-  {% endif %}
-</section>
+
+
+    <section class="banner-style" id="banner-anchor">
+
+        <div class="banner-text_box">
+            <h1 class="banner-title">Kharkiv business review</h1>
+        </div>
+
+    </section>
+<!--post table section-->
+    <section class="posts-table-style" id="posts-table-anchor">
+<!--    post table wrapper    -->
+        <div class="posts-wrapper">
+            <div class="post">
+                <a href="#" class="post-link">
+                    <img src="static/img/index-banner-bgi.png" alt="post image" class="post-image">
+                    <p class="post-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                </a>
+            </div>
+            <div class="post">
+                <a href="#" class="post-link">
+                    <img src="static/img/index-banner-bgi.png" alt="post image" class="post-image">
+                    <p class="post-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                </a>
+            </div>
+            <div class="post">
+                <a href="#" class="post-link">
+                    <img src="static/img/index-banner-bgi.png" alt="post image" class="post-image">
+                    <p class="post-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                </a>
+            </div>
+            <div class="post">
+                <a href="#" class="post-link">
+                    <img src="static/img/index-banner-bgi.png" alt="post image" class="post-image">
+                    <p class="post-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                </a>
+            </div>
+            <div class="post">
+                <a href="#" class="post-link">
+                    <img src="static/img/index-banner-bgi.png" alt="post image" class="post-image">
+                    <p class="post-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                </a>
+            </div>
+            <div class="post">
+                <a href="#" class="post-link">
+                    <img src="static/img/index-banner-bgi.png" alt="post image" class="post-image">
+                    <p class="post-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                </a>
+            </div>
+            <div class="post">
+                <a href="#" class="post-link">
+                    <img src="static/img/index-banner-bgi.png" alt="post image" class="post-image">
+                    <p class="post-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+    <hr>
+    <section class="post_list-style" id="post_list-1-anchor">
+        <div class="post_list-wrapper">
+            <div class="post_list">
+                <h3 class="post_list-title">Рейтинги</h3>
+                 <ul class="post_list-list">
+                     <li class="post-list-item"><a href="#" class="post-list-link">
+                         <span class="post-list-number">1.</span>
+                         Недвижимость заграницей. Есть смысл
+                         инвестировать? Обзор рынка недвижимости </a></li>
+                     <li class="post-list-item"><a href="#" class="post-list-link">
+                         <span class="post-list-number">2.</span>
+                         Обзор торговли с Польшей: что могут
+                         экспортировать харьковские предприятия? </a></li>
+                     <li class="post-list-item"><a href="#" class="post-list-link">
+                         <span class="post-list-number">3.</span>
+                         Торговая война между США и Китаем:
+                         последствия и возможности. Исследование </a></li>
+                     <li class="post-list-item"><a href="#" class="post-list-link">
+                         <span class="post-list-number">4.</span>
+                         Недоторгованные рынки: где скрытые
+                         возможности для экспорта? Исследование</a></li>
+                 </ul>
+            </div>
+            <div class="post_list">
+                <h3 class="post_list-title">Аналитика</h3>
+
+                <ul class="post_list-list">
+
+                    <li class="post-list-item"><a href="#" class="post-list-link">
+                        <span class="post-list-number">1.</span>
+                        Недвижимость заграницей. Есть смысл
+                        инвестировать? Обзор рынка недвижимости </a></li>
+                    <li class="post-list-item"><a href="#" class="post-list-link">
+                        <span class="post-list-number">2.</span>
+                        Обзор торговли с Польшей: что могут
+                        экспортировать харьковские предприятия? </a></li>
+                    <li class="post-list-item"><a href="#" class="post-list-link">
+                        <span class="post-list-number">3.</span>
+                        Торговая война между США и Китаем:
+                        последствия и возможности. Исследование </a></li>
+                    <li class="post-list-item"><a href="#" class="post-list-link">
+                        <span class="post-list-number">4.</span>
+                        Недоторгованные рынки: где скрытые
+                        возможности для экспорта? Исследование</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <hr>
+    <section class="action-style" id="action-anchor">
+        <div class="action-percent">38%</div>
+        <div class="action-content">предприятий инвестируют
+            новые бизнес-проекты </div>
+    </section>
+    <hr>
+
+    <section class="post_list-style" id="post_list-2-anchor">
+        <div class="post_list-wrapper">
+            <div class="post_list">
+                <h3 class="post_list-title">События</h3>
+                <ul class="post_list-list">
+                    <li class="post-list-item"><a href="#" class="post-list-link">
+                        <span class="post-list-number">1.</span>
+                        Недвижимость заграницей. Есть смысл
+                        инвестировать? Обзор рынка недвижимости </a></li>
+                    <li class="post-list-item"><a href="#" class="post-list-link">
+                        <span class="post-list-number">2.</span>
+                        Обзор торговли с Польшей: что могут
+                        экспортировать харьковские предприятия? </a></li>
+                    <li class="post-list-item"><a href="#" class="post-list-link">
+                        <span class="post-list-number">3.</span>
+                        Торговая война между США и Китаем:
+                        последствия и возможности. Исследование </a></li>
+                    <li class="post-list-item"><a href="#" class="post-list-link">
+                        <span class="post-list-number">4.</span>
+                        Недоторгованные рынки: где скрытые
+                        возможности для экспорта? Исследование</a></li>
+                </ul>
+            </div>
+            <div class="post_list">
+                <h3 class="post_list-title">Аналитика</h3>
+
+                <ul class="post_list-list">
+
+                    <li class="post-list-item"><a href="#" class="post-list-link">
+                        <span class="post-list-number">1.</span>
+                        Недвижимость заграницей. Есть смысл
+                        инвестировать? Обзор рынка недвижимости </a></li>
+                    <li class="post-list-item"><a href="#" class="post-list-link">
+                        <span class="post-list-number">2.</span>
+                        Обзор торговли с Польшей: что могут
+                        экспортировать харьковские предприятия? </a></li>
+                    <li class="post-list-item"><a href="#" class="post-list-link">
+                        <span class="post-list-number">3.</span>
+                        Торговая война между США и Китаем:
+                        последствия и возможности. Исследование </a></li>
+                    <li class="post-list-item"><a href="#" class="post-list-link">
+                        <span class="post-list-number">4.</span>
+                        Недоторгованные рынки: где скрытые
+                        возможности для экспорта? Исследование</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <hr>
+    <section class="video_box-style" id="video_box-anchor">
+        <div class="video_box-wrapper">
+            <div class="video-box">
+                <a href="#" class="video-box-link">
+                    <img src="static/img/index-banner-bgi.png" alt="image video" class="video-box-image">
+                    <h3 class="video-box-title">Название видео может быть таким</h3>
+                </a>
+            </div>
+            <div class="video-box">
+                <a href="#" class="video-box-link">
+                    <img src="static/img/index-banner-bgi.png" alt="image video" class="video-box-image">
+                    <h3 class="video-box-title">Название видео может быть таким</h3>
+                </a>
+            </div>
+            <div class="video-box">
+                <a href="#" class="video-box-link">
+                    <img src="static/img/index-banner-bgi.png" alt="image video" class="video-box-image">
+                    <h3 class="video-box-title">Название видео может быть таким</h3>
+                </a>
+            </div>
+            <div class="video-box">
+                <a href="#" class="video-box-link">
+                    <img src="static/img/index-banner-bgi.png" alt="image video" class="video-box-image">
+                    <h3 class="video-box-title">Название видео может быть таким</h3>
+                </a>
+            </div>
+            <div class="video-box">
+                <a href="#" class="video-box-link">
+                    <img src="static/img/index-banner-bgi.png" alt="image video" class="video-box-image">
+                    <h3 class="video-box-title">Название видео может быть таким</h3>
+                </a>
+            </div>
+            <div class="video-box">
+                <a href="#" class="video-box-link">
+                    <img src="static/img/index-banner-bgi.png" alt="image video" class="video-box-image">
+                    <h3 class="video-box-title">Название видео может быть таким</h3>
+                </a>
+            </div>
+        </div>
+    </section>
+
 {% endblock content %}
+
+
+
+<!--adaptive + -->
