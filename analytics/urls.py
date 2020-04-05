@@ -4,5 +4,8 @@ from . import views
 
 urlpatterns = [
     path('', views.main, name='analytics'),
-    re_path('analytics/(?P<slug>[\w-]+)', views.article_detail, name='article_detail')
+    path('analytics/', views.article_index, name='analytics_index'),
+    re_path('analytics/(?P<slug>[\w-]+)', views.article_detail, name='article_detail'),
+    path('signin/', views.signin, name='signin'),
+    path('signup/', views.signup, name='signup'),
 ]

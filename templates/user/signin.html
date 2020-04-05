@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+    <div class="sign-container">
+        <div class="sign-window">
+            <div class="sign-window-title"><h2>Авторизация</h2></div>
+              <div class="sign-window-google">
+                <a href="#"><span>Вход с помощью Google</span><img src="../static/img/1004px-Google__G__Logo.svg.webp" alt=""></a>
+            </div>
+            <div class="sign-window-form">
+                <form action="{% url 'signin' %}" method="post">
+                    <p>Введите Ваш логин:</p>
+                    <input type="text" name="user_login" class="sign-window-input" placeholder="Логин">
+                    <p>Введите Ваш пароль:</p>
+                    <input type="text" name="user_password" class="sign-window-input" placeholder="Пароль">
+
+                </form>
+            </div>
+            <div class="sign-window-return_password">
+                <a href="#">Забыли пароль?</a>
+            </div>
+            <div class="sign-window-bottom">
+                <a href="#" class="createAccount">Создайте аккаунт</a>
+                <a href="#" class="sign-window-next">Далее</a>
+            </div>
+        </div>
+    </div>
+
+
+
+
+{% endblock content %}

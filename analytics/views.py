@@ -3,28 +3,39 @@ from django.shortcuts import get_object_or_404
 from .models import *
 
 def main(request):
-    data_cat = Category.objects.filter(is_active=True)
     data_art = Article.objects.filter(is_active=True).order_by('-created')
     if data_art:
-        context = {'data_cat': data_cat, 'data_art': data_art}
+        context = {'data_art': data_art}
     else:
         context = {'blank': 'К сожалению, ничего не найдено'}
     return render(request, 'analytics/index.html', context)
 
+def article_index(request):
+    data_art = Article.objects.filter(is_active=True).order_by('-created')
+    if data_art:
+        context = {'data_art': data_art}
+    else:
+        context = {'blank': 'К сожалению, ничего не найдено'}
+    return render(request, 'analytics/article_index.html', context)
 
 def article_detail(request, slug):
-    data_art = get_object_or_404(Article, slug=slug)
-    context = {'data_art': data_art}
-    return render(request, 'analytics/article_detail.html', context)
+    article = get_object_or_404(Article, slug=slug)
+    return render(request, 'analytics/article_detail.html', locals())
 
 def not_found_view(request, exception):
-    return render(request, '404.html')
+    return render(request, 'errors/404.html')
 
 def error_view(request):
-    return render(request, '500.html')
+    return render(request, 'errors/500.html')
 
 def permission_denied_view(request, exception):
-    return render(request, '403.html')
+    return render(request, 'errors/403.html')
 
 def bad_request_view(request, exception):
-    return render(request, '400.html')
+    return render(request, 'errors/400.html')
+
+def signup(request):
+    return render(request, 'user/signup.html')
+
+def signin(request):
+    return render(request, 'user/signin.html')

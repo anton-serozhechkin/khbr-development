@@ -21,6 +21,45 @@
         .event-detail-title {
             margin-top:0;
         }
+        .analytics-detail-container {
+            border:none;
+        }
+        .index-follow-input {
+            width:65%;
+        }
+        .index-follow-button {
+            width:35%;
+            font-size:14px;
+        }
+}
+@media (max-width:1024px;) {
+.analytics-box-content {
+            display:block;
+       }
+       .analytics_post-box:nth-of-type(even) .analytics-box-content .analytics-box-image img {
+            width:100%;
+            left:0;
+            right:0;
+            top:0;
+            bottom:0;
+            border-radius:0%;
+            position:static;
+            border-radius:none;
+       }
+       .analytics_post-box:nth-of-type(odd) .analytics-box-content .analytics-box-image img {
+            width:100%;
+            left:0;
+            right:0;
+            top:0;
+            bottom:0;
+            border-radius:0%;
+            position:static;
+            border-radius:none;
+       }
+        .analytics-detail-container {
+            border:none;
+        }
+
 }
 @media (max-width: 1000px) {
         .banner-title {
@@ -40,6 +79,49 @@
         .event-detail-title {
             margin-top:0;
         }
+         .analytics-box-title {
+            border-radius:0;
+        }
+        .analytics_post-box {
+            border-radius:0;
+        }
+        .analytics-box-content {
+            padding:0;
+        }
+        .analytics-box-content {
+            display:block;
+       }
+       .analytics_post-box:nth-of-type(even) .analytics-box-content .analytics-box-image img {
+            width:100%;
+            left:0;
+            right:0;
+            top:0;
+            bottom:0;
+            border-radius:0%;
+            position:static;
+            border-radius:none;
+       }
+       .analytics_post-box:nth-of-type(odd) .analytics-box-content .analytics-box-image img {
+            width:100%;
+            left:0;
+            right:0;
+            top:0;
+            bottom:0;
+            border-radius:0%;
+            position:static;
+            border-radius:none;
+       }
+        .analytics-detail-container {
+            border:none;
+        }
+         .index-follow-input {
+            width:65%;
+        }
+        .index-follow-button {
+            width:35%;
+            font-size:14px;
+        }
+
 }
 
 
@@ -59,6 +141,27 @@
         }
         .event-detail-title {
             margin-top:0;
+        }
+        .video-wrapper {
+            flex-flow: wrap column;
+            align-items:center;
+        }
+        .video-index-box {
+            width:100%;
+            margin-bottom:35px;
+        }
+        .video-index-box-title {
+        text-align:center;
+        }
+         .analytics-detail-container {
+            border:none;
+        }
+         .index-follow-input {
+            width:65%;
+        }
+        .index-follow-button {
+            width:35%;
+            font-size:14px;
         }
 }
 
@@ -94,6 +197,48 @@
         }
         .rating-post-title {
             margin-bottom:12px;
+        }
+         .analytics-box-title {
+            border-radius:0;
+        }
+        .analytics_post-box {
+            border-radius:0;
+        }
+        .analytics-box-content {
+            padding:0;
+        }
+        .analytics-box-content {
+            display:block;
+       }
+       .analytics_post-box:nth-of-type(even) .analytics-box-content .analytics-box-image img {
+            width:100%;
+            left:0;
+            right:0;
+            top:0;
+            bottom:0;
+            border-radius:0%;
+            position:static;
+            border-radius:none;
+       }
+       .analytics_post-box:nth-of-type(odd) .analytics-box-content .analytics-box-image img {
+            width:100%;
+            left:0;
+            right:0;
+            top:0;
+            bottom:0;
+            border-radius:0%;
+            position:static;
+            border-radius:none;
+       }
+        .analytics-detail-container {
+            border:none;
+        }
+         .index-follow-input {
+            width:50%;
+        }
+        .index-follow-button {
+            width:50%;
+            font-size:12px;
         }
 }
 
@@ -156,6 +301,59 @@
         .rating-post-title {
             margin-bottom:12px;
         }
+        .video-wrapper {
+            flex-flow: wrap column;
+            align-items:center;
+        }
+        .video-index-box {
+            width:100%;
+            margin-bottom:35px;
+        }
+        .video-index-box-title {
+        text-align:center;
+        }
+         .analytics-box-title {
+            border-radius:0;
+        }
+        .analytics_post-box {
+            border-radius:0;
+        }
+        .analytics-box-content {
+            padding:0;
+        }
+        .analytics-box-content {
+            display:block;
+       }
+       .analytics_post-box:nth-of-type(even) .analytics-box-content .analytics-box-image img {
+            width:100%;
+            left:0;
+            right:0;
+            top:0;
+            bottom:0;
+            border-radius:0%;
+            position:static;
+            border-radius:none;
+       }
+       .analytics_post-box:nth-of-type(odd) .analytics-box-content .analytics-box-image img {
+            width:100%;
+            left:0;
+            right:0;
+            top:0;
+            bottom:0;
+            border-radius:0%;
+            position:static;
+            border-radius:none;
+       }
+        .analytics-detail-container {
+            border:none;
+        }
+        .index-follow-input {
+            width:50%;
+        }
+        .index-follow-button {
+            width:50%;
+            font-size:12px;
+        }
 }
 
 /* IPHONE 6/7/8 PLUS */
@@ -199,6 +397,59 @@
         }
         .rating-post-title {
             margin-bottom:12px;
+        }
+        .video-wrapper {
+            flex-flow: wrap column;
+            align-items:center;
+        }
+        .video-index-box {
+            width:100%;
+            margin-bottom:35px;
+        }
+        .video-index-box-title {
+        text-align:center;
+        }
+         .analytics-box-title {
+            border-radius:0;
+        }
+        .analytics_post-box {
+            border-radius:0;
+        }
+        .analytics-box-content {
+            padding:0;
+        }
+        .analytics-box-content {
+            display:block;
+       }
+       .analytics_post-box:nth-of-type(even) .analytics-box-content .analytics-box-image img {
+            width:100%;
+            left:0;
+            right:0;
+            top:0;
+            bottom:0;
+            border-radius:0%;
+            position:static;
+            border-radius:none;
+       }
+       .analytics_post-box:nth-of-type(odd) .analytics-box-content .analytics-box-image img {
+            width:100%;
+            left:0;
+            right:0;
+            top:0;
+            bottom:0;
+            border-radius:0%;
+            position:static;
+            border-radius:none;
+       }
+        .analytics-detail-container {
+            border:none;
+        }
+        .index-follow-input {
+            width:50%;
+        }
+        .index-follow-button {
+            width:50%;
+            font-size:12px;
         }
 }
 
@@ -260,6 +511,61 @@
         .rating-post-title {
             margin-bottom:12px;
         }
+        .video-wrapper {
+            flex-flow: wrap column;
+            align-items:center;
+        }
+        .video-index-box {
+            width:100%;
+            margin-bottom:35px;
+        }
+        .video-index-box-title {
+        text-align:center;
+        }
+
+
+        .analytics-box-title {
+            border-radius:0;
+        }
+        .analytics_post-box {
+            border-radius:0;
+        }
+        .analytics-box-content {
+            padding:0;
+        }
+      .analytics-box-content {
+            display:block;
+       }
+       .analytics_post-box:nth-of-type(even) .analytics-box-content .analytics-box-image img {
+            width:100%;
+            left:0;
+            right:0;
+            top:0;
+            bottom:0;
+            border-radius:0%;
+            position:static;
+            border-radius:none;
+       }
+       .analytics_post-box:nth-of-type(odd) .analytics-box-content .analytics-box-image img {
+            width:100%;
+            left:0;
+            right:0;
+            top:0;
+            bottom:0;
+            border-radius:0%;
+            position:static;
+            border-radius:none;
+       }
+        .analytics-detail-container {
+            border:none;
+        }
+        .index-follow-input {
+            width:50%;
+        }
+        .index-follow-button {
+            width:50%;
+            font-size:12px;
+        }
 }
 
 /* iphone x ! */
@@ -291,5 +597,14 @@
         .event-detail-title {
             margin-top:0;
         }
-
+         .analytics-detail-container {
+            border:none;
+        }
+        .index-follow-input {
+            width:50%;
+        }
+        .index-follow-button {
+            width:50%;
+            font-size:12px;
+        }
 }
