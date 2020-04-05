@@ -1236,3 +1236,36 @@ overflow:hidden;
     position:relative;
     top:4px;
 }
+.index-follow {
+    padding: 35px 20vw;
+    text-align:center;
+}
+.index-follow-box {
+    width:100%;
+    display:flex;
+    flex-direction:row;
+}
+.index-follow-input {
+    border-radius: 25px 0 0 25px;
+    border:solid 0.5px black;
+    border-right:none;
+    margin:0;
+    padding: 12px 2px;
+    width:85%;
+    outline:none;
+    text-indent: 12px;
+}
+.index-follow-button {
+    border-radius: 0 25px 25px 0;
+    border:solid 0.5px black;
+    border-left:none;
+    margin:0;
+    padding: 12px 2px;
+    width:15%;
+    cursor:pointer;
+    font-size:20px;
+}
+.index-follow-title {
+    text-align:left;
+    margin-bottom: 24px;
+}
