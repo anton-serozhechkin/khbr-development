@@ -21,6 +21,37 @@
         .event-detail-title {
             margin-top:0;
         }
+        .analytics-detail-container {
+            border:none;
+        }
+}
+@media (max-width:1024px;) {
+.analytics-box-content {
+            display:block;
+       }
+       .analytics_post-box:nth-of-type(even) .analytics-box-content .analytics-box-image img {
+            width:100%;
+            left:0;
+            right:0;
+            top:0;
+            bottom:0;
+            border-radius:0%;
+            position:static;
+            border-radius:none;
+       }
+       .analytics_post-box:nth-of-type(odd) .analytics-box-content .analytics-box-image img {
+            width:100%;
+            left:0;
+            right:0;
+            top:0;
+            bottom:0;
+            border-radius:0%;
+            position:static;
+            border-radius:none;
+       }
+        .analytics-detail-container {
+            border:none;
+        }
 }
 @media (max-width: 1000px) {
         .banner-title {
@@ -39,6 +70,41 @@
         }
         .event-detail-title {
             margin-top:0;
+        }
+         .analytics-box-title {
+            border-radius:0;
+        }
+        .analytics_post-box {
+            border-radius:0;
+        }
+        .analytics-box-content {
+            padding:0;
+        }
+        .analytics-box-content {
+            display:block;
+       }
+       .analytics_post-box:nth-of-type(even) .analytics-box-content .analytics-box-image img {
+            width:100%;
+            left:0;
+            right:0;
+            top:0;
+            bottom:0;
+            border-radius:0%;
+            position:static;
+            border-radius:none;
+       }
+       .analytics_post-box:nth-of-type(odd) .analytics-box-content .analytics-box-image img {
+            width:100%;
+            left:0;
+            right:0;
+            top:0;
+            bottom:0;
+            border-radius:0%;
+            position:static;
+            border-radius:none;
+       }
+        .analytics-detail-container {
+            border:none;
         }
 }
 
@@ -70,6 +136,9 @@
         }
         .video-index-box-title {
         text-align:center;
+        }
+         .analytics-detail-container {
+            border:none;
         }
 }
 
@@ -105,6 +174,41 @@
         }
         .rating-post-title {
             margin-bottom:12px;
+        }
+         .analytics-box-title {
+            border-radius:0;
+        }
+        .analytics_post-box {
+            border-radius:0;
+        }
+        .analytics-box-content {
+            padding:0;
+        }
+        .analytics-box-content {
+            display:block;
+       }
+       .analytics_post-box:nth-of-type(even) .analytics-box-content .analytics-box-image img {
+            width:100%;
+            left:0;
+            right:0;
+            top:0;
+            bottom:0;
+            border-radius:0%;
+            position:static;
+            border-radius:none;
+       }
+       .analytics_post-box:nth-of-type(odd) .analytics-box-content .analytics-box-image img {
+            width:100%;
+            left:0;
+            right:0;
+            top:0;
+            bottom:0;
+            border-radius:0%;
+            position:static;
+            border-radius:none;
+       }
+        .analytics-detail-container {
+            border:none;
         }
 }
 
@@ -178,6 +282,41 @@
         .video-index-box-title {
         text-align:center;
         }
+         .analytics-box-title {
+            border-radius:0;
+        }
+        .analytics_post-box {
+            border-radius:0;
+        }
+        .analytics-box-content {
+            padding:0;
+        }
+        .analytics-box-content {
+            display:block;
+       }
+       .analytics_post-box:nth-of-type(even) .analytics-box-content .analytics-box-image img {
+            width:100%;
+            left:0;
+            right:0;
+            top:0;
+            bottom:0;
+            border-radius:0%;
+            position:static;
+            border-radius:none;
+       }
+       .analytics_post-box:nth-of-type(odd) .analytics-box-content .analytics-box-image img {
+            width:100%;
+            left:0;
+            right:0;
+            top:0;
+            bottom:0;
+            border-radius:0%;
+            position:static;
+            border-radius:none;
+       }
+        .analytics-detail-container {
+            border:none;
+        }
 }
 
 /* IPHONE 6/7/8 PLUS */
@@ -232,6 +371,41 @@
         }
         .video-index-box-title {
         text-align:center;
+        }
+         .analytics-box-title {
+            border-radius:0;
+        }
+        .analytics_post-box {
+            border-radius:0;
+        }
+        .analytics-box-content {
+            padding:0;
+        }
+        .analytics-box-content {
+            display:block;
+       }
+       .analytics_post-box:nth-of-type(even) .analytics-box-content .analytics-box-image img {
+            width:100%;
+            left:0;
+            right:0;
+            top:0;
+            bottom:0;
+            border-radius:0%;
+            position:static;
+            border-radius:none;
+       }
+       .analytics_post-box:nth-of-type(odd) .analytics-box-content .analytics-box-image img {
+            width:100%;
+            left:0;
+            right:0;
+            top:0;
+            bottom:0;
+            border-radius:0%;
+            position:static;
+            border-radius:none;
+       }
+        .analytics-detail-container {
+            border:none;
         }
 }
 
@@ -304,6 +478,43 @@
         .video-index-box-title {
         text-align:center;
         }
+
+
+        .analytics-box-title {
+            border-radius:0;
+        }
+        .analytics_post-box {
+            border-radius:0;
+        }
+        .analytics-box-content {
+            padding:0;
+        }
+      .analytics-box-content {
+            display:block;
+       }
+       .analytics_post-box:nth-of-type(even) .analytics-box-content .analytics-box-image img {
+            width:100%;
+            left:0;
+            right:0;
+            top:0;
+            bottom:0;
+            border-radius:0%;
+            position:static;
+            border-radius:none;
+       }
+       .analytics_post-box:nth-of-type(odd) .analytics-box-content .analytics-box-image img {
+            width:100%;
+            left:0;
+            right:0;
+            top:0;
+            bottom:0;
+            border-radius:0%;
+            position:static;
+            border-radius:none;
+       }
+        .analytics-detail-container {
+            border:none;
+        }
 }
 
 /* iphone x ! */
@@ -334,6 +545,9 @@
         }
         .event-detail-title {
             margin-top:0;
+        }
+         .analytics-detail-container {
+            border:none;
         }
 
 }

@@ -867,10 +867,10 @@ input:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
     padding: 0 16vw;
 }
 .analytics_post-box {
+overflow:hidden;
     border-radius: 50px;
     width: 100%;
-    height: 100%;
-    overflow: hidden;
+    height:100%;
     -webkit-box-shadow: 0 15px 25px -3px #080808;
     box-shadow: 0 15px 25px -3px #080808;
     margin-bottom: 100px;
@@ -889,8 +889,8 @@ input:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
     display: flex;
     flex-flow: wrap row;
     align-items: center;
-    height: 100%;
     padding: 24px 24px;
+    height:100%;
 }
 .analytics-box-image img {
     border-radius: 100%;
@@ -903,7 +903,6 @@ input:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
 }
 .analytics-box-text {
     flex: 1;
-    height: 320px;
     font-size: 18px;
     display: flex;
     flex-direction: column;
