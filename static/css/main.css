@@ -1255,14 +1255,14 @@ overflow:hidden;
     text-indent: 12px;
 }
 .index-follow-button {
-    border-radius: 0 25px 25px 0;
+    border-radius: 0 25px 25px 0;index-follow-button
     border:solid 0.5px black;
     border-left:none;
     margin:0;
     padding: 12px 2px;
     width:15%;
     cursor:pointer;
-    font-size:20px;
+    font-size:1.2em;
     outline:none;
 }
 .index-follow-button:focus {
@@ -1328,3 +1328,6 @@ overflow:hidden;
     margin-right:24px;
     margin-bottom:10px;
 }
+
+
+

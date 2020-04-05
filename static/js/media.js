@@ -1,5 +1,5 @@
 let videoArray = document.querySelectorAll("iframe");
-
+let followButton = document.querySelectorAll('.index-follow-button');
 
 if (screen.width <= 375) {
     for (let i = 0; i < videoArray.length; i++) {
