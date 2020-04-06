@@ -1033,7 +1033,7 @@ overflow:hidden;
 .event-post-content {
     margin-left: 50px;
     border-right: solid 3px #000;
-    padding-right: 25px;
+    padding: 12px 12px;
 }
 .event-post-title {
     font-size: 36px;
@@ -1333,4 +1333,9 @@ overflow:hidden;
 .analytics-detail-container .detail-viewCount {
     margin-right:24px;
     margin-bottom:10px;
+}
+.rating-post-image img {
+    width: 100%;
+    margin: 2vh 0;
+    max-height: 450px;
 }
