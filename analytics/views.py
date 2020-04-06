@@ -1,14 +1,23 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.shortcuts import get_object_or_404
 from .models import *
+from .forms import SubscribeForm
 
 def main(request):
-    data_art = Article.objects.filter(is_active=True).order_by('-created')
-    if data_art:
-        context = {'data_art': data_art}
+    if request.method == 'POST':
+        form = SubscribeForm(request.POST)
+        if form.is_valid():
+            subscribe = form.save(commit=False) 
+            email = form.cleaned_data['email']
+            form.save()
+            return redirect('analytics')
+        else:
+            return redirect('analytics')
     else:
-        context = {'blank': 'К сожалению, ничего не найдено'}
-    return render(request, 'analytics/index.html', context)
+        form = SubscribeForm()
+        data_art = Article.objects.filter(is_active=True).order_by('-created')[0:5]
+
+    return render(request, 'analytics/index.html', locals())
 
 def article_index(request):
     data_art = Article.objects.filter(is_active=True).order_by('-created')

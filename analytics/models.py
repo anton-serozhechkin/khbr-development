@@ -55,3 +55,14 @@ class Links(models.Model):
     class Meta:
         verbose_name = 'Соц.сеть'
         verbose_name_plural = 'Соц.сети'
+
+class Subscribe(models.Model):
+    email = models.EmailField(verbose_name='Электронная почта')
+    created = models.DateTimeField('Дата создания', default=timezone.now)
+
+    def __str__(self):
+        return self.email
+
+    class Meta:
+        verbose_name = 'Подписчик на рассылку'
+        verbose_name_plural = 'Подписчики на рассылку'

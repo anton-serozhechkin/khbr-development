@@ -1,67 +1,31 @@
 {% extends 'base.html' %}
 {% block content %}
-
-
+{% load widget_tweaks %}
     <section class="banner-style" id="banner-anchor">
-
         <div class="banner-text_box">
             <h1 class="banner-title">Kharkiv business review</h1>
         </div>
-
     </section>
 <!--post table section-->
     <section class="posts-table-style" id="posts-table-anchor">
 <!--    post table wrapper    -->
         <div class="posts-wrapper">
+            {% for article in data_art %}
             <div class="post">
-                <a href="#" class="post-link">
+                <a href="{% url 'article_detail' slug=article.slug %}" class="post-link">
                     <img src="static/img/index-banner-bgi.png" alt="post image" class="post-image">
-                    <p class="post-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                    <p class="post-description">{{ article.title }}</p>
                 </a>
             </div>
-            <div class="post">
-                <a href="#" class="post-link">
-                    <img src="static/img/index-banner-bgi.png" alt="post image" class="post-image">
-                    <p class="post-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                </a>
-            </div>
-            <div class="post">
-                <a href="#" class="post-link">
-                    <img src="static/img/index-banner-bgi.png" alt="post image" class="post-image">
-                    <p class="post-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                </a>
-            </div>
-            <div class="post">
-                <a href="#" class="post-link">
-                    <img src="static/img/index-banner-bgi.png" alt="post image" class="post-image">
-                    <p class="post-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                </a>
-            </div>
-            <div class="post">
-                <a href="#" class="post-link">
-                    <img src="static/img/index-banner-bgi.png" alt="post image" class="post-image">
-                    <p class="post-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                </a>
-            </div>
-            <div class="post">
-                <a href="#" class="post-link">
-                    <img src="static/img/index-banner-bgi.png" alt="post image" class="post-image">
-                    <p class="post-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                </a>
-            </div>
-            <div class="post">
-                <a href="#" class="post-link">
-                    <img src="static/img/index-banner-bgi.png" alt="post image" class="post-image">
-                    <p class="post-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                </a>
-            </div>
+            {% endfor %}
         </div>
     </section>
     <hr>
     <section class="index-follow" id="index-follow-anchor">
-        <h3 class="index-follow-title">Вы можете получать рассылку от нас</h3>
-        <form class="index-follow-box" action="" method="post">
-            <input type="email" class="index-follow-input" name="user_email" placeholder="Ваш e-mail: ">
+        <h3 class="index-follow-title">Подпишитесь на нашу рассылку</h3>
+        <form class="index-follow-box" action="{% url 'analytics' %}" method="post">
+            {% csrf_token %}
+            {% render_field form.email class="index-follow-input" name="user_email" placeholder="Ваш e-mail: " %}
             <button class="index-follow-button" type="submit">Подписаться</button>
         </form>
     </section>
@@ -115,13 +79,12 @@
         </div>
     </section>
     <hr>
-    <section class="action-style" id="action-anchor">
-        <div class="action-percent">38%</div>
-        <div class="action-content">предприятий инвестируют
-            новые бизнес-проекты </div>
-    </section>
+        <section class="action-style" id="action-anchor">
+            <div class="action-percent">38%</div>
+            <div class="action-content">предприятий инвестируют
+                новые бизнес-проекты </div>
+        </section>
     <hr>
-
     <section class="post_list-style" id="post_list-2-anchor">
         <div class="post_list-wrapper">
             <div class="post_list">
@@ -211,9 +174,5 @@
             </div>
         </div>
     </section>
-
 {% endblock content %}
-
-
-
 <!--adaptive + -->
