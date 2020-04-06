@@ -15,7 +15,7 @@
         {% for raiting in list_rait %}
             <div class="rating-post-box">
                 <div class="rating-post-title">
-                    <a href="{% url 'raiting_detail' slug=raiting.slug %}"> 
+                    <a href="{% url 'raiting_detail' slug=raiting.slug %}" class="rating-post-title-link">
                         {{ raiting.title }}
                       </a>
                 </div>
