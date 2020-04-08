@@ -12,5 +12,4 @@ def main(request):
 
 def event_detail(request, slug):
     data_event = get_object_or_404(Event, slug=slug)
-    context = {'data_event': data_event}
-    return render(request, 'event/event_detail.html', context)
+    return render(request, 'event/event_detail.html', locals())

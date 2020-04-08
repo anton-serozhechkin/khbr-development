@@ -10,7 +10,7 @@
     <section class="posts-table-style" id="posts-table-anchor">
 <!--    post table wrapper    -->
         <div class="posts-wrapper">
-            {% for article in data_art %}
+            {% for article in last_art %}
             <div class="post">
                 <a href="{% url 'article_detail' slug=article.slug %}" class="post-link">
                     <img src="static/img/index-banner-bgi.png" alt="post image" class="post-image">
@@ -37,9 +37,9 @@
                  <ul class="post_list-list">
                     {% for raiting in data_rait%}
                          <li class="post-list-item">
-                            <a href="{url 'raiting_detail' slug=raiting.slug" class="post-list-link">
+                            <a href="{% url 'raiting_detail' slug=raiting.slug %}" class="post-list-link">
                                 <span class="post-list-number">
-                                    1
+                                    {{ raiting.created }}
                                 </span>
                                 {{ raiting.title }}
                             </a>
@@ -49,34 +49,24 @@
             </div>
             <div class="post_list">
                 <h3 class="post_list-title">Аналитика</h3>
-
                 <ul class="post_list-list">
-
-                    <li class="post-list-item"><a href="#" class="post-list-link">
-                        <span class="post-list-number">1.</span>
-                        Недвижимость заграницей. Есть смысл
-                        инвестировать? Обзор рынка недвижимости </a></li>
-                    <li class="post-list-item"><a href="#" class="post-list-link">
-                        <span class="post-list-number">2.</span>
-                        Обзор торговли с Польшей: что могут
-                        экспортировать харьковские предприятия? </a></li>
-                    <li class="post-list-item"><a href="#" class="post-list-link">
-                        <span class="post-list-number">3.</span>
-                        Торговая война между США и Китаем:
-                        последствия и возможности. Исследование </a></li>
-                    <li class="post-list-item"><a href="#" class="post-list-link">
-                        <span class="post-list-number">4.</span>
-                        Недоторгованные рынки: где скрытые
-                        возможности для экспорта? Исследование</a></li>
+                    {% for article in data_art_1_4 %}
+                    <li class="post-list-item">
+                        <a href="{% url 'article_detail' slug=article.slug %}" class="post-list-link">
+                            <span class="post-list-number">{{ article.created }}</span>
+                            {{ article.title }}</a>
+                    </li>
+                    {% endfor %}
                 </ul>
             </div>
         </div>
     </section>
     <hr>
         <section class="action-style" id="action-anchor">
-            <div class="action-percent">38%</div>
-            <div class="action-content">предприятий инвестируют
-                новые бизнес-проекты </div>
+            <div class="action-percent"></div>
+            <div class="action-content">
+                 
+            </div>
         </section>
     <hr>
     <section class="post_list-style" id="post_list-2-anchor">
@@ -84,45 +74,31 @@
             <div class="post_list">
                 <h3 class="post_list-title">События</h3>
                 <ul class="post_list-list">
-                    <li class="post-list-item"><a href="#" class="post-list-link">
-                        <span class="post-list-number">1.</span>
-                        Недвижимость заграницей. Есть смысл
-                        инвестировать? Обзор рынка недвижимости </a></li>
-                    <li class="post-list-item"><a href="#" class="post-list-link">
-                        <span class="post-list-number">2.</span>
-                        Обзор торговли с Польшей: что могут
-                        экспортировать харьковские предприятия? </a></li>
-                    <li class="post-list-item"><a href="#" class="post-list-link">
-                        <span class="post-list-number">3.</span>
-                        Торговая война между США и Китаем:
-                        последствия и возможности. Исследование </a></li>
-                    <li class="post-list-item"><a href="#" class="post-list-link">
-                        <span class="post-list-number">4.</span>
-                        Недоторгованные рынки: где скрытые
-                        возможности для экспорта? Исследование</a></li>
+                    {% for event in data_event %}
+                        <li class="post-list-item">
+                            <a href="{% url 'event_detail' slug=event.slug %}" class="post-list-link">
+                                <span class="post-list-number">
+                                    {{ event.created }}
+                                </span>
+                                {{ event.title }}
+                            </a>
+                        </li>
+                    {% endfor %}
                 </ul>
             </div>
             <div class="post_list">
                 <h3 class="post_list-title">Аналитика</h3>
-
                 <ul class="post_list-list">
-
-                    <li class="post-list-item"><a href="#" class="post-list-link">
-                        <span class="post-list-number">1.</span>
-                        Недвижимость заграницей. Есть смысл
-                        инвестировать? Обзор рынка недвижимости </a></li>
-                    <li class="post-list-item"><a href="#" class="post-list-link">
-                        <span class="post-list-number">2.</span>
-                        Обзор торговли с Польшей: что могут
-                        экспортировать харьковские предприятия? </a></li>
-                    <li class="post-list-item"><a href="#" class="post-list-link">
-                        <span class="post-list-number">3.</span>
-                        Торговая война между США и Китаем:
-                        последствия и возможности. Исследование </a></li>
-                    <li class="post-list-item"><a href="#" class="post-list-link">
-                        <span class="post-list-number">4.</span>
-                        Недоторгованные рынки: где скрытые
-                        возможности для экспорта? Исследование</a></li>
+                    {% for article in data_art_6_9 %}
+                    <li class="post-list-item">
+                        <a href="{% url 'article_detail' slug=article.slug %} class="post-list-link">
+                            <span class="post-list-number">
+                                {{ article.created }}
+                            </span>
+                        {{ article.title }} 
+                        </a>
+                    </li>
+                    {% endfor %}
                 </ul>
             </div>
         </div>
@@ -130,12 +106,18 @@
     <hr>
     <section class="video_box-style" id="video_box-anchor">
         <div class="video_box-wrapper">
+            {% for video in data_video %}
             <div class="video-box">
-                <a href="#" class="video-box-link">
-                    <img src="static/img/index-banner-bgi.png" alt="image video" class="video-box-image">
-                    <h3 class="video-box-title">Название видео может быть таким</h3>
+                <a href="{{ video.url }}" class="video-box-link">
+                    <iframe width="400px" height="235px" src="{{ video.video }}"
+                        frameborder="0" allow="accelerometer; autoplay;
+                        encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                    <h3 class="video-box-title">{{ video.title }}</h3>
                 </a>
             </div>
+            {% endfor %}
         </div>
     </section>
 {% endblock content %}

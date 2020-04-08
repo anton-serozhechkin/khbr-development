@@ -13,5 +13,4 @@ def main(request):
     
 def raiting_detail(request, slug):
     data_rait = get_object_or_404(Raiting, slug=slug)
-    context = {'data_rait': data_rait}
-    return render(request, 'raitings/raiting_detail.html', context)
+    return render(request, 'raitings/raiting_detail.html', locals())
