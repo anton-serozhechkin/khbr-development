@@ -35,23 +35,17 @@
             <div class="post_list">
                 <h3 class="post_list-title">Рейтинги</h3>
                  <ul class="post_list-list">
-                     <li class="post-list-item"><a href="#" class="post-list-link">
-                         <span class="post-list-number">1.</span>
-                         Недвижимость заграницей. Есть смысл
-                         инвестировать? Обзор рынка недвижимости </a></li>
-                     <li class="post-list-item"><a href="#" class="post-list-link">
-                         <span class="post-list-number">2.</span>
-                         Обзор торговли с Польшей: что могут
-                         экспортировать харьковские предприятия? </a></li>
-                     <li class="post-list-item"><a href="#" class="post-list-link">
-                         <span class="post-list-number">3.</span>
-                         Торговая война между США и Китаем:
-                         последствия и возможности. Исследование </a></li>
-                     <li class="post-list-item"><a href="#" class="post-list-link">
-                         <span class="post-list-number">4.</span>
-                         Недоторгованные рынки: где скрытые
-                         возможности для экспорта? Исследование</a></li>
-                 </ul>
+                    {% for raiting in data_rait%}
+                         <li class="post-list-item">
+                            <a href="{url 'raiting_detail' slug=raiting.slug" class="post-list-link">
+                                <span class="post-list-number">
+                                    1
+                                </span>
+                                {{ raiting.title }}
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
             </div>
             <div class="post_list">
                 <h3 class="post_list-title">Аналитика</h3>

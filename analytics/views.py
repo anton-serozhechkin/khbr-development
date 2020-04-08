@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect
 from django.shortcuts import get_object_or_404
 from .models import *
+from raitings.models import Raiting
+from event.models import Event
 from .forms import SubscribeForm
 
 def main(request):
@@ -16,6 +18,7 @@ def main(request):
     else:
         form = SubscribeForm()
         data_art = Article.objects.filter(is_active=True).order_by('-created')[0:5]
+        data_rait = Raiting.objects.filter(is_active=True).order_by('-created')[0:3]
 
     return render(request, 'analytics/index.html', locals())
 
