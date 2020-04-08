@@ -40,7 +40,7 @@
                          <li class="post-list-item">
                             <a href="{% url 'raiting_detail' slug=raiting.slug %}" class="post-list-link">
                                 <span class="post-list-number">
-                                    {{ raiting.created }}
+                                    {{ raiting.author }}
                                 </span>
                                 {{ raiting.title }}
                             </a>
@@ -54,7 +54,7 @@
                     {% for article in data_art_1_4 %}
                     <li class="post-list-item">
                         <a href="{% url 'article_detail' slug=article.slug %}" class="post-list-link">
-                            <span class="post-list-number">{{ article.created }}</span>
+                            <span class="post-list-number">{{ article.author }}</span>
                             {{ article.title }}</a>
                     </li>
                     {% endfor %}
@@ -64,10 +64,13 @@
     </section>
     <hr>
         <section class="action-style" id="action-anchor">
-            <div class="action-percent"></div>
-            <div class="action-content">
-                 
-            </div>
+            {% for integer in integer_day %}
+            <a href="{% url 'article_detail' slug=integer.article.slug %}" class="post-list-link">
+                <div class="action-content">
+                    {{ integer.title }}          
+                </div>
+            </a>
+            {% endfor %}
         </section>
     <hr>
     <section class="post_list-style" id="post_list-2-anchor">
@@ -79,7 +82,7 @@
                         <li class="post-list-item">
                             <a href="{% url 'event_detail' slug=event.slug %}" class="post-list-link">
                                 <span class="post-list-number">
-                                    {{ event.created }}
+                                    {{ event.author }}
                                 </span>
                                 {{ event.title }}
                             </a>
@@ -94,7 +97,7 @@
                     <li class="post-list-item">
                         <a href="{% url 'article_detail' slug=article.slug %} class="post-list-link">
                             <span class="post-list-number">
-                                {{ article.created }}
+                                {{ article.author }}
                             </span>
                         {{ article.title }} 
                         </a>

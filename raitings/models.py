@@ -1,17 +1,16 @@
 from django.db import models
 from django.urls import reverse
 from django.utils import timezone
+from analytics.models import Author
 
-def upload_raiting_images_folder(instance, filename):
-    filename = instance.id + '.' + filename.split('.')[-1]
-    return "{}/{}".format(instance.id, filename)
 
 class Raiting(models.Model):
     title = models.CharField('Заголовок',max_length=200)
     slug = models.SlugField('Ссылка')
+    short_description = models.CharField('Короткое описание на 200 символов', max_length=200)
     content = models.TextField('Контент')
-    author = models.TextField('Автор', blank=True)
-    image = models.ImageField('Фотография', blank=True, upload_to=upload_raiting_images_folder)
+    author = models.ForeignKey(Author, on_delete=models.DO_NOTHING, verbose_name="Автор")
+    image = models.ImageField('Фотография', blank=True)
     created = models.DateTimeField('Дата создания', default=timezone.now)
     is_active = models.BooleanField(default=True, verbose_name='Видимость для пользователя')
 

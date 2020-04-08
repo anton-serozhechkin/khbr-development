@@ -24,15 +24,12 @@ def main(request):
         data_video = VideoDownloading.objects.filter(is_active=True)[0:5]
         data_art_6_9 = Article.objects.filter(is_active=True)[5:8]
         data_event = Event.objects.filter(is_active=True)[0:3]
+        integer_day = Article.objects.filter(integer_of_day=True).last()
     return render(request, 'analytics/index.html', locals())
 
 def article_index(request):
     data_art = Article.objects.filter(is_active=True).order_by('-created')
-    if data_art:
-        context = {'data_art': data_art}
-    else:
-        context = {'blank': 'К сожалению, ничего не найдено'}
-    return render(request, 'analytics/article_index.html', context)
+    return render(request, 'analytics/article_index.html', locals())
 
 def article_detail(request, slug):
     article = get_object_or_404(Article, slug=slug)
@@ -49,9 +46,3 @@ def permission_denied_view(request, exception):
 
 def bad_request_view(request, exception):
     return render(request, 'errors/400.html')
-
-def signup(request):
-    return render(request, 'user/signup.html')
-
-def signin(request):
-    return render(request, 'user/signin.html')
