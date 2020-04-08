@@ -22,6 +22,7 @@ urlpatterns = [
     path('events/', include('event.urls')),
     path('videooverviews/', include('videooverview.urls')),
     path('raitings/', include('raitings.urls')),
+    path('user/', include('users.urls')),
     path('accounts/', include('allauth.urls')),
 ]
 
