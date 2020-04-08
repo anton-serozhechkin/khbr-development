@@ -21,7 +21,7 @@
         </div>
     </section>
     <hr>
-    <section class="index-follow" id="index-follow-anchor">
+    <section class="index-follow  wow fadeInDown" id="index-follow-anchor" >
         <h3 class="index-follow-title">Подпишитесь на нашу рассылку</h3>
         <form class="index-follow-box" action="{% url 'analytics' %}" method="post">
             {% csrf_token %}
@@ -29,6 +29,7 @@
             <button class="index-follow-button" type="submit">Подписаться</button>
         </form>
     </section>
+
 <hr>
     <section class="post_list-style" id="post_list-1-anchor">
         <div class="post_list-wrapper">
