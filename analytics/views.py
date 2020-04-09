@@ -10,8 +10,7 @@ def main(request):
     if request.method == 'POST':
         form = SubscribeForm(request.POST)
         if form.is_valid():
-            subscribe = form.save(commit=False) 
-            email = form.cleaned_data['email']
+            print(form)
             form.save()
             return redirect('analytics')
         else:

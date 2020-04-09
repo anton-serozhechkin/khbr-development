@@ -29,48 +29,46 @@
             <button class="index-follow-button" type="submit">Подписаться</button>
         </form>
     </section>
-
 <hr>
     <section class="post_list-style" id="post_list-1-anchor">
         <div class="post_list-wrapper">
             <div class="post_list">
                 <h3 class="post_list-title">Рейтинги</h3>
                  <ul class="post_list-list">
-                    {% for raiting in data_rait%}
                          <li class="post-list-item">
+                            {% for raiting in data_rait%}
                             <a href="{% url 'raiting_detail' slug=raiting.slug %}" class="post-list-link">
                                 <span class="post-list-number">
                                     {{ raiting.author }}
                                 </span>
                                 {{ raiting.title }}
                             </a>
+                            {% endfor %}
                         </li>
-                    {% endfor %}
                 </ul>
             </div>
             <div class="post_list">
                 <h3 class="post_list-title">Аналитика</h3>
                 <ul class="post_list-list">
-                    {% for article in data_art_1_4 %}
                     <li class="post-list-item">
+                        {% for article in data_art_1_4 %}
                         <a href="{% url 'article_detail' slug=article.slug %}" class="post-list-link">
                             <span class="post-list-number">{{ article.author }}</span>
-                            {{ article.title }}</a>
+                            {{ article.title }}
+                        </a>
+                        {% endfor %}
                     </li>
-                    {% endfor %}
                 </ul>
             </div>
         </div>
     </section>
     <hr>
         <section class="action-style" id="action-anchor">
-            {% for integer in integer_day %}
-            <a href="{% url 'article_detail' slug=integer.article.slug %}" class="post-list-link">
+            <a href="{% url 'article_detail' slug=integer_day.slug %}" class="post-list-link">
                 <div class="action-content">
-                    {{ integer.title }}          
+                    {{ integer_day.title }}          
                 </div>
             </a>
-            {% endfor %}
         </section>
     <hr>
     <section class="post_list-style" id="post_list-2-anchor">

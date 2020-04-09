@@ -659,7 +659,7 @@ body {
 
 
 .banner-style {
-    background-image: url(../img/article-detail/index-banner-bgi.png);
+    background-image: url(../img/index-banner-bgi.png);
     background-size: cover;
     background-repeat: no-repeat;
     height: 85vh;
@@ -1149,7 +1149,7 @@ overflow:hidden;
     font-family: 'Inter', sans-serif;
  }
 .sign-container {
-    background-image: url("../img/article-detail/index-banner-bgi.png");
+    background-image: url("../img/index-banner-bgi.png");
     background-size:cover;
     background-repeat:no-repeat;
     height:75vh;

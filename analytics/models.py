@@ -65,7 +65,7 @@ class Links(models.Model):
         verbose_name_plural = 'Соц.сети'
 
 class Subscribe(models.Model):
-    email = models.EmailField(verbose_name='Электронная почта')
+    email = models.EmailField(verbose_name='Электронная почта', unique=True)
     created = models.DateTimeField('Дата создания', default=timezone.now)
 
     def __str__(self):

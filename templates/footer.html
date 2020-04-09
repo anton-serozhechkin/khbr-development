@@ -1,4 +1,6 @@
- <footer class="footer-style" id="footer-anchor">
+{% load staticfiles %} 
+{% load widget_tweaks %}
+<footer class="footer-style" id="footer-anchor">
         <div class="footer-wrapper">
             <ul class="footer-list">
                 <li class="footer-list-item">
@@ -23,14 +25,9 @@
                 </li>
             </ul>
             <div class="footer-logo">
-                <a href="#" class="footer-logo-link"><img src="../static/img/logo.png" alt=""></a>
-                <div class="index-follow index-follow-footer" id="index-follow-anchor">
-                    <h3 class="index-follow-title">Вы можете получать рассылку от нас</h3>
-                    <form class="index-follow-box" action="" method="post">
-                        <input type="email" class="index-follow-input" name="user_email" placeholder="Ваш e-mail: ">
-                        <button class="index-follow-button" type="submit">Подписаться</button>
-                    </form>
-                </div>
+                <a href="#" class="footer-logo-link">
+                    <img src="{% static 'img/logo.png' %}" alt="">
+                </a>
             </div>
             <ul class="footer-list">
                 <li class="footer-list-item">
@@ -61,5 +58,4 @@
                 </li>
             </ul>
         </div>
-
     </footer>
