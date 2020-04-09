@@ -10,7 +10,6 @@ def main(request):
     if request.method == 'POST':
         form = SubscribeForm(request.POST)
         if form.is_valid():
-            print(form)
             form.save()
             return redirect('analytics')
         else:
