@@ -39,11 +39,12 @@
                 </div>
                 {% endfor %}
             </div>
-    </div>
     </section>
-    <hr>
+    </div>
+
+<hr>
     <div class="container">
-        <section class="index-follow  wow fadeInDown" id="index-follow-anchor" >
+        <section class="index-follow   " id="index-follow-anchor" >
             <h3 class="index-follow-title">Подпишитесь на нашу рассылку</h3>
             <form class="index-follow-box" action="{% url 'analytics' %}" method="post">
                 {% csrf_token %}
@@ -53,73 +54,80 @@
         </section>
     </div>
 <hr>
-    <section class="post_list-style" id="post_list-1-anchor">
-        <div class="post_list-wrapper">
-            <div class="post_list">
-                <h3 class="post_list-title">Рейтинги</h3>
-                 <ul class="post_list-list">
-                     {% for raiting in data_rait%}
+   <div class="container">
+       <section class="index-lists-style" id="post_list-1-anchor">
+           <div class="index-lists-wrapper">
+               <div class="index-list-box">
+                   <h3 class="index-list-title">Рейтинги</h3>
+                   <ul class="index-list">
+                       {% for raiting in data_rait%}
 
-                     <li class="post-list-item">
-                            <a href="{% url 'raiting_detail' slug=raiting.slug %}" class="post-list-link">
-                                {{ raiting.title }}
-                            </a>
-                        </li>
-                     {% endfor %}
-                </ul>
-            </div>
-            <div class="post_list">
-                <h3 class="post_list-title">Аналитика</h3>
-                <ul class="post_list-list">
-                    {% for article in data_art_1_4 %}
+                       <li class="index-list-item">
+                           <a href="{% url 'raiting_detail' slug=raiting.slug %}" class="index-list-item-link">
+                               {{ raiting.title }}
+                           </a>
+                       </li>
+                       {% endfor %}
+                   </ul>
+               </div>
+               <div class="index-list-box">
+                   <h3 class="index-list-title">Аналитика</h3>
+                   <ul class="index-list">
+                       {% for article in data_art_1_4 %}
 
-                    <li class="post-list-item">
-                        <a href="{% url 'article_detail' slug=article.slug %}" class="post-list-link">
-                            {{ article.title }}
-                        </a>
-                    </li>
-                    {% endfor %}
-                </ul>
-            </div>
-        </div>
-    </section>
+                       <li class="index-list-item">
+                           <a href="{% url 'article_detail' slug=article.slug %}" class="index-list-item-link">
+                               {{ article.title }}
+                               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque eum fuga hic maiores omnis ut! Ad asperiores cum eos et officia sunt tempora velit voluptas.
+                           </a>
+                       </li>
+                       {% endfor %}
+                   </ul>
+               </div>
+           </div>
+       </section>
+   </div>
     <hr>
-        <section class="action-style" id="action-anchor">
-            <a href="{% url 'article_detail' slug=integer_day.slug %}" class="post-list-link">
-                <div class="action-content">
-                    {{ integer_day.title }}          
-                </div>
-            </a>
-        </section>
-    <hr>
-    <section class="post_list-style" id="post_list-2-anchor">
-        <div class="post_list-wrapper">
-            <div class="post_list">
-                <h3 class="post_list-title">События</h3>
-                <ul class="post_list-list">
-                    {% for event in data_event %}
-                        <li class="post-list-item">
-                            <a href="{% url 'event_detail' slug=event.slug %}" class="post-list-link">
-                                {{ event.title }}
-                            </a>
-                        </li>
-                    {% endfor %}
-                </ul>
-            </div>
-            <div class="post_list">
-                <h3 class="post_list-title">Аналитика</h3>
-                <ul class="post_list-list">
-                    {% for article in data_art_6_9 %}
-                    <li class="post-list-item">
-                        <a href="{% url 'article_detail' slug=article.slug %} class="post-list-link">
-                        {{ article.title }}
-                        </a>
-                    </li>
-                    {% endfor %}
-                </ul>
-            </div>
+        <div class="container">
+            <section class="index-action-style wow flash" id="index-action-anchor">
+                <a href="{% url 'article_detail' slug=integer_day.slug %}" class="index-action-link">
+                    <div class="index-action-content">
+                        {{ integer_day.title }}
+                    </div>
+                </a>
+            </section>
         </div>
-    </section>
+    <hr>
+   <div class="container">
+       <section class="index-lists-style" id="post_list-2-anchor">
+           <div class="index-lists-wrapper">
+               <div class="index-list-box">
+                   <h3 class="index-list-title">События</h3>
+                   <ul class="index-list">
+                       {% for event in data_event %}
+                       <li class="index-list-item">
+                           <a href="{% url 'event_detail' slug=event.slug %}" class="index-list-item-link">
+                               {{ event.title }}
+                           </a>
+                       </li>
+                       {% endfor %}
+                   </ul>
+               </div>
+               <div class="index-list-box">
+                   <h3 class="index-list-title">Аналитика</h3>
+                   <ul class="index-list">
+                       {% for article in data_art_6_9 %}
+                       <li class="index-list-item">
+                           <a href="{% url 'article_detail' slug=article.slug %}" class="index-list-item-link">
+                           {{ article.title }}
+                           </a>
+                       </li>
+                       {% endfor %}
+                   </ul>
+               </div>
+           </div>
+       </section>
+   </div>
     <hr>
     <section class="video_box-style" id="video_box-anchor">
         <div class="video_box-wrapper">

@@ -42,4 +42,77 @@
       color: #303738;
       text-decoration: none; }
 
+.index-follow {
+  display: flex;
+  justify-content: center;
+  flex-flow: column wrap;
+  align-items: center;
+  padding: 5vh 0; }
+  .index-follow .index-follow-title {
+    margin: 2vh 0;
+    font-size: 2em; }
+  .index-follow .index-follow-box {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center; }
+    .index-follow .index-follow-box .index-follow-input {
+      border-radius: 25px 0 0 25px;
+      border: solid 0.5px black;
+      border-right: none;
+      padding: 14px 26px;
+      margin: 0;
+      outline: none;
+      text-indent: 12px;
+      width: 25%; }
+    .index-follow .index-follow-box .index-follow-button {
+      border-radius: 0 25px 25px 0;
+      border: solid 0.5px #303738;
+      border-left: none;
+      background-color: #757e79;
+      margin: 0;
+      padding: 14px 12px;
+      cursor: pointer;
+      font-size: 0.9em;
+      font-weight: 700;
+      outline: none; }
+      .index-follow .index-follow-box .index-follow-button:hover {
+        background-color: #9aa39e; }
+      .index-follow .index-follow-box .index-follow-button:active {
+        background-color: #5e6762; }
+
+.index-lists-style {
+  padding: 5vh 0; }
+  .index-lists-style .index-lists-wrapper {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around; }
+    .index-lists-style .index-lists-wrapper .index-list-box {
+      max-width: 350px; }
+      .index-lists-style .index-lists-wrapper .index-list-box .index-list-title {
+        font-size: 2.2em; }
+      .index-lists-style .index-lists-wrapper .index-list-box .index-list .index-list-item {
+        list-style-type: decimal; }
+      .index-lists-style .index-lists-wrapper .index-list-box .index-list .index-list-item-link {
+        text-decoration: none;
+        color: #303738;
+        font-size: 1.6em; }
+        .index-lists-style .index-lists-wrapper .index-list-box .index-list .index-list-item-link:hover {
+          color: #63808b;
+          transition: .4s; }
+        .index-lists-style .index-lists-wrapper .index-list-box .index-list .index-list-item-link:focus {
+          color: #8b5d65; }
+
+.index-action-style {
+  display: flex;
+  padding: 5vh 0;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center; }
+  .index-action-style .index-action-content {
+    font-size: 3.5em; }
+  .index-action-style .index-action-link {
+    color: #303738;
+    text-decoration: none; }
+
 /*# sourceMappingURL=main.css.map */
