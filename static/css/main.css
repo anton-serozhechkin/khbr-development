@@ -214,7 +214,6 @@ body {
 
 .article-detail-publication-image {
     width: 100%;
-
 }
 .article-detail-paragraph {
     text-align: left;
@@ -427,7 +426,6 @@ body {
 .event-detail-short-text {
     margin: 24px 0;
 }
-
 .event-detail-paragraph {
     text-align: left;
     padding: 2vh 2vw 2vw;
@@ -618,9 +616,6 @@ body {
   .notfound .notfound-search>button:hover>span:before {
     background-color: #00b7ff;
   }
-
-
-
 .header-style {
     display: flex;
     flex-flow: row wrap;
@@ -722,6 +717,9 @@ body {
     padding: 100px 10vw;
 
 }
+.post_list {
+    flex: 1;
+}
 .post_list-wrapper {
     display: flex;
     flex-flow: row wrap;
@@ -737,7 +735,7 @@ body {
     color:#111;
 }
 .post-list-item {
-    list-style-type: none;
+    list-style-type: decimal;
 }
 .post-list-link {
     text-decoration: none;
@@ -837,8 +835,6 @@ input:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
 
 
 /*!!! Main index */
-
-
 /* |||| Index analytics*/
 .page_title-top_line {
     width: 60%;
@@ -848,7 +844,9 @@ input:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
     text-align: center;
     font-size: 32px;
 }
-
+.page_title-box {
+    margin-top: 25px;
+}
 .page_title-bottom_line {
     width: 60%;
     float: right;
@@ -884,6 +882,11 @@ overflow:hidden;
     background-color: dimgray;
     font-weight: 300;
 }
+.analytics-box-title a {
+    color:black;
+    text-decoration: none;
+
+}
 .analytics-box-content {
     display: flex;
     flex-flow: wrap row;
@@ -902,6 +905,7 @@ overflow:hidden;
 }
 .analytics-box-text {
     flex: 1;
+    height: 350px;
     font-size: 18px;
     display: flex;
     flex-direction: column;
@@ -1042,9 +1046,7 @@ overflow:hidden;
 }
 .event-post-content-text {
     font-size: 26px;
-}
-
-.event-post-content a {
+}.event-post-content a {
     color: #000000;
     text-decoration: none;
 }
@@ -1190,12 +1192,10 @@ overflow:hidden;
 .sign-window-return_password a{
         text-decoration:none;
         color:black;
-           cursor:pointer;
+    cursor:pointer;
 }
-.sign-window-bottom {
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+.sign-window_haveAcc {
+    text-align: center;
 }
 .createAccount {
     margin: 14px 0;
@@ -1212,11 +1212,14 @@ overflow:hidden;
     font-size:16px;
     padding:8px 14px;
     cursor:pointer;
-
 }
 .sign-window-next:active {
     background-color:#122aa3;
     transition: 0.3s;
+}
+.sign-window-bottom {
+    display: flex;
+    flex-direction: column;
 }
 .sign-window-google {
     background-color:#1a73e8;
@@ -1361,3 +1364,4 @@ overflow:hidden;
     font-weight: 700;
     width: 30%;
 }
+
