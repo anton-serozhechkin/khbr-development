@@ -4,7 +4,42 @@
   background-image: url(../../../img/index-banner-bgi.png);
   background-size: cover;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   width: 100%;
-  height: 75vh; }
+  height: 100vh;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center; }
+  .index-banner-style .index-banner-textBox {
+    background-color: rgba(1, 1, 1, 0.5);
+    width: 100%;
+    padding: 3.8vh 0;
+    text-align: center;
+    color: #fff;
+    font-size: 5em; }
+
+.index-posts-wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5vh 0; }
+  .index-posts-wrapper .index-post {
+    margin: 2vh 3vw; }
+    .index-posts-wrapper .index-post .index-post-image {
+      width: 315px; }
+      .index-posts-wrapper .index-post .index-post-image:hover {
+        -webkit-box-shadow: 1px 1px 5px 1px #7A7A7A;
+        box-shadow: 1px 1px 5px 3px #7A7A7A; }
+    .index-posts-wrapper .index-post .index-post-title {
+      font-size: 1.5em;
+      margin: 0.5vh 0; }
+      .index-posts-wrapper .index-post .index-post-title:hover {
+        color: #63808b;
+        transition: .4s; }
+    .index-posts-wrapper .index-post .index-post-link {
+      color: #303738;
+      text-decoration: none; }
 
 /*# sourceMappingURL=main.css.map */
