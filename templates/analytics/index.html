@@ -1,9 +1,10 @@
 {% extends 'base.html' %}
 {% block content %}
 {% load widget_tweaks %}
-    <section class="banner-style" id="banner-anchor">
-        <div class="banner-text_box">
-            <h1 class="banner-title">Kharkiv business review</h1>
+    <section class="index-banner-style" id="index-banner-anchor"    style="background-image: url(../../static/img/index-banner-bgi.png);
+">
+        <div class="index-banner-textBox">
+            <h1 class="index-banner-title">Kharkiv business review</h1>
         </div>
     </section>
 <!--post table section-->
@@ -35,29 +36,27 @@
             <div class="post_list">
                 <h3 class="post_list-title">Рейтинги</h3>
                  <ul class="post_list-list">
-                         <li class="post-list-item">
-                            {% for raiting in data_rait%}
+                     {% for raiting in data_rait%}
+
+                     <li class="post-list-item">
                             <a href="{% url 'raiting_detail' slug=raiting.slug %}" class="post-list-link">
-                                <span class="post-list-number">
-                                    {{ raiting.author }}
-                                </span>
                                 {{ raiting.title }}
                             </a>
-                            {% endfor %}
                         </li>
+                     {% endfor %}
                 </ul>
             </div>
             <div class="post_list">
                 <h3 class="post_list-title">Аналитика</h3>
                 <ul class="post_list-list">
+                    {% for article in data_art_1_4 %}
+
                     <li class="post-list-item">
-                        {% for article in data_art_1_4 %}
                         <a href="{% url 'article_detail' slug=article.slug %}" class="post-list-link">
-                            <span class="post-list-number">{{ article.author }}</span>
                             {{ article.title }}
                         </a>
-                        {% endfor %}
                     </li>
+                    {% endfor %}
                 </ul>
             </div>
         </div>
@@ -79,9 +78,6 @@
                     {% for event in data_event %}
                         <li class="post-list-item">
                             <a href="{% url 'event_detail' slug=event.slug %}" class="post-list-link">
-                                <span class="post-list-number">
-                                    {{ event.author }}
-                                </span>
                                 {{ event.title }}
                             </a>
                         </li>
@@ -94,10 +90,7 @@
                     {% for article in data_art_6_9 %}
                     <li class="post-list-item">
                         <a href="{% url 'article_detail' slug=article.slug %} class="post-list-link">
-                            <span class="post-list-number">
-                                {{ article.author }}
-                            </span>
-                        {{ article.title }} 
+                        {{ article.title }}
                         </a>
                     </li>
                     {% endfor %}
