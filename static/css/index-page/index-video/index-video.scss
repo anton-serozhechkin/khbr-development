@@ -1,0 +1,9 @@
+.index-video-style {
+  padding: 5vh 0;
+  .index-video-wrapper {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+}

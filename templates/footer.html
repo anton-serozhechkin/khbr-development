@@ -1,7 +1,8 @@
-{% load staticfiles %} 
+{% load staticfiles %}
+
 <footer class="footer-style" id="footer-anchor">
     <div class="footer-wrapper">
-        <ul class="footer-list">
+        <ul class="footer-list wow fadeInLeft">
             <li class="footer-list-item">
                 <a href="{% url 'analytics' %}" class="footer-link">
                     Аналитика
@@ -23,36 +24,36 @@
                 </a>
             </li>
         </ul>
-        <div class="footer-logo">
+        <div class="footer-logo wow fadeIn">
             <a href="#" class="footer-logo-link">
                 <img src="{% static 'img/logo.png' %}" alt="">
             </a>
         </div>
-        <ul class="footer-list">
+        <ul class="footer-list wow fadeInRight">
             <li class="footer-list-item">
                 <a href="#" class="footer-link">
-                    мы в соцсетях
+                    Мы в соцсетях
                 </a>
             </li>
-            <li class="footer-list-item" style="text-align: center">
+            <li class="footer-list-item" >
                 <a href="#" class="footer-link">
                     <i class="fa fa-facebook"></i>
                 </a><a href="#" class="footer-link">
-                    <i class="fa fa-twitter-square"></i>
-                </a><a href="#" class="footer-link">
-                    <i class="fa fa-linkedin-square"></i>
-                </a><a href="#" class="footer-link">
-                    <i class="fa fa-instagram"></i>
+                <i class="fa fa-twitter-square"></i>
+            </a><a href="#" class="footer-link">
+                <i class="fa fa-linkedin-square"></i>
+            </a><a href="#" class="footer-link">
+                <i class="fa fa-instagram"></i>
+            </a>
+            </li>
+            <li class="footer-list-item">
+                <a href="#" class="footer-link">
+                    Обратная связь
                 </a>
             </li>
             <li class="footer-list-item">
                 <a href="#" class="footer-link">
-                    обратная связь
-                </a>
-            </li>
-            <li class="footer-list-item">
-                <a href="#" class="footer-link">
-                    контакты
+                    Контакты
                 </a>
             </li>
         </ul>

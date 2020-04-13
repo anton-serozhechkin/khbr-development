@@ -129,21 +129,24 @@
        </section>
    </div>
     <hr>
-    <section class="video_box-style" id="video_box-anchor">
-        <div class="video_box-wrapper">
-            {% for video in data_video %}
-            <div class="video-box">
-                <a href="{{ video.url }}" class="video-box-link">
-                    <iframe width="400px" height="235px" src="{{ video.video }}"
-                        frameborder="0" allow="accelerometer; autoplay;
+    <div class="container">
+        <section class="index-video-style" id="index-video-anchor">
+            <div class="index-video-wrapper">
+                {% for video in data_video %}
+                <div class="index-video-box">
+                    <a href="{{ video.url }}" class="index-video-link">
+                        <iframe width="400px" height="235px" src="{{ video.video }}"
+                                frameborder="0" allow="accelerometer; autoplay;
                         encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen>
-                    </iframe>
-                    <h3 class="video-box-title">{{ video.title }}</h3>
-                </a>
+                                allowfullscreen>
+                        </iframe>
+                        <h3 class="index-video-title">{{ video.title }}</h3>
+
+                    </a>
+                </div>
+                {% endfor %}
             </div>
-            {% endfor %}
-        </div>
-    </section>
+        </section>
+    </div>
 {% endblock content %}
 <!--adaptive + -->
