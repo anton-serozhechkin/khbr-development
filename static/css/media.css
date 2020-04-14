@@ -120,6 +120,13 @@
     align-items: flex-start; }
     .event-detail .event-detail-info p {
       margin: 0.5vh 0; } }
+/* Portrait tablets and medium desktops */
+/* Portrait tablets and small desktops */
+/* Landscape phones and portrait tablets */
+/* Landscape phones and smaller */
+@media (max-width: 480px) {
+  .analytics-wrapper .analytics_post-box .analytics-box-content {
+    flex-flow: wrap row; } }
 .footer-style {
   padding: 5vh 2vw;
   background-color: #f3f4f2; }

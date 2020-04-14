@@ -219,7 +219,7 @@ time, mark, audio, video {
         transition: .4s; }
   .analytics-wrapper .analytics_post-box .analytics-box-content {
     display: flex;
-    flex-flow: row wrap; }
+    flex-flow: row nowrap; }
     .analytics-wrapper .analytics_post-box .analytics-box-content .analytics-box-image img {
       width: 455px;
       border-radius: 5px; }
@@ -232,6 +232,8 @@ time, mark, audio, video {
         color: #303738;
         text-decoration: none;
         font-size: 1.6em; }
+        .analytics-wrapper .analytics_post-box .analytics-box-content .analytics-box-text .analytics-box-text-content a p {
+          word-wrap: break-word; }
         .analytics-wrapper .analytics_post-box .analytics-box-content .analytics-box-text .analytics-box-text-content a:hover {
           color: #63808b; }
     .analytics-wrapper .analytics_post-box .analytics-box-content .analytics-box-info p {
@@ -280,7 +282,9 @@ time, mark, audio, video {
         color: #7A7A7A; }
   .analytics-detail-post .analytics-detail-content-box {
     font-size: 1.6em;
-    margin: 2vh 0; }
+    margin: 2vh 0;
+    display: flex;
+    flex-flow: row wrap; }
     .analytics-detail-post .analytics-detail-content-box:hover {
       text-shadow: 1px 1px 1px #C9C9C9;
       cursor: pointer; }
