@@ -1,16 +1,18 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="container-detail">
-    <section class="article-detail">
-        <div class="article-detail-top">
-            <div class="article-detail-top-left_side">
-                <h1 class="article-detail-title">{{ data_rait.tittle }}</h1>
-                <p class="article-detail-short-text">{{ data_rait.content }}</p>
-                 <span class="article-detail-author">{{ data_rait.author }}</span> <span class="article-detail-date">{{ raiting_data.created }}</span>
-                <div class="detail-viewCount">
-                    <i class="fa fa-eye" aria-hidden="true"></i>
-                    <span>222</span>
-                </div>
+<div class="container">
+    <section class="rating-detail">
+        <div class="rating-detail-top">
+            <div class="rating-detail-top-left_side">
+                <h1 class="rating-detail-title">{{ data_rait.title }}</h1>
+                <p class="rating-detail-short-text">{{ data_rait.content }}</p>
+                 <div class="rating-detail-info">
+                     <span class="rating-detail-author">{{ data_rait.author }}</span> <span class="rating-detail-date">{{ raiting_data.created }}</span>
+                     <div class="rating-detail-viewCount">
+                         <i class="fa fa-eye" aria-hidden="true"></i>
+                         <span>222</span>
+                     </div>
+                 </div>
             </div>
         </div>
     </section>
