@@ -16,7 +16,7 @@
                 <span>222</span>
             </div>
         </div>
-        <p class="event-detail-paragraph">{{ data_event.notes }}</p>
+        <p class="event-detail-paragraph">{{ data_event.content|safe }}</p>
     </section>
 </div>
 {% endblock content %}

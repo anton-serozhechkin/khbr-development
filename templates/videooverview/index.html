@@ -31,12 +31,18 @@
                     </h2>
                 </div>
                 <div class="video-box-info">
-                    <p class="video-box-author"><i class="fa fa-user"></i>Максим Серпухов</p>
-                    <p class="video-box-time"><i class="fa fa-calendar"></i>{{ video.created }}</p>
+                    <p class="video-box-author">
+                        <i class="fa fa-user"></i>
+                        {{ video.author }}
+                    </p>
+                    <p class="video-box-time">
+                        <i class="fa fa-calendar"></i>
+                        {{ video.created }}
+                    </p>
                 </div>
 
                 <div class="video-index-box-description">
-                    <p>{{ video.notes|truncatechars:10 }}</p>
+                    <p>{{ video.notes|safe }}</p>
                 </div>
             </div>
             {% endfor %}

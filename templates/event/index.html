@@ -25,8 +25,7 @@
                     </a>
                 </div>
                 <div class="event-post-content-text">
-                    {{ event.notes }}
-                    Lorem ipsum dolor sit amet, consectetur2345trree adipisicing elit. Accusantium doloribus fuga id maiores nisi!
+                    {{ event.short_description|safe }}
                 </div>
                 <div class="event-post-content-info">
                     <p class="event-post-content-place"><i class="fa fa-map-marker" aria-hidden="true"></i>Где? - {{ event.place }}</p>

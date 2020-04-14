@@ -5,7 +5,7 @@
         <div class="rating-detail-top">
             <div class="rating-detail-top-left_side">
                 <h1 class="rating-detail-title">{{ data_rait.title }}</h1>
-                <p class="rating-detail-short-text">{{ data_rait.content }}</p>
+                <p class="rating-detail-short-text">{{ data_rait.content|safe }}</p>
                  <div class="rating-detail-info">
                      <span class="rating-detail-author">{{ data_rait.author }}</span> <span class="rating-detail-date">{{ raiting_data.created }}</span>
                      <div class="rating-detail-viewCount">

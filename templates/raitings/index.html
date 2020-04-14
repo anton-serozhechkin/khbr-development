@@ -24,7 +24,7 @@
                 <img src="../../static/img/background-body.png" alt="">
             </div>
             <div class="rating-post-content">
-                <p>{{ raiting.content|truncatechars:130 }}</p>
+                <p>{{ raiting.short_description|safe }}</p>
                 <div class="analytics-box-info">
                     <p class="analytics-box-author">{{ raiting.author }}</p>
                     <p class="analytics-box-time">{{ raiting.created }}</p>
