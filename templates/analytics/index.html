@@ -8,6 +8,21 @@
         </div>
     </section>
 <!--post table section-->
+
+<div class="page_title-box">
+
+    <div class="page_title-top_line">
+
+    </div>
+    <div class="page_title-title">
+        <h1>Аналитика</h1>
+    </div>
+    <div class="page_title-bottom_line">
+
+    </div>
+
+</div>
+
     <div class="container">
         <section class="index-posts-style" id="index-posts-anchor">
             <!--    post table wrapper    -->
@@ -115,6 +130,39 @@
         <section class="index-video-style" id="index-video-anchor">
             <div class="index-video-wrapper">
                 {% for video in data_video %}
+                <div class="index-video-box">
+                    <a href="{{ video.url }}" class="index-video-link">
+                        <iframe width="400px" height="235px" src="{{ video.video }}"
+                                frameborder="0" allow="accelerometer; autoplay;
+                        encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen>
+                        </iframe>
+                        <h3 class="index-video-title">{{ video.title }}</h3>
+
+                    </a>
+                </div>
+                <div class="index-video-box">
+                    <a href="{{ video.url }}" class="index-video-link">
+                        <iframe width="400px" height="235px" src="{{ video.video }}"
+                                frameborder="0" allow="accelerometer; autoplay;
+                        encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen>
+                        </iframe>
+                        <h3 class="index-video-title">{{ video.title }}</h3>
+
+                    </a>
+                </div>
+                <div class="index-video-box">
+                    <a href="{{ video.url }}" class="index-video-link">
+                        <iframe width="400px" height="235px" src="{{ video.video }}"
+                                frameborder="0" allow="accelerometer; autoplay;
+                        encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen>
+                        </iframe>
+                        <h3 class="index-video-title">{{ video.title }}</h3>
+
+                    </a>
+                </div>
                 <div class="index-video-box">
                     <a href="{{ video.url }}" class="index-video-link">
                         <iframe width="400px" height="235px" src="{{ video.video }}"

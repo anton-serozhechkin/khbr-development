@@ -5,5 +5,22 @@
     flex-flow: row wrap;
     justify-content: space-between;
     align-items: center;
+    .index-video-box {
+      margin: 3vh 1vw;
+      a{
+        text-decoration: none;
+
+      }
+      .index-video-title {
+        color:#303738;
+        font-size: 1.8em;
+        &:hover {
+          color:#63808b;
+        }
+        &:focus {
+          color:#8b5d65;
+        }
+      }
+    }
   }
 }

@@ -177,6 +177,17 @@ time, mark, audio, video {
     flex-flow: row wrap;
     justify-content: space-between;
     align-items: center; }
+    .index-video-style .index-video-wrapper .index-video-box {
+      margin: 3vh 1vw; }
+      .index-video-style .index-video-wrapper .index-video-box a {
+        text-decoration: none; }
+      .index-video-style .index-video-wrapper .index-video-box .index-video-title {
+        color: #303738;
+        font-size: 1.8em; }
+        .index-video-style .index-video-wrapper .index-video-box .index-video-title:hover {
+          color: #63808b; }
+        .index-video-style .index-video-wrapper .index-video-box .index-video-title:focus {
+          color: #8b5d65; }
 
 .page_title-box {
   text-align: center;
