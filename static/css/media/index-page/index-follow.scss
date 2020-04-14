@@ -19,10 +19,21 @@
 
 /* Landscape phones and smaller */
 @media (max-width: 480px) {
-  .index-banner-style {
-    .index-banner-textBox {
-      .index-banner-title {
-        font-size: 1em;
+  .index-follow {
+      .index-follow-title {
+        font-size: 1.4em;
+    }
+    .index-follow-box {
+      .index-follow-button {
+        width: 100%;
+        border-radius: 0;
+        border: none;
+      }
+      .index-follow-input {
+        padding-left: 0;
+        width: 100%;
+        border-radius: 0;
+        border: none;
       }
     }
   }
