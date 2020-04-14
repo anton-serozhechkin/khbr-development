@@ -54,7 +54,7 @@ time, mark, audio, video {
       float: right; }
 
 .index-banner-style {
-  background-image: url(../../../img/index-banner-bgi.png);
+  background-image: url(../../img/index-banner-bgi.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -70,7 +70,8 @@ time, mark, audio, video {
     padding: 3.8vh 0;
     text-align: center;
     color: #fff;
-    font-size: 5em; }
+    font-size: 5em;
+    font-family: Robo,'Arial',sans-serif; }
 
 .index-posts-wrapper {
   display: flex;
@@ -163,7 +164,8 @@ time, mark, audio, video {
   align-items: center;
   justify-content: center; }
   .index-action-style .index-action-content {
-    font-size: 3.5em; }
+    font-size: 3.5em;
+    word-wrap: break-word; }
   .index-action-style .index-action-link {
     color: #303738;
     text-decoration: none; }
@@ -175,6 +177,91 @@ time, mark, audio, video {
     flex-flow: row wrap;
     justify-content: space-between;
     align-items: center; }
+
+.sign-container {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+  height: 100%; }
+  .sign-container .sign-window {
+    background-color: white;
+    padding: 15px 22px;
+    border: solid 1px black; }
+    .sign-container .sign-window .sign-window-title {
+      text-align: center;
+      margin: 1.5vh 0; }
+
+.sign-window-input {
+  display: block;
+  width: 325px;
+  margin: 1vh 0;
+  padding: 6px 16px;
+  background-color: #e8f0fe;
+  border: solid 1px #1a40e8;
+  cursor: pointer; }
+
+.sign-window-input:focus {
+  cursor: unset; }
+
+.sign-window-form p {
+  font-size: 12px; }
+
+.sign-window-return_password {
+  margin: 14px 0;
+  font-size: 18px; }
+
+.sign-window-return_password a {
+  text-decoration: none;
+  color: black;
+  cursor: pointer; }
+
+.sign-window-bottom {
+  display: flex;
+  flex-flow: wrap column;
+  align-items: center; }
+
+.createAccount {
+  margin: 14px 0;
+  font-size: 18px;
+  text-decoration: none;
+  cursor: pointer; }
+
+.sign-window-next {
+  background-color: #1a73e8;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 16px;
+  padding: 8px 14px;
+  cursor: pointer; }
+
+.sign-window-next:active {
+  background-color: #122aa3;
+  transition: 0.3s; }
+
+.sign-window-google {
+  background-color: #1a73e8;
+  text-align: center;
+  padding: 14px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 6px; }
+
+.sign-window-google a {
+  text-decoration: none; }
+
+.sign-window-google span {
+  margin-right: 24px;
+  font-size: 20px;
+  color: white; }
+
+.sign-window-google img {
+  height: 22px;
+  width: 22px;
+  position: relative;
+  top: 4px; }
 
 .footer-style {
   padding: 5vh 2vw;
