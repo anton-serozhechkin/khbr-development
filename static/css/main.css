@@ -183,6 +183,8 @@ time, mark, audio, video {
   flex-flow: row wrap;
   align-items: center;
   justify-content: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   height: 100%; }
   .sign-container .sign-window {
     background-color: white;
