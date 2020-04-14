@@ -6,15 +6,17 @@ class EventAdmin(admin.ModelAdmin):
     list_editable = ('day', 'place', )
     list_filter = ('place', 'created', 'is_active')
     search_fields = ('title', 'short_description', 'content', 'day', 'place')
-#     prepopulated_fields = {'slug': ('title', )}
+    prepopulated_fields = {'slug': ('title', )}
     fieldsets = (
         (None, {
             'fields':(
                 'title',
+                'slug',
                 'short_description',
                 'day',
                 'place',
                 'content',
+                'author'
             )
         }),
         ('Дополнительные опции',
