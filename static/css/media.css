@@ -112,6 +112,13 @@
     flex-flow: column wrap;
     align-items: flex-start; }
     .event-wrapper .event-post-box .event-post-content .event-post-content-info p {
+      margin: 0.5vh 0; }
+
+  .event-detail .event-detail-info {
+    margin: 2vh 0;
+    flex-flow: column wrap;
+    align-items: flex-start; }
+    .event-detail .event-detail-info p {
       margin: 0.5vh 0; } }
 .footer-style {
   padding: 5vh 2vw;
