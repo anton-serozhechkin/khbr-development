@@ -13,8 +13,8 @@
 <div class="container">
 
     <section class="ratings-wrapper">
-        {% for raiting in list_rait %}
         <div class="rating-post-box">
+            {% for raiting in list_rait %}
             <div class="rating-post-title">
                 <a href="{% url 'raiting_detail' slug=raiting.slug %}" class="rating-post-title-link">
                     {{ raiting.title }}
@@ -30,8 +30,8 @@
                     <p class="analytics-box-time">{{ raiting.created }}</p>
                 </div>
             </div>
+            {% endfor %}
         </div>
-        {% endfor %}
     </section>
 </div>
 <!--<section class="pages-carousel">-->
