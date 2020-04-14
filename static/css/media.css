@@ -102,6 +102,13 @@
   align-items: center;
   text-align: center; }
 
+/* Portrait tablets and medium desktops */
+/* Portrait tablets and small desktops */
+/* Landscape phones and portrait tablets */
+/* Landscape phones and smaller */
+@media (max-width: 480px) {
+  .event-wrapper .event-post-box .event-post-content-info {
+    text-align: left; } }
 .footer-style {
   padding: 5vh 2vw;
   background-color: #f3f4f2; }

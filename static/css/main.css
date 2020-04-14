@@ -274,6 +274,43 @@ time, mark, audio, video {
       text-shadow: 1px 1px 1px #C9C9C9;
       cursor: pointer; }
 
+.event-wrapper {
+  margin: 5vh 0;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center; }
+  .event-wrapper .event-post-box {
+    width: 100%;
+    border-bottom: solid 2px #303738;
+    padding-bottom: 2vh; }
+    .event-wrapper .event-post-box .event-post-content .event-post-title {
+      font-size: 3em;
+      text-align: center; }
+      .event-wrapper .event-post-box .event-post-content .event-post-title a {
+        text-decoration: none;
+        color: #303738; }
+        .event-wrapper .event-post-box .event-post-content .event-post-title a:hover {
+          color: #63808b; }
+        .event-wrapper .event-post-box .event-post-content .event-post-title a:focus {
+          color: #8b5d65; }
+    .event-wrapper .event-post-box .event-post-content .event-post-content-text {
+      text-align: left;
+      font-size: 1.4em;
+      margin: 1vh 0; }
+    .event-wrapper .event-post-box .event-post-content .event-post-content-info {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-around;
+      align-items: center;
+      color: #7A7A7A;
+      font-size: 1.2em;
+      margin: 1vh 0; }
+      .event-wrapper .event-post-box .event-post-content .event-post-content-info p:hover {
+        text-decoration: underline;
+        cursor: pointer; }
+      .event-wrapper .event-post-box .event-post-content .event-post-content-info i {
+        margin-right: 8px; }
+
 .sign-container {
   display: flex;
   flex-flow: row wrap;
