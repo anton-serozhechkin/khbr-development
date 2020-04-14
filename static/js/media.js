@@ -4,7 +4,6 @@ let headerNav = document.getElementById('header-anchor');
 let headerNavMenu = document.getElementById('header-navigation-id');
 let signContainer = document.getElementById('sign-container-id');
 if (screen.width <= 480) {
-    signContainer.style.backgroundImage = "none";
     navBars.style.display = "block";
     for(let i = 0; i < headerNavList.length;i++) {
         headerNavList[i].classList.add('navUnHide')
