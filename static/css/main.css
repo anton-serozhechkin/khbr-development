@@ -361,7 +361,7 @@ time, mark, audio, video {
     .event-detail .event-detail-paragraph:hover {
       text-shadow: 1px 1px 1px #C9C9C9;
       cursor: pointer; }
-  .event-detail .event-detail-publication-image {
+  .event-detail .event-detail-publication-image img {
     width: 100%;
     height: 55vh;
     border-radius: 10px; }
@@ -405,6 +405,10 @@ time, mark, audio, video {
 
 .rating-detail {
   margin: 5vh 0; }
+  .rating-detail .rating-detail-publication-image img {
+    width: 100%;
+    height: 55vh;
+    border-radius: 10px; }
   .rating-detail .rating-detail-top .rating-detail-top-left_side .rating-detail-title {
     font-size: 2em;
     color: #303738; }

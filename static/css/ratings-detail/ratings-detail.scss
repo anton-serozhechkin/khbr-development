@@ -1,5 +1,12 @@
 .rating-detail {
   margin: 5vh 0;
+  .rating-detail-publication-image {
+    img {
+      width: 100%;
+      height: 55vh;
+      border-radius: 10px;
+    }
+  }
   .rating-detail-top {
     .rating-detail-top-left_side {
       .rating-detail-title {

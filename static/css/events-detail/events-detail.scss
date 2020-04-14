@@ -47,8 +47,10 @@
     }
   }
   .event-detail-publication-image {
-    width: 100%;
-    height: 55vh;
-    border-radius: 10px;
+      img  {
+        width: 100%;
+        height: 55vh;
+        border-radius: 10px;
+      }
   }
 }
