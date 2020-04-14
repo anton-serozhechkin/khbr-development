@@ -21,8 +21,15 @@
 @media (max-width: 480px) {
   .event-wrapper {
     .event-post-box {
-      .event-post-content-info {
-        text-align: left;
+      .event-post-content {
+        .event-post-content-info {
+          margin: 2vh 0;
+          flex-flow: column wrap;
+          align-items: flex-start;
+          p {
+            margin: 0.5vh 0;
+          }
+        }
       }
     }
   }
