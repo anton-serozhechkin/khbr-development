@@ -3,7 +3,7 @@ from django.urls import reverse
 from django.utils import timezone
 from django.conf import settings
 from django.contrib.auth.models import User
-
+from tinymce.models import HTMLField
 class Author(models.Model):
     user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, verbose_name='Пользователь')
     bio = models.CharField('Немного о себе', max_length=500)
@@ -35,9 +35,9 @@ class Article(models.Model):
     category = models.ForeignKey(Category, verbose_name="Категория", on_delete=models.CASCADE)
     title = models.CharField('Заголовок', max_length=120)
     slug = models.SlugField('Ссылка')
-    short_description = models.CharField('Короткое описание на 200 символов', max_length=200)
+    short_description = HTMLField('Короткое описание на 200 символов', max_length=200)
     image = models.ImageField("Фотография", blank=True)
-    content = models.TextField("Контент")
+    content = HTMLField("Контент")
     integer_of_day = models.BooleanField('Цифра дня', default=False)
     author = models.ForeignKey(Author, on_delete=models.DO_NOTHING, verbose_name="Автор")
     created = models.DateTimeField('Дата создания', default=timezone.now)

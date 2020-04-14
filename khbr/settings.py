@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'widget_tweaks',
     'embed_video',
+    'tinymce',
     'raitings',
     'videooverview',
     'event',

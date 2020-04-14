@@ -6,7 +6,7 @@ class RaitingAdmin(admin.ModelAdmin):
     list_editable = ('is_active', )
     list_filter = ('created', 'is_active', 'author')
     search_fields = ('title', 'short_description', 'content', 'author')
-    prepopulated_fields = {'slug': ('title', )}
+#     prepopulated_fields = {'slug': ('title', )}
     fieldsets = (
         (None, {
             'fields':(
