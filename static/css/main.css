@@ -236,6 +236,44 @@ time, mark, audio, video {
     font-size: 26px;
     margin: 0 4px; }
 
+.analytics-detail-post {
+  margin: 5vh 0; }
+  .analytics-detail-post .analytics-detail-image img {
+    width: 100%;
+    height: 65vh;
+    border-radius: 10px; }
+  .analytics-detail-post .analytics-detail-info {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    margin: 2vh 0; }
+    .analytics-detail-post .analytics-detail-info a {
+      text-decoration: none;
+      color: #303738;
+      font-size: 1.4em; }
+      .analytics-detail-post .analytics-detail-info a:hover {
+        color: #63808b; }
+      .analytics-detail-post .analytics-detail-info a:focus {
+        color: #8b5d65; }
+    .analytics-detail-post .analytics-detail-info .analytics-detail-infoBox {
+      display: flex;
+      align-items: center;
+      flex-flow: row wrap; }
+      .analytics-detail-post .analytics-detail-info .analytics-detail-infoBox p {
+        font-size: 1em;
+        margin: 0 1vw;
+        color: #7A7A7A; }
+      .analytics-detail-post .analytics-detail-info .analytics-detail-infoBox .detail-viewCount {
+        font-size: 1em;
+        margin: 0 1vw;
+        color: #7A7A7A; }
+  .analytics-detail-post .analytics-detail-content-box {
+    font-size: 1.6em;
+    margin: 2vh 0; }
+    .analytics-detail-post .analytics-detail-content-box:hover {
+      text-shadow: 1px 1px 1px #C9C9C9;
+      cursor: pointer; }
+
 .sign-container {
   display: flex;
   flex-flow: row wrap;
