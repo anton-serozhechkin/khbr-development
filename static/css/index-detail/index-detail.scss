@@ -1,5 +1,16 @@
 .analytics-detail-post {
   margin: 5vh 0;
+  .analytics-detail-title {
+    font-size: 2.4em;
+    color:#303738;
+    margin: 2vh 0;
+    text-align: center;
+    &:hover {
+      color:#63808b;
+      transition: .4s;
+      cursor: pointer;
+    }
+  }
   .analytics-detail-image {
     img {
       width: 100%;
