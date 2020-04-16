@@ -1,19 +1,20 @@
 from django.db import models
 from django.urls import reverse
 from django.utils import timezone
+from analytics.models import Author
+from tinymce.models import HTMLField
 
-def upload_raiting_images_folder(instance, filename):
-    filename = instance.id + '.' + filename.split('.')[-1]
-    return "{}/{}".format(instance.id, filename)
 
 class Raiting(models.Model):
-    id = models.AutoField(primary_key=True)
     title = models.CharField('Заголовок',max_length=200)
-    content = models.TextField('Контент')
-    author = models.TextField('Автор', blank=True)
-    image = models.ImageField('Фотография', blank=True, upload_to=upload_raiting_images_folder)
+    slug = models.SlugField('Ссылка')
+    short_description = HTMLField('Короткое описание на 200 символов', max_length=200)
+    content = HTMLField("Контент")
+    author = models.ForeignKey(Author, on_delete=models.DO_NOTHING, verbose_name="Автор")
+    image = models.ImageField('Фотография', upload_to='raitings/%Y/%m/%h/', blank=True)
     created = models.DateTimeField('Дата создания', default=timezone.now)
     is_active = models.BooleanField(default=True, verbose_name='Видимость для пользователя')
+    views = models.PositiveIntegerField('Просмотров публикации', default=0)
 
     class Meta:
         verbose_name = 'Рейтинг'
@@ -23,4 +24,4 @@ class Raiting(models.Model):
         return self.title
     
     def get_absolute_url(self):
-        return reverse('raiting_detail', kwargs={'id': self.id})
+        return reverse('raiting_detail', kwargs={'slug': self.slug})

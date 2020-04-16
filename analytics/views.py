@@ -1,25 +1,48 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.shortcuts import get_object_or_404
 from .models import *
+from raitings.models import Raiting
+from event.models import Event
+from videooverview.models import VideoDownloading
+from .forms import SubscribeForm
 
 def main(request):
-    context = []
-    data_cat = Category.objects.filter(is_active=True)
-    data_art = Article.objects.filter(is_active=True).order_by('-created')
-    data_art_by_cat = Article.objects.filter(category=4)
-    context.append({'data_cat': data_cat, 'data_art': data_art, 'data_art_by_cat': data_art_by_cat})
+    if request.method == 'POST':
+        form = SubscribeForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('analytics')
+        else:
+            return redirect('analytics')
+    else:
+        form = SubscribeForm()
+        last_art = Article.objects.filter(is_active=True).order_by('-created')[0:5]
+        data_rait = Raiting.objects.filter(is_active=True).order_by('-created')[0:3]
+        data_art_1_4 = Article.objects.filter(is_active=True)[0:3]
+        data_video = VideoDownloading.objects.filter(is_active=True)[0:5]
+        data_art_6_9 = Article.objects.filter(is_active=True)[5:8]
+        data_event = Event.objects.filter(is_active=True)[0:3]
+        integer_day = Article.objects.filter(integer_of_day=True).last()
     return render(request, 'analytics/index.html', locals())
 
+def article_index(request):
+    data_art = Article.objects.filter(is_active=True).order_by('-created')
+    return render(request, 'analytics/article_index.html', locals())
 
-'''def article_by_categ(request, *args, **kwargs):
-    category_by_url = kwargs.get('slug')    
-    data_art = Article.objects.filter(is_active=True, category=category_by_url).order_by('-created')
-    context = []
-    context.append({'data_art': data_art})
-    return render(request, 'analytics/article_by_categ.html', locals())'''
-
-
-def article_detail(request, id):
-    data_art = Article.objects.filter(id=id)
-    context = []
-    context.append({'data_art': data_art})
+def article_detail(request, slug):
+    article = get_object_or_404(Article, slug=slug)
+    article.views += 1
+    article.save()
     return render(request, 'analytics/article_detail.html', locals())
+
+def not_found_view(request, exception):
+    return render(request, 'errors/404.html')
+
+def error_view(request):
+    return render(request, 'errors/500.html')
+
+def permission_denied_view(request, exception):
+    return render(request, 'errors/403.html')
+
+def bad_request_view(request, exception):
+    return render(request, 'errors/400.html')
