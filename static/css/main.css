@@ -340,6 +340,11 @@ time, mark, audio, video {
       .event-wrapper .event-post-box .event-post-content .event-post-content-info i {
         margin-right: 8px; }
 
+.event-post-image img {
+  width: 100%;
+  height: 55vh;
+  border-radius: 10px; }
+
 .event-detail {
   margin: 5vh 0;
   display: flex;
