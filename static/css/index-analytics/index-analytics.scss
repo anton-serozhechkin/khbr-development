@@ -51,6 +51,8 @@
         flex-flow: column wrap;
         justify-content: space-between;
         .analytics-box-text-content {
+          width: 750px;
+
           a {
             p {
               word-wrap: break-word;

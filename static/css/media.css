@@ -126,7 +126,11 @@
 /* Landscape phones and smaller */
 @media (max-width: 480px) {
   .analytics-wrapper .analytics_post-box .analytics-box-content {
-    flex-flow: wrap row; } }
+    flex-flow: wrap row; }
+    .analytics-wrapper .analytics_post-box .analytics-box-content p {
+      width: 315px; }
+    .analytics-wrapper .analytics_post-box .analytics-box-content .analytics-box-text {
+      margin-left: 0; } }
 .footer-style {
   padding: 5vh 2vw;
   background-color: #f3f4f2; }

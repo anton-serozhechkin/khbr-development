@@ -236,14 +236,16 @@ time, mark, audio, video {
         display: flex;
         flex-flow: column wrap;
         justify-content: space-between; }
-        .analytics-wrapper .analytics_post-box .analytics-box-content .analytics-box-text .analytics-box-text-content a {
-          color: #303738;
-          text-decoration: none;
-          font-size: 1.6em; }
-          .analytics-wrapper .analytics_post-box .analytics-box-content .analytics-box-text .analytics-box-text-content a p {
-            word-wrap: break-word; }
-          .analytics-wrapper .analytics_post-box .analytics-box-content .analytics-box-text .analytics-box-text-content a:hover {
-            color: #63808b; }
+        .analytics-wrapper .analytics_post-box .analytics-box-content .analytics-box-text .analytics-box-text-content {
+          width: 750px; }
+          .analytics-wrapper .analytics_post-box .analytics-box-content .analytics-box-text .analytics-box-text-content a {
+            color: #303738;
+            text-decoration: none;
+            font-size: 1.6em; }
+            .analytics-wrapper .analytics_post-box .analytics-box-content .analytics-box-text .analytics-box-text-content a p {
+              word-wrap: break-word; }
+            .analytics-wrapper .analytics_post-box .analytics-box-content .analytics-box-text .analytics-box-text-content a:hover {
+              color: #63808b; }
       .analytics-wrapper .analytics_post-box .analytics-box-content .analytics-box-info p {
         margin: 1vh 0;
         color: #7A7A7A; }
