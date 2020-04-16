@@ -11,6 +11,7 @@
         </div>
         <div class="sign-window-form">
             <form action="{% url 'signin' %}" method="post">
+                {% csrf_token %}
                 <p>Введите Ваш логин:</p>
                 {% render_field form.username name="user_login" class="sign-window-input" placeholder="Логин" %}
                 <p>Введите Ваш пароль:</p>
