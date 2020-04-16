@@ -15,7 +15,6 @@
         </a>
     </div>
 </div>
-
     <div class="container">
         <section class="index-posts-style" id="index-posts-anchor">
             <!--    post table wrapper    -->
@@ -23,7 +22,9 @@
                 {% for article in last_art %}
                 <div class="index-post  wow fadeInDown">
                     <a href="{% url 'article_detail' slug=article.slug %}" class="index-post-link">
-                        <img src="../../static/img/index-banner-bgi.png" alt="post image" class="index-post-image">
+                        {% if article.image %}
+                            <img src="{{ article.image.url }}" alt="post image" class="index-post-image">
+                        {% endif %}
                         <p class="index-post-title">{{ article.title }}</p>
                     </a>
                 </div>
@@ -50,7 +51,7 @@
                <div class="index-list-box">
                    <h3 class="index-list-title">Рейтинги</h3>
                    <ul class="index-list">
-                       {% for raiting in data_rait%}
+                       {% for raiting in data_rait %}
 
                        <li class="index-list-item">
                            <a href="{% url 'raiting_detail' slug=raiting.slug %}" class="index-list-item-link">
@@ -68,7 +69,6 @@
                        <li class="index-list-item">
                            <a href="{% url 'article_detail' slug=article.slug %}" class="index-list-item-link">
                                {{ article.title }}
-                               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque eum fuga hic maiores omnis ut! Ad asperiores cum eos et officia sunt tempora velit voluptas.
                            </a>
                        </li>
                        {% endfor %}

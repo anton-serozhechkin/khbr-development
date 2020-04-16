@@ -3,11 +3,8 @@ from .models import *
 from django.shortcuts import get_object_or_404
 
 def main(request):
-    list_rait = Raiting.objects.filter(is_active=True).order_by('-created')
-    if list_rait:
-        context = {'list_rait': list_rait}
-    else:
-        context = {'blank': 'К сожалению, ничего не найдено'}
+    list_rait = Raiting.objects.filter(is_active=True).order_by('-created')    
+    context = {'list_rait': list_rait}
     return render(request, 'raitings/index.html', context)
 
     

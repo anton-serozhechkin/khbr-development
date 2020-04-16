@@ -10,7 +10,6 @@
         <div class="page_title-bottom_line">
         </div>
     </div>
-    {% if data_art %}
   <div class="container">
       <section class="analytics-wrapper" id="analytics-wrapper-anchor">
           {% for article in data_art %}
@@ -23,9 +22,11 @@
                   </a>
               </div>
               <div class="analytics-box-content">
+                  {% if article.image %}
                   <div class="analytics-box-image">
-                      <img src="{% static 'img/index-banner-bgi.png' %}" alt="">
+                      <img src="{{ article.image.url }}" alt="">
                   </div>
+                  {% endif %}
                   <div class="analytics-box-text">
                       <div class="analytics-box-text-content">
                           <a href="#" class="analytics-box-text-content-link">
@@ -62,7 +63,4 @@
 <!--            <div class="pages-carousel-bottom"></div>-->
 <!--        </div>-->
 <!--    </section>-->
-    {% else %}
-    {{ blank }}
-    {% endif %}
 {% endblock content %}

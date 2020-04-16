@@ -9,9 +9,7 @@
     <div class="page_title-bottom_line">
     </div>
 </div>
-{% if list_rait %}
 <div class="container">
-
     <section class="ratings-wrapper">
         <div class="rating-post-box">
             {% for raiting in list_rait %}
@@ -20,9 +18,11 @@
                     {{ raiting.title }}
                 </a>
             </div>
+            {% if raiting.image %}
             <div class="rating-post-image">
-                <img src="../../static/img/background-body.png" alt="">
+                <img src="{{ raiting.image.url }}" alt="">
             </div>
+            {% endif %}
             <div class="rating-post-content">
                 <p>{{ raiting.short_description|safe }}</p>
                 <div class="analytics-box-info">
@@ -54,7 +54,4 @@
 <!--        <div class="pages-carousel-bottom"></div>-->
 <!--    </div>-->
 <!--</section>-->
-{% else %}
-    {{ blank }}
-{% endif %}
 {% endblock content %}

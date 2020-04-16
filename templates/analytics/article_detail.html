@@ -1,64 +1,32 @@
 {% extends 'base.html' %}
+{% load staticfiles %}
 {% block content %}
 <div class="container">
-
     <section class="analytics-detail-style" id="analytics-detail-anchor">
-
             <div class="analytics-detail-post">
                 <div class="analytics-detail-title">
-                    <h1>Title of analytic post</h1>
+                    <h1>{{ article.title }}</h1>
                 </div>
+                {% if article.image %}
                 <div class="analytics-detail-image">
-                    <img src="../../static/img/index-banner-bgi.png" alt="">
+                    <img src="{{ article.image.url }}" alt="">
                 </div>
+                {% endif %}
                 <div class="analytics-detail-info">
-                    <a href="#"><h3>Category</h3>
-                    </a>
-                <div class="analytics-detail-infoBox">
-                    <p class="analytics-box-author">Максим Серпухов</p>
-                    <p class="analytics-box-time">22 Января, 2020</p>
-
-                    <div class="detail-viewCount">
-                        <i class="fa fa-eye" aria-hidden="true"></i>
-                        <span>222</span>
+                    <h3>{{ article.category }}</h3>
+                    <div class="analytics-detail-infoBox">
+                        <p class="analytics-box-author">{{ article.author }}</p>
+                        <p class="analytics-box-time">{{ article.created }}</p>
+                        <div class="detail-viewCount">
+                            <i class="fa fa-eye" aria-hidden="true"></i>
+                            <span>222</span>
+                        </div>
                     </div>
                 </div>
-                </div>
-
                 <div class="analytics-detail-content-box">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab architecto aut autem beatae delectus
-                        dolor excepturi explicabo facere impedit, ipsa laborum minus nisi odio optio possimus, praesentium
-                        quaerat quisquam rem repudiandae sit? Laudantium odit sint voluptatem. Hic, repudiandae sapiente. Ab
-                        dolore dolores impedit, ipsa itaque odio quam quasi vero voluptas!</p>
-                </div>
-                <div class="analytics-detail-content-box">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab architecto aut autem beatae delectus
-                        dolor excepturi explicabo facere impedit, ipsa laborum minus nisi odio optio possimus, praesentium
-                        quaerat quisquam rem repudiandae sit? Laudantium odit sint voluptatem. Hic, repudiandae sapiente. Ab
-                        dolore dolores impedit, ipsa itaque odio quam quasi vero voluptas!</p>
-                </div>
-                <div class="analytics-detail-content-box">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab architecto aut autem beatae delectus
-                        dolor excepturi explicabo facere impedit, ipsa laborum minus nisi odio optio possimus, praesentium
-                        quaerat quisquam rem repudiandae sit? Laudantium odit sint voluptatem. Hic, repudiandae sapiente. Ab
-                        dolore dolores impedit, ipsa itaque odio quam quasi vero voluptas!</p>
-                </div>
-                <div class="analytics-detail-content-box">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab architecto aut autem beatae delectus
-                        dolor excepturi explicabo facere impedit, ipsa laborum minus nisi odio optio possimus, praesentium
-                        quaerat quisquam rem repudiandae sit? Laudantium odit sint voluptatem. Hic, repudiandae sapiente. Ab
-                        dolore dolores impedit, ipsa itaque odio quam quasi vero voluptas!</p>
-                </div>
-                <div class="analytics-detail-content-box">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab architecto aut autem beatae delectus
-                        dolor excepturi explicabo facere impedit, ipsa laborum minus nisi odio optio possimus, praesentium
-                        quaerat quisquam rem repudiandae sit? Laudantium odit sint voluptatem. Hic, repudiandae sapiente. Ab
-                        dolore dolores impedit, ipsa itaque odio quam quasi vero voluptas!</p>
+                    {{ article.content }}
                 </div>
             </div>
-
-
     </section>
-
 </div>
 {% endblock content %}

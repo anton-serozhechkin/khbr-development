@@ -9,15 +9,16 @@
     <div class="page_title-bottom_line">
     </div>
 </div>
-{% if list_event %}
 <div class="container">
 
     <div class="event-wrapper">
         <div class="event-post-box">
             {% for event in list_event %}
-            <div class="event-post-image">
-                <img src="static/img/index-banner-bgi.png" alt="">
-            </div>
+            {% if event.image %}
+                <div class="event-post-image">
+                    <img src="{{ event.image.url }}" alt="">
+                </div>
+            {% endif %}
             <div class="event-post-content">
                 <div class="event-post-title">
                     <a href="{% url 'event_detail' slug=event.slug %}">
@@ -57,7 +58,4 @@
 <!--            <div class="pages-carousel-bottom"></div>-->
 <!--        </div>-->
 <!--    </section>-->
-{% else %}
-  {{ blank }}
-{% endif %}
 {% endblock content %}

@@ -5,6 +5,9 @@
         <div class="event-detail-detail-top">
             <h1 class="event-detail-title">{{ data_event.title }}</h1>
         </div>
+        {% if data_event.image %}<!--над дивом с фоткой -->
+                {{data_event.image.url }}<!--в src -->
+                {% endif %}<!--под дивом с фоткой -->
         <div class="event-detail-info">
             <p class="event-detail-short-text"><span><i class="fa fa-calendar" aria-hidden="true"></i>{{ data_event.day }}</span></p>
             <p class="event-detail-short-text"><span><i class="fa fa-map-marker" aria-hidden="true"></i>{{ data_event.place }}</span></p>

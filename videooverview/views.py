@@ -3,9 +3,5 @@ from .models import *
 
 def main(request):
     data_video = VideoDownloading.objects.filter(is_active=True)
-    
-    if data_video:
-        context = {'data_video': data_video}
-    else:
-        context = {'blank': 'К сожалению, ничего не найдено'}
+    context = {'data_video': data_video}
     return render(request, 'videooverview/index.html', context)

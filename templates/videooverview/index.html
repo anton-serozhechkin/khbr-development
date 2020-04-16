@@ -9,9 +9,7 @@
     </div>
     <div class="page_title-bottom_line">
     </div>
-</div>
-{% if data_video %}
-    
+</div>    
     <div class="container">
         <div class="video-wrapper">
             {% for video in data_video %}
@@ -68,7 +66,4 @@
 <!--            <div class="pages-carousel-bottom"></div>-->
 <!--        </div>-->
 <!--    </section>-->
-    {% else %}
-      {{ blank }}
-    {% endif %}
   {% endblock content %}

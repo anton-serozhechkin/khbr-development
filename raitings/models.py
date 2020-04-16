@@ -11,7 +11,7 @@ class Raiting(models.Model):
     short_description = HTMLField('Короткое описание на 200 символов', max_length=200)
     content = HTMLField("Контент")
     author = models.ForeignKey(Author, on_delete=models.DO_NOTHING, verbose_name="Автор")
-    image = models.ImageField('Фотография', blank=True)
+    image = models.ImageField('Фотография', upload_to='raitings/%Y/%m/%h/', blank=True)
     created = models.DateTimeField('Дата создания', default=timezone.now)
     is_active = models.BooleanField(default=True, verbose_name='Видимость для пользователя')
 
