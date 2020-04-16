@@ -385,7 +385,7 @@ time, mark, audio, video {
       cursor: pointer; }
   .event-detail .event-detail-publication-image img {
     width: 100%;
-    height: 55vh;
+    height: 65vh;
     border-radius: 10px; }
 
 .ratings-wrapper {
@@ -429,7 +429,7 @@ time, mark, audio, video {
   margin: 5vh 0; }
   .rating-detail .rating-detail-publication-image img {
     width: 100%;
-    height: 55vh;
+    height: 65vh;
     border-radius: 10px; }
   .rating-detail .rating-detail-top .rating-detail-top-left_side .rating-detail-title {
     font-size: 2em;
