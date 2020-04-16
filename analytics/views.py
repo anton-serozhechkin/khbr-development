@@ -31,6 +31,8 @@ def article_index(request):
 
 def article_detail(request, slug):
     article = get_object_or_404(Article, slug=slug)
+    article.views += 1
+    article.save()
     return render(request, 'analytics/article_detail.html', locals())
 
 def not_found_view(request, exception):

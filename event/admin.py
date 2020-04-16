@@ -22,7 +22,7 @@ class EventAdmin(admin.ModelAdmin):
         ('Дополнительные опции',
             {
             'classes': ('collapse', ),
-            'fields': ('start_time', 'end_time', 'image', 'is_active', 'created')
+            'fields': ('start_time', 'end_time', 'image', 'is_active', 'created', 'views')
             }
             )
     )

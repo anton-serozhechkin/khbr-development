@@ -42,6 +42,7 @@ class Article(models.Model):
     author = models.ForeignKey(Author, on_delete=models.DO_NOTHING, verbose_name="Автор")
     created = models.DateTimeField('Дата создания', default=timezone.now)
     is_active = models.BooleanField(default=True, verbose_name='Видимость для пользователя')
+    views = models.PositiveIntegerField('Просмотров публикации', default=0)
 
     def __str__(self):
         return self.title

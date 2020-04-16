@@ -14,6 +14,7 @@ class Raiting(models.Model):
     image = models.ImageField('Фотография', upload_to='raitings/%Y/%m/%h/', blank=True)
     created = models.DateTimeField('Дата создания', default=timezone.now)
     is_active = models.BooleanField(default=True, verbose_name='Видимость для пользователя')
+    views = models.PositiveIntegerField('Просмотров публикации', default=0)
 
     class Meta:
         verbose_name = 'Рейтинг'

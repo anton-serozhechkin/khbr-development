@@ -43,7 +43,7 @@ class ArticleAdmin(admin.ModelAdmin):
         ('Дополнительные опции',
             {
             'classes': ('collapse', ),
-            'fields': ('author', 'integer_of_day', 'image', 'is_active', 'created')
+            'fields': ('author', 'integer_of_day', 'image', 'is_active', 'created', 'views')
             }
             )
     )

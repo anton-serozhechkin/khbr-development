@@ -16,7 +16,7 @@
         <p class="event-detail-short-text"><span><i class="fa fa-ban" aria-hidden="true"></i>Конец: {{ data_event.end_time}}</span></p>
             <div class="detail-viewCount">
                 <i class="fa fa-eye" aria-hidden="true"></i>
-                <span>222</span>
+                <span>{{ data_event.views }}</span>
             </div>
         </div>
         <p class="event-detail-paragraph">{{ data_event.content|safe }}</p>

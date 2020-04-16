@@ -17,6 +17,7 @@ class Event(models.Model):
     content = HTMLField("Контент")
     created = models.DateTimeField('Дата создания', default=timezone.now)
     is_active = models.BooleanField(default=True, verbose_name='Видимость для пользователя')
+    views = models.PositiveIntegerField('Просмотров публикации', default=0)
     
     class Meta:
         verbose_name = 'Событие'
