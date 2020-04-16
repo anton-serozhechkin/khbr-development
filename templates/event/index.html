@@ -9,54 +9,54 @@
     <div class="page_title-bottom_line">
     </div>
 </div>
-{% if list_event %}
+<div class="container">
+
     <div class="event-wrapper">
-        <div class="container-index">
-                <div class="event-post-box">
-                  {% for event in list_event %}
-                    <div class="event-post-image">
-                        <img src="static/img/index-banner-bgi.png" alt="">
-                    </div>
-                    <div class="event-post-content">
-                        <div class="event-post-title">
-                            <a href="{% url 'event_detail' slug=event.slug %}">
-                                {{ event.title }}
-                            </a>
-                        </div>
-                        <div class="event-post-content-text">
-                            {{ event.notes }}
-                        </div>
-                        <div class="analytics-box-info">
-                            <p class="analytics-box-place">Где? - {{ event.place }}</p>
-                            <p class="analytics-box-time">Когда? - {{ event.day }}</p>
-                            <p class="analytics-box-start">Во сколько начало? - {{ event.start_time }}</p>
-                        </div>
-                    </div>
-                    {% endfor %}
+        <div class="event-post-box">
+            {% for event in list_event %}
+            <div class="event-post-content">
+                <div class="event-post-title">
+                    <a href="{% url 'event_detail' slug=event.slug %}">
+                        {{ event.title }}
+                    </a>
                 </div>
+                {% if event.image %}
+                <div class="event-post-image">
+                    <img src="{{ event.image.url }}" alt="">
+                </div>
+                {% endif %}
+
+                <div class="event-post-content-text">
+                    {{ event.short_description|safe }}
+                </div>
+                <div class="event-post-content-info">
+                    <p class="event-post-content-place"><i class="fa fa-map-marker" aria-hidden="true"></i>Где? - {{ event.place }}</p>
+                    <p class="event-post-content-date"><i class="fa fa-calendar" aria-hidden="true"></i>Когда? - {{ event.day }}</p>
+                    <p class="event-post-content-start"><i class="fa fa-clock-o" aria-hidden="true"></i>Во сколько начало? - {{ event.start_time }}</p>
+                </div>
+            </div>
+            {% endfor %}
         </div>
     </div>
-    <section class="pages-carousel">
-        <div class="pages-carousel-button" id="prev">
+</div>
+<!--    <section class="pages-carousel">-->
+<!--        <div class="pages-carousel-button" id="prev">-->
 
-            <div class="pages-carousel-top"></div>
-            <button>Предыдущая</button>
-            <div class="pages-carousel-bottom"></div>
+<!--            <div class="pages-carousel-top"></div>-->
+<!--            <button>Предыдущая</button>-->
+<!--            <div class="pages-carousel-bottom"></div>-->
 
-        </div>
-        <div class="pages-carousel-pages">
-            <span class="pages-carousel-active">1</span>
-            <span>2</span>
-            <span>3</span>
-            <span>4</span>
-        </div>
-        <div class="pages-carousel-button " id="next">
-            <div class="pages-carousel-top"></div>
-            <button>Следующая</button>
-            <div class="pages-carousel-bottom"></div>
-        </div>
-    </section>
-{% else %}
-  {{ blank }}
-{% endif %}
+<!--        </div>-->
+<!--        <div class="pages-carousel-pages">-->
+<!--            <span class="pages-carousel-active">1</span>-->
+<!--            <span>2</span>-->
+<!--            <span>3</span>-->
+<!--            <span>4</span>-->
+<!--        </div>-->
+<!--        <div class="pages-carousel-button " id="next">-->
+<!--            <div class="pages-carousel-top"></div>-->
+<!--            <button>Следующая</button>-->
+<!--            <div class="pages-carousel-bottom"></div>-->
+<!--        </div>-->
+<!--    </section>-->
 {% endblock content %}

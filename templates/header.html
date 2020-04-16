@@ -1,19 +1,26 @@
-{% load socialaccount %}
-{% providers_media_js %}
-<header class="header" id="header-anchor">
-    <div class="logo">
-        <img src="../static/img/logo.png" alt="">
-    </div>
+{% load staticfiles %}
+<div class="container">
+    <i class="fa fa-bars" aria-hidden="true" id="header-navbars-id" style="display: none;"></i>
 
-    <div class="heading">
-        <a href="{% url 'analytics' %}" class="heading-links">Аналитика</a>
-        <a href="{% url 'events' %}" class="heading-links">События</a>
-        <a href="{% url 'raitings' %}" class="heading-links">Рейтинги</a>
-        <a href="{% url 'videooverview' %}" class="heading-links">Видео</a>
-        <button><a href="{% provider_login_url 'google' %}">Google Login</a></button>
+<header class="header-style" id="header-anchor">
+       <div class="header-logo">
+           <a href="{% url 'analytics' %}">
+               <img src="{% static 'img/logo.png' %}" class="wow fadeIn"alt="">
+           </a>
+       </div>
 
-    </div>
+    <div class="header-navigation" id="header-navigation-id">
+           <a href="{% url 'analytics_index' %}" class="header-navigation-item wow fadeIn">Аналитика</a>
+           <a href="{% url 'events' %}" class="header-navigation-item wow fadeIn">События</a>
+           <a href="{% url 'raitings' %}" class="header-navigation-item wow fadeIn">Рейтинги</a>
+           <a href="{% url 'videooverviews' %}" class="header-navigation-item wow fadeIn">Видео</a>
+           {% comment %}<a href="{% url 'signin' %}" class="header-navigation-item header-navigation-sign wow fadeIn">
+               <i class="fa fa-user-circle" aria-hidden="true"></i>
+           </a>{% endcomment %}
+       </div>
 </header>
+</div>
+
 <!--<div class="search__menu">
     <a href=""> <i class="fa fa-search search__icon" aria-hidden="true"></i> </a>
     <input type="search">
