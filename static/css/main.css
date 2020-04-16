@@ -82,7 +82,8 @@ time, mark, audio, video {
   .index-posts-wrapper .index-post {
     margin: 2vh 3vw; }
     .index-posts-wrapper .index-post .index-post-image {
-      width: 315px; }
+      width: 315px;
+      height: 20vh; }
       .index-posts-wrapper .index-post .index-post-image:hover {
         -webkit-box-shadow: 1px 1px 5px 1px #7A7A7A;
         box-shadow: 1px 1px 5px 3px #7A7A7A; }
@@ -213,36 +214,39 @@ time, mark, audio, video {
   margin: 5vh 0;
   flex-flow: column wrap;
   justify-content: center; }
-  .analytics-wrapper .analytics_post-box .analytics-box-title {
-    font-size: 1.4em; }
-    .analytics-wrapper .analytics_post-box .analytics-box-title a {
-      text-decoration: none;
-      color: #303738; }
-      .analytics-wrapper .analytics_post-box .analytics-box-title a:hover {
-        color: #63808b;
-        transition: .4s; }
-  .analytics-wrapper .analytics_post-box .analytics-box-content {
-    display: flex;
-    flex-flow: row nowrap; }
-    .analytics-wrapper .analytics_post-box .analytics-box-content .analytics-box-image img {
-      width: 455px;
-      border-radius: 5px; }
-    .analytics-wrapper .analytics_post-box .analytics-box-content .analytics-box-text {
-      margin-left: 24px;
-      display: flex;
-      flex-flow: column wrap;
-      justify-content: space-between; }
-      .analytics-wrapper .analytics_post-box .analytics-box-content .analytics-box-text .analytics-box-text-content a {
-        color: #303738;
+  .analytics-wrapper .analytics_post-box {
+    margin: 3vh 0; }
+    .analytics-wrapper .analytics_post-box .analytics-box-title {
+      font-size: 1.4em; }
+      .analytics-wrapper .analytics_post-box .analytics-box-title a {
         text-decoration: none;
-        font-size: 1.6em; }
-        .analytics-wrapper .analytics_post-box .analytics-box-content .analytics-box-text .analytics-box-text-content a p {
-          word-wrap: break-word; }
-        .analytics-wrapper .analytics_post-box .analytics-box-content .analytics-box-text .analytics-box-text-content a:hover {
-          color: #63808b; }
-    .analytics-wrapper .analytics_post-box .analytics-box-content .analytics-box-info p {
-      margin: 1vh 0;
-      color: #7A7A7A; }
+        color: #303738; }
+        .analytics-wrapper .analytics_post-box .analytics-box-title a:hover {
+          color: #63808b;
+          transition: .4s; }
+    .analytics-wrapper .analytics_post-box .analytics-box-content {
+      display: flex;
+      flex-flow: row nowrap; }
+      .analytics-wrapper .analytics_post-box .analytics-box-content .analytics-box-image img {
+        width: 455px;
+        height: 25vh;
+        border-radius: 5px; }
+      .analytics-wrapper .analytics_post-box .analytics-box-content .analytics-box-text {
+        margin-left: 24px;
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: space-between; }
+        .analytics-wrapper .analytics_post-box .analytics-box-content .analytics-box-text .analytics-box-text-content a {
+          color: #303738;
+          text-decoration: none;
+          font-size: 1.6em; }
+          .analytics-wrapper .analytics_post-box .analytics-box-content .analytics-box-text .analytics-box-text-content a p {
+            word-wrap: break-word; }
+          .analytics-wrapper .analytics_post-box .analytics-box-content .analytics-box-text .analytics-box-text-content a:hover {
+            color: #63808b; }
+      .analytics-wrapper .analytics_post-box .analytics-box-content .analytics-box-info p {
+        margin: 1vh 0;
+        color: #7A7A7A; }
 
 .pages-carousel {
   display: flex;

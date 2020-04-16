@@ -24,6 +24,7 @@
   flex-flow: column wrap;
   justify-content: center;
   .analytics_post-box {
+    margin: 3vh 0;
     .analytics-box-title {
       font-size: 1.4em;
       a {
@@ -41,6 +42,7 @@
       flex-flow: row nowrap;
       .analytics-box-image img {
         width: 455px;
+        height: 25vh;
         border-radius: 5px;
       }
       .analytics-box-text {
