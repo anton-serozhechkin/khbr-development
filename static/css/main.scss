@@ -262,3 +262,41 @@
     }
   }
 }
+.day-poll {
+  margin: 4vh 0;
+  background-color: #babaad;
+  border-radius: 20px;
+  padding: 12px 24px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  .currency {
+    display: flex;
+    flex-wrap: wrap;
+    width: 200px;
+    div {
+      margin: 0 2%;
+      i {
+        font-size: 18px;
+      }
+      span {
+        margin-left: 4px;
+      }
+      &:first-of-type{
+        margin-left: 0;
+      }
+    }
+  }
+  .day-poll-content {
+    a {
+      color:black;
+      font-size: 20px;
+      text-decoration: none;
+      transition: .2s linear;
+      &:hover {
+        color:lightcoral;
+        transition: .2s linear;
+      }
+    }
+  }
+}

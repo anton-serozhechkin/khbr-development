@@ -22,6 +22,29 @@ function poll_slider() {
         }
     }
 }
+function currency() {
+    let API = 'https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5',
+        request = new XMLHttpRequest();
+    request.open('GET',API)
+    request.responseType = 'json';
+    request.send();
+    request.onload = function () {
+        let currency = request.response;
+        console.log(currency)
+        let USD = document.getElementById('usd'),
+            EURO = document.getElementById('euro'),
+            RUR = document.getElementById('rur')
+        let currencyUSD = currency[0].buy;
+        let currencyUsdSliced = currencyUSD.substr(0,currencyUSD.length - 3)
+        let currencyEURO = currency[1].buy;
+        let currencyEuroSliced = currencyEURO.substr(0,currencyEURO.length - 3)
+        let currencyRUR = currency[2].buy;
+        let currencyRurSliced = currencyRUR.substr(0,currencyRUR.length - 3)
+        USD.textContent = currencyUsdSliced;
+        EURO.textContent = currencyEuroSliced;
+        RUR.textContent = currencyRurSliced;
+    }
+}
 function poll() {
     let checkboxArray = document.querySelectorAll('.poll-checkbox'),
         resultButton = document.getElementById('poll_result_button'),
@@ -56,7 +79,7 @@ function poll_statusBar() {
 
 }
 poll_slider();
-
+currency()
 poll();
 poll_statusBar();
 

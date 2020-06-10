@@ -777,4 +777,33 @@ time, mark, audio, video {
           opacity: 1;
           transition: .2s linear; }
 
+.day-poll {
+  margin: 4vh 0;
+  background-color: #babaad;
+  border-radius: 20px;
+  padding: 12px 24px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; }
+  .day-poll .currency {
+    display: flex;
+    flex-wrap: wrap;
+    width: 200px; }
+    .day-poll .currency div {
+      margin: 0 2%; }
+      .day-poll .currency div i {
+        font-size: 18px; }
+      .day-poll .currency div span {
+        margin-left: 4px; }
+      .day-poll .currency div:first-of-type {
+        margin-left: 0; }
+  .day-poll .day-poll-content a {
+    color: black;
+    font-size: 20px;
+    text-decoration: none;
+    transition: .2s linear; }
+    .day-poll .day-poll-content a:hover {
+      color: lightcoral;
+      transition: .2s linear; }
+
 /*# sourceMappingURL=main.css.map */
