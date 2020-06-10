@@ -739,4 +739,42 @@ time, mark, audio, video {
         opacity: 1;
         transition: .2s linear; }
 
+.index-polls {
+  padding: 30px 0; }
+  .index-polls .index-polls-wrapper {
+    display: flex;
+    justify-content: space-between; }
+    .index-polls .index-polls-wrapper .index-poll-box {
+      border-radius: 3%;
+      width: 325px;
+      position: relative;
+      overflow: hidden;
+      margin: 2vh 0.5%;
+      transition: .2s linear; }
+      .index-polls .index-polls-wrapper .index-poll-box .img {
+        width: 100%;
+        height: 235px; }
+      .index-polls .index-polls-wrapper .index-poll-box .title {
+        display: flex;
+        top: 0;
+        text-transform: uppercase;
+        text-align: center;
+        align-items: flex-end;
+        justify-content: center;
+        position: absolute;
+        color: white;
+        height: 235px;
+        width: 100%;
+        transition: .2s linear;
+        opacity: 0;
+        background: linear-gradient(to top, black 0%, rgba(255, 228, 224, 0.05) 100%); }
+        .index-polls .index-polls-wrapper .index-poll-box .title span {
+          padding-bottom: 25px; }
+      .index-polls .index-polls-wrapper .index-poll-box:hover {
+        transform: scale(1.2);
+        transition: .2s linear; }
+        .index-polls .index-polls-wrapper .index-poll-box:hover .title {
+          opacity: 1;
+          transition: .2s linear; }
+
 /*# sourceMappingURL=main.css.map */
