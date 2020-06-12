@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'event',
     'users',
     'analytics',
+    'poll',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
