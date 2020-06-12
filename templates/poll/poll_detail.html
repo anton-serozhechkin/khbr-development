@@ -1,16 +1,6 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="../../static/css/main.css">
-    <title>Document</title>
-</head>
-<body>
-
-
-    <div class="poll-container">
+{% extends 'base.html' %}
+{% block content %}
+<div class="poll-container">
         <div class="poll_detail">
             <div class="title">
                 <b>Что делать в первую очередь, а что можно оставить на потом?
@@ -66,56 +56,12 @@
                             </div>
                             <div class="poll_result_statusBar"></div>
                         </div>
-                    </div>
-                    <div class="option">
-                        <div class="heading">
-                            <div>Приготовить ужин</div>
-                            <div class="poll_result_percent">38%</div>
-                        </div>
-                        <div class="line">
-                            <div class="bg">
-
-                            </div>
-                            <div class="poll_result_statusBar"></div>
-                        </div>
-                    </div>
-                    <div class="option">
-                        <div class="heading">
-                            <div>Позвонить близким</div>
-                            <div class="poll_result_percent">20%</div>
-                        </div>
-                        <div class="line">
-                            <div class="bg">
-
-                            </div>
-                            <div class="poll_result_statusBar"></div>
-                        </div>
-                    </div>
-                    <div class="option">
-                        <div class="heading">
-                            <div>Сходить в парк</div>
-                            <div class="poll_result_percent">30%</div>
-                        </div>
-                        <div class="line">
-                            <div class="bg">
-
-                            </div>
-                            <div class="poll_result_statusBar"></div>
-                        </div>
-                    </div>
+                    </div>                 
                 </div>
-
                 <div class="statistics">
                     В опросе приняло участие: 12313 человек
                 </div>
             </div>
         </div>
     </div>
-
-
-
-<script src="../../static/js/main.js"></script>
-<script src="https://use.fontawesome.com/44959e12e1.js"></script>
-
-</body>
-</html>
+{% endblock content %}

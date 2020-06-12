@@ -25,6 +25,7 @@ urlpatterns = [
     path('videooverviews/', include('videooverview.urls')),
     path('raitings/', include('raitings.urls')),
     #path('user/', include('users.urls')),
+    path('poll/', include('poll.urls')),
     path('accounts/', include('allauth.urls')),
 ]
 
