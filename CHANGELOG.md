@@ -1,3 +1,8 @@
+## 0.3.0 [12.06.2020]
+### Added 
+- Search form, dropdown menu with category in header
+- Links on a social networks in footer
+
 ## 0.2.0 [12.06.2020]
 ### Added
 - Feature poll of day on index
