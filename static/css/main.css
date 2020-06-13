@@ -630,33 +630,6 @@ time, mark, audio, video {
   position: relative;
   top: 4px; }
 
-.footer-style {
-  padding: 5vh 2vw;
-  background-color: #f3f4f2; }
-  .footer-style .footer-wrapper {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-around;
-    align-items: center; }
-    .footer-style .footer-wrapper .footer-list .footer-list-item {
-      list-style-type: none;
-      margin: 0.7vh 0; }
-      .footer-style .footer-wrapper .footer-list .footer-list-item .fa-facebook {
-        color: #3b5998; }
-      .footer-style .footer-wrapper .footer-list .footer-list-item .fa-linkedin-square {
-        color: #3b5998; }
-      .footer-style .footer-wrapper .footer-list .footer-list-item .footer-link {
-        text-decoration: none;
-        color: #303738;
-        font-size: 1.5em; }
-        .footer-style .footer-wrapper .footer-list .footer-list-item .footer-link:hover {
-          color: #63808b;
-          transition: .4s; }
-        .footer-style .footer-wrapper .footer-list .footer-list-item .footer-link:focus {
-          color: #8b5d65; }
-    .footer-style .footer-wrapper .footer-logo .footer-logo-link img {
-      width: 315px; }
-
 .poll-container {
   max-width: 1070px;
   margin: 0 auto; }
@@ -861,5 +834,85 @@ time, mark, audio, video {
     .day-poll .day-poll-content a:hover {
       color: lightcoral;
       transition: .2s linear; }
+
+.search-index .container {
+  padding: 50px 15vw; }
+  .search-index .container .search-result .date {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1.6rem;
+    font-weight: 700; }
+  .search-index .container .search-result a {
+    text-decoration: none;
+    color: unset; }
+  .search-index .container .search-result .result {
+    display: flex;
+    width: 85%;
+    flex-wrap: wrap;
+    margin: 35px auto;
+    border-radius: 15px; }
+    .search-index .container .search-result .result:hover {
+      -webkit-box-shadow: 1px 1px 20px 10px #D4D4D4;
+      box-shadow: 1px 1px 20px 10px #D4D4D4; }
+    .search-index .container .search-result .result .img {
+      flex: 1; }
+      .search-index .container .search-result .result .img img {
+        max-width: 325px;
+        border-bottom-left-radius: 15px;
+        border-top-left-radius: 15px; }
+    .search-index .container .search-result .result .content {
+      padding: 20px 16px;
+      position: relative;
+      display: flex;
+      flex: 2;
+      flex-direction: column; }
+      .search-index .container .search-result .result .content .category {
+        font-size: 1.2rem;
+        color: #4e4921;
+        text-transform: uppercase; }
+      .search-index .container .search-result .result .content .title {
+        margin-top: 16px;
+        color: black;
+        font-size: 1.6rem;
+        font-weight: 700; }
+      .search-index .container .search-result .result .content .description {
+        font-size: 1.2rem;
+        margin-top: 10px; }
+      .search-index .container .search-result .result .content .content-bottom {
+        position: absolute;
+        bottom: 0;
+        width: 95%;
+        display: flex;
+        justify-content: space-between; }
+        .search-index .container .search-result .result .content .content-bottom .post_date {
+          font-size: 1rem;
+          color: rgba(56, 55, 51, 0.89); }
+
+.footer-style {
+  padding: 5vh 2vw;
+  background-color: #f3f4f2; }
+  .footer-style .footer-wrapper {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center; }
+    .footer-style .footer-wrapper .footer-list .footer-list-item {
+      list-style-type: none;
+      margin: 0.7vh 0; }
+      .footer-style .footer-wrapper .footer-list .footer-list-item .fa-facebook {
+        color: #3b5998; }
+      .footer-style .footer-wrapper .footer-list .footer-list-item .fa-linkedin-square {
+        color: #3b5998; }
+      .footer-style .footer-wrapper .footer-list .footer-list-item .footer-link {
+        text-decoration: none;
+        color: #303738;
+        font-size: 1.5em; }
+        .footer-style .footer-wrapper .footer-list .footer-list-item .footer-link:hover {
+          color: #63808b;
+          transition: .4s; }
+        .footer-style .footer-wrapper .footer-list .footer-list-item .footer-link:focus {
+          color: #8b5d65; }
+    .footer-style .footer-wrapper .footer-logo .footer-logo-link img {
+      width: 315px; }
 
 /*# sourceMappingURL=main.css.map */

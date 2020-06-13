@@ -1,3 +1,7 @@
+## 0.4.0 [13.06.2020]
+### Added
+- Search index page
+
 ## 0.3.0 [12.06.2020]
 ### Added 
 - Search form, dropdown menu with category in header
