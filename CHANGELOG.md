@@ -1,3 +1,7 @@
+## 0.5.0 [14.06.2020]
+### Added
+- Two factor authentication in admin panel
+
 ## 0.4.0 [13.06.2020]
 ### Added
 - Search index page
@@ -13,7 +17,7 @@
 - Currency API on index
 - App poll, URLs, views
 
-## 0.1.0 [11.06.2020]
+## 0.1.0 [10.06.2020]
 ### Added
 - Feature poll template index and poll detail
 - Slider with poll on main index page
