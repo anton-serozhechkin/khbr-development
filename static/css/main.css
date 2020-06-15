@@ -889,6 +889,17 @@ time, mark, audio, video {
           font-size: 1rem;
           color: rgba(56, 55, 51, 0.89); }
 
+.search-nothing-result {
+  text-align: center; }
+  .search-nothing-result .title {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.8rem; }
+  .search-nothing-result .subtitle {
+    margin: 12px 0;
+    color: #9aa39e;
+    font-size: 1.2rem; }
+
 .category-wrapper {
   display: flex;
   flex-wrap: wrap;

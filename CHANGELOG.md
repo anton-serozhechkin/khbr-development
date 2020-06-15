@@ -2,6 +2,11 @@
 ### Added 
 - Category index page
 
+### Refactored
+- Ecranization
+- Title at events and ratings detail
+
+
 ## 0.5.0 [14.06.2020]
 ### Added
 - Two factor authentication in admin panel
