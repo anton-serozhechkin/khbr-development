@@ -7,16 +7,16 @@
                 <h1 class="rating-detail-title">{{ data_rait.title }}</h1>
                 {% if data_rait.image %}<!--над дивом с фоткой -->
                 <div class="rating-detail-publication-image">
-                    <img src="{{data_rait.image.url }}" alt="">
+                    <img src="{{ data_rait.image.url }}" alt="">
                 </div>
                 {% endif %}<!--под дивом с фоткой -->
                 <p class="rating-detail-short-text">{{ data_rait.content|safe }}</p>
                  <div class="rating-detail-info">
-                     <span class="rating-detail-author">{{ data_rait.author }}</span>
+                     <span class="rating-detail-author"><i class="fa fa-user"></i> {{ data_rait.author }}</span>
                      <span class="rating-detail-date">{{ data_rait.created }}</span>
                      <div class="rating-detail-viewCount">
                          <i class="fa fa-eye" aria-hidden="true"></i>
-                         <span>{{data_rait.views}}</span>
+                         <span>{{ data_rait.views }}</span>
                      </div>
                  </div>
             </div>

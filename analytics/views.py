@@ -54,6 +54,10 @@ def search_results(request):
         Q(short_description__icontains=query)|
         Q(content__icontains=query)
     )
+    video_list = VideoDownloading.objects.filter(
+        Q(title__icontains=query)|
+        Q(notes__icontains=query)
+    )
 
     return render(request, 'search/index.html', locals())
 
