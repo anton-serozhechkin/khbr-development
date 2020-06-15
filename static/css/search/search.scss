@@ -70,3 +70,16 @@
     }
   }
 }
+.search-nothing-result {
+  text-align: center;
+  .title {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.8rem;
+  }
+  .subtitle {
+    margin: 12px 0;
+    color:#9aa39e;
+    font-size: 1.2rem;
+  }
+}
