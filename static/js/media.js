@@ -1,26 +1,18 @@
-let navBars = document.getElementById('header-navbars-id');
-let headerNavList = document.getElementsByClassName('header-navigation-item');
-let headerNav = document.getElementById('header-anchor');
-let headerNavMenu = document.getElementById('header-navigation-id');
-let signContainer = document.getElementById('sign-container-id');
-if (screen.width <= 480) {
-    navBars.style.display = "block";
-    for(let i = 0; i < headerNavList.length;i++) {
-        headerNavList[i].classList.add('navUnHide')
-    }
-    navBars.classList.add('hide');
-    navBars.addEventListener('click',function () {
-        for(let i = 0; i < headerNavList.length;i++) {
-            headerNavList[i].classList.remove('navUnHide');
-            headerNavList[i].classList.add('wow');
-            headerNavList[i].classList.add('fadeIn');
-        }
-        headerNavMenu.classList.add('navMediaMenu');
-        navBars.addEventListener('click',function () {
-            for(let i = 0; i < headerNavList.length;i++) {
-                headerNavList[i].classList.add('navUnHide');
-            }
-        })
-    });
-}
+if (screen.width <= 1199) {
+    let bar = document.getElementById('barsButton')
+    let menu = document.getElementById('header-navigation-id')
+    let flag = false;
+    bar.addEventListener('click', function () {
+            if (flag == false) {
 
+                menu.style.opacity = '1'
+                menu.style.transition = 'all .2s ease-in-out'
+                flag = true
+            }
+            else {
+                menu.style.opacity = '0'
+                menu.style.transition = 'all .2s ease-in-out'
+                flag = false;
+            }
+        }
+    )}

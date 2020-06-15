@@ -31,66 +31,19 @@ time, mark, audio, video {
   display: flex;
   flex-flow: wrap row;
   align-items: center;
-  padding: 2vh 0; }
+  padding: 2vh 0;
+  justify-content: space-between; }
   .header-style .header-logo {
     flex-grow: 0; }
     .header-style .header-logo img {
       width: 315px; }
-  .header-style .header-navigation {
-    position: relative;
-    text-align: center;
-    flex-grow: 1;
-    margin-left: 24px;
+  .header-style .header-center {
     display: flex;
-    list-style-type: none;
-    font-size: 1.6rem;
-    flex-wrap: wrap; }
-    .header-style .header-navigation .fa-angle-down {
-      position: relative;
-      top: 3px; }
-    .header-style .header-navigation li {
-      position: relative;
-      padding: 6px 22px;
-      box-sizing: border-box;
-      margin: 0 16px; }
-    .header-style .header-navigation .header-navigation-submenu {
-      transition: .2s linear;
-      position: absolute;
-      opacity: 0;
-      list-style-type: none;
-      padding: 0;
-      width: 100%;
-      right: 0;
-      top: 100%;
-      visibility: hidden; }
-      .header-style .header-navigation .header-navigation-submenu li {
-        background-color: #e8e8da;
-        border-bottom: solid 1px #7A7A7A;
-        transition: .2s linear; }
-        .header-style .header-navigation .header-navigation-submenu li:hover {
-          background-color: #b7b7ab;
-          transition: .2s linear; }
-        .header-style .header-navigation .header-navigation-submenu li:first-of-type {
-          border-top-left-radius: 10px;
-          border-top-right-radius: 10px; }
-        .header-style .header-navigation .header-navigation-submenu li:last-of-type {
-          border-bottom: none;
-          border-bottom-left-radius: 10px;
-          border-bottom-right-radius: 10px; }
-    .header-style .header-navigation .submenu-item:hover .header-navigation-submenu {
-      opacity: 1;
-      transition: .2s linear;
-      visibility: visible; }
-    .header-style .header-navigation a {
-      text-decoration: none;
-      color: #303738; }
-      .header-style .header-navigation a:hover {
-        color: #63808b;
-        transition: .4s; }
-      .header-style .header-navigation a:focus {
-        color: #8b5d65; }
-    .header-style .header-navigation .header-navigation-sign {
-      float: right; }
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between; }
+    .header-style .header-center .mobile-bar {
+      font-size: 2rem; }
   .header-style .header-search .search-wrapper {
     border: solid 2px #16690d; }
     .header-style .header-search .search-wrapper input {
@@ -108,6 +61,67 @@ time, mark, audio, video {
       padding-right: 8px;
       color: #36488f;
       font-size: 18px; }
+
+.header-navigation {
+  position: relative;
+  text-align: center;
+  flex-grow: 1;
+  margin-left: 24px;
+  display: flex;
+  list-style-type: none;
+  font-size: 1.6rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 50px; }
+  .header-navigation .fa-angle-down {
+    position: relative;
+    top: 3px; }
+  .header-navigation li {
+    position: relative;
+    padding: 6px 22px;
+    box-sizing: border-box;
+    margin: 0 16px; }
+  .header-navigation .header-navigation-submenu {
+    transition: .2s linear;
+    position: absolute;
+    opacity: 0;
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+    right: 0;
+    top: 100%;
+    visibility: hidden; }
+    .header-navigation .header-navigation-submenu li {
+      background-color: #e8e8da;
+      border-bottom: solid 1px #7A7A7A;
+      transition: .2s linear; }
+      .header-navigation .header-navigation-submenu li:hover {
+        background-color: #b7b7ab;
+        transition: .2s linear; }
+      .header-navigation .header-navigation-submenu li:first-of-type {
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px; }
+      .header-navigation .header-navigation-submenu li:last-of-type {
+        border-bottom: none;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px; }
+  .header-navigation .submenu-item:hover .header-navigation-submenu {
+    opacity: 1;
+    transition: .2s linear;
+    visibility: visible; }
+  .header-navigation a {
+    text-decoration: none;
+    color: #303738; }
+    .header-navigation a:hover {
+      color: #63808b;
+      transition: .4s; }
+    .header-navigation a:focus {
+      color: #8b5d65; }
+  .header-navigation .header-navigation-sign {
+    float: right; }
+
+.mobile-bar {
+  display: none; }
 
 .index-banner-style {
   background-image: url(../../img/index-banner-bgi.png);

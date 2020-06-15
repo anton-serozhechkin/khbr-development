@@ -26,3 +26,6 @@ pycache
 
 # temp storage (reports etc.)
 /temp
+
+# scss cache
+static/css/.sass-cache

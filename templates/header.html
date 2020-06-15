@@ -1,19 +1,40 @@
 {% load staticfiles %}
+<script src="../static/js/media.js"></script>
 <div class="container">
-    <i class="fa fa-bars" aria-hidden="true" id="header-navbars-id" style="display: none;"></i>
 
-<header class="header-style" id="header-anchor">
-       <div class="header-logo">
-           <a href="{% url 'analytics' %}">
-               <img src="{% static 'img/logo.png' %}" class="wow fadeIn"alt="">
-           </a>
-       </div>
+    <header class="header-style" id="header-anchor">
 
-    <ul class="header-navigation" id="header-navigation-id">
+        {% comment %}
+        <div class="header-search">
+            <div class="search-wrapper">
+                <form action="{% url 'search_results' %}">
+                    <input type="search" name="q" placeholder="Поиск...">
+                    <i class="fa fa-search"></i>
+                </form>
+            </div>
+        </div>
+        {% endcomment %}
+        <div class="header-center">
+        <div class="mobile-bar">
+            <i class="fa fa-bars" aria-hidden="true" id="barsButton"></i>
+        </div>
+        <div class="header-logo">
+            <a href="{% url 'analytics' %}">
+                <img src="{% static 'img/logo.png' %}" class="wow fadeIn" alt="">
+            </a>
+        </div>
+        </div>
+        {% comment %}<a href="{% url 'signin' %}" class="header-navigation-item header-navigation-sign wow fadeIn">
+        <i class="fa fa-user-circle" aria-hidden="true"></i>
+    </a>{% endcomment %}
+    </header>
+    <section class="navigation" id="navigation-anchor">
+
+        <ul class="header-navigation" id="header-navigation-id">
             <li class="submenu-item">
                 <a href="{% url 'analytics_index' %}" class="header-navigation-item wow fadeIn ">Аналитика
                     <i class="fa fa-angle-down" aria-hidden="true"></i>
-<!--         show if category there is           -->
+                    <!--         show if category there is           -->
                 </a>
                 <ul class="header-navigation-submenu">
                     <li><a href="#">item1</a></li>
@@ -34,23 +55,6 @@
             <li>
                 <a href="" class="header-navigation-item wow fadeIn">Опросы</a>
             </li>
-           {% comment %}<a href="{% url 'signin' %}" class="header-navigation-item header-navigation-sign wow fadeIn">
-               <i class="fa fa-user-circle" aria-hidden="true"></i>
-           </a>{% endcomment %}
-       </ul>
-    <div class="header-search">
-        <div class="search-wrapper">
-            <form action="">
-                <input type="search" placeholder="Поиск...">
-                <a href="#"><i class="fa fa-search"></i></a>
-            </form>
-        </div>
-    </div>
-</header>
+        </ul>
+    </section>
 </div>
-
-<!--<div class="search__menu">
-    <a href=""> <i class="fa fa-search search__icon" aria-hidden="true"></i> </a>
-    <input type="search">
-</div>-->
-
