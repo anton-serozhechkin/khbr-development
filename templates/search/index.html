@@ -6,7 +6,7 @@
             {% if article_list %}
                 <div class="search-result">
                     <div class="date">
-                        Аналитика
+                        <a href="{% url 'analytics' %}">Аналитика</a>
                     </div>
                     {% for article in article_list %}
                         <a href="{% url 'article_detail' slug=article.slug %}">
@@ -17,21 +17,26 @@
                                     </div>
                                 {% endif %}
                                 <div class="content">
-                                    {% if article.category %}
-                                    <div class="category">
-                                        {{ article.category }}
-                                    </div>
-                                    {% endif %}
-                                    <div class="title">
-                                        {{ article.title }}
+
+                                    <div class="content-header">
+                                        <div class="title">
+                                            {{ article.title }}
+                                        </div>
+                                        <div class="category">
+                                            <a href="">
+                                                {{ article.category }}
+                                            </a>
+                                        </div>
+
                                     </div>
                                     <div class="description">
                                         {{ article.short_description|safe }}
                                     </div>
                                     <div class="content-bottom">
                                         <div class="post_date">
-                                            {{ article.created }}
+                                            {{ article.created|date:"d M Y" }}
                                         </div>
+
                                         <div class="author">
                                             <i class="fa fa-user-o"></i>
                                             {{ article.author }}
@@ -46,7 +51,7 @@
             {% if event_list %}
                 <div class="search-result">
                     <div class="date">
-                        События
+                        <a href="{% url 'events' %}">События</a>
                     </div>
                     {% for event in event_list %}
                         <a href="{% url 'event_detail' slug=event.slug %}">
@@ -65,7 +70,7 @@
                                     </div>
                                     <div class="content-bottom">
                                         <div class="post_date">
-                                            {{ event.created }}
+                                            {{ event.created|date:"d M Y" }}
                                         </div>
                                         <div class="author">
                                             <i class="fa fa-user-o"></i>
@@ -81,7 +86,7 @@
             {% if raiting_list %}
                 <div class="search-result">
                     <div class="date">
-                        Рейтинги
+                        <a href="{% url 'raitings' %}">Рейтинги</a>
                     </div>
                     {% for raiting in raiting_list %}
                         <a href="{% url 'raiting_detail' slug=raiting.slug %}">
@@ -100,7 +105,7 @@
                                     </div>
                                     <div class="content-bottom">
                                         <div class="post_date">
-                                            {{ raiting.created }}
+                                            {{ raiting.created|date:"d M Y" }}
                                         </div>
                                         <div class="author">
                                             <i class="fa fa-user-o"></i>
@@ -116,7 +121,7 @@
             {% if video_list %}
                 <div class="search-result">
                     <div class="date">
-                        Видеообзоры
+                        <a href="{% url 'videooverviews' %}">Видеообзоры</a>
                     </div>
                     {% for video in video_list %}
                             <div class="result result-video">
@@ -143,7 +148,7 @@
                                     </div>
                                     <div class="content-bottom">
                                         <div class="post_date">
-                                            {{ video.created }}
+                                            {{ video.created|date:"d M Y" }}
                                         </div>
                                         <div class="author">
                                             <i class="fa fa-user-o"></i>

@@ -14,7 +14,7 @@
       }
       .result {
         display: flex;
-
+        padding: 20px 0;
         width: 85%;
         flex-wrap: wrap;
         margin: 35px auto;
@@ -38,13 +38,18 @@
           display: flex;
           flex: 2;
           flex-direction: column;
+          .content-header {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+          }
           .category {
             font-size: 1.2rem;
             color:#4e4921;
             text-transform: uppercase;
           }
           .title {
-            margin-top: 16px;
             color:black;
             font-size: 1.6rem;
             font-weight: 700;

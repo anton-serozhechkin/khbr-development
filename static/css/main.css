@@ -848,6 +848,7 @@ time, mark, audio, video {
     color: unset; }
   .search-index .container .search-result .result {
     display: flex;
+    padding: 20px 0;
     width: 85%;
     flex-wrap: wrap;
     margin: 35px auto;
@@ -868,12 +869,16 @@ time, mark, audio, video {
       display: flex;
       flex: 2;
       flex-direction: column; }
+      .search-index .container .search-result .result .content .content-header {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center; }
       .search-index .container .search-result .result .content .category {
         font-size: 1.2rem;
         color: #4e4921;
         text-transform: uppercase; }
       .search-index .container .search-result .result .content .title {
-        margin-top: 16px;
         color: black;
         font-size: 1.6rem;
         font-weight: 700;
