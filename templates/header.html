@@ -9,15 +9,43 @@
            </a>
        </div>
 
-    <div class="header-navigation" id="header-navigation-id">
-           <a href="{% url 'analytics_index' %}" class="header-navigation-item wow fadeIn">Аналитика</a>
-           <a href="{% url 'events' %}" class="header-navigation-item wow fadeIn">События</a>
-           <a href="{% url 'raitings' %}" class="header-navigation-item wow fadeIn">Рейтинги</a>
-           <a href="{% url 'videooverviews' %}" class="header-navigation-item wow fadeIn">Видео</a>
+    <ul class="header-navigation" id="header-navigation-id">
+            <li class="submenu-item">
+                <a href="{% url 'analytics_index' %}" class="header-navigation-item wow fadeIn ">Аналитика
+                    <i class="fa fa-angle-down" aria-hidden="true"></i>
+<!--         show if category there is           -->
+                </a>
+                <ul class="header-navigation-submenu">
+                    <li><a href="#">item1</a></li>
+                    <li><a href="#">item2</a></li>
+                    <li><a href="#">item3</a></li>
+                    <li><a href="#">item4</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="{% url 'events' %}" class="header-navigation-item wow fadeIn">События</a>
+            </li>
+            <li>
+                <a href="{% url 'raitings' %}" class="header-navigation-item wow fadeIn">Рейтинги</a>
+            </li>
+            <li>
+                <a href="{% url 'videooverviews' %}" class="header-navigation-item wow fadeIn">Видео</a>
+            </li>
+            <li>
+                <a href="" class="header-navigation-item wow fadeIn">Опросы</a>
+            </li>
            {% comment %}<a href="{% url 'signin' %}" class="header-navigation-item header-navigation-sign wow fadeIn">
                <i class="fa fa-user-circle" aria-hidden="true"></i>
            </a>{% endcomment %}
-       </div>
+       </ul>
+    <div class="header-search">
+        <div class="search-wrapper">
+            <form action="">
+                <input type="search" placeholder="Поиск...">
+                <a href="#"><i class="fa fa-search"></i></a>
+            </form>
+        </div>
+    </div>
 </header>
 </div>
 
@@ -25,3 +53,4 @@
     <a href=""> <i class="fa fa-search search__icon" aria-hidden="true"></i> </a>
     <input type="search">
 </div>-->
+

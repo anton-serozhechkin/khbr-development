@@ -8,20 +8,54 @@
     </section>
 <!--post table section-->
 
+
+<!--wrapper of heading page-->
+
+
+<div class="container">
+    <section class="day-poll">
+        <div class="currency">
+            <div class="dollar">
+                <i class="fa fa-usd"><span id="usd"></span></i>
+            </div>
+            <div class="euro">
+                <i class="fa fa-eur"><span id="euro"></span></i>
+            </div>
+            <div class="rub">
+                <i class="fa fa-rub"><span id="rur"></span></i>
+            </div>
+        </div>
+        <div class="day-poll-content">
+            <a href="">
+                <i class="fa fa-bell-o"></i>
+                опрос дня
+            </a>
+        </div>
+    </section>
+</div>
+
+
+
 <div class="page_title-box">
     <div class="page_title-title">
-        <a href="{% url 'analytics_index' %}"> 
+        <a href="{% url 'analytics_index' %}">
             <h1>Аналитика</h1>
         </a>
     </div>
 </div>
+<!--wrapper of heading page-->
+
+
+
     <div class="container">
         <section class="index-posts-style" id="index-posts-anchor">
             <!--    post table wrapper    -->
             <div class="index-posts-wrapper">
                 {% for article in last_art %}
                 <div class="index-post  wow fadeInDown">
+<!--        index post post box with animations fade class            -->
                     <a href="{% url 'article_detail' slug=article.slug %}" class="index-post-link">
+
                         {% if article.image %}
                             <img src="{{ article.image.url }}" alt="post image" class="index-post-image">
                         {% endif %}
@@ -118,7 +152,25 @@
            </div>
        </section>
    </div>
-    <hr>
+<hr>
+<div class="container">
+        <section class="index-polls" id="index-polls">
+            <div class="index-polls-wrapper slider">
+                <div class="index-poll-box ">
+                    <a href="">
+                        <img src="https://images.unsplash.com/photo-1591794289635-13a402187d9d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" alt="" class="img">
+                        <div class="title">
+                            <span>заголовок опроса</span>
+                        </div>
+                    </a>
+                </div>
+
+
+            </div>
+        </section>
+    </div>
+<hr>
+
     <div class="container">
         <section class="index-video-style" id="index-video-anchor">
             <div class="index-video-wrapper">
@@ -138,5 +190,8 @@
             </div>
         </section>
     </div>
+
+
+
 {% endblock content %}
 <!--adaptive + -->
