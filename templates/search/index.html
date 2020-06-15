@@ -1,10 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+{% if article_list or event_list or raiting_list %}
 <section class="search-index">
     <div class="container">
-        <div class="search-result ">
+        <div class="search-result">
             <div class="date">
-                29 апреля, среда
+                {% if article_list %} Аналитика {% endif %}
+                {% if event_list %} События {% endif %} 
+                {% if raiting_list %} Рейтинги {% endif %}
             </div>
-            <a href="">
+            <a href=""> 
                 <div class="result">
                     <div class="img">
                         <img src="https://images.unsplash.com/photo-1591981387363-ae7d4375b353?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" alt="">
@@ -14,7 +19,6 @@
                             история
                         </div>
                         <div class="title">
-                            Заголовок результата Lorem ipsum dolor sit amet, consectetur adipisicing.
                         </div>
                         <div class="description">
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, impedit.
@@ -34,3 +38,13 @@
         </div>
     </div>
 </section>
+{% endif %}
+<div class="search-nothing-result" style="display: none;">
+    <div class="title">
+        ничего не найдено
+    </div>
+   <div class="subtitle">
+           Попробуйте как-нибудь по-другому
+   </div>
+</div>
+{% endblock content %}
