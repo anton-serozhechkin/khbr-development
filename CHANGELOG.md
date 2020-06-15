@@ -1,3 +1,11 @@
+## 0.7.0 [15.06.2020]
+
+### Added
+
+### Refactored
+- Structure of header and navigation menu
+
+
 ## 0.6.0 [15.06.2020]
 ### Added 
 - Category index page
