@@ -1,3 +1,7 @@
+## 0.6.0 [15.06.2020]
+### Added 
+- Category index page
+
 ## 0.5.0 [14.06.2020]
 ### Added
 - Two factor authentication in admin panel

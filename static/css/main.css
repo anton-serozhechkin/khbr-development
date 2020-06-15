@@ -418,7 +418,7 @@ time, mark, audio, video {
     width: 100%; }
     .event-detail .event-detail-detail-top .event-detail-title {
       font-size: 3em;
-      text-align: left;
+      text-align: center;
       color: #303738; }
       .event-detail .event-detail-detail-top .event-detail-title:hover {
         transition: .4s;
@@ -495,7 +495,8 @@ time, mark, audio, video {
     border-radius: 10px; }
   .rating-detail .rating-detail-top .rating-detail-top-left_side .rating-detail-title {
     font-size: 2em;
-    color: #303738; }
+    color: #303738;
+    text-align: center; }
     .rating-detail .rating-detail-top .rating-detail-top-left_side .rating-detail-title:hover {
       color: #63808b;
       transition: .4s; }
