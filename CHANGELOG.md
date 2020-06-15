@@ -1,3 +1,12 @@
+## 0.6.0 [15.06.2020]
+### Added
+- Category index page
+- Nothing found block at search index
+
+### Refactored
+- Ecranization
+- Title at events and ratings detail
+
 ## 0.5.0 [14.06.2020]
 ### Added
 - Two factor authentication in admin panel
