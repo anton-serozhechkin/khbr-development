@@ -15,7 +15,7 @@
           {% for article in data_art %}
           <div class="analytics_post-box wow fadeInLeft">
               <div class="analytics-box-title">
-                  <a href="{% url 'article_detail' slug=article.slug %}">
+                  <a href="{% url 'article_detail' category_slug=article.category.slug slug=article.slug %}">
                       <h2>
                           {{ article.title }}
                       </h2>

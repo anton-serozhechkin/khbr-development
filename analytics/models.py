@@ -4,6 +4,7 @@ from django.utils import timezone
 from django.conf import settings
 from django.contrib.auth.models import User
 from tinymce.models import HTMLField
+
 class Author(models.Model):
     user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, verbose_name='Пользователь')
     bio = models.CharField('Немного о себе', max_length=500)
@@ -48,7 +49,7 @@ class Article(models.Model):
         return self.title
             
     def get_absolute_url(self):
-        return reverse('article_detail', kwargs={'slug': self.slug})
+        return reverse('article_detail', kwargs={'category_slug': self.category.slug, 'slug': self.slug})
     
     class Meta:
         verbose_name = 'Пост'

@@ -9,7 +9,7 @@
                         <a href="{% url 'analytics' %}">Аналитика</a>
                     </div>
                     {% for article in article_list %}
-                        <a href="{% url 'article_detail' slug=article.slug %}">
+                        <a href="{% url 'article_detail' category_slug=article.category.slug slug=article.slug %}">
                             <div class="result">
                                 {% if article.image %}
                                     <div class="img">

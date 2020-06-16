@@ -54,7 +54,7 @@
                 {% for article in last_art %}
                 <div class="index-post  wow fadeInDown">
 <!--        index post post box with animations fade class            -->
-                    <a href="{% url 'article_detail' slug=article.slug %}" class="index-post-link">
+                    <a href="{% url 'article_detail' category_slug=article.category.slug slug=article.slug %}" class="index-post-link">
 
                         {% if article.image %}
                             <img src="{{ article.image.url }}" alt="post image" class="index-post-image">
@@ -101,7 +101,7 @@
                        {% for article in data_art_1_4 %}
 
                        <li class="index-list-item">
-                           <a href="{% url 'article_detail' slug=article.slug %}" class="index-list-item-link">
+                           <a href="{% url 'article_detail' category_slug=article.category.slug slug=article.slug %}" class="index-list-item-link">
                                {{ article.title }}
                            </a>
                        </li>
@@ -114,7 +114,7 @@
     <hr>
         <div class="container">
             <section class="index-action-style wow flash" id="index-action-anchor">
-                <a href="{% url 'article_detail' slug=integer_day.slug %}" class="index-action-link">
+                <a href="{% url 'article_detail' category_slug=integer_day.category.slug slug=integer_day.slug %}" class="index-action-link">
                     <div class="index-action-content">
                         {{ integer_day.title }}
                     </div>
@@ -142,7 +142,7 @@
                    <ul class="index-list">
                        {% for article in data_art_6_9 %}
                        <li class="index-list-item">
-                           <a href="{% url 'article_detail' slug=article.slug %}" class="index-list-item-link">
+                           <a href="{% url 'article_detail' category_slug=article.category.slug slug=article.slug %}" class="index-list-item-link">
                            {{ article.title }}
                            </a>
                        </li>
