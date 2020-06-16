@@ -10,6 +10,7 @@
     <div class="page_title-bottom_line">
     </div>
 </div>    
+    {% if data_video %}
     <div class="container">
         <div class="video-wrapper">
             {% for video in data_video %}
@@ -35,7 +36,7 @@
                     </p>
                     <p class="video-box-time">
                         <i class="fa fa-calendar"></i>
-                        {{ video.created }}
+                        {{ video.created|date:"d M Y" }}
                     </p>
                 </div>
 
@@ -46,6 +47,9 @@
             {% endfor %}
         </div>
     </div>
+    {% else %}
+    ниче не найдено
+    {% endif %}
 <!--    <section class="pages-carousel">-->
 <!--        <div class="pages-carousel-button" id="prev">-->
 

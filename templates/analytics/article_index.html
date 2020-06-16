@@ -10,6 +10,7 @@
         <div class="page_title-bottom_line">
         </div>
     </div>
+    {% if data_art %}
   <div class="container">
       <section class="analytics-wrapper" id="analytics-wrapper-anchor">
           {% for article in data_art %}
@@ -35,7 +36,7 @@
                       </div>
                       <div class="analytics-box-info">
                           <p class="analytics-box-author"><i class="fa fa-user"></i> {{ article.author }}</p>
-                          <p class="analytics-box-time">{{ article.created }}</p>
+                          <p class="analytics-box-time">{{ article.created|date:"d M Y" }}</p>
                       </div>
                   </div>
               </div>
@@ -43,6 +44,9 @@
           {% endfor %}
       </section>
   </div>
+  {% else %}
+  ниче не найдено
+  {% endif %}
 <!--    <section class="pages-carousel">-->
 <!--        <div class="pages-carousel-button" id="prev">-->
 

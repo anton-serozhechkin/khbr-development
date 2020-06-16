@@ -43,10 +43,8 @@
         </a>
     </div>
 </div>
+{% if last_art %}
 <!--wrapper of heading page-->
-
-
-
     <div class="container">
         <section class="index-posts-style" id="index-posts-anchor">
             <!--    post table wrapper    -->
@@ -64,9 +62,11 @@
                 </div>
                 {% endfor %}
             </div>
-    </section>
+        </section>
     </div>
-
+    {% else %}
+    пока ничего нет
+    {% endif %}
 <hr>
     <div class="container">
         <section class="index-follow" id="index-follow-anchor" >
@@ -83,7 +83,10 @@
        <section class="index-lists-style" id="post_list-1-anchor">
            <div class="index-lists-wrapper">
                <div class="index-list-box">
-                   <h3 class="index-list-title">Рейтинги</h3>
+                   <h3 class="index-list-title">
+                       Рейтинги
+                    </h3>
+                   {% if data_rait %}
                    <ul class="index-list">
                        {% for raiting in data_rait %}
 
@@ -94,9 +97,15 @@
                        </li>
                        {% endfor %}
                    </ul>
+                   {% else %}
+                   здесь пока ничего нет
+                   {% endif %}
                </div>
                <div class="index-list-box">
-                   <h3 class="index-list-title">Аналитика</h3>
+                   <h3 class="index-list-title">
+                       Аналитика
+                    </h3>
+                    {% if data_art_1_4 %}
                    <ul class="index-list">
                        {% for article in data_art_1_4 %}
 
@@ -107,10 +116,14 @@
                        </li>
                        {% endfor %}
                    </ul>
+                   {% else %}
+                   здесь пока ничего нет
+                   {% endif %}
                </div>
            </div>
        </section>
    </div>
+   {% if integer_day %}
     <hr>
         <div class="container">
             <section class="index-action-style wow flash" id="index-action-anchor">
@@ -122,11 +135,15 @@
             </section>
         </div>
     <hr>
+    {% endif %}
    <div class="container">
        <section class="index-lists-style" id="post_list-2-anchor">
            <div class="index-lists-wrapper">
                <div class="index-list-box">
-                   <h3 class="index-list-title">События</h3>
+                   <h3 class="index-list-title">
+                       События
+                    </h3>
+                    {% if data_event %}
                    <ul class="index-list">
                        {% for event in data_event %}
                        <li class="index-list-item">
@@ -136,10 +153,16 @@
                        </li>
                        {% endfor %}
                    </ul>
+                   {% else %}
+                   пока ничего нет
+                   {% endif %}
                </div>
                <div class="index-list-box">
-                   <h3 class="index-list-title">Аналитика</h3>
-                   <ul class="index-list">
+                    <h3 class="index-list-title">
+                        Аналитика
+                    </h3>
+                    {% if data_art_6_9 %}
+                    <ul class="index-list">
                        {% for article in data_art_6_9 %}
                        <li class="index-list-item">
                            <a href="{% url 'article_detail' category_slug=article.category.slug slug=article.slug %}" class="index-list-item-link">
@@ -148,6 +171,9 @@
                        </li>
                        {% endfor %}
                    </ul>
+                   {% else %}
+                   пока ничего нет
+                   {% endif %}
                </div>
            </div>
        </section>
@@ -170,7 +196,7 @@
         </section>
     </div>
 <hr>
-
+    {% if data_video %}
     <div class="container">
         <section class="index-video-style" id="index-video-anchor">
             <div class="index-video-wrapper">
@@ -190,8 +216,6 @@
             </div>
         </section>
     </div>
-
-
-
+    {% endif %}
 {% endblock content %}
 <!--adaptive + -->

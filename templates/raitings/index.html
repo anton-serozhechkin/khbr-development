@@ -9,6 +9,7 @@
     <div class="page_title-bottom_line">
     </div>
 </div>
+{% if list_rait %}
 <div class="container">
     <section class="ratings-wrapper">
         <div class="rating-post-box">
@@ -27,13 +28,16 @@
                 <p>{{ raiting.short_description|safe }}</p>
                 <div class="analytics-box-info">
                     <p class="analytics-box-author"><i class="fa fa-user"></i> {{ raiting.author }}</p>
-                    <p class="analytics-box-time">{{ raiting.created }}</p>
+                    <p class="analytics-box-time">{{ raiting.created|date:"d M Y" }}</p>
                 </div>
             </div>
             {% endfor %}
         </div>
     </section>
 </div>
+{% else %}
+ниче не найдено
+{% endif %}
 <!--<section class="pages-carousel">-->
 <!--    <div class="pages-carousel-button" id="prev">-->
 
