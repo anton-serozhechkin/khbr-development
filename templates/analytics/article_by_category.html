@@ -9,20 +9,23 @@
         <div class="page_title-bottom_line">
         </div>
     </div>
+    {% if articles %}
     <div class="container">
         <div class="category-wrapper">
             {% for article in articles %}
             <div class="category-box">
                 <a href="{% url 'article_detail' category_slug=article.category.slug slug=article.slug %}">
                     {% if article.image %}
-                    <img src="{{ article.image.url }}" alt="" class="category-box-image">
+                        <img src="{{ article.image.url }}" alt="" class="category-box-image">
                     {% endif %}
                     <div class="category-box-title">
-                    {{ article.title }}
+                        {{ article.title }}
                     </div>
                 </a>
             </div>
             {% endfor %}
         </div>
     </div>
+    {% else %}
+    {% endif %}
 {% endblock content %}

@@ -41,7 +41,6 @@ def article_by_category(request, category_slug):
     category_name = Category.objects.get(slug=category_slug).name
     return render(request, 'analytics/article_by_category.html', locals())
 
-
 def search_results(request):
     query = request.GET.get('q')
 
