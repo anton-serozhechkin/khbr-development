@@ -5,3 +5,4 @@ django-allauth==0.41.0
 django-widget-tweaks==1.4.8
 django-tinymce==3.0.1
 django-two-factor-auth==1.11.0
+phonenumbers==8.12.5

@@ -1,5 +1,5 @@
 ## 0.6.0 [15.06.2020]
-### Added
+### Added 
 - Category index page
 - Nothing found block at search index
 
