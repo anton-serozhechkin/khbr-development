@@ -29,3 +29,4 @@ pycache
 
 # static cashe
 /static/css/.sass-cache/
+/static/css/main.css.map

@@ -5,6 +5,7 @@ from raitings.models import Raiting
 from event.models import Event
 from videooverview.models import VideoDownloading
 from .forms import SubscribeForm
+from django.db.models import Q
 
 def main(request):
     if request.method == 'POST':
@@ -34,6 +35,31 @@ def article_detail(request, slug):
     article.views += 1
     article.save()
     return render(request, 'analytics/article_detail.html', locals())
+
+def search_results(request):
+    query = request.GET.get('q')
+
+    article_list = Article.objects.filter(
+        Q(title__icontains=query)|
+        Q(short_description__icontains=query)|
+        Q(content__icontains=query)
+    )
+    event_list = Event.objects.filter(
+        Q(title__icontains=query)|
+        Q(short_description__icontains=query)|
+        Q(content__icontains=query)
+    )
+    raiting_list = Raiting.objects.filter(
+        Q(title__icontains=query)|
+        Q(short_description__icontains=query)|
+        Q(content__icontains=query)
+    )
+    video_list = VideoDownloading.objects.filter(
+        Q(title__icontains=query)|
+        Q(notes__icontains=query)
+    )
+
+    return render(request, 'search/index.html', locals())
 
 def not_found_view(request, exception):
     return render(request, 'errors/404.html')
