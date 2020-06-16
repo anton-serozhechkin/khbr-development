@@ -23,7 +23,7 @@
                                             {{ article.title }}
                                         </div>
                                         <div class="category">
-                                            <a href="">
+                                            <a href="{% url 'article_by_category' category_slug=article.category.slug %}">
                                                 {{ article.category }}
                                             </a>
                                         </div>
