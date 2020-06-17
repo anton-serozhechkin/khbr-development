@@ -35,8 +35,18 @@
                           </a>
                       </div>
                       <div class="analytics-box-info">
-                          <p class="analytics-box-author"><i class="fa fa-user"></i> {{ article.author }}</p>
-                          <p class="analytics-box-time">{{ article.created|date:"d M Y" }}</p>
+                        <p class="analytics-box-author">
+                            <i class="fa fa-user"></i> 
+                            {{ article.author }}
+                        </p>
+                        <p class="analytics-box-time">
+                            {{ article.created|date:"d M Y" }}
+                        </p>
+                        <p>
+                            <a href="{% url 'article_by_category' category_slug=article.category.slug %}">
+                                {{ article.category }}
+                            </a>
+                        </p>
                       </div>
                   </div>
               </div>
