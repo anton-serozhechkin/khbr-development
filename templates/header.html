@@ -3,40 +3,16 @@
     <i class="fa fa-bars" aria-hidden="true" id="header-navbars-id" style="display: none;"></i>
 
     <header class="header-style" id="header-anchor">
-        <div class="header-logo">
-            <a href="{% url 'analytics' %}">
-                <img src="{% static 'img/logo.png' %}" class="wow fadeIn"alt="">
-            </a>
+        <div class="header-center">
+            <div class="mobile-bar">
+                <i class="fa fa-bars" aria-hidden="true" id="barsButton"></i>
+            </div>
+            <div class="header-logo">
+                <a href="{% url 'analytics' %}">
+                    <img src="{% static 'img/logo.png' %}" class="wow fadeIn"alt="">
+                </a>
+            </div>
         </div>
-        <ul class="header-navigation" id="header-navigation-id">
-                <li class="submenu-item">
-                    <a href="{% url 'analytics_index' %}" class="header-navigation-item wow fadeIn ">Аналитика
-                        <i class="fa fa-angle-down" aria-hidden="true"></i>
-    <!--         show if category there is           -->
-                    </a>
-                    <ul class="header-navigation-submenu">
-                        <li><a href="#">item1</a></li>
-                        <li><a href="#">item2</a></li>
-                        <li><a href="#">item3</a></li>
-                        <li><a href="#">item4</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="{% url 'events' %}" class="header-navigation-item wow fadeIn">События</a>
-                </li>
-                <li>
-                    <a href="{% url 'raitings' %}" class="header-navigation-item wow fadeIn">Рейтинги</a>
-                </li>
-                <li>
-                    <a href="{% url 'videooverviews' %}" class="header-navigation-item wow fadeIn">Видео</a>
-                </li>
-                <li>
-                    <a href="" class="header-navigation-item wow fadeIn">Опросы</a>
-                </li>
-               {% comment %}<a href="{% url 'signin' %}" class="header-navigation-item header-navigation-sign wow fadeIn">
-                   <i class="fa fa-user-circle" aria-hidden="true"></i>
-               </a>{% endcomment %}
-           </ul>
         <div class="header-search">
             <div class="search-wrapper">
                 <form action="{% url 'search_results' %}">
@@ -46,4 +22,35 @@
             </div>
         </div>
     </header>
+    <section class="navigation">
+        <ul class="header-navigation" id="header-navigation-id">
+            <li class="submenu-item">
+                <a href="{% url 'analytics_index' %}" class="header-navigation-item wow fadeIn ">Аналитика
+                    <i class="fa fa-angle-down" aria-hidden="true"></i>
+                    <!--         show if category there is           -->
+                </a>
+                <ul class="header-navigation-submenu">
+                    <li><a href="#">item1</a></li>
+                    <li><a href="#">item2</a></li>
+                    <li><a href="#">item3</a></li>
+                    <li><a href="#">item4</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="{% url 'events' %}" class="header-navigation-item wow fadeIn">События</a>
+            </li>
+            <li>
+                <a href="{% url 'raitings' %}" class="header-navigation-item wow fadeIn">Рейтинги</a>
+            </li>
+            <li>
+                <a href="{% url 'videooverviews' %}" class="header-navigation-item wow fadeIn">Видео</a>
+            </li>
+            <li>
+                <a href="" class="header-navigation-item wow fadeIn">Опросы</a>
+            </li>
+            {% comment %}<a href="{% url 'signin' %}" class="header-navigation-item header-navigation-sign wow fadeIn">
+            <i class="fa fa-user-circle" aria-hidden="true"></i>
+        </a>{% endcomment %}
+        </ul>
+    </section>
 </div>
