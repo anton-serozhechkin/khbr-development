@@ -29,12 +29,13 @@
                     <i class="fa fa-angle-down" aria-hidden="true"></i>
                     <!--         show if category there is           -->
                 </a>
+                {% comment %}
                 <ul class="header-navigation-submenu">
-                    <li><a href="#">item1</a></li>
-                    <li><a href="#">item2</a></li>
-                    <li><a href="#">item3</a></li>
-                    <li><a href="#">item4</a></li>
+                    {% for category in categories %}
+                    <li><a href="{% url 'article_by_category' category_slug=category.slug %}">{{ category.name }}</a></li>
+                    {% endfor %}
                 </ul>
+                {% endcomment %}
             </li>
             <li>
                 <a href="{% url 'events' %}" class="header-navigation-item wow fadeIn">События</a>
