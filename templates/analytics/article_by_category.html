@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="page_title-box">
+        <div class="page_title-top_line">
+        </div>
+        <div class="page_title-title">
+            <h1>{{ category_name }}</h1>
+        </div>
+        <div class="page_title-bottom_line">
+        </div>
+    </div>
+    {% if articles %}
+    <div class="container">
+        <div class="category-wrapper">
+            {% for article in articles %}
+            <div class="category-box">
+                <a href="{% url 'article_detail' category_slug=article.category.slug slug=article.slug %}">
+                    {% if article.image %}
+                        <img src="{{ article.image.url }}" alt="" class="category-box-image">
+                    {% endif %}
+                    <div class="category-box-title">
+                        {{ article.title }}
+                    </div>
+                    {% if not article.image %}
+                    <div class="category-box-description">
+                        {{ article.short_description|safe }}
+                    </div>
+                    {% endif %}
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% else %}
+<div class="nothing-found">
+    Ничего не найдено
+</div>
+    {% endif %}
+{% endblock content %}

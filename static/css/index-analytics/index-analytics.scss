@@ -67,9 +67,22 @@
         }
       }
       .analytics-box-info {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
         p {
           margin: 1vh 0;
           color:#7A7A7A;
+        }
+        .analytics-box-category {
+          font-size: 22px;
+          i {
+            margin-right: 6px;
+          }
+          a {
+            color:black;
+            text-decoration: none;
+          }
         }
       }
     }

@@ -1,3 +1,16 @@
+## 0.7.0 [16.06.2020] 
+## 13-14 branches
+### Added 
+- Search views, URL
+- Search result title URLs
+
+### Changed
+- Format date of results
+- Search not found template
+
+### Deleted
+- Protocols of links in footer
+
 ## 0.6.0 [15.06.2020]
 ### Added 
 - Category index page
@@ -30,4 +43,3 @@
 ### Added
 - Feature poll template index and poll detail
 - Slider with poll on main index page
-

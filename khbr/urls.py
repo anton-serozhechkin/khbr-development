@@ -68,9 +68,12 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')),
 ]
 
-urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
+
+# handling errors and include views
 handler404 = 'analytics.views.not_found_view'
 handler500 = 'analytics.views.error_view'
 handler403 = 'analytics.views.permission_denied_view'
