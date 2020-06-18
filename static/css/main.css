@@ -251,6 +251,11 @@ time, mark, audio, video {
         .index-video-style .index-video-wrapper .index-video-box .index-video-title:focus {
           color: #8b5d65; }
 
+.index-heading-link {
+  color: #5e6762;
+  text-decoration: none;
+  text-align: center; }
+
 .page_title-box {
   text-align: center;
   padding: 2vh 0; }
@@ -992,5 +997,12 @@ time, mark, audio, video {
           color: #8b5d65; }
     .footer-style .footer-wrapper .footer-logo .footer-logo-link img {
       width: 315px; }
+
+.nothing-found {
+  text-align: center;
+  font-size: 2rem;
+  color: black;
+  font-weight: 500;
+  margin: 60px 0; }
 
 /*# sourceMappingURL=main.css.map */

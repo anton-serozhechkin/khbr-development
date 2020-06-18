@@ -38,7 +38,7 @@
 
 <div class="page_title-box">
     <div class="page_title-title">
-        <a href="{% url 'analytics_index' %}">
+        <a href="{% url 'analytics_index' %}" class="index-heading-link">
             <h1>Аналитика</h1>
         </a>
     </div>
@@ -65,7 +65,9 @@
         </section>
     </div>
     {% else %}
-    пока ничего нет
+<div class="nothing-found">
+    Пока ничего нет
+</div>
     {% endif %}
 <hr>
     <div class="container">
@@ -83,7 +85,7 @@
        <section class="index-lists-style" id="post_list-1-anchor">
            <div class="index-lists-wrapper">
                <div class="index-list-box">
-                    <a href="{% url 'raitings' %}">
+                    <a href="{% url 'raitings' %}" class="index-heading-link">
                        <h3 class="index-list-title">
                            Рейтинги
                         </h3>
@@ -100,11 +102,13 @@
                        {% endfor %}
                    </ul>
                    {% else %}
-                   здесь пока ничего нет
+                   <div class="nothing-found">
+                       Пока ничего нет
+                   </div>
                    {% endif %}
                </div>
                <div class="index-list-box">
-                   <a href="{% url 'analytics_index' %}">
+                   <a href="{% url 'analytics_index' %}" class="index-heading-link">
                        <h3 class="index-list-title">
                            Аналитика
                         </h3>
@@ -121,7 +125,9 @@
                        {% endfor %}
                    </ul>
                    {% else %}
-                   здесь пока ничего нет
+                   <div class="nothing-found">
+                       Пока ничего нет
+                   </div>
                    {% endif %}
                </div>
            </div>
@@ -144,7 +150,7 @@
        <section class="index-lists-style" id="post_list-2-anchor">
            <div class="index-lists-wrapper">
                <div class="index-list-box">
-                    <a href="{% url 'events' %}">
+                    <a href="{% url 'events' %}" class="index-heading-link">
                        <h3 class="index-list-title">
                            События
                         </h3>
@@ -160,11 +166,13 @@
                        {% endfor %}
                    </ul>
                    {% else %}
-                   пока ничего нет
+                   <div class="nothing-found">
+                       Пока ничего нет
+                   </div>
                    {% endif %}
                </div>
                <div class="index-list-box">
-                    <a href="{% url 'analytics_index' %}">
+                    <a href="{% url 'analytics_index' %}" class="index-heading-link">
                         <h3 class="index-list-title">
                             Аналитика
                         </h3>
@@ -180,7 +188,9 @@
                        {% endfor %}
                    </ul>
                    {% else %}
-                   пока ничего нет
+                   <div class="nothing-found">
+                       Пока ничего нет
+                   </div>
                    {% endif %}
                </div>
            </div>
