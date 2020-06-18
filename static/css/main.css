@@ -391,7 +391,7 @@ time, mark, audio, video {
     border-bottom: solid 2px #303738;
     padding-bottom: 2vh; }
     .event-wrapper .event-post-box .event-post-content .event-post-title {
-      font-size: 3em;
+      font-size: 2em;
       text-align: center; }
       .event-wrapper .event-post-box .event-post-content .event-post-title a {
         text-decoration: none;
@@ -475,8 +475,9 @@ time, mark, audio, video {
   .ratings-wrapper .rating-post-box {
     width: 100%; }
     .ratings-wrapper .rating-post-box .rating-post-title {
-      text-align: left;
-      font-size: 2em; }
+      text-align: center;
+      font-size: 2em;
+      margin: 25px 0; }
       .ratings-wrapper .rating-post-box .rating-post-title a {
         color: #303738;
         text-decoration: none; }
