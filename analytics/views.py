@@ -66,6 +66,14 @@ def search_results(request):
 
     return render(request, 'search/index.html', locals())
 
+def authors_index(request):
+    authors = Author.objects.all()
+    return render(request, 'authors/index.html', locals())
+
+def authors_detail(request, slug):
+    author = Author.objects.get(slug=slug)
+    return render(request, 'authors/author_detail.html', locals())
+
 def not_found_view(request, exception):
     return render(request, 'errors/404.html')
 

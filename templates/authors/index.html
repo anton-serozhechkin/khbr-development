@@ -1,78 +1,40 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
 <div class="page_title-box">
     <div class="page_title-top_line">
     </div>
     <div class="page_title-title">
-        <h1>Автора</h1>
+        <h1>Авторы</h1>
     </div>
     <div class="page_title-bottom_line">
     </div>
 </div>
     <div class="container">
         <div class="authors">
+            {% for author in authors %}
             <div class="author">
-                <a href="">
+                <a href="{% url 'authors_detail' slug=author.slug %}">
                     <div class="top">
-                        <img src="//images.unsplash.com/photo-1592190356671-304f26555907?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80" alt="">
+                        {% if author.avatar %}
+                            <img src="{{ author.avatar.url }}" alt="">
+                        {% else %}
+                            <img src="{% static 'img/User_icon-cp.png' %}" alt="">
+                        {% endif %}
                     </div>
                     <div class="middle">
-                        Валерий Семенович Глаголин
+                        {{ author.user.lastname }} 
+                         {{ author.user.firstname }}
+                        {% if author.user.middlename %}
+                         {{ author.user.middlename }}
+                        {% endif %}
                     </div>
                     <div class="bottom">
-                        vsg@gmail.com
+                        {{ author.user.email }}
                     </div>
                 </a>
             </div>
-            <div class="author">
-                <a href="">
-                    <div class="top">
-                        <img src="//images.unsplash.com/photo-1592190356671-304f26555907?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80" alt="">
-                    </div>
-                    <div class="middle">
-                        Валерий Семенович Глаголин
-                    </div>
-                    <div class="bottom">
-                        vsg@gmail.com
-                    </div>
-                </a>
-            </div>
-            <div class="author">
-                <a href="">
-                    <div class="top">
-                        <img src="//images.unsplash.com/photo-1592190356671-304f26555907?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80" alt="">
-                    </div>
-                    <div class="middle">
-                        Валерий Семенович Глаголин
-                    </div>
-                    <div class="bottom">
-                        vsg@gmail.com
-                    </div>
-                </a>
-            </div>
-            <div class="author">
-                <a href="">
-                    <div class="top">
-                        <img src="//images.unsplash.com/photo-1592190356671-304f26555907?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80" alt="">
-                    </div>
-                    <div class="middle">
-                        Валерий Семенович Глаголин
-                    </div>
-                    <div class="bottom">
-                        vsg@gmail.com
-                    </div>
-                </a>
-            </div>
-            <div class="author">
-                <a href="">
-                    <div class="top">
-                        <img src="//images.unsplash.com/photo-1592190356671-304f26555907?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80" alt="">
-                    </div>
-                    <div class="middle">
-                        Валерий Семенович Глаголин
-                    </div>
-                    <div class="bottom">
-                        vsg@gmail.com
-                    </div>
-                </a>
-            </div>
+            {% endfor %}
         </div>
     </div>
+{% endblock content %}

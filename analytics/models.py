@@ -1,21 +1,25 @@
 from django.db import models
 from django.urls import reverse
 from django.utils import timezone
-from django.conf import settings
 from django.contrib.auth.models import User
 from tinymce.models import HTMLField
 
 class Author(models.Model):
-    user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, verbose_name='Пользователь')
+    user = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='Пользователь')
+    slug = models.SlugField('Ссылка')
     bio = models.CharField('Немного о себе', max_length=500)
+    avatar = models.ImageField(verbose_name='Аватар', upload_to='avatars/', blank=True)
 
     def __str__(self):
         return self.user.username
 
+    def get_absolute_url(self):
+        return reverse('authors_detail', kwargs={'slug': self.slug})
     
     class Meta:
         verbose_name = 'Автор'
         verbose_name_plural = 'Авторы'
+
 
 class Category(models.Model):
     name = models.CharField('Название', max_length=100)  
