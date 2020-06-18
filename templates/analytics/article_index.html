@@ -15,13 +15,7 @@
       <section class="analytics-wrapper" id="analytics-wrapper-anchor">
           {% for article in data_art %}
           <div class="analytics_post-box wow fadeInLeft">
-              <div class="analytics-box-title">
-                  <a href="{% url 'article_detail' category_slug=article.category.slug slug=article.slug %}">
-                      <h2>
-                          {{ article.title }}
-                      </h2>
-                  </a>
-              </div>
+
               <div class="analytics-box-content">
                   {% if article.image %}
                   <div class="analytics-box-image">
@@ -29,6 +23,13 @@
                   </div>
                   {% endif %}
                   <div class="analytics-box-text">
+                      <div class="analytics-box-title">
+                          <a href="{% url 'article_detail' category_slug=article.category.slug slug=article.slug %}">
+                              <h2>
+                                  {{ article.title }}
+                              </h2>
+                          </a>
+                      </div>
                       <div class="analytics-box-text-content">
                           <a href="#" class="analytics-box-text-content-link">
                               {{ article.short_description|safe }}
@@ -36,16 +37,17 @@
                       </div>
                       <div class="analytics-box-info">
                         <p class="analytics-box-author">
-                            <i class="fa fa-user"></i> 
+                            <i class="fa fa-user"></i>
                             {{ article.author }}
                         </p>
+                          <p class="analytics-box-category">
+                              <a href="{% url 'article_by_category' category_slug=article.category.slug %}">
+                                  <i class="fa fa-bookmark"></i>
+                                  {{ article.category }}
+                              </a>
+                          </p>
                         <p class="analytics-box-time">
                             {{ article.created|date:"d M Y" }}
-                        </p>
-                        <p>
-                            <a href="{% url 'article_by_category' category_slug=article.category.slug %}">
-                                {{ article.category }}
-                            </a>
                         </p>
                       </div>
                   </div>

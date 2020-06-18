@@ -303,9 +303,20 @@ time, mark, audio, video {
               word-wrap: break-word; }
             .analytics-wrapper .analytics_post-box .analytics-box-content .analytics-box-text .analytics-box-text-content a:hover {
               color: #63808b; }
-      .analytics-wrapper .analytics_post-box .analytics-box-content .analytics-box-info p {
-        margin: 1vh 0;
-        color: #7A7A7A; }
+      .analytics-wrapper .analytics_post-box .analytics-box-content .analytics-box-info {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between; }
+        .analytics-wrapper .analytics_post-box .analytics-box-content .analytics-box-info p {
+          margin: 1vh 0;
+          color: #7A7A7A; }
+        .analytics-wrapper .analytics_post-box .analytics-box-content .analytics-box-info .analytics-box-category {
+          font-size: 22px; }
+          .analytics-wrapper .analytics_post-box .analytics-box-content .analytics-box-info .analytics-box-category i {
+            margin-right: 6px; }
+          .analytics-wrapper .analytics_post-box .analytics-box-content .analytics-box-info .analytics-box-category a {
+            color: black;
+            text-decoration: none; }
 
 .pages-carousel {
   display: flex;
@@ -928,17 +939,6 @@ time, mark, audio, video {
     max-width: 265px;
     margin: 35px auto; }
 
-.search-nothing-result {
-  text-align: center; }
-  .search-nothing-result .title {
-    text-transform: uppercase;
-    font-weight: 700;
-    font-size: 1.8rem; }
-  .search-nothing-result .subtitle {
-    margin: 12px 0;
-    color: #9aa39e;
-    font-size: 1.2rem; }
-
 .category-wrapper {
   display: flex;
   flex-wrap: wrap;
@@ -960,6 +960,10 @@ time, mark, audio, video {
       text-transform: uppercase;
       font-size: 2rem;
       margin: 10px 0;
+      color: black; }
+    .category-wrapper .category-box .category-box-description {
+      margin-left: 10px;
+      font-size: 18px;
       color: black; }
 
 .footer-style {

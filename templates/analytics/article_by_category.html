@@ -21,6 +21,11 @@
                     <div class="category-box-title">
                         {{ article.title }}
                     </div>
+                    {% if not article.image %}
+                    <div class="category-box-description">
+                        {{ article.short_description|safe }}
+                    </div>
+                    {% endif %}
                 </a>
             </div>
             {% endfor %}
