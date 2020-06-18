@@ -985,6 +985,64 @@ time, mark, audio, video {
       font-size: 18px;
       color: black; }
 
+.container-authors {
+  max-width: 1170px;
+  width: 100%;
+  margin: 0 auto; }
+
+.authors {
+  margin: 100px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; }
+  .authors .author {
+    margin: 25px 0;
+    width: 325px; }
+    .authors .author a {
+      text-decoration: none; }
+    .authors .author .top img {
+      border-radius: 100%;
+      width: 325px;
+      height: 325px; }
+    .authors .author .middle {
+      color: black;
+      text-align: center;
+      width: 325px;
+      font-size: 34px; }
+    .authors .author .bottom {
+      color: #5e6762;
+      text-align: center;
+      width: 325px;
+      font-size: 22px; }
+
+.author-info {
+  margin: 100px 0;
+  display: flex;
+  flex-wrap: wrap; }
+  .author-info .left {
+    max-width: 325px; }
+    .author-info .left img {
+      width: 100%;
+      max-width: 325px;
+      height: 100%;
+      max-height: 450px; }
+  .author-info .right {
+    width: 810px;
+    margin-top: 20px;
+    margin-left: 35px; }
+    .author-info .right .name {
+      font-size: 32px; }
+    .author-info .right .contact {
+      margin: 20px 0;
+      margin-left: 20px; }
+      .author-info .right .contact p {
+        font-size: 20px;
+        font-weight: 500;
+        margin: 4px 0; }
+    .author-info .right .info p {
+      margin: 20px 0;
+      font-size: 24px; }
+
 .footer-style {
   padding: 5vh 2vw;
   background-color: #f3f4f2; }
