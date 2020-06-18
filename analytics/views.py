@@ -30,11 +30,16 @@ def article_index(request):
     data_art = Article.objects.filter(is_active=True).order_by('-created')
     return render(request, 'analytics/article_index.html', locals())
 
-def article_detail(request, slug):
+def article_detail(request, category_slug, slug):
     article = get_object_or_404(Article, slug=slug)
     article.views += 1
     article.save()
     return render(request, 'analytics/article_detail.html', locals())
+
+def article_by_category(request, category_slug):
+    articles = Article.objects.filter(category__slug=category_slug, is_active=True).order_by('-created')
+    category_name = Category.objects.get(slug=category_slug).name
+    return render(request, 'analytics/article_by_category.html', locals())
 
 def search_results(request):
     query = request.GET.get('q')

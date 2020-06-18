@@ -12,7 +12,7 @@
         {% endif %}<!--под дивом с фоткой -->
 
         <div class="event-detail-info">
-            <p class="event-detail-short-text"><span><i class="fa fa-calendar" aria-hidden="true"></i>{{ data_event.day }}</span></p>
+            <p class="event-detail-short-text"><span><i class="fa fa-calendar" aria-hidden="true"></i>{{ data_event.day|date:"d M Y" }}</span></p>
             <p class="event-detail-short-text"><span><i class="fa fa-map-marker" aria-hidden="true"></i>{{ data_event.place }}</span></p>
 
         <p class="event-detail-short-text"><span><i class="fa fa-clock-o" aria-hidden="true"></i>Начало: {{ data_event.start_time}}</span></p>

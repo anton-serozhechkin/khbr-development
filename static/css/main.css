@@ -251,6 +251,11 @@ time, mark, audio, video {
         .index-video-style .index-video-wrapper .index-video-box .index-video-title:focus {
           color: #8b5d65; }
 
+.index-heading-link {
+  color: #5e6762;
+  text-decoration: none;
+  text-align: center; }
+
 .page_title-box {
   text-align: center;
   padding: 2vh 0; }
@@ -303,9 +308,20 @@ time, mark, audio, video {
               word-wrap: break-word; }
             .analytics-wrapper .analytics_post-box .analytics-box-content .analytics-box-text .analytics-box-text-content a:hover {
               color: #63808b; }
-      .analytics-wrapper .analytics_post-box .analytics-box-content .analytics-box-info p {
-        margin: 1vh 0;
-        color: #7A7A7A; }
+      .analytics-wrapper .analytics_post-box .analytics-box-content .analytics-box-info {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between; }
+        .analytics-wrapper .analytics_post-box .analytics-box-content .analytics-box-info p {
+          margin: 1vh 0;
+          color: #7A7A7A; }
+        .analytics-wrapper .analytics_post-box .analytics-box-content .analytics-box-info .analytics-box-category {
+          font-size: 22px; }
+          .analytics-wrapper .analytics_post-box .analytics-box-content .analytics-box-info .analytics-box-category i {
+            margin-right: 6px; }
+          .analytics-wrapper .analytics_post-box .analytics-box-content .analytics-box-info .analytics-box-category a {
+            color: black;
+            text-decoration: none; }
 
 .pages-carousel {
   display: flex;
@@ -375,7 +391,7 @@ time, mark, audio, video {
     border-bottom: solid 2px #303738;
     padding-bottom: 2vh; }
     .event-wrapper .event-post-box .event-post-content .event-post-title {
-      font-size: 3em;
+      font-size: 2em;
       text-align: center; }
       .event-wrapper .event-post-box .event-post-content .event-post-title a {
         text-decoration: none;
@@ -459,8 +475,9 @@ time, mark, audio, video {
   .ratings-wrapper .rating-post-box {
     width: 100%; }
     .ratings-wrapper .rating-post-box .rating-post-title {
-      text-align: left;
-      font-size: 2em; }
+      text-align: center;
+      font-size: 2em;
+      margin: 25px 0; }
       .ratings-wrapper .rating-post-box .rating-post-title a {
         color: #303738;
         text-decoration: none; }
@@ -928,17 +945,6 @@ time, mark, audio, video {
     max-width: 265px;
     margin: 35px auto; }
 
-.search-nothing-result {
-  text-align: center; }
-  .search-nothing-result .title {
-    text-transform: uppercase;
-    font-weight: 700;
-    font-size: 1.8rem; }
-  .search-nothing-result .subtitle {
-    margin: 12px 0;
-    color: #9aa39e;
-    font-size: 1.2rem; }
-
 .category-wrapper {
   display: flex;
   flex-wrap: wrap;
@@ -960,6 +966,10 @@ time, mark, audio, video {
       text-transform: uppercase;
       font-size: 2rem;
       margin: 10px 0;
+      color: black; }
+    .category-wrapper .category-box .category-box-description {
+      margin-left: 10px;
+      font-size: 18px;
       color: black; }
 
 .footer-style {
@@ -988,5 +998,12 @@ time, mark, audio, video {
           color: #8b5d65; }
     .footer-style .footer-wrapper .footer-logo .footer-logo-link img {
       width: 315px; }
+
+.nothing-found {
+  text-align: center;
+  font-size: 2rem;
+  color: black;
+  font-weight: 500;
+  margin: 60px 0; }
 
 /*# sourceMappingURL=main.css.map */

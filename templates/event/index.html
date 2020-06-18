@@ -9,8 +9,8 @@
     <div class="page_title-bottom_line">
     </div>
 </div>
+{% if list_event %}
 <div class="container">
-
     <div class="event-wrapper">
         <div class="event-post-box">
             {% for event in list_event %}
@@ -31,7 +31,7 @@
                 </div>
                 <div class="event-post-content-info">
                     <p class="event-post-content-place"><i class="fa fa-map-marker" aria-hidden="true"></i>Где? - {{ event.place }}</p>
-                    <p class="event-post-content-date"><i class="fa fa-calendar" aria-hidden="true"></i>Когда? - {{ event.day }}</p>
+                    <p class="event-post-content-date"><i class="fa fa-calendar" aria-hidden="true"></i>Когда? - {{ event.day|date:"d M Y" }}</p>
                     <p class="event-post-content-start"><i class="fa fa-clock-o" aria-hidden="true"></i>Во сколько начало? - {{ event.start_time }}</p>
                 </div>
             </div>
@@ -39,6 +39,11 @@
         </div>
     </div>
 </div>
+{% else %}
+    <div class="nothing-found">
+        Ничего не найдено
+    </div>
+{% endif %}
 <!--    <section class="pages-carousel">-->
 <!--        <div class="pages-carousel-button" id="prev">-->
 
