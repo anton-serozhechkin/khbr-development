@@ -1,3 +1,29 @@
+## 0.9.0 [18.06.2020]
+## 18 branch
+### Added
+- Search block at header
+
+### Refactored
+- Markup of header
+
+## 0.8.0 [18.06.2020]
+## 16 branch
+### Added
+- Views of article_by_category, URL's
+- Context_processors with category on header
+- Format of date on all templates
+- Check if data exist of data template(changed template to if data exist)
+- URL's on index to main block
+- Category on article index
+- Short description if not image exist in article index 
+
+### Changed
+- Templates
+- Method: get_absolute_url of category model 
+
+### Refactored
+- Fixed position on title at rating index
+
 ## 0.7.0 [16.06.2020] 
 ## 13-14 branches
 ### Added 
