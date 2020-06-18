@@ -9,11 +9,22 @@
             </div>
             <div class="header-logo">
                 <a href="{% url 'analytics' %}">
-                    <img src="{% static 'img/logo.png' %}" class="wow fadeIn"alt="">
+                    <img src="{% static 'img/logo.png' %}" class="wow fadeIn" alt="">
                 </a>
             </div>
         </div>
-        <ul class="header-navigation" id="header-navigation-id">
+
+        <div class="header-search">
+            <div class="search-wrapper">
+                <form action="{% url 'search_results' %}">
+                    <input type="search" name="q" placeholder="Поиск...">
+                    <i class="fa fa-search"></i>
+                </form>
+            </div>
+        </div>
+    </header>
+        <section class="navigation">
+            <ul class="header-navigation" id="header-navigation-id">
                 <li class="submenu-item">
                     <a href="{% url 'analytics_index' %}" class="header-navigation-item wow fadeIn ">Аналитика
                         <i class="fa fa-angle-down" aria-hidden="true"></i>
