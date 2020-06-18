@@ -3,10 +3,15 @@
     <i class="fa fa-bars" aria-hidden="true" id="header-navbars-id" style="display: none;"></i>
 
     <header class="header-style" id="header-anchor">
-        <div class="header-logo">
-            <a href="{% url 'analytics' %}">
-                <img src="{% static 'img/logo.png' %}" class="wow fadeIn"alt="">
-            </a>
+        <div class="header-center">
+            <div class="mobile-bar">
+                <i class="fa fa-bars" aria-hidden="true" id="barsButton"></i>
+            </div>
+            <div class="header-logo">
+                <a href="{% url 'analytics' %}">
+                    <img src="{% static 'img/logo.png' %}" class="wow fadeIn"alt="">
+                </a>
+            </div>
         </div>
         <ul class="header-navigation" id="header-navigation-id">
                 <li class="submenu-item">
@@ -36,13 +41,5 @@
                    <i class="fa fa-user-circle" aria-hidden="true"></i>
                </a>{% endcomment %}
            </ul>
-        <div class="header-search">
-            <div class="search-wrapper">
-                <form action="{% url 'search_results' %}">
-                    <input type="search" name="q" placeholder="Поиск...">
-                    <i class="fa fa-search"></i>
-                </form>
-            </div>
-        </div>
-    </header>
+    </section>
 </div>

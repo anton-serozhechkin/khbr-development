@@ -28,5 +28,5 @@ pycache
 /temp
 
 # static cashe
-/static/css/.sass-cache/
-/static/css/main.css.map
+static/css/.sass-cache/
+static/css/*.*.map
