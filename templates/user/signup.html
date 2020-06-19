@@ -17,7 +17,9 @@
                     <p>Введите Вашу электронную почту:</p>
                     {% render_field form.email name="user_login" class="sign-window-input" placeholder="Электроннная почта" %}
                     <p>Введите Ваш пароль:</p>
-                    {% render_field form.username name="user_login" class="sign-window-input" placeholder="Пароль" %}
+                    {% render_field form.password1 name="user_login" class="sign-window-input" placeholder="Пароль" %}
+                    <p>Введите еще раз Ваш пароль:</p>
+                    {% render_field form.password2 name="user_login" class="sign-window-input" placeholder="Повторите пароль" %}
                     <button class="sign-window-next" type="submit">Создать аккаунт</button>
                 </form>
             </div>

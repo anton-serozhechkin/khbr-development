@@ -5,21 +5,14 @@ from django.contrib.auth.forms import UserCreationForm
 
 
 class SignUpUserForm(UserCreationForm):
-    username = forms.CharField(label='Логин')
-    email = forms.CharField(label='Электронная почта')
-    password = forms.CharField(label='Пароль', widget=forms.HiddenInput())
-
     class Meta:
         model = User
         fields = ['username', 'email',
-                'password']
+                'password1', 'password2']
 
 
-class SignInUserForm(ModelForm):
-    
-    username = forms.CharField(label='Логин', max_length=100)
-    password = forms.CharField(label='Пароль', widget=forms.PasswordInput())
-
+"""class SignInUserForm(UserCreationForm):
     class Meta:
         model = User
         fields = ['username', 'password']
+"""
