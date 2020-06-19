@@ -188,6 +188,50 @@
       width: 315px; }
     .analytics-wrapper .analytics_post-box .analytics-box-content .analytics-box-text {
       margin-left: 0; } }
+/* Portrait tablets and medium desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .user_main .popular-posts .post {
+    height: 125px;
+    align-items: center; }
+    .user_main .popular-posts .post .left {
+      display: none; }
+    .user_main .popular-posts .post .right .title {
+      position: static; }
+    .user_main .popular-posts .post .right .description {
+      position: static; } }
+/* Portrait tablets and small desktops */
+@media (min-width: 768px) and (max-width: 991px) {
+  .user_main .popular-posts .post {
+    height: 125px;
+    align-items: center; }
+    .user_main .popular-posts .post .left {
+      display: none; }
+    .user_main .popular-posts .post .right .title {
+      position: static; }
+    .user_main .popular-posts .post .right .description {
+      position: static; } }
+/* Landscape phones and portrait tablets */
+@media (max-width: 767px) {
+  .user_main .popular-posts .post {
+    height: 125px;
+    align-items: center; }
+    .user_main .popular-posts .post .left {
+      display: none; }
+    .user_main .popular-posts .post .right .title {
+      position: static; }
+    .user_main .popular-posts .post .right .description {
+      position: static; } }
+/* Landscape phones and smaller */
+@media (max-width: 480px) {
+  .user_main .popular-posts .post {
+    height: 125px;
+    align-items: center; }
+    .user_main .popular-posts .post .left {
+      display: none; }
+    .user_main .popular-posts .post .right .title {
+      position: static; }
+    .user_main .popular-posts .post .right .description {
+      position: static; } }
 .footer-style {
   padding: 5vh 2vw;
   background-color: #f3f4f2; }
