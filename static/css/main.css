@@ -958,6 +958,24 @@ time, mark, audio, video {
     max-width: 265px;
     margin: 35px auto; }
 
+.header-search .search-wrapper {
+  border: solid 2px #16690d; }
+  .header-search .search-wrapper input {
+    border: none;
+    outline: none;
+    padding: 12px 18px; }
+    .header-search .search-wrapper input:focus::placeholder {
+      opacity: 0; }
+  .header-search .search-wrapper input[type='search']::-webkit-search-decoration,
+  .header-search .search-wrapper input[type='search']::-webkit-search-cancel-button,
+  .header-search .search-wrapper input[type='search']::-webkit-search-results-button,
+  .header-search .search-wrapper input[type='search']::-webkit-search-results-decoration {
+    display: none; }
+  .header-search .search-wrapper i {
+    padding-right: 8px;
+    color: #36488f;
+    font-size: 18px; }
+
 .category-wrapper {
   display: flex;
   flex-wrap: wrap;
