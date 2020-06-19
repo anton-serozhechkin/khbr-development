@@ -8,6 +8,12 @@ def logout_view(request):
     logout(request)
     return redirect('analytics')
 
+def recovery(request):
+    if request.method == 'POST':
+        email = request.POST['email']
+        print(email)
+    return render(request, 'user/recovery.html', locals())
+
 def signin(request):
     if request.method == 'POST':
         

@@ -5,8 +5,12 @@
 {% block content %}
 <div class="sign-container" style="background-image: url(../../static/img/index-banner-bgi.png); " id="sign-container-id">
     <div class="sign-window">
-        <div class="sign-window-title"><h2>Авторизация</h2></div>
-          <div class="sign-window-google">
+        <div class="sign-window-title">
+            <h2>
+                Авторизация
+            </h2>
+        </div>
+        <div class="sign-window-google">
             <a href="#">
                 <span>
                     Вход с помощью Google
@@ -21,14 +25,20 @@
                 <input name="username" class="sign-window-input" placeholder="Логин"> 
                 <p>Введите Ваш пароль:</p>
                 <input name="password" class="sign-window-input" placeholder="Пароль">
-                <button class="sign-window-next" type="submit">Войти</button>
+                <button class="sign-window-next" type="submit">
+                    Войти
+                </button>
             </form>
         </div>
         <div class="sign-window-return_password">
-            <a href="#">Забыли пароль?</a>
+            <a href="{% url 'recovery' %}">
+                Забыли пароль?
+            </a>
         </div>
         <div class="sign-window-bottom">
-            <a href="{% url 'signup' %}" class="createAccount">Создайте аккаунт</a>
+            <a href="{% url 'signup' %}" class="createAccount">
+                Создайте аккаунт
+            </a>
             <a href="{% url 'analytics' %}" class="sign-window-next sign-window_haveAcc">
                 <i class="fa fa-share" aria-hidden="true"></i>
                 Вернуться на главную
