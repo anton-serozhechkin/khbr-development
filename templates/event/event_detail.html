@@ -14,6 +14,7 @@
         <div class="event-detail-info">
             <p class="event-detail-short-text"><span><i class="fa fa-calendar" aria-hidden="true"></i>{{ data_event.day|date:"d M Y" }}</span></p>
             <p class="event-detail-short-text"><span><i class="fa fa-map-marker" aria-hidden="true"></i>{{ data_event.place }}</span></p>
+            <p class="event-post-content-author"><a href="{% url 'authors_detail' slug=data_event.author.slug %}"><i class="fa fa-user" aria-hidden="true"></i>Автор - {{ data_event.author }}</a></p>
 
         <p class="event-detail-short-text"><span><i class="fa fa-clock-o" aria-hidden="true"></i>Начало: {{ data_event.start_time}}</span></p>
         <p class="event-detail-short-text"><span><i class="fa fa-ban" aria-hidden="true"></i>Конец: {{ data_event.end_time}}</span></p>

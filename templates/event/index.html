@@ -34,6 +34,7 @@
                         <p class="event-post-content-place"><i class="fa fa-map-marker" aria-hidden="true"></i>Где? - {{ event.place }}</p>
                         <p class="event-post-content-date"><i class="fa fa-calendar" aria-hidden="true"></i>Когда? - {{ event.day|date:"d M Y" }}</p>
                         <p class="event-post-content-start"><i class="fa fa-clock-o" aria-hidden="true"></i>Во сколько начало? - {{ event.start_time }}</p>
+                        <p class="event-post-content-author"><a href="{% url 'authors_detail' slug=event.author.slug %}"><i class="fa fa-user" aria-hidden="true"></i>Автор - {{ event.author }}</a></p>
                     </div>
                 </div>
             </a>

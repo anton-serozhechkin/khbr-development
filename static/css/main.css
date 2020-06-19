@@ -426,6 +426,9 @@ time, mark, audio, video {
       color: #7A7A7A;
       font-size: 1.2em;
       margin: 1vh 0; }
+      .event-wrapper .event-post-box .event-post-content .event-post-content-info .event-post-content-author a {
+        color: #7A7A7A;
+        text-decoration: none; }
       .event-wrapper .event-post-box .event-post-content .event-post-content-info p:hover {
         text-decoration: underline;
         cursor: pointer; }
@@ -480,6 +483,10 @@ time, mark, audio, video {
     height: 65vh;
     border-radius: 10px; }
 
+.event-post-content-author a {
+  color: #7A7A7A;
+  text-decoration: none; }
+
 .ratings-wrapper {
   display: flex;
   flex-flow: wrap row;
@@ -517,6 +524,10 @@ time, mark, audio, video {
       .ratings-wrapper .rating-post-box .analytics-box-info p {
         font-size: 1em;
         color: #7A7A7A; }
+
+.analytics-box-author a {
+  color: black;
+  text-decoration: none; }
 
 .rating-detail {
   margin: 5vh 0; }
@@ -574,6 +585,10 @@ time, mark, audio, video {
     .video-wrapper .video-index-box .video-index-box-description p:hover {
       text-shadow: 1px 1px 1px #C9C9C9;
       cursor: pointer; }
+
+.video-box-author a {
+  color: black;
+  text-decoration: none; }
 
 .sign-container {
   display: flex;

@@ -38,6 +38,12 @@
         color:#7A7A7A;
         font-size: 1.2em;
         margin: 1vh 0;
+        .event-post-content-author {
+          a {
+            color: #7A7A7A;
+            text-decoration: none;
+          }
+        }
         p {
 
           &:hover {
