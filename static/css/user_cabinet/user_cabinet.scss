@@ -36,12 +36,18 @@
   }
 }
 .user_main {
+  position: relative;
   height: 75%;
   background-image: url('//images.unsplash.com/photo-1524600234162-8afa9b414317?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80');
   background-size: cover;
   background-repeat: no-repeat;
 
   .container {
+    margin: 0 auto;
+    max-width: 1360px;
+    padding: 0;
+    width: 100%;
+    position: relative;
     padding-top: 25px;
     display: flex;
     justify-content: space-between;
@@ -80,13 +86,13 @@
       .name {
         padding: 6px 8px;
         border: solid 1px lightgrey;
-        font-size: 22px;
+        font-size: 20px;
         font-weight: 500;
       }
       .mail {
         padding: 6px 8px;
         border: solid 1px lightgrey;
-        font-size: 18px;
+        font-size: 20px;
       }
       .role {
         padding: 6px 8px;
@@ -94,6 +100,13 @@
         font-size: 20px;
         font-weight: 500;
       }
+      .last_signIn {
+        padding: 6px 8px;
+        border: solid 1px lightgrey;
+        font-size: 20px;
+        font-weight: 300;
+      }
+
     }
   }
   .settings {
@@ -104,6 +117,7 @@
     background-color: rgba(255,255,255,1);
     flex: 2 350px;
     ul {
+      text-align: center;
       list-style-type: none;
       margin: 0;
       padding: 0;
@@ -191,4 +205,73 @@
     }
   }
 }
+.user_modal_settings {
+  display: none;
+}
+.user_modal_settings.active {
+  display: block;
+}
+.user_modal_settings {
+  width: 100%;
+  max-width: 524px;
+  position: absolute;
+  margin:auto;
+  top: 30px;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  height: 95%;
+  background-color: rgba(255,255,255,1);
+  .user_modal_header {
+    height: 5%;
+    padding: 20px 10px;
+    display: flex;
+    justify-content:center;
+    flex-wrap: wrap;
+    align-items: center;
+    border-bottom: solid 2px lightgrey;
 
+    p {
+      position: relative;
+      bottom: 5px;
+      font-size: 32px;
+    }
+    //i {
+    //  position: relative;
+    //  bottom: 5px;
+    //  font-size: 32px;
+    //}
+  }
+  .user_modal_form {
+    height: 93%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    label {
+      display: block;
+      font-size: 20px;
+      margin: 6px 0;
+
+    }
+    input[type='text'] {
+      padding: 8px 0;
+      width: 325px;
+      font-size: 22px;
+    }
+    input[type='submit']{
+      margin-top: 20px;
+      padding: 6px 10px;
+      font-size: 16px;
+      border: dodgerblue solid 2px;
+      outline: none;
+      cursor: pointer;
+      background-color: cornflowerblue;
+      transition: .2s linear;
+      &:hover {
+        background-color: steelblue;
+        transition: .2s linear;
+      }
+    }
+  }
+}

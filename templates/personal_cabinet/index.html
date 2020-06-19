@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://use.fontawesome.com/44959e12e1.js"></script>
     <link rel="stylesheet" href="../../static/css/main.css">
     <link rel="stylesheet" href="../../static/css/media.css">
     <title>Document</title>
@@ -42,6 +43,10 @@
                        <div class="role">
                            Администратор
                        </div>
+                       <div class="last_signIn">
+                           Дата последнего входа:
+                           17.11.2020
+                       </div>
                    </div>
                </div>
                <div class="popular-posts">
@@ -63,22 +68,11 @@
 
                    </div>
                         </div>
-                   <div class="post">
-<!---->
-                   </div>
-                   <div class="post">
-<!---->
-                   </div>
-                   <div class="post">
-<!---->
-                   </div>
-                   <div class="post">
-<!---->
-                   </div>
                </div>
                <div class="settings">
                     <ul>
-                        <li>Настройки</li>
+                        <li>Личные данные</li>
+                        <li>Смена пароля</li>
                         <li>Подписка</li>
                         <li>Предложить новость</li>
                         <li>Связаться с нами</li>
@@ -86,6 +80,36 @@
                     </ul>
                </div>
            </div>
+
+            <!-- modal form for change user personal data -->
+
+            <div class="user_modal_settings active">
+                <div class="user_modal_header">
+                    <p>
+                        Личные данные
+                    </p>
+                </div>
+                <div class="user_modal_form">
+                    <form action="">
+                        <div class="">
+                            <label for="personal_user_name">
+                                Имя пользователя:
+                            </label>
+                            <input type="text" name="personal_user_name" id="personal_user_name">
+                        </div>
+                        <div class="">
+                            <label for="personal_user_email">
+                                E-mail пользователя:
+                            </label>
+                            <input type="text" name="personal_user_name" id="personal_user_email">
+                        </div>
+                        <div class="">
+                            <input type="submit">
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- modal form for change user personal data -->
         </div>
     </div>
 </div>
