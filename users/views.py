@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from .forms import *
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.models import auth
-
+from analytics.models import Subscribe
 
 def logout_view(request):
     logout(request)
@@ -36,9 +36,13 @@ def signup(request):
             user.username = form.cleaned_data.get('username')
             user.password1 = form.cleaned_data.get('password1')
             user.password2 = form.cleaned_data.get('password2')
-            print(user.email)
-            print(user.username)
-            print(user.password1)
+            try:
+                subscribe = request.POST['subscribe']
+                new_subscriber = Subscribe.objects.create(email=user.email)
+                new_subscriber.save()
+            except:
+                pass
+            
             form.save()
             login(request, user, backend='django.contrib.auth.backends.ModelBackend')            
             return redirect('analytics')

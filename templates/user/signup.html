@@ -37,6 +37,12 @@
                         Введите еще раз Ваш пароль:
                     </p>
                     {% render_field form.password2 name="user_login" class="sign-window-input" placeholder="Повторите пароль" %}
+                    <div>
+                        <label for='subscribe'>
+                            Подписаться на нашу рассылку
+                        </label>
+                        <input type="checkbox" name="subscribe" id="subscribe" checked>
+                    </div>
                     <button class="sign-window-next" type="submit">
                         Создать аккаунт
                     </button>
