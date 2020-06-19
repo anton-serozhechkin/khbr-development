@@ -31,8 +31,10 @@
                 </div>
                 <div class="video-box-info">
                     <p class="video-box-author">
-                        <i class="fa fa-user"></i>
-                        {{ video.author }}
+                        <a href="{% url 'authors_detail' slug=video.author.slug %}">
+                            <i class="fa fa-user"></i>
+                            {{ video.author }}
+                        </a>
                     </p>
                     <p class="video-box-time">
                         <i class="fa fa-calendar"></i>

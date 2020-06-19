@@ -19,7 +19,12 @@
                         </h3>
                     </a>
                     <div class="analytics-detail-infoBox">
-                        <p class="analytics-box-author"><i class="fa fa-user"></i> {{ article.author }}</p>
+                        <p class="analytics-box-author">
+                            <a href="{% url 'authors_detail' slug=article.author.slug %}">
+                                <i class="fa fa-user"></i>
+                                {{ article.author }}
+                            </a>
+                        </p>
                         <p class="analytics-box-time">{{ article.created|date:"d M Y" }}</p>
                         <div class="detail-viewCount">
                             <i class="fa fa-eye" aria-hidden="true"></i>

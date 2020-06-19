@@ -12,7 +12,12 @@
                 {% endif %}<!--под дивом с фоткой -->
                 <p class="rating-detail-short-text">{{ data_rait.content|safe }}</p>
                  <div class="rating-detail-info">
-                     <span class="rating-detail-author"><i class="fa fa-user"></i> {{ data_rait.author }}</span>
+                     <span class="rating-detail-author">
+                        <a href="{% url 'authors_detail' slug=data_rait.author.slug %}">
+                            <i class="fa fa-user"></i> 
+                            {{ data_rait.author }}
+                        </a>
+                    </span>
                      <span class="rating-detail-date">{{ data_rait.created|date:"d M Y" }}</span>
                      <div class="rating-detail-viewCount">
                          <i class="fa fa-eye" aria-hidden="true"></i>

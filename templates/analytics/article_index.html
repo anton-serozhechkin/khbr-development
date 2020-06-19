@@ -37,8 +37,10 @@
                       </div>
                       <div class="analytics-box-info">
                         <p class="analytics-box-author">
-                            <i class="fa fa-user"></i>
-                            {{ article.author }}
+                            <a href="{% url 'authors_detail' slug=article.author.slug %}">
+                                <i class="fa fa-user"></i>
+                                {{ article.author }}
+                            </a>
                         </p>
                           <p class="analytics-box-category">
                               <a href="{% url 'article_by_category' category_slug=article.category.slug %}">

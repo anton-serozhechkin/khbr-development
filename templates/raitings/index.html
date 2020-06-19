@@ -27,7 +27,12 @@
             <div class="rating-post-content">
                 <p>{{ raiting.short_description|safe }}</p>
                 <div class="analytics-box-info">
-                    <p class="analytics-box-author"><i class="fa fa-user"></i> {{ raiting.author }}</p>
+                    <p class="analytics-box-author">
+                        <a href="{% url 'authors_detail' slug=raiting.author.slug %}">
+                            <i class="fa fa-user"></i> 
+                            {{ raiting.author }}
+                        </a>
+                    </p>
                     <p class="analytics-box-time">{{ raiting.created|date:"d M Y" }}</p>
                 </div>
             </div>
