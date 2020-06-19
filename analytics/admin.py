@@ -5,6 +5,8 @@ from .models import *
 class AuthorAdmin(admin.ModelAdmin):
     list_display = ('user', 'bio', )
     list_filter = ('user', )
+    prepopulated_fields = {'slug': ('user__lastname', )}
+
 
 
 class SubscribeAdmin(admin.ModelAdmin):
@@ -51,5 +53,5 @@ class ArticleAdmin(admin.ModelAdmin):
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(Article, ArticleAdmin)
 admin.site.register(Links, LinksAdmin)
-admin.site.register(Author, AuthorAdmin)
+admin.site.register(Author)#, AuthorAdmin)
 admin.site.register(Subscribe, SubscribeAdmin)

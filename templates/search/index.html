@@ -38,8 +38,10 @@
                                         </div>
 
                                         <div class="author">
-                                            <i class="fa fa-user-o"></i>
-                                            {{ article.author }}
+                                            <a href="{% url 'authors_detail' slug=article.author.slug %}">
+                                                <i class="fa fa-user-o"></i>
+                                                {{ article.author }}
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -73,8 +75,10 @@
                                             {{ event.created|date:"d M Y" }}
                                         </div>
                                         <div class="author">
-                                            <i class="fa fa-user-o"></i>
-                                            {{ event.author }}
+                                            <a href="{% url 'authors_detail' slug=event.author.slug %}">
+                                                <i class="fa fa-user-o"></i>
+                                                {{ event.author }}
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -108,8 +112,10 @@
                                             {{ raiting.created|date:"d M Y" }}
                                         </div>
                                         <div class="author">
-                                            <i class="fa fa-user-o"></i>
-                                            {{ raiting.author }}
+                                            <a href="{% url 'authors_detail' slug=raiting.author.slug %}">
+                                                <i class="fa fa-user-o"></i>
+                                                {{ raiting.author }}
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -151,8 +157,10 @@
                                             {{ video.created|date:"d M Y" }}
                                         </div>
                                         <div class="author">
-                                            <i class="fa fa-user-o"></i>
-                                            {{ video.author }}
+                                            <a href="{% url 'authors_detail' slug=video.author.slug %}">
+                                                <i class="fa fa-user-o"></i>
+                                                {{ video.author }}
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
