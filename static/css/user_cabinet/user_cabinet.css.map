@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,YAAa;EACX,OAAO,EAAE,IAAI;EACb,SAAS,EAAE,IAAI;EACf,kBAAM;IACJ,SAAS,EAAE,KAAK;IAChB,KAAK,EAAE,IAAI;IACX,MAAM,EAAE,IAAI",
+"sources": ["user_cabinet.scss"],
+"names": [],
+"file": "user_cabinet.css"
+}
