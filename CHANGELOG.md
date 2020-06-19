@@ -1,3 +1,14 @@
+## 1.0.0 [19.06.2020]
+## 19 branch
+### Added
+- Views URL's for author detail and index
+
+### Changed 
+- Styles of some links at detail and index
+
+### Refactored
+- Nothing founded form at search index
+
 ## 0.9.0 [18.06.2020]
 ## 18 branch
 ### Added
