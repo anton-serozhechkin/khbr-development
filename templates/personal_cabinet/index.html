@@ -28,62 +28,62 @@
 
     <div class="user_main">
         <div class="container">
-           <div class="wrapper">
-               <div class="profile">
-                   <div class="img">
-                       <img src="../../static/img/User_icon-cp.png" alt="">
-                   </div>
-                   <div class="info">
-                       <div class="name">
-                           Максим Серпухов
-                       </div>
-                       <div class="mail">
-                           mserpuhov@gmail.com
-                       </div>
-                       <div class="role">
-                           Администратор
-                       </div>
-                       <div class="last_signIn">
-                           Дата последнего входа:
-                           17.11.2020
-                       </div>
-                   </div>
-               </div>
-               <div class="popular-posts">
-                   <div class="post">
-<!--&lt;!&ndash;&ndash;&gt;                 <div class="left">-->
-<!--                       <img src="//images.unsplash.com/photo-1592594040725-e24e9b71033c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" alt="">-->
-<!--                   </div>-->
-<!---->                 <div class="right">
-                       <div class="title">
-                           <a href="">Аналитика</a>
-                           <p>|</p>
-                           <a href="">Спорт</a>
-                       </div>
-                       <div class="description">
-                           <a href="">
-                               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, culpa!
-                           </a>
-                       </div>
-
-                   </div>
+            <div class="wrapper">
+                <div class="profile">
+                    <div class="img">
+                        <img src="../../static/img/User_icon-cp.png" alt="">
+                    </div>
+                    <div class="info">
+                        <div class="name">
+                            Максим Серпухов
                         </div>
-               </div>
-               <div class="settings">
+                        <div class="mail">
+                            mserpuhov@gmail.com
+                        </div>
+                        <div class="role">
+                            Администратор
+                        </div>
+                        <div class="last_signIn">
+                            Дата последнего входа:
+                            17.11.2020
+                        </div>
+                    </div>
+                </div>
+                <div class="popular-posts">
+                    <div class="post">
+                        <!--&lt;!&ndash;&ndash;&gt;                 <div class="left">-->
+                        <!--                       <img src="//images.unsplash.com/photo-1592594040725-e24e9b71033c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" alt="">-->
+                        <!--                   </div>-->
+                        <!---->
+                        <div class="right">
+                            <div class="title">
+                                <a href="">Аналитика</a>
+                                <p>|</p>
+                                <a href="">Спорт</a>
+                            </div>
+                            <div class="description">
+                                <a href="">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, culpa!
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="settings">
                     <ul>
                         <li>Личные данные</li>
                         <li>Смена пароля</li>
                         <li>Подписка</li>
-                        <li>Предложить новость</li>
+<!--                        <li>Предложить новость</li>-->
                         <li>Связаться с нами</li>
                         <li>Удаление аккаунта</li>
                     </ul>
-               </div>
-           </div>
+                </div>
+            </div>
 
             <!-- modal form for change user personal data -->
-
-            <div class="user_modal_settings active">
+            <div class="user_modal ">
                 <div class="user_modal_header">
                     <p>
                         Личные данные
@@ -104,14 +104,93 @@
                             <input type="text" name="personal_user_name" id="personal_user_email">
                         </div>
                         <div class="">
-                            <input type="submit">
+                            <input type="submit" value="Сохранить">
                         </div>
                     </form>
                 </div>
             </div>
             <!-- modal form for change user personal data -->
+            <!-- modal form for change user password -->
+            <div class="user_modal">
+                <div class="user_modal_header">
+                    <p>
+                        Смена пароля
+                    </p>
+                </div>
+                <div class="user_modal_form">
+                    <form action="">
+                        <div class="">
+                            <label for="personal_user_password">
+                                Введите новый пароль:
+                            </label>
+                            <input type="text" name="personal_user_password" id="personal_user_password">
+                        </div>
+                        <div class="">
+                            <label for="personal_user_confirmationPassword">
+                                Подтвердите новый пароль:
+                            </label>
+                            <input type="text" name="personal_user_confirmationPassword" id="personal_user_confirmationPassword">
+                        </div>
+                        <div class="">
+                            <input type="submit" value="Подвердить">
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- modal form for change user password -->
+            <!-- modal form for subscribe -->
+            <div class="user_modal ">
+                <div class="user_modal_header">
+                    <p>
+                        Подписка
+                    </p>
+                </div>
+                <div class="user_modal_description">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto delectus dolor dolorum eius hic illo ipsum iste itaque officiis provident quia recusandae rerum, tenetur! Neque?
+                </div>
+                <div class="user_modal_form">
+                    <form action="">
+                        <div class="">
+                            <label for="personal_user_subscribe">
+                                Введите Ваш e-mail:
+                            </label>
+                            <input type="text" name="personal_user_subscribe" id="personal_user_subscribe">
+                        </div>
+                        <div class="">
+                            <input type="submit" value="Подписаться">
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- modal form for subscribe -->
+            <!-- modal form for cancel subscribe -->
+            <div class="user_modal active">
+                <div class="user_modal_header">
+                    <p>
+                        Подписка
+                    </p>
+                </div>
+                <div class="user_modal_description">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto delectus dolor dolorum eius hic illo ipsum iste itaque officiis provident quia recusandae rerum, tenetur! Neque?
+                </div>
+                <div class="user_modal_form">
+                    <form action="">
+                        <div class="">
+                            <p class="text">
+                                Вы уже подписаны на рассылку. Хотели бы отписаться?
+                            </p>
+                        </div>
+                        <div class="" style="text-align: center">
+                            <input type="submit" value="Отписаться">
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- modal form for cancel subscribe -->
         </div>
     </div>
 </div>
+
+
 </body>
 </html>

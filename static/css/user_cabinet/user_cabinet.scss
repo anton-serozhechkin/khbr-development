@@ -205,13 +205,13 @@
     }
   }
 }
-.user_modal_settings {
+.user_modal {
   display: none;
 }
-.user_modal_settings.active {
+.user_modal.active {
   display: block;
 }
-.user_modal_settings {
+.user_modal {
   width: 100%;
   max-width: 524px;
   position: absolute;
@@ -241,6 +241,10 @@
     //  bottom: 5px;
     //  font-size: 32px;
     //}
+  }
+  .user_modal_description {
+    padding: 6px 12px;
+    font-size: 18px;
   }
   .user_modal_form {
     height: 93%;
@@ -273,5 +277,8 @@
         transition: .2s linear;
       }
     }
+  }
+  .text {
+    font-size: 18px;
   }
 }
