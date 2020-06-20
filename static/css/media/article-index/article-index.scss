@@ -1,5 +1,11 @@
-@media (min-width: 1200px) {
+@media (min-width: 1200px) and (max-width:1400px){
+  .analytics-box-info {
+    max-width: 475px;
+    width: 100%;
+  }
+  .analytics-box-category {
 
+  }
 }
 
 /* Portrait tablets and medium desktops */
