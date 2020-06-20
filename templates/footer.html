@@ -1,12 +1,17 @@
 {% load staticfiles %}
 
 <footer class="footer-style" id="footer-anchor">
+<!-- footer main block   -->
     <div class="footer-wrapper">
+<!--    footer wrap    -->
         <ul class="footer-list wow fadeInLeft">
+<!--      footer list with important links.If you need hide anim remove wow class.    -->
             <li class="footer-list-item">
+<!--        footer list link        -->
                 <a href="{% url 'analytics_index' %}" class="footer-link">
                     Аналитика
                 </a>
+<!--       footer item link         -->
             </li>
             <li class="footer-list-item">
                 <a href="{% url 'events' %}" class="footer-link">
@@ -29,11 +34,15 @@
                 </a>
             </li>
         </ul>
+<!--    footer logo block with wowJs anim- fadeIn anim. If you need hide anim remove wow class from this.   -->
         <div class="footer-logo wow fadeIn">
             <a href="{% url 'analytics' %}" class="footer-logo-link">
+<!--        logo link        -->
                 <img src="{% static 'img/logo.png' %}" alt="">
+<!--        include logo image        -->
             </a>
         </div>
+        <!--      footer list with social networks.If you need hide anim remove wow class.    -->
         <ul class="footer-list wow fadeInRight">
             <li class="footer-list-item">
                 <a class="footer-link">
@@ -43,6 +52,7 @@
             <li class="footer-list-item" >
                 <a href="//www.facebook.com/KhBusinessReview/" class="footer-link" target="_blank">
                     <i class="fa fa-facebook"></i>
+<!--          Font awesome classes. If you need remove item - remove li elem with class footer-list-item          -->
                 </a>
                 <a href="//www.linkedin.com/showcase/khbr/about/?viewAsMember=true" class="footer-link" target="_blank">
                     <i class="fa fa-linkedin-square"></i>

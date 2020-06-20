@@ -1,0 +1,87 @@
+@media (min-width: 1200px) {
+
+}
+
+/* Portrait tablets and medium desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .user_main .popular-posts .post {
+    height: 125px;
+    align-items: center;
+    .left {
+      display: none;
+    }
+    .right {
+      .title {
+        position: static;
+      }
+      .description {
+        position: static;
+      }
+    }
+  }
+}
+
+/* Portrait tablets and small desktops */
+@media (min-width: 768px) and (max-width: 991px) {
+  .user_main .popular-posts .post {
+    height: 125px;
+    align-items: center;
+    .left {
+      display: none;
+    }
+    .right {
+      .title {
+        position: static;
+      }
+      .description {
+        position: static;
+      }
+    }
+  }
+  //.user_main {
+  //  .container {
+  //    .user_modal_settings {
+  //      position: static;
+  //    }
+  //  }
+  //}
+}
+
+/* Landscape phones and portrait tablets */
+@media (max-width: 767px) {
+  .user_main .popular-posts .post {
+    height: 125px;
+    align-items: center;
+    .left {
+      display: none;
+    }
+    .right {
+      .title {
+        position: static;
+      }
+      .description {
+        position: static;
+      }
+    }
+  }
+}
+
+/* Landscape phones and smaller */
+@media (max-width: 480px) {
+  .user_main .popular-posts .post {
+    height: 125px;
+    align-items: center;
+    .left {
+      display: none;
+    }
+    .right {
+      .title {
+        position: static;
+      }
+      .description {
+        position: static;
+      }
+    }
+  }
+}
+
