@@ -7,7 +7,7 @@ from tinymce.models import HTMLField
 class Author(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='Пользователь')
     slug = models.SlugField('Ссылка')
-    bio = models.CharField('Немного о себе', max_length=500)
+    bio = HTMLField('Немного о себе')
     avatar = models.ImageField(verbose_name='Аватар', upload_to='avatars/', blank=True)
 
     def __str__(self):

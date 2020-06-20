@@ -177,6 +177,10 @@
     align-items: flex-start; }
     .event-detail .event-detail-info p {
       margin: 0.5vh 0; } }
+@media (min-width: 1200px) and (max-width: 1400px) {
+  .analytics-box-info {
+    max-width: 475px;
+    width: 100%; } }
 /* Portrait tablets and medium desktops */
 /* Portrait tablets and small desktops */
 /* Landscape phones and portrait tablets */

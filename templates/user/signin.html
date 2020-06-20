@@ -5,27 +5,52 @@
 {% block content %}
 <div class="sign-container" style="background-image: url(../../static/img/index-banner-bgi.png); " id="sign-container-id">
     <div class="sign-window">
-        <div class="sign-window-title"><h2>Авторизация</h2></div>
-          <div class="sign-window-google">
-            <a href="#"><span>Вход с помощью Google</span><img src="{% static 'img/Google.svg.webp' %}" alt=""></a>
+        <div class="sign-window-title">
+            <h2>
+                Авторизация
+            </h2>
+        </div>
+        <div class="sign-window-google">
+            <a href="#">
+                <span>
+                    Вход с помощью Google
+                </span>
+                <img src="{% static 'img/Google.webp' %}" alt="">
+            </a>
         </div>
         <div class="sign-window-form">
             <form action="{% url 'signin' %}" method="post">
+                {% if error %}
+                    <div class="sign-error-box">{{ error }}</div>
+                {% endif %}
                 {% csrf_token %}
                 <p>Введите Ваш логин:</p>
-                {% render_field form.username name="user_login" class="sign-window-input" placeholder="Логин" %}
+                <input name="username" class="sign-window-input" placeholder="Логин">
                 <p>Введите Ваш пароль:</p>
-                {% render_field form.username name="user_login" class="sign-window-input" placeholder="Пароль" %}
-                <button class="sign-window-next" type="submit">Войти</button>
+                <div class="signIn-password">
+                    <input name="password" class="sign-window-input" placeholder="Пароль" id="password-input" type="password">
+                    <a href="#" class="password-control">
+                        <i class="fa fa-eye" aria-hidden="true"></i>
+                    </a>
+                </div>
+                <button class="sign-window-next" type="submit">
+                    Войти
+                </button>
             </form>
         </div>
         <div class="sign-window-return_password">
-            <a href="#">Забыли пароль?</a>
+            <a href="{% url 'recovery' %}">
+                Забыли пароль?
+            </a>
         </div>
         <div class="sign-window-bottom">
-            <a href="{% url 'signup' %}" class="createAccount">Создайте аккаунт</a>
-            <a href="{% url 'analytics' %}" class="sign-window-next sign-window_haveAcc"><i class="fa fa-share" aria-hidden="true"></i>
-                Вернуться на главную</a>
+            <a href="{% url 'signup' %}" class="createAccount">
+                Создайте аккаунт
+            </a>
+            <a href="{% url 'analytics' %}" class="sign-window-next sign-window_haveAcc">
+                <i class="fa fa-share" aria-hidden="true"></i>
+                Вернуться на главную
+            </a>
         </div>
     </div>
 </div>
