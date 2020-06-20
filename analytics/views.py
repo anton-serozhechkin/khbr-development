@@ -49,21 +49,24 @@ def search_results(request):
             Q(title__icontains=query)|
             Q(short_description__icontains=query)|
             Q(content__icontains=query)
-        )
+        ).order_by('-created')
+        
         event_list = Event.objects.filter(
             Q(title__icontains=query)|
             Q(short_description__icontains=query)|
             Q(content__icontains=query)
-        )
+        ).order_by('-created')
+
         raiting_list = Raiting.objects.filter(
             Q(title__icontains=query)|
             Q(short_description__icontains=query)|
             Q(content__icontains=query)
-        )
+        ).order_by('-created')
+        
         video_list = VideoDownloading.objects.filter(
             Q(title__icontains=query)|
             Q(notes__icontains=query)
-        )
+        ).order_by('-created')
         if not article_list or not event_list or not raiting_list or not video_list:
             answer = 'Ничего не найдено'
     else:    
