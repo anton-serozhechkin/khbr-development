@@ -3,27 +3,61 @@
 <div class="container">
     <section class="event-detail">
         <div class="event-detail-detail-top">
-            <h1 class="event-detail-title">{{ data_event.title }}</h1>
+            <h1 class="event-detail-title">
+                {{ data_event.title }}
+            </h1>
         </div>
         {% if data_event.image %}<!--над дивом с фоткой -->
-        <div class="event-detail-publication-image">
-            <img src="{{data_event.image.url }}" alt="">
-        </div>
+            <div class="event-detail-publication-image">
+                <img src="{{ data_event.image.url }}" alt="">
+            </div>
         {% endif %}<!--под дивом с фоткой -->
 
         <div class="event-detail-info">
-            <p class="event-detail-short-text"><span><i class="fa fa-calendar" aria-hidden="true"></i>{{ data_event.day|date:"d M Y" }}</span></p>
-            <p class="event-detail-short-text"><span><i class="fa fa-map-marker" aria-hidden="true"></i>{{ data_event.place }}</span></p>
-            <p class="event-post-content-author"><a href="{% url 'authors_detail' slug=data_event.author.slug %}"><i class="fa fa-user" aria-hidden="true"></i>Автор - {{ data_event.author }}</a></p>
-
-        <p class="event-detail-short-text"><span><i class="fa fa-clock-o" aria-hidden="true"></i>Начало: {{ data_event.start_time}}</span></p>
-        <p class="event-detail-short-text"><span><i class="fa fa-ban" aria-hidden="true"></i>Конец: {{ data_event.end_time}}</span></p>
+            <p class="event-detail-short-text">
+                <span>
+                    <i class="fa fa-calendar" aria-hidden="true"></i>
+                    {{ data_event.day|date:"d M Y" }}
+                </span>
+            </p>
+            <p class="event-detail-short-text">
+                <span>
+                    <i class="fa fa-map-marker" aria-hidden="true"></i>
+                    {{ data_event.place }}
+                </span>
+            </p>
+            <p class="event-post-content-author">
+                <a href="{% url 'authors_detail' slug=data_event.author.slug %}">
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                    Автор - {{ data_event.author }}
+                </a>
+            </p>
+            {% if data_event.start_time %}
+            <p class="event-detail-short-text">
+                <span>
+                    <i class="fa fa-clock-o" aria-hidden="true"></i>
+                    Начало: {{ data_event.start_time }}
+                </span>
+            </p>
+            {% endif %}
+            {% if data_event.end_time %}
+            <p class="event-detail-short-text">
+                <span>
+                    <i class="fa fa-ban" aria-hidden="true"></i>
+                    Конец: {{ data_event.end_time }}
+                </span>
+            </p>
+            {% endif %}
             <div class="detail-viewCount">
                 <i class="fa fa-eye" aria-hidden="true"></i>
-                <span>{{ data_event.views }}</span>
+                <span>
+                    {{ data_event.views }}
+                </span>
             </div>
         </div>
-        <p class="event-detail-paragraph">{{ data_event.content|safe }}</p>
+        <p class="event-detail-paragraph">
+            {{ data_event.content|safe }}
+        </p>
     </section>
 </div>
 {% endblock content %}

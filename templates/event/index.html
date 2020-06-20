@@ -4,7 +4,9 @@
     <div class="page_title-top_line">
     </div>
     <div class="page_title-title">
-        <h1>События</h1>
+        <h1>
+            События
+        </h1>
     </div>
     <div class="page_title-bottom_line">
     </div>
@@ -31,10 +33,26 @@
                         {{ event.short_description|safe }}
                     </div>
                     <div class="event-post-content-info">
-                        <p class="event-post-content-place"><i class="fa fa-map-marker" aria-hidden="true"></i>Где? - {{ event.place }}</p>
-                        <p class="event-post-content-date"><i class="fa fa-calendar" aria-hidden="true"></i>Когда? - {{ event.day|date:"d M Y" }}</p>
-                        <p class="event-post-content-start"><i class="fa fa-clock-o" aria-hidden="true"></i>Во сколько начало? - {{ event.start_time }}</p>
-                        <p class="event-post-content-author"><a href="{% url 'authors_detail' slug=event.author.slug %}"><i class="fa fa-user" aria-hidden="true"></i>Автор - {{ event.author }}</a></p>
+                        <p class="event-post-content-place">
+                            <i class="fa fa-map-marker" aria-hidden="true"></i>
+                            Где? - {{ event.place }}
+                        </p>
+                        <p class="event-post-content-date">
+                            <i class="fa fa-calendar" aria-hidden="true"></i>
+                            Когда? - {{ event.day|date:"d M Y" }}
+                        </p>
+                        {% if event.start_time %}
+                        <p class="event-post-content-start">
+                            <i class="fa fa-clock-o" aria-hidden="true"></i>
+                            Во сколько начало? - {{ event.start_time }}
+                        </p>
+                        {% endif %}
+                        <p class="event-post-content-author">
+                            <a href="{% url 'authors_detail' slug=event.author.slug %}">
+                                <i class="fa fa-user" aria-hidden="true"></i>
+                                Автор - {{ event.author }}
+                            </a>
+                        </p>
                     </div>
                 </div>
             </a>
