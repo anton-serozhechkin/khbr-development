@@ -21,11 +21,11 @@
         <div class="sign-window-form">
             <form action="{% url 'signin' %}" method="post">
                 {% if error %}
-                    <p>{{ error }}</p>
+                    <div class="sign-error-box">{{ error }}</div>
                 {% endif %}
                 {% csrf_token %}
                 <p>Введите Ваш логин:</p>
-                <input name="username" class="sign-window-input" placeholder="Логин"> 
+                <input name="username" class="sign-window-input" placeholder="Логин">
                 <p>Введите Ваш пароль:</p>
                 <input name="password" class="sign-window-input" placeholder="Пароль">
                 <button class="sign-window-next" type="submit">
@@ -44,7 +44,7 @@
             </a>
             <a href="{% url 'analytics' %}" class="sign-window-next sign-window_haveAcc">
                 <i class="fa fa-share" aria-hidden="true"></i>
-                Вернуться на главную 
+                Вернуться на главную
             </a>
         </div>
     </div>

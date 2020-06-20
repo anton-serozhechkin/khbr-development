@@ -21,9 +21,11 @@
             <div class="sign-window-form">
                 <form action="{% url 'signup' %}" method="post">
                     {% if error %}
-                        {{ error }}
+                        <div class="sign-error-box">
+                            {{ error }}
+                        </div>
                     {% endif %}
-                    
+
                     {% csrf_token %}
                     <p>
                         Введите Ваш логин:
@@ -41,15 +43,18 @@
                         Введите еще раз Ваш пароль:
                     </p>
                     {% render_field form.password2 name="user_login" class="sign-window-input" placeholder="Повторите пароль" %}
-                    <div>
+                    <div class="signUp-checkbox">
+                        <input type="checkbox" name="subscribe" id="subscribe" checked>
                         <label for='subscribe'>
                             Подписаться на нашу рассылку
                         </label>
-                        <input type="checkbox" name="subscribe" id="subscribe" checked>
                     </div>
-                    <button class="sign-window-next" type="submit">
-                        Создать аккаунт
-                    </button>
+                    <div class="submit-button">
+
+                        <button class="sign-window-next" type="submit">
+                            Создать аккаунт
+                        </button>
+                    </div>
                 </form>
             </div>
             <div class="sign-window-bottom">
