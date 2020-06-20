@@ -20,6 +20,10 @@
             </div>
             <div class="sign-window-form">
                 <form action="{% url 'signup' %}" method="post">
+                    {% if error %}
+                        {{ error }}
+                    {% endif %}
+                    
                     {% csrf_token %}
                     <p>
                         Введите Ваш логин:
