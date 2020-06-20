@@ -118,3 +118,18 @@
   width: 100%;
   max-width: 330px;
 }
+.signIn-password {
+  position: relative;
+}
+.password-control {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  color:black;
+}
+.password-control.view {
+
+}
