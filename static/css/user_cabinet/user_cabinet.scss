@@ -325,4 +325,14 @@
     width: 325px;
     resize: none;
   }
+  .delete_acc {
+    input {
+      border: #c10800 solid 2px!important;
+      color:white;
+      background-color: #ab0700!important;
+      &:hover {
+        background-color: #a80800!important;
+      }
+    }
+  }
 }

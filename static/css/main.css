@@ -1327,6 +1327,12 @@ time, mark, audio, video {
   .user_modal textarea {
     width: 325px;
     resize: none; }
+  .user_modal .delete_acc input {
+    border: #c10800 solid 2px !important;
+    color: white;
+    background-color: #ab0700 !important; }
+    .user_modal .delete_acc input:hover {
+      background-color: #a80800 !important; }
 
 .footer-style {
   padding: 5vh 2vw;
