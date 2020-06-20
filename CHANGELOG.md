@@ -1,3 +1,25 @@
+## 1.1.1 [20.06.2020]
+## 21 branch
+### Added
+- User cabinet 
+- Documentation 
+- Featured posts at user cabinet 
+
+## 1.1.0 [20.06.2020]
+## 20 branch
+### Added
+- Views URL's of signIn and signUp templates
+- Checkbox for subscribe while signUp
+- Check for empty request in search
+- Check for data while sighIn and signUp
+- Hide/show password on signIn form
+- Logout view
+
+### Refactored
+- Templates 
+- Null true for event date start && end time
+- Error box on signIn or signUp
+
 ## 1.0.0 [19.06.2020]
 ## 19 branch
 ### Added

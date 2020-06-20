@@ -34,10 +34,22 @@
                     <!--  search icon into input  -->
                 </form>
                 <!--     search form       -->
+
             </div>
             <!-- search wrap-->
+            <div class="user-icon">
+                {% if user.is_authenticated %}
+                <a href="{% url 'sign_out' %}" class="header-navigation-item header-navigation-sign wow fadeIn" title="Выйти">
+                    {% else %}
+                    <a href="{% url 'signup' %}" class="header-navigation-item header-navigation-sign wow fadeIn" title="Зарегистрироваться">
+                        {% endif %}
+                        <i class="fa fa-user-circle" aria-hidden="true"></i>
+                    </a>
+                </a>
+            </div>
         </div>
         <!--       header search block     -->
+
     </header>
     <!--  main header block  -->
 
@@ -76,9 +88,6 @@
             <li>
                 <a href="" class="header-navigation-item wow fadeIn">Опросы</a>
             </li>
-            {% comment %}<a href="{% url 'signin' %}" class="header-navigation-item header-navigation-sign wow fadeIn">
-            <i class="fa fa-user-circle" aria-hidden="true"></i>
-        </a>{% endcomment %}
         </ul>
         <!--   header navigation wrapper list    -->
     </section>

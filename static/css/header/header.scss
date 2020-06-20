@@ -20,6 +20,20 @@
     }
   }
   .header-search {
+    display: flex;
+    align-items: center;
+    .user-icon {
+      i {
+        font-size: 32px;
+        color:#7A7A7A;
+        transition: .2s linear;
+        margin-left: 20px;
+        &:hover {
+          color:#63808b;
+          transition: .2s linear;
+        }
+      }
+    }
     .search-wrapper {
       border: solid 2px #16690d;
       input {
