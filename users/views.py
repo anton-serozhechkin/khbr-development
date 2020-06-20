@@ -49,9 +49,9 @@ def signup(request):
 
                 try:
                     subscribe = request.POST['subscribe']
-                    #встаивть проверку существует ли эмейл
-                    new_subscriber = Subscribe.objects.create(email=user.email)
-                    new_subscriber.save()
+                    if not Subscribe.objects.filter(email=user.email).exists():
+                        new_subscriber = Subscribe.objects.create(email=user.email)
+                        new_subscriber.save()
                 except:
                     pass
                 
