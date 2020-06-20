@@ -42,27 +42,32 @@ def article_by_category(request, category_slug):
     return render(request, 'analytics/article_by_category.html', locals())
 
 def search_results(request):
-    query = request.GET.get('q')
+    if request.GET.get('q'):
+        query = request.GET.get('q')
 
-    article_list = Article.objects.filter(
-        Q(title__icontains=query)|
-        Q(short_description__icontains=query)|
-        Q(content__icontains=query)
-    )
-    event_list = Event.objects.filter(
-        Q(title__icontains=query)|
-        Q(short_description__icontains=query)|
-        Q(content__icontains=query)
-    )
-    raiting_list = Raiting.objects.filter(
-        Q(title__icontains=query)|
-        Q(short_description__icontains=query)|
-        Q(content__icontains=query)
-    )
-    video_list = VideoDownloading.objects.filter(
-        Q(title__icontains=query)|
-        Q(notes__icontains=query)
-    )
+        article_list = Article.objects.filter(
+            Q(title__icontains=query)|
+            Q(short_description__icontains=query)|
+            Q(content__icontains=query)
+        )
+        event_list = Event.objects.filter(
+            Q(title__icontains=query)|
+            Q(short_description__icontains=query)|
+            Q(content__icontains=query)
+        )
+        raiting_list = Raiting.objects.filter(
+            Q(title__icontains=query)|
+            Q(short_description__icontains=query)|
+            Q(content__icontains=query)
+        )
+        video_list = VideoDownloading.objects.filter(
+            Q(title__icontains=query)|
+            Q(notes__icontains=query)
+        )
+        if not article_list or not event_list or not raiting_list or not video_list:
+            answer = 'Ничего не найдено'
+    else:    
+        answer = 'Пустой запрос'
 
     return render(request, 'search/index.html', locals())
 
