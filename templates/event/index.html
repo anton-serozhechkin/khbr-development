@@ -46,12 +46,13 @@
                             <i class="fa fa-clock-o" aria-hidden="true"></i>
                             Во сколько начало? - {{ event.start_time }}
                         </p>
+                        <p class="event-post-content-creating">
+                            <i class="fa fa-clock-o" aria-hidden="true"></i>
+                            Во сколько начало? - {{ event.start_time }}
+                        </p>
                         {% endif %}
                         <p class="event-post-content-author">
-                            <a href="{% url 'authors_detail' slug=event.author.slug %}">
-                                <i class="fa fa-user" aria-hidden="true"></i>
-                                Автор - {{ event.author }}
-                            </a>
+                                Дата создания - {{ event.created|date:"d M Y" }}
                         </p>
                     </div>
                 </div>

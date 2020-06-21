@@ -470,37 +470,39 @@ time, mark, audio, video {
     width: 100%;
     border-bottom: solid 2px #303738;
     padding-bottom: 2vh; }
-    .event-wrapper .event-post-box .event-post-content .event-post-title {
-      font-size: 2em;
-      text-align: center; }
-      .event-wrapper .event-post-box .event-post-content .event-post-title a {
-        text-decoration: none;
-        color: #303738; }
-        .event-wrapper .event-post-box .event-post-content .event-post-title a:hover {
-          color: #63808b;
-          transition: .4s; }
-        .event-wrapper .event-post-box .event-post-content .event-post-title a:focus {
-          color: #8b5d65; }
-    .event-wrapper .event-post-box .event-post-content .event-post-content-text {
-      text-align: left;
-      font-size: 1.4em;
-      margin: 1vh 0; }
-    .event-wrapper .event-post-box .event-post-content .event-post-content-info {
-      display: flex;
-      flex-flow: row wrap;
-      justify-content: space-around;
-      align-items: center;
-      color: #7A7A7A;
-      font-size: 1.2em;
-      margin: 1vh 0; }
-      .event-wrapper .event-post-box .event-post-content .event-post-content-info .event-post-content-author a {
+    .event-wrapper .event-post-box .event-post-content {
+      margin: 5vh 0; }
+      .event-wrapper .event-post-box .event-post-content .event-post-title {
+        font-size: 2em;
+        text-align: center; }
+        .event-wrapper .event-post-box .event-post-content .event-post-title a {
+          text-decoration: none;
+          color: #303738; }
+          .event-wrapper .event-post-box .event-post-content .event-post-title a:hover {
+            color: #63808b;
+            transition: .4s; }
+          .event-wrapper .event-post-box .event-post-content .event-post-title a:focus {
+            color: #8b5d65; }
+      .event-wrapper .event-post-box .event-post-content .event-post-content-text {
+        text-align: left;
+        font-size: 1.4em;
+        margin: 1vh 0; }
+      .event-wrapper .event-post-box .event-post-content .event-post-content-info {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-around;
+        align-items: center;
         color: #7A7A7A;
-        text-decoration: none; }
-      .event-wrapper .event-post-box .event-post-content .event-post-content-info p:hover {
-        text-decoration: underline;
-        cursor: pointer; }
-      .event-wrapper .event-post-box .event-post-content .event-post-content-info i {
-        margin-right: 8px; }
+        font-size: 1.2em;
+        margin: 1vh 0; }
+        .event-wrapper .event-post-box .event-post-content .event-post-content-info .event-post-content-author a {
+          color: #7A7A7A;
+          text-decoration: none; }
+        .event-wrapper .event-post-box .event-post-content .event-post-content-info p:hover {
+          text-decoration: underline;
+          cursor: pointer; }
+        .event-wrapper .event-post-box .event-post-content .event-post-content-info i {
+          margin-right: 8px; }
 
 .event-post-image img {
   width: 100%;
