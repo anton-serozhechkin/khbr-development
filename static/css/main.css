@@ -930,6 +930,12 @@ time, mark, audio, video {
       color: lightcoral;
       transition: .2s linear; }
 
+.auth_error {
+  text-align: center;
+  font-size: 22px; }
+  .auth_error a {
+    color: black; }
+
 .search-index .container {
   padding: 50px 15vw; }
   .search-index .container .search-result .date {
@@ -1060,10 +1066,6 @@ time, mark, audio, video {
       text-transform: uppercase;
       font-size: 2rem;
       margin: 10px 0;
-      color: black; }
-    .category-wrapper .category-box {
-      margin-left: 10px;
-      font-size: 18px;
       color: black; }
 
 .container-authors {

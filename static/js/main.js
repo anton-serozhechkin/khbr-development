@@ -59,12 +59,6 @@ function poll() {
                 }
             })
         }
-        resultButton.addEventListener('click',function () {
-            event.preventDefault()
-            pollForm.style.display = 'none'
-            pollResults.style.display = 'block'
-        })
-
     }
 }
 function poll_statusBar() {
