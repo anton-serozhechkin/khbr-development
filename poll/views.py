@@ -8,6 +8,5 @@ def main(request):
 
 def poll_detail(request, slug):
     poll = get_object_or_404(Poll, slug=slug)
-    answers = Answer.objects.filter(poll__slug=slug)
-    
-    return render(request, 'poll/poll_detail.html')
+    answers = Answer.objects.filter(poll__slug=slug)  
+    return render(request, 'poll/poll_detail.html', locals())
