@@ -357,12 +357,14 @@ time, mark, audio, video {
     margin: 0 4px; }
 
 .analytics-detail-post {
-  margin: 5vh 0; }
+  margin: 5vh 0;
+  margin-top: .4vh; }
   .analytics-detail-post .analytics-detail-title {
     font-size: 2.4em;
     color: #303738;
     margin: 2vh 0;
-    text-align: center; }
+    text-align: center;
+    margin-top: 0; }
     .analytics-detail-post .analytics-detail-title:hover {
       color: #63808b;
       transition: .4s;
@@ -404,6 +406,60 @@ time, mark, audio, video {
     .analytics-detail-post .analytics-detail-content-box:hover {
       text-shadow: 1px 1px 1px #C9C9C9;
       cursor: pointer; }
+
+.return_back_button {
+  display: flex;
+  align-items: center; }
+  .return_back_button a {
+    border: solid 2px purple;
+    padding: 6px 10px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: 500;
+    color: black;
+    transition: .2s linear; }
+    .return_back_button a:hover {
+      background-color: purple;
+      color: white;
+      transition: .2s linear;
+      transform: scale(1.1); }
+      .return_back_button a:hover i {
+        color: white;
+        border: solid 2px purple; }
+    .return_back_button a i {
+      color: slategray;
+      border-radius: 100%;
+      border: solid 2px slategray;
+      padding: 4px 8px; }
+
+.next-prev-button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; }
+  .next-prev-button a {
+    border: solid 2px purple;
+    padding: 6px 10px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: 500;
+    color: black;
+    transition: .2s linear; }
+    .next-prev-button a:hover {
+      background-color: purple;
+      color: white;
+      transition: .2s linear;
+      transform: scale(1.1); }
+      .next-prev-button a:hover i {
+        color: white;
+        border: solid 2px purple; }
+    .next-prev-button a i {
+      color: slategray;
+      border-radius: 100%;
+      border: solid 2px slategray;
+      padding: 4px 8px; }
 
 .event-wrapper {
   margin: 5vh 0;
@@ -457,7 +513,8 @@ time, mark, audio, video {
   flex-flow: column wrap;
   align-items: center;
   justify-content: center;
-  width: 100%; }
+  width: 100%;
+  margin-top: .4vh; }
   .event-detail .event-detail-detail-top {
     width: 100%; }
     .event-detail .event-detail-detail-top .event-detail-title {
@@ -568,6 +625,9 @@ time, mark, audio, video {
     align-items: center;
     color: #7A7A7A;
     font-size: 1em; }
+    .rating-detail .rating-detail-top .rating-detail-info .rating-detail-author a {
+      color: #7A7A7A;
+      text-decoration: none; }
 
 .video-wrapper {
   margin: 5vh 0; }

@@ -2,6 +2,12 @@
 {% block content %}
 <div class="container">
     <section class="rating-detail">
+        <div class="return_back_button">
+            <a href="{% url 'raitings' %}">
+                <i class="fa fa-chevron-left"></i>
+                Вернуться назад
+            </a>
+        </div>
         <div class="rating-detail-top">
             <div class="rating-detail-top-left_side">
                 <h1 class="rating-detail-title">{{ data_rait.title }}</h1>
@@ -14,7 +20,7 @@
                  <div class="rating-detail-info">
                      <span class="rating-detail-author">
                         <a href="{% url 'authors_detail' slug=data_rait.author.slug %}">
-                            <i class="fa fa-user"></i> 
+                            <i class="fa fa-user"></i>
                             {{ data_rait.author }}
                         </a>
                     </span>
@@ -28,6 +34,16 @@
         </div>
         <div class="rating-detail-publication-image">
             <img src="" alt="" class="">
+        </div>
+        <div class="next-prev-button">
+            <a href="">
+                <i class="fa fa-chevron-left"></i>
+                Предыдущий рейтинг
+            </a>
+            <a href="">
+                Следующий рейтинг
+                <i class="fa fa-chevron-right"></i>
+            </a>
         </div>
     </section>
 </div>

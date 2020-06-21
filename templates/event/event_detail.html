@@ -1,6 +1,12 @@
 {% extends 'base.html' %}
 {% block content %}
 <div class="container">
+    <div class="return_back_button">
+        <a href="{% url 'events' %}">
+            <i class="fa fa-chevron-left"></i>
+            Вернуться назад
+        </a>
+    </div>
     <section class="event-detail">
         <div class="event-detail-detail-top">
             <h1 class="event-detail-title">
@@ -58,6 +64,16 @@
         <p class="event-detail-paragraph">
             {{ data_event.content|safe }}
         </p>
+        <div class="next-prev-button">
+            <a href="">
+                <i class="fa fa-chevron-left"></i>
+                Предыдущее событие
+            </a>
+            <a href="">
+                Следующее событие
+                <i class="fa fa-chevron-right"></i>
+            </a>
+        </div>
     </section>
 </div>
 {% endblock content %}
