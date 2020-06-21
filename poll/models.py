@@ -15,6 +15,7 @@ class Poll(models.Model):
     created = models.DateTimeField('Дата создания', default=timezone.now)
     is_active = models.BooleanField(default=True, verbose_name='Видимость для пользователя')
     views = models.PositiveIntegerField('Просмотров публикации', default=0)
+    counter_votes = models.PositiveIntegerField('Количество проголосовавших', default=0)
 
     def __str__(self):
         return self.title
