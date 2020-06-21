@@ -41,7 +41,7 @@ class Article(models.Model):
     title = models.CharField('Заголовок', max_length=120)
     slug = models.SlugField('Ссылка')
     short_description = HTMLField('Короткое описание на 200 символов', max_length=200)
-    image = models.ImageField("Фотография", upload_to='article/%Y/%m/%h/', blank=True)
+    image = models.ImageField("Фотография", upload_to='article/%Y/%m/%h/')
     content = HTMLField("Контент")
     integer_of_day = models.BooleanField('Цифра дня', default=False)
     author = models.ForeignKey(Author, on_delete=models.DO_NOTHING, verbose_name="Автор")

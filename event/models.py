@@ -12,7 +12,7 @@ class Event(models.Model):
     start_time = models.TimeField('Начало', null=True, blank=True)
     end_time = models.TimeField('Конец', null=True, blank=True)
     place = models.CharField('Место', blank=True, max_length=300)
-    image = models.ImageField('Фотография', upload_to='event/%Y/%m/%h/', blank=True)
+    image = models.ImageField('Фотография', upload_to='event/%Y/%m/%h/')
     author = models.ForeignKey(Author, on_delete=models.DO_NOTHING, verbose_name="Автор")
     content = HTMLField("Контент")
     created = models.DateTimeField('Дата создания', default=timezone.now)

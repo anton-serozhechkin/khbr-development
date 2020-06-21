@@ -10,7 +10,7 @@ class Poll(models.Model):
     slug = models.SlugField('Ссылка')
     content = HTMLField("Контент")
     question = HTMLField("Вопрос")
-    image = models.ImageField("Фотография", upload_to='poll/%Y/%m/%h/', blank=True)
+    image = models.ImageField("Фотография", upload_to='poll/%Y/%m/%h/')
     author = models.ForeignKey(Author, on_delete=models.DO_NOTHING, verbose_name="Автор")
     created = models.DateTimeField('Дата создания', default=timezone.now)
     is_active = models.BooleanField(default=True, verbose_name='Видимость для пользователя')
@@ -18,7 +18,7 @@ class Poll(models.Model):
     counter_votes = models.PositiveIntegerField('Количество проголосовавших', default=0)
 
     def __str__(self):
-        return self.title
+        return 'Заголовок - {}, вопрос - {}, проголосовавших - {}'.format(self.title, self.question, self.counter_votes)
             
     def get_absolute_url(self):
         return reverse('poll_detail', kwargs={'slug': self.slug})

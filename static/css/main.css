@@ -1061,7 +1061,7 @@ time, mark, audio, video {
       font-size: 2rem;
       margin: 10px 0;
       color: black; }
-    .category-wrapper .category-box .category-box-description {
+    .category-wrapper .category-box {
       margin-left: 10px;
       font-size: 18px;
       color: black; }

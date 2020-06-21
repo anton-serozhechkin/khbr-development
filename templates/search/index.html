@@ -11,11 +11,9 @@
                     {% for article in article_list %}
                         <a href="{% url 'article_detail' category_slug=article.category.slug slug=article.slug %}">
                             <div class="result">
-                                {% if article.image %}
-                                    <div class="img">
-                                        <img src="{{ article.image.url }}" alt="">
-                                    </div>
-                                {% endif %}
+                                <div class="img">
+                                    <img src="{{ article.image.url }}" alt="">
+                                </div>
                                 <div class="content">
 
                                     <div class="content-header">
@@ -58,11 +56,9 @@
                     {% for event in event_list %}
                         <a href="{% url 'event_detail' slug=event.slug %}">
                             <div class="result">
-                                {% if event.image %}
-                                    <div class="img">
-                                        <img src="{{ event.image.url }}" alt="">
-                                    </div>
-                                {% endif %}
+                                <div class="img">
+                                    <img src="{{ event.image.url }}" alt="">
+                                </div>
                                 <div class="content">
                                     <div class="title">
                                         {{ event.title }}
@@ -95,11 +91,9 @@
                     {% for raiting in raiting_list %}
                         <a href="{% url 'raiting_detail' slug=raiting.slug %}">
                             <div class="result">
-                                {% if raiting.image %}
-                                    <div class="img">
-                                        <img src="{{ raiting.image.url }}" alt="">
-                                    </div>
-                                {% endif %}
+                                <div class="img">
+                                    <img src="{{ raiting.image.url }}" alt="">
+                                </div>
                                 <div class="content">
                                     <div class="title">
                                         {{ raiting.title }}

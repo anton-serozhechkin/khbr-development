@@ -17,11 +17,9 @@
           <div class="analytics_post-box wow fadeInLeft">
 
               <div class="analytics-box-content">
-                  {% if article.image %}
                   <div class="analytics-box-image">
                       <img src="{{ article.image.url }}" alt="">
                   </div>
-                  {% endif %}
                   <div class="analytics-box-text">
                       <div class="analytics-box-title">
                           <a href="{% url 'article_detail' category_slug=article.category.slug slug=article.slug %}">

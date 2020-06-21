@@ -23,12 +23,9 @@
                             {{ event.title }}
                         </a>
                     </div>
-                    {% if event.image %}
                     <div class="event-post-image">
                         <img src="{{ event.image.url }}" alt="">
                     </div>
-                    {% endif %}
-
                     <div class="event-post-content-text">
                         {{ event.short_description|safe }}
                     </div>

@@ -7,11 +7,9 @@
                 <div class="analytics-detail-title">
                     <h1>{{ article.title }}</h1>
                 </div>
-                {% if article.image %}
                 <div class="analytics-detail-image">
                     <img src="{{ article.image.url }}" alt="">
                 </div>
-                {% endif %}
                 <div class="analytics-detail-info">
                     <a href="{% url 'article_by_category' category_slug=article.category.slug %}">
                         <h3>

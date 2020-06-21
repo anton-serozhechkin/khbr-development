@@ -17,9 +17,7 @@
                 {% for poll in polls %}
                     <div class="poll-box">
                         <a href="{% url 'poll_detail' slug=poll.slug %}">
-                            {% if poll.image %}
-                                <img src="{{ poll.image.url }}" alt="" class="img">
-                            {% endif %}
+                            <img src="{{ poll.image.url }}" alt="" class="img">
                             <div class="title">
                                 <span>
                                     {{ poll.title }}

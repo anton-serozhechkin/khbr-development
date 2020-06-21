@@ -53,10 +53,7 @@
                 <div class="index-post  wow fadeInDown">
 <!--        index post post box with animations fade class            -->
                     <a href="{% url 'article_detail' category_slug=article.category.slug slug=article.slug %}" class="index-post-link">
-
-                        {% if article.image %}
-                            <img src="{{ article.image.url }}" alt="post image" class="index-post-image">
-                        {% endif %}
+                        <img src="{{ article.image.url }}" alt="post image" class="index-post-image">
                         <p class="index-post-title">{{ article.title }}</p>
                     </a>
                 </div>
@@ -208,8 +205,6 @@
                         </div>
                     </a>
                 </div>
-
-
             </div>
         </section>
     </div>
