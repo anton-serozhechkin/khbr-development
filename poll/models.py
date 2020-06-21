@@ -31,6 +31,7 @@ class Answer(models.Model):
     poll = models.ForeignKey(Poll, verbose_name='Опрос', on_delete=models.CASCADE)
     text = models.CharField('Ответ', max_length=50)
     counter = models.IntegerField('Количество проголосовавших', default=0)
+    percents = models.FloatField('Процентное соотношение проголосовавших', default=0)
 
     def __str__(self):
         return 'Опрос {}, кол-во проголосовавших - {}'.format(self.poll.title, self.counter)
