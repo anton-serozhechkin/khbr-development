@@ -1,15 +1,27 @@
 {% extends 'base.html' %}
-{% block content %}
-<div id="notfound">
-	<div class="notfound">
-		<div class="notfound-404">
-			<h1>5<span>0</span>0</h1>
-		</div>
-		<h2>Неполадки на сервере. Повторите попытку позже</h2>
-		<form class="notfound-search">
-			<input type="text" placeholder="Search...">
-			<button type="button"><span></span></button>
-		</form>
-	</div>
+{% load static %}
+<div id="error">
+    <div class="page_title-box">
+        <div class="page_title-top_line">
+        </div>
+        <div class="page_title-title error-title">
+            <h1>
+                500
+            </h1>
+        </div>
+        <div class="page_title-bottom_line">
+        </div>
+    </div>
+    <div class="error_description">
+        Отказано в доступе. Проверьте наличие прав для доступа.
+    </div>
+    <div class="error-image">
+        <img src="{% static 'img/error.png' %}" alt="Error 500">
+    </div>
+    <div class="return-back-error">
+        <i class="fa fa-chevron-left"></i>
+        <a href="{% url 'analytics' %}">
+            Вернуться назад
+        </a>
+    </div>
 </div>
-{% endblock content %}
