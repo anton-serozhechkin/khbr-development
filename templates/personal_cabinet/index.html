@@ -82,27 +82,30 @@
                 <!--       user main profile section         -->
 
                 <!--        central section on user page main body with popular posts        -->
+                {% if fuck %}
                 <div class="popular-posts">
+                    {% if last_articles %}
                     <!--         popular post wrap           -->
+                    {% for post in last_articles %}
                     <div class="post">
                         <!--info section-->
                         <div class="right">
                             <!--title of popular post-->
                             <div class="title">
                                 <!--category of post-->
-                                <a href="">Аналитика</a>
+                                <a href="{% url 'analytics' %}">Аналитика</a>
                                 <!--category of post-->
                                 <p>|</p>
                                 <!--subcategory of popular post. -->
-                                <a href="">Спорт</a>
+                                <a href="{% url 'article_by_category' category_slug=post.category.slug %}">{{ post.category }}</a>
                                 <!--subcategory of popular post. -->
                             </div>
                             <!--title of popular post-->
                             <!--description of post-->
                             <div class="description">
                                 <!--link to detail of post-->
-                                <a href="">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, culpa!
+                                <a href="{% url 'article_detail' category_slug=post.category.slug slug=post.slug %}">
+                                    {{ post.title }}
                                 </a>
                                 <!--link to detail of post-->
                             </div>
@@ -111,14 +114,72 @@
                         </div>
                         <!--info section-->
                     </div>
+                    {% endfor %}
+                    {% endif %}
+                    {% if last_events %}
+                    {% for event in last_events %}
+                    <div class="post">
+                        <!--info section-->
+                        <div class="right">
+                            <!--title of popular post-->
+                            <div class="title">
+                                <!--category of post-->
+                                <a href="{% url 'events' %}">События</a>
+                                <!--category of post-->
+                            </div>
+                            <!--title of popular post-->
+                            <!--description of post-->
+                            <div class="description">
+                                <!--link to detail of post-->
+                                <a href="{% url 'event_detail' slug=event.slug %}">
+                                    {{ event.title }}
+                                </a>
+                                <!--link to detail of post-->
+                            </div>
+                            <!--description of post-->
+
+                        </div>
+                        <!--info section-->
+                    </div>
+                    {% endfor %}
+                    {% endif %}
+                    {% if last_raitings %}
+                    {% for raiting in last_raitings %}
+                    <div class="post">
+                        <!--info section-->
+                        <div class="right">
+                            <!--title of popular post-->
+                            <div class="title">
+                                <!--category of post-->
+                                <a href="{% url 'raitings' %}">Рейтинги</a>
+                                <!--category of post-->
+                            </div>
+                            <!--title of popular post-->
+                            <!--description of post-->
+                            <div class="description">
+                                <!--link to detail of post-->
+                                <a href="{% url 'raiting_detail' slug=raiting.slug %}">
+                                    {{ raiting.title }}
+                                </a>
+                                <!--link to detail of post-->
+                            </div>
+                            <!--description of post-->
+
+                        </div>
+                        <!--info section-->
+                    </div>
+                    {% endfor %}
+                    {% endif %}
                     <!--         popular post wrap           -->
                 </div>
+                {% endif %}
                 <!--        central section on user page main body with popular posts        -->
                 <!--      settings section of user main body      -->
                 <div class="settings">
                     <!-- settings list with links to modal -->
                     <ul>
                         <!-- list elem -->
+                        <li><a href="{% url 'personal_cabinet' %}">Последние новости</a></li>
                         <li><a href="{% url 'private_data' %}">Личные данные</a></li>
                         <!-- list elem -->
                         <li><a href="{% url 'change_password' %}">Смена пароля</a></li>
@@ -135,9 +196,9 @@
                 </div>
                 <!--      settings section of user main body      -->
             </div>
-
+            {% if private_data %}
             <!-- modal form for change user personal data -->
-            <div class="user_modal ">
+            <div class="user_modal active">
                 <!--        modal header        -->
                 <div class="user_modal_header">
                     <p>
@@ -172,9 +233,10 @@
                 </div>
             </div>
             <!-- modal form for change user personal data -->
-
+            {% endif %}
+            {% if change_password %}
             <!-- modal form for change user password -->
-            <div class="user_modal">
+            <div class="user_modal active">
                 <div class="user_modal_header">
                     <p>
                         Смена пароля
@@ -201,8 +263,10 @@
                 </div>
             </div>
             <!-- modal form for change user password -->
+            {% endif %}
+            {% if subscribe %}
             <!-- modal form for subscribe -->
-            <div class="user_modal ">
+            <div class="user_modal active">
                 <div class="user_modal_header">
                     <p>
                         Подписка на рассылку
@@ -225,9 +289,11 @@
                     </form>
                 </div>
             </div>
+            {% endif %}
             <!-- modal form for subscribe -->
+            {% if unsubscribe %}
             <!-- modal form for cancel subscribe -->
-            <div class="user_modal">
+            <div class="user_modal active">
                 <div class="user_modal_header">
                     <p>
                         Отписаться от рассылки
@@ -250,8 +316,10 @@
                 </div>
             </div>
             <!-- modal form for cancel subscribe -->
+            {% endif %}
+            {% if links %}
             <!-- modal form for contact us -->
-            <div class="user_modal">
+            <div class="user_modal active">
                 <div class="user_modal_header">
                     <p>
                         Связь с нами
@@ -299,9 +367,10 @@
                 </div>
             </div>
             <!-- modal form for contact us -->
-
+            {% endif %}
+            {% if delete_account %}
             <!-- modal form for delete account -->
-            <div class="user_modal">
+            <div class="user_modal active">
                 <div class="user_modal_header">
                     <p>
                         Удаление аккаунта
@@ -324,6 +393,7 @@
                 </div>
             </div>
             <!-- modal form for delete account -->
+            {% endif %}
             <!--      user main body wrapper      -->
 
         </div>
