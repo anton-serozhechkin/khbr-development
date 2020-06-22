@@ -25,3 +25,20 @@ class Raiting(models.Model):
     
     def get_absolute_url(self):
         return reverse('raiting_detail', kwargs={'slug': self.slug})
+
+class RaitingImage(models.Model):
+    raiting = models.ForeignKey(Raiting, on_delete=models.CASCADE, verbose_name='Рейтинг')
+    title = models.CharField('Название картинки', blank=True, null=True, max_length=50)
+    image = models.ImageField(upload_to='article_inside/%Y/%m/%h/', verbose_name='Загрузить картинку')
+    author = models.ForeignKey(Author, on_delete=models.CASCADE, verbose_name="Автор")
+    created = models.DateTimeField('Дата создания', default=timezone.now)
+
+    def __str__(self):
+        if self.title:
+            return self.title
+        else:
+            return self.author.user.username
+
+    class Meta:
+        verbose_name = 'Фотография рейтинга'
+        verbose_name_plural = 'Фотографии рейтингов'

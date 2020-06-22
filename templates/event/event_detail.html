@@ -67,18 +67,22 @@
 
         <!--         slider detail wrap       -->
         <div class="slider-detail">
+            {% for event_image in event_images %}
             <!-- slide detail. insert this to add slide's -->
             <div class="slide-detail">
                 <!-- slide image -->
-                <img src="https://images.unsplash.com/photo-1592714197108-48fc6befc899?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" alt="" class="slider-detail-image">
+                <img src="{{ event_image.image.url }}" alt="" class="slider-detail-image">
                 <!-- slide image -->
                 <!--     slide description      -->
+                {% if event_image.title %}
                 <div class="description">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam, sapiente!
+                    {{ event_image.title }}
                 </div>
+                {% endif %}
                 <!--     slide description      -->
             </div>
             <!-- slide detail. insert this to add slide's -->
+            {% endfor %}
         </div>
         <!--         slider detail wrap       -->
 

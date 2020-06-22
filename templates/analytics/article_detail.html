@@ -44,16 +44,20 @@
             <!--         slider detail wrap       -->
             <div class="slider-detail">
                 <!-- slide detail. insert this to add slide's -->
+                {% for article_image in article_images %}
                 <div class="slide-detail">
                     <!-- slide image -->
-                    <img src="https://images.unsplash.com/photo-1592714197108-48fc6befc899?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" alt="" class="slider-detail-image">
+                    <img src="{{ article_image.image.url }}" alt="" class="slider-detail-image">
                     <!-- slide image -->
+                    {% if article_image.title %}
                     <!--     slide description      -->
                     <div class="description">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam, sapiente!
+                        {{ article_image.title }}
                     </div>
+                    {% endif %}
                     <!--     slide description      -->
                 </div>
+                {% endfor %}
                 <!-- slide detail. insert this to add slide's -->
             </div>
             <!--         slider detail wrap       -->

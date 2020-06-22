@@ -3,11 +3,10 @@ from .models import *
 
 
 class AuthorAdmin(admin.ModelAdmin):
-    list_display = ('user', 'bio', )
-    list_filter = ('user', )
-    prepopulated_fields = {'slug': ('user__lastname', )}
+    prepopulated_fields = {'slug': ('user', )}
 
-
+class ArticleImageAdmin(admin.ModelAdmin):
+    search_fields = ('author__user__username', )
 
 class SubscribeAdmin(admin.ModelAdmin):
     list_display = ('email', 'created', )
@@ -49,9 +48,9 @@ class ArticleAdmin(admin.ModelAdmin):
             }
             )
     )
-
+admin.site.register(ArticleImage, ArticleImageAdmin)
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(Article, ArticleAdmin)
 admin.site.register(Links, LinksAdmin)
-admin.site.register(Author)#, AuthorAdmin)
+admin.site.register(Author, AuthorAdmin)
 admin.site.register(Subscribe, SubscribeAdmin)
