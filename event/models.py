@@ -28,3 +28,21 @@ class Event(models.Model):
     
     def get_absolute_url(self):
         return reverse('event_detail', kwargs={'slug': self.slug})
+
+
+class EventImage(models.Model):
+    event = models.ForeignKey(Event, on_delete=models.CASCADE, verbose_name='Выберите событие')
+    title = models.CharField('Название картинки', blank=True, null=True, max_length=50)
+    image = models.ImageField(upload_to='article_inside/%Y/%m/%h/', verbose_name='Загрузить картинку')
+    author = models.ForeignKey(Author, on_delete=models.CASCADE, verbose_name="Автор")
+    created = models.DateTimeField('Дата создания', default=timezone.now)
+
+    def __str__(self):
+        if self.title:
+            return self.title
+        else:
+            return self.author.user.username
+            
+    class Meta:
+        verbose_name = 'Фотография события'
+        verbose_name_plural = 'Фотографии событий'

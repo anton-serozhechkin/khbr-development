@@ -1,3 +1,15 @@
+## 1.1.2 [22.06.2020]
+## 23 branch
+### Added
+- Navigation links on detail page
+- Mail's templates
+- Slider on detail pages 
+- Errors pages
+
+### Refactored
+- Hide anim on banner at main index
+
+
 ## 1.1.1 [20.06.2020]
 ## 21 branch
 ### Added

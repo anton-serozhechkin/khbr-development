@@ -80,3 +80,20 @@ class Subscribe(models.Model):
     class Meta:
         verbose_name = 'Подписчик на рассылку'
         verbose_name_plural = 'Подписчики на рассылку'
+
+class ArticleImage(models.Model):
+    article = models.ForeignKey(Article, on_delete=models.CASCADE, verbose_name='Пост')
+    title = models.CharField('Название картинки', blank=True, null=True, max_length=50)
+    image = models.ImageField(upload_to='article_inside/%Y/%m/%h/', verbose_name='Загрузить картинку')
+    author = models.ForeignKey(Author, on_delete=models.CASCADE, verbose_name="Автор")
+    created = models.DateTimeField('Дата создания', default=timezone.now)
+
+    def __str__(self):
+        if self.title:
+            return self.title
+        else:
+            return self.author.user.username
+
+    class Meta:
+        verbose_name = 'Фотография поста'
+        verbose_name_plural = 'Фотографии постов'

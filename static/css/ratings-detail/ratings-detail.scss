@@ -36,6 +36,12 @@
       align-items: center;
       color:#7A7A7A;
       font-size: 1em;
+      .rating-detail-author {
+        a {
+          color:#7A7A7A;
+          text-decoration: none;
+        }
+      }
     }
   }
 }

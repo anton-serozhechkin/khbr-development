@@ -10,6 +10,7 @@ def main(request):
     
 def raiting_detail(request, slug):
     data_rait = get_object_or_404(Raiting, slug=slug)
+    raiting_images = RaitingImage.objects.filter(raiting__slug=slug)
     data_rait.views += 1
     data_rait.save()
     return render(request, 'raitings/raiting_detail.html', locals())

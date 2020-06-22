@@ -1,6 +1,12 @@
 {% extends 'base.html' %}
 {% block content %}
 <div class="container">
+    <div class="return_back_button">
+        <a href="{% url 'events' %}">
+            <i class="fa fa-chevron-left"></i>
+            Вернуться назад
+        </a>
+    </div>
     <section class="event-detail">
         <div class="event-detail-detail-top">
             <h1 class="event-detail-title">
@@ -55,6 +61,39 @@
         <p class="event-detail-paragraph">
             {{ data_event.content|safe }}
         </p>
+
+        <!--         slider detail wrap       -->
+        <div class="slider-detail">
+            {% for event_image in event_images %}
+            <!-- slide detail. insert this to add slide's -->
+            <div class="slide-detail">
+                <!-- slide image -->
+                <img src="{{ event_image.image.url }}" alt="" class="slider-detail-image">
+                <!-- slide image -->
+                <!--     slide description      -->
+                {% if event_image.title %}
+                <div class="description">
+                    {{ event_image.title }}
+                </div>
+                {% endif %}
+                <!--     slide description      -->
+            </div>
+            <!-- slide detail. insert this to add slide's -->
+            {% endfor %}
+        </div>
+        <!--         slider detail wrap       -->
+
+
+        <div class="next-prev-button">
+            <a href="">
+                <i class="fa fa-chevron-left"></i>
+                Предыдущее событие
+            </a>
+            <a href="">
+                Следующее событие
+                <i class="fa fa-chevron-right"></i>
+            </a>
+        </div>
     </section>
 </div>
 {% endblock content %}

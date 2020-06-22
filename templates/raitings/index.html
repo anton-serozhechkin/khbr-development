@@ -27,11 +27,11 @@
                 <div class="analytics-box-info">
                     <p class="analytics-box-author">
                         <a href="{% url 'authors_detail' slug=raiting.author.slug %}">
-                            <i class="fa fa-user"></i> 
+                            <i class="fa fa-user"></i>
                             {{ raiting.author }}
                         </a>
                     </p>
-                    <p class="analytics-box-time">{{ raiting.created|date:"d M Y" }}</p>
+                    <p class="analytics-box-time">Дата создания: {{ raiting.created|date:"d M Y" }}</p>
                 </div>
             </div>
             {% endfor %}
