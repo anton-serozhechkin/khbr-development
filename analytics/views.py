@@ -32,6 +32,7 @@ def article_index(request):
 
 def article_detail(request, category_slug, slug):
     article = get_object_or_404(Article, slug=slug)
+    article_images = ArticleImage.objects.filter(article__slug=slug)
     article.views += 1
     article.save()
     return render(request, 'analytics/article_detail.html', locals())

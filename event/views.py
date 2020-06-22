@@ -8,6 +8,7 @@ def main(request):
 
 def event_detail(request, slug):
     data_event = get_object_or_404(Event, slug=slug)
+    event_images = EventImage.objects.filter(event__slug=slug)
     data_event.views += 1
     data_event.save()
     return render(request, 'event/event_detail.html', locals())
