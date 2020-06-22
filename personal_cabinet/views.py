@@ -7,7 +7,7 @@ from raitings.models import Raiting
 def personal_cabinet(request, private_data=None, change_password=None, unsubscribe=None, subscribe=None, links=None, delete_account=None):
     if Subscribe.objects.filter(email=request.user.email).exists():
         already_subscriber = True
-    
+
     last_articles = Article.objects.filter(is_active=True)[0:3]
     last_events = Event.objects.filter(is_active=True)[0:2]
     last_raitings = Raiting.objects.filter(is_active=True)[0:1]
@@ -15,26 +15,20 @@ def personal_cabinet(request, private_data=None, change_password=None, unsubscri
     fuck = True
     if str(request.build_absolute_uri).rsplit('/', 1)[-1] == "private_data'>>":
         private_data = True
-        fuck = False
-    
+
     if str(request.build_absolute_uri).rsplit('/', 1)[-1] == "change_password'>>":
         change_password = True
-        fuck = False
-    
+
     if str(request.build_absolute_uri).rsplit('/', 1)[-1] == "unsubscribe'>>":
         unsubscribe = True
-        fuck = False
 
     if str(request.build_absolute_uri).rsplit('/', 1)[-1] == "subscribe'>>":
         subscribe = True
-        fuck = False
 
     if str(request.build_absolute_uri).rsplit('/', 1)[-1] == "links'>>":
         links = True
-        fuck = False
 
     if str(request.build_absolute_uri).rsplit('/', 1)[-1] == "delete_account'>>":
         delete_account = True
-        fuck = False
 
     return render(request, 'personal_cabinet/index.html', locals())

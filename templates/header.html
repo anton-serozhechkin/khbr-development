@@ -39,7 +39,7 @@
             <!-- search wrap-->
             <div class="user-icon">
                 {% if user.is_authenticated %}
-                    <a href="{% url 'sign_out' %}" class="header-navigation-item header-navigation-sign wow fadeIn" title="Выйти">
+                    <a href="{% url 'personal_cabinet' %}" class="header-navigation-item header-navigation-sign wow fadeIn" title="Личный кабинет">
                 {% else %}
                     <a href="{% url 'signup' %}" class="header-navigation-item header-navigation-sign wow fadeIn" title="Зарегистрироваться">
                 {% endif %}
