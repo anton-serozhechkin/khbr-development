@@ -39,11 +39,11 @@
             <!-- search wrap-->
             <div class="user-icon">
                 {% if user.is_authenticated %}
-                <a href="{% url 'sign_out' %}" class="header-navigation-item header-navigation-sign wow fadeIn" title="Выйти">
-                    {% else %}
+                    <a href="{% url 'personal_cabinet' %}" class="header-navigation-item header-navigation-sign wow fadeIn" title="Личный кабинет">
+                {% else %}
                     <a href="{% url 'signup' %}" class="header-navigation-item header-navigation-sign wow fadeIn" title="Зарегистрироваться">
-                        {% endif %}
-                        <i class="fa fa-user-circle" aria-hidden="true"></i>
+                {% endif %}
+                <i class="fa fa-user-circle" aria-hidden="true"></i>
                     </a>
                 </a>
             </div>
@@ -69,7 +69,11 @@
                 <ul class="header-navigation-submenu">
                     {% for category in categories %}
                     <!--  submenu item  -->
-                    <li><a href="{% url 'article_by_category' category_slug=category.slug %}">{{ category.name }}</a></li>
+                    <li>
+                        <a href="{% url 'article_by_category' category_slug=category.slug %}">
+                        {{ category.name }}
+                        </a>
+                    </li>
                     <!--  submenu item  -->
                     {% endfor %}
                 </ul>
@@ -86,7 +90,7 @@
                 <a href="{% url 'videooverviews' %}" class="header-navigation-item wow fadeIn">Видео</a>
             </li>
             <li>
-                <a href="" class="header-navigation-item wow fadeIn">Опросы</a>
+                <a href="{% url 'poll' %}" class="header-navigation-item wow fadeIn">Опросы</a>
             </li>
         </ul>
         <!--   header navigation wrapper list    -->

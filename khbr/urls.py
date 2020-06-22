@@ -49,6 +49,7 @@ urlpatterns = [
     path('raitings/', include('raitings.urls')),
     path('user/', include('users.urls')),
     path('poll/', include('poll.urls')),
+    path('personal_cabinet/', include('personal_cabinet.urls')),
     path('', include(tf_urls, "two_factor")),
     path('accounts/', include('allauth.urls')),
 ]

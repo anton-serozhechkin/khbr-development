@@ -3,65 +3,104 @@
 <div class="poll-container">
         <div class="poll_detail">
             <div class="title">
-                <b>Что делать в первую очередь, а что можно оставить на потом?
+                <b>
+                    {{ poll.title }}
                 </b>
                 Опрос читателей "KHBR"
             </div>
             <div class="date">
-                11:33, 3 июня 2020
+                {{ poll.created|date:"d M Y" }}
             </div>
-            <img src="https://images.unsplash.com/photo-1591726156195-e977882a5591?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1374&q=80" alt="" class="img">
+            <img src="{{ poll.image.url }}" alt="" class="img">
             <div class="content">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquam amet aperiam asperiores aut, consectetur consequuntur deleniti dolore eaque eveniet exercitationem fugit illo incidunt, ipsa ipsam iste laudantium libero mollitia natus neque nesciunt non odio odit pariatur porro quia quos sequi sit tempora tenetur, ullam voluptate voluptatem voluptatum. Alias atque blanditiis earum, eos eum eveniet id illo ipsam iste molestias non officia quaerat quam quas qui quis quod quos repellat repudiandae sint soluta tempore, unde ut. Deserunt provident quisquam quo. Ab ad alias aut autem dolor doloremque expedita incidunt inventore laudantium magnam maiores minima natus non numquam obcaecati officiis quibusdam quo quod ullam, unde ut, veniam voluptates? Alias assumenda error hic iste, iure laboriosam molestias neque nesciunt, praesentium rem repudiandae sapiente sunt tempore veritatis voluptate!
+                {{ poll.content|safe }}
             </div>
-            <form class="poll-form" id="poll-form">
-                <div class="poll-form_title">
-                    Что вы планируете сделать, но обычно откладываете на потом?
-                </div>
-                <div class="poll-form_options">
-                    <div class="option">
-                        <input type="checkbox" class="poll-checkbox" name="" id="123">
-                        <label for="123">Начать рисовать</label>
-                    </div>
-                    <div class="option">
-                        <input type="checkbox" class="poll-checkbox" name="" id="122">
-                        <label for="122">Приготовить ужин</label>
-                    </div>
-                    <div class="option">
-                        <input type="checkbox" class="poll-checkbox" name="" id="121">
-                        <label for="121">Позвонить близким</label>
-                    </div>
-                    <div class="option">
-                        <input type="checkbox" class="poll-checkbox" name="" id="120">
-                        <label for="120">Сходить в парк</label>
-                    </div>
-                </div>
-                <div class="submit">
-                    <input type="submit" id="poll_result_button" value="Посмотреть результаты" >
-                </div>
-            </form>
-            <div class="poll-results" style="display: none" id="poll-results">
-                <div class="poll-results_title">
-                    Что вы планируете сделать, но обычно откладываете на потом?
-                </div>
-                <div class="poll-result-options">
-                    <div class="option">
-                        <div class="heading">
-                            <div>Начать рисовать</div>
-                            <div class="poll_result_percent">12%</div>
+            {% if user.is_authenticated %}
+                {% if not user_took_part %}
+                    <form class="poll-form" id="poll-form" action="{% url 'poll_detail' slug=slug %}" method="post">
+                        {% csrf_token %}
+                        <div class="poll-form_title">
+                            {{ poll.question|safe }}
                         </div>
-                        <div class="line">
-                            <div class="bg">
-
+                        <div class="poll-form_options">
+                            {% for answer in answers %}
+                                <div class="option">
+                                    <input type="checkbox" class="poll-checkbox" name="answer-text" id="{{ answer.id }}">
+                                    <label for="{{ answer.id }}">
+                                        {{ answer.text }}
+                                    </label>
+                                </div>
+                            {% endfor %}
+                        </div>
+                        <div class="submit">
+                            <button type="submit" id="poll_result_button" value="Посмотреть результаты">
+                        </div>
+                    </form>
+                {% else %}
+                    <div class="poll-results" id="poll-results">
+                        <div class="poll-results_title">
+                            {{ poll.question|safe }}
+                        </div>
+                        <div class="poll-result-options">
+                            <div class="option">
+                                {% for answer in answers %}
+                                    <div class="heading">
+                                        <div>
+                                            {{ answer.text }}
+                                        </div>
+                                        <div class="poll_result_percent">
+                                            {{ answer.percents }}
+                                        </div>
+                                    </div>
+                                    <div class="line">
+                                        <div class="bg">
+                                        </div>
+                                        <div class="poll_result_statusBar"></div>
+                                    </div>
+                                    <p>Вы уже прошли этот опрос</p>
+                                {% endfor %}
                             </div>
-                            <div class="poll_result_statusBar"></div>
                         </div>
-                    </div>                 
+                        <div class="statistics">
+                            В опросе приняло участие: {{ poll.counter_votes }} человек
+                        </div>
+                    </div>
+                {% endif %}
+
+            {% else %}
+                <div class="poll-results"  id="poll-results">
+                    <div class="poll-results_title">
+                        {{ poll.question|safe }}
+                    </div>
+                    <div class="poll-result-options">
+                        <div class="option">
+                            {% for answer in answers %}
+                                <div class="heading">
+                                    <div>
+                                        {{ answer.text }}
+                                    </div>
+                                    <div class="poll_result_percent">
+                                        {{ answer.percents }}
+                                    </div>
+                                </div>
+                                <div class="line">
+                                    <div class="bg">
+                                    </div>
+                                    <div class="poll_result_statusBar"></div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="statistics">
+                        В опросе приняло участие: {{ poll.counter_votes }} человек
+                    </div>
                 </div>
-                <div class="statistics">
-                    В опросе приняло участие: 12313 человек
-                </div>
-            </div>
+                <p class="auth_error">Авторизируйтесь для участия -
+                     <a href="{% url 'signin' %}">
+                         Вход
+                    </a>
+                </p>
+            {% endif %}
         </div>
     </div>
 {% endblock content %}

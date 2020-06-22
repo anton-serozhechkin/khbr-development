@@ -11,11 +11,9 @@
         <div class="rating-detail-top">
             <div class="rating-detail-top-left_side">
                 <h1 class="rating-detail-title">{{ data_rait.title }}</h1>
-                {% if data_rait.image %}<!--над дивом с фоткой -->
                 <div class="rating-detail-publication-image">
                     <img src="{{ data_rait.image.url }}" alt="">
                 </div>
-                {% endif %}<!--под дивом с фоткой -->
                 <p class="rating-detail-short-text">{{ data_rait.content|safe }}</p>
                  <div class="rating-detail-info">
                      <span class="rating-detail-author">

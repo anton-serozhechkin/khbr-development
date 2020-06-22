@@ -80,7 +80,7 @@ def authors_index(request):
     return render(request, 'authors/index.html', locals())
 
 def authors_detail(request, slug):
-    author = Author.objects.get(slug=slug)
+    author = get_object_or_404(Author, slug=slug)
     return render(request, 'authors/author_detail.html', locals())
 
 def not_found_view(request, exception):
