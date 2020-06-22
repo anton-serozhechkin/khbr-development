@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'users',
     'analytics',
     'poll',
+    'personal_cabinet',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',

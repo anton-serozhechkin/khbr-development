@@ -119,13 +119,17 @@
                     <!-- settings list with links to modal -->
                     <ul>
                         <!-- list elem -->
-                        <li>Личные данные</li>
+                        <li><a href="{% url 'private_data' %}">Личные данные</a></li>
                         <!-- list elem -->
-                        <li>Смена пароля</li>
-                        <li>Подписка</li>
+                        <li><a href="{% url 'change_password' %}">Смена пароля</a></li>
+                        {% if already_subscriber %}
+                        <li><a href="{% url 'unsubscribe' %}">Отписаться от рассылки</a></li>
+                        {% else %}
+                        <li><a href="{% url 'subscribe' %}">Подписка на рассылку</a></li>
+                        {% endif %}
                         <!--                        <li>Предложить новость</li>-->
-                        <li>Связаться с нами</li>
-                        <li>Удаление аккаунта</li>
+                        <li><a href="{% url 'links' %}">Связаться с нами</a></li>
+                        <li><a href="{% url 'delete_account' %}">Удаление аккаунта</a></li>
                     </ul>
                     <!-- settings list with links to modal -->
                 </div>
@@ -197,12 +201,11 @@
                 </div>
             </div>
             <!-- modal form for change user password -->
-
             <!-- modal form for subscribe -->
             <div class="user_modal ">
                 <div class="user_modal_header">
                     <p>
-                        Подписка
+                        Подписка на рассылку
                     </p>
                 </div>
                 <div class="user_modal_description">
@@ -223,12 +226,11 @@
                 </div>
             </div>
             <!-- modal form for subscribe -->
-
             <!-- modal form for cancel subscribe -->
             <div class="user_modal">
                 <div class="user_modal_header">
                     <p>
-                        Подписка
+                        Отписаться от рассылки
                     </p>
                 </div>
                 <div class="user_modal_description">
@@ -248,7 +250,6 @@
                 </div>
             </div>
             <!-- modal form for cancel subscribe -->
-
             <!-- modal form for contact us -->
             <div class="user_modal">
                 <div class="user_modal_header">
@@ -261,23 +262,22 @@
                 </div>
                 <ul class="social-list">
                     <li>
-                        <a href="">
+                        <a href="//www.instagram.com/kh_business_review/">
                             <i class="fa fa-instagram" aria-hidden="true"></i>
                         </a>
                     </li>
-
                     <li>
-                        <a href="">
+                        <a href="//www.facebook.com/KhBusinessReview/">
                             <i class="fa fa-facebook" aria-hidden="true"></i>
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a href="//www.linkedin.com/showcase/khbr/about/?viewAsMember=true">
                             <i class="fa fa-linkedin-square" aria-hidden="true"></i>
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a href="//t.me/KH_business">
                             <i class="fa fa-telegram" aria-hidden="true"></i>
                         </a>
                     </li>
@@ -334,3 +334,4 @@
 
 </div>
 <!--  user cabinet main block   -->
+{% endblock %}
