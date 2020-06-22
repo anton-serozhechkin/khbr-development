@@ -13,9 +13,11 @@ def poll_detail(request, slug):
     answers = Answer.objects.filter(poll__slug=slug)
     if request.user.is_authenticated and UserAnswer.objects.filter(user__username=request.user.username, poll__slug=slug).exists():
             user_took_part = True
+    """n = 0
     if request.method == 'POST':
-        print(request.method)
-
-
-
+        for i in request.POST['answer-text']: 
+            if i == 'on': 
+                n += 1
+            print(n)
+    """
     return render(request, 'poll/poll_detail.html', locals())

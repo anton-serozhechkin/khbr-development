@@ -1,3 +1,6 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
 <!--  user cabinet main block   -->
 <div class="user_cabinet_wrapper">
     <!--  container of website  -->
@@ -9,7 +12,7 @@
                 <!--user header logo link-->
                 <a href="">
                     <!--     user header icon       -->
-                    <img src="../../static/img/logo.png" alt="">
+                    <img src="{% static 'img/logo.png' %}" alt="">
                     <!--     user header icon       -->
                 </a>
                 <!--user header logo link-->
@@ -17,9 +20,17 @@
             <!--      user header links list      -->
             <ul>
                 <!--user header links links item-->
-                <li><a href="">Вернуться на сайт</a></li>
+                <li>
+                    <a href="{% url 'analytics' %}">
+                        Вернуться на сайт
+                    </a>
+                </li>
                 <!--user header links links item-->
-                <li><a href="">Выйти</a></li>
+                <li>
+                    <a href="{% url 'sign_out' %}">
+                        Выйти
+                    </a>
+                </li>
             </ul>
             <!--      user header links list      -->
             <!--user header logo block-->
@@ -37,25 +48,33 @@
                 <div class="profile">
                     <!--          user profile icon          -->
                     <div class="img">
-                        <img src="../../static/img/User_icon-cp.png" alt="">
+                        <img src="{% static 'img/User_icon-cp.png' %}" alt="">
                     </div>
                     <!--          user profile icon          -->
                     <!--user info section -->
                     <div class="info">
                         <!--user info elem-->
                         <div class="name">
-                            Максим Серпухов
+                            {{ request.user.username }}
                         </div>
                         <!--user info elem-->
+                        {% if request.user.email %}
                         <div class="mail">
-                            mserpuhov@gmail.com
+                            {{ request.user.email }}
                         </div>
+                        {% endif %}
                         <div class="role">
-                            Администратор
+                            {% if request.user.is_superuser %}
+                                Администратор
+                            {% elif request.user.is_staff %}
+                                Сотрудник
+                            {% else %}
+                                Пользователь
+                            {% endif %}
                         </div>
                         <div class="last_signIn">
                             Дата последнего входа:
-                            17.11.2020
+                            {{ request.user.last_login }}
                         </div>
                     </div>
                     <!--user info section -->

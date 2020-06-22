@@ -25,7 +25,7 @@
                         <div class="poll-form_options">
                             {% for answer in answers %}
                                 <div class="option">
-                                    <input type="checkbox" class="poll-checkbox" name="" id="{{ answer.id }}">
+                                    <input type="checkbox" class="poll-checkbox" name="answer-text" id="{{ answer.id }}">
                                     <label for="{{ answer.id }}">
                                         {{ answer.text }}
                                     </label>
