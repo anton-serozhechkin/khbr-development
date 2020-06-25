@@ -42,6 +42,7 @@
                 {{ article.content|safe }}
             </div>
             <!--         slider detail wrap       -->
+            {% if article_images %}
             <div class="slider-detail">
                 <!-- slide detail. insert this to add slide's -->
                 {% for article_image in article_images %}
@@ -61,6 +62,7 @@
                 <!-- slide detail. insert this to add slide's -->
             </div>
             <!--         slider detail wrap       -->
+            {% endif %}
 
         </div>
         <div class="next-prev-button">

@@ -10,6 +10,7 @@
                     Регистрация
                 </h2>
             </div>
+            {% comment %}
             <div class="sign-window-google">
                 <a href="#">
                     <span>
@@ -18,6 +19,7 @@
                     <img src="{% static 'img/Google.webp' %}" alt="">
                 </a>
             </div>
+            {% endcomment %}
             <div class="sign-window-form">
                 <form action="{% url 'signup' %}" method="post">
                     {% if error %}

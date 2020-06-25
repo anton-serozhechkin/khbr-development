@@ -63,6 +63,7 @@
         </p>
 
         <!--         slider detail wrap       -->
+        {% if event_images %}
         <div class="slider-detail">
             {% for event_image in event_images %}
             <!-- slide detail. insert this to add slide's -->
@@ -81,6 +82,7 @@
             <!-- slide detail. insert this to add slide's -->
             {% endfor %}
         </div>
+        {% endif %}
         <!--         slider detail wrap       -->
 
 
