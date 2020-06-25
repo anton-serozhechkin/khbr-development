@@ -10,37 +10,26 @@
             </a>
         </div>
         <div class="analytics-detail-post">
-            <div class="analytics-detail-title">
-                <h1>{{ article.title }}</h1>
-            </div>
-            {% if article.image %}
-            <div class="analytics-detail-image">
-                <img src="{{ article.image.url }}" alt="">
-            </div>
-            {% endif %}
-            <div class="analytics-detail-info">
-                <a href="{% url 'article_by_category' category_slug=article.category.slug %}">
-                    <h3>
-                        {{ article.category }}
-                    </h3>
-                </a>
-                <div class="analytics-detail-infoBox">
-                    <p class="analytics-box-author">
-                        <a href="{% url 'authors_detail' slug=article.author.slug %}">
-                            <i class="fa fa-user"></i>
-                            {{ article.author }}
-                        </a>
-                    </p>
-                    <p class="analytics-box-time">{{ article.created|date:"d M Y" }}</p>
-                    <div class="detail-viewCount">
-                        <i class="fa fa-eye" aria-hidden="true"></i>
-                        <span>{{ article.views }}</span>
-                    </div>
+
+            <div class="post-info">
+                <div class="date">
+                    22 июня, 14:06
+                </div>
+                <div class="views">
+                    <span>4141</span>
+                    <i class="fa fa-eye"></i>
+                </div>
+                <div class="category">
+                    <a href="#">
+                        спорт
+                    </a>
                 </div>
             </div>
-            <div class="analytics-detail-content-box">
-                {{ article.content|safe }}
-            </div>
+
+
+
+
+
             <!--         slider detail wrap       -->
             {% if article_images %}
             <div class="slider-detail">

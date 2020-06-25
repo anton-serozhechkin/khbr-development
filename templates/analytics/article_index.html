@@ -13,45 +13,24 @@
     {% if data_art %}
   <div class="container">
       <section class="analytics-wrapper" id="analytics-wrapper-anchor">
-          {% for article in data_art %}
-          <div class="analytics_post-box wow fadeInLeft">
-
-              <div class="analytics-box-content">
-                  <div class="analytics-box-image">
-                      <img src="{{ article.image.url }}" alt="">
-                  </div>
-                  <div class="analytics-box-text">
-                      <div class="analytics-box-title">
-                          <a href="{% url 'article_detail' category_slug=article.category.slug slug=article.slug %}">
-                              <h2>
-                                  {{ article.title }}
-                              </h2>
-                          </a>
-                      </div>
-                      <div class="analytics-box-text-content">
-                          <a href="#" class="analytics-box-text-content-link">
-                              {{ article.short_description|safe }}
-                          </a>
-                      </div>
-                      <div class="analytics-box-info">
-                        <p class="analytics-box-author">
-                            <a href="{% url 'authors_detail' slug=article.author.slug %}">
-                                <i class="fa fa-user"></i>
-                                {{ article.author }}
-                            </a>
-                        </p>
-                          <p class="analytics-box-category">
-                              <a href="{% url 'article_by_category' category_slug=article.category.slug %}">
-                                  <i class="fa fa-bookmark"></i>
-                                  {{ article.category }}
-                              </a>
-                          </p>
-                        <p class="analytics-box-time">
-                            {{ article.created|date:"d M Y" }}
-                        </p>
-                      </div>
-                  </div>
-              </div>
+          {% for post in data_art %}
+          <div class="analytics-item">
+                <div class="insert">
+                    <a href="{% url 'article_detail' category_slug=post.category.slug slug=post.slug %}">
+                        <img src="{{ post.image.url }}" alt="" class="item-image">
+                        <div class="title">
+                            {{ post.title }}
+                        </div>
+                        <div class="subtitle">
+                            {{ post.short_description|safe }}
+                        </div>
+                    </a>
+                    <div class="category">
+                        <a href="{% url 'article_by_category' category_slug=post.category.slug %}">
+                            {{ post.category }}
+                        </a>
+                    </div>
+                </div>
           </div>
           {% endfor %}
       </section>
