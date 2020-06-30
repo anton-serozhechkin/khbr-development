@@ -34,17 +34,17 @@
     <tr>
         <td colspan="">
             <a href="">
-                <img src="../../static/img/index-banner-bgi.png" alt="" style="width: 100%;">
+                <img src="" alt="" style="width: 100%;">
             </a>
         </td>
     </tr>
     <tr>
         <td colspan="">
             <p style="padding: 0 8px; font-size: 26px; text-align: center">
-                Title of post
+                "{1}"
             </p>
             <p style="margin: 8px 0;padding: 0 8px; font-size: 20px;">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem cumque error hic inventore minus odio placeat quo sequi, sint sunt!
+                ferfrf
             </p>
         </td>
     </tr>

@@ -3,6 +3,8 @@ from django.urls import reverse
 from django.utils import timezone
 from django.contrib.auth.models import User
 from tinymce.models import HTMLField
+from django.core.mail import send_mail
+from khbr.settings import EMAIL_HOST_USER
 
 class Author(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='Пользователь')
@@ -48,6 +50,7 @@ class Article(models.Model):
     created = models.DateTimeField('Дата создания', default=timezone.now)
     is_active = models.BooleanField(default=True, verbose_name='Видимость для пользователя')
     views = models.PositiveIntegerField('Просмотров публикации', default=0)
+    send_email = models.BooleanField(default=True, verbose_name='Отправить на рассылку')
 
     def __str__(self):
         return self.title
@@ -55,6 +58,24 @@ class Article(models.Model):
     def get_absolute_url(self):
         return reverse('article_detail', kwargs={'category_slug': self.category.slug, 'slug': self.slug})
     
+    def save(self):
+        if self.created:
+            subscribers = Subscribe.objects.values_list('email', flat=True)
+            if subscribers and self.send_email == True:
+                with open('templates/mails/analytic.txt', 'r+', encoding='UTF-8') as f:
+                    old_file_content = f.readline() # read everything in the file
+                    new_email_content = old_file_content.format(self.title)
+                    send_mail(
+                            str(self.title),
+                            str(new_email_content),
+                            'khbr.info@gmail.com',
+                            subscribers,
+                            fail_silently=False
+                            )
+
+            super(Article, self).save()
+
+
     class Meta:
         verbose_name = 'Пост'
         verbose_name_plural = 'Посты'
