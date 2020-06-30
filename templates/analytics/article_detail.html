@@ -3,25 +3,73 @@
 {% block content %}
 <div class="container">
     <section class="analytics-detail-style" id="analytics-detail-anchor">
-        <div class="return_back_button">
-            <a href="{% url 'analytics_index' %}">
-                <i class="fa fa-chevron-left"></i>
-                Вернуться назад
-            </a>
-        </div>
+<!--        <div class="return_back_button">-->
+<!--            <a href="{% url 'analytics_index' %}">-->
+<!--                <i class="fa fa-chevron-left"></i>-->
+<!--                Вернуться назад-->
+<!--            </a>-->
+<!--        </div>-->
         <div class="analytics-detail-post">
+            <div class="post">
 
-            <div class="post-info">
-                <div class="date">
-                    22 июня, 14:06
+                <div class="post-info">
+                    <div class="date">
+                        22 июня, 14:06
+                    </div>
+                    <div class="views">
+                        <span>4141</span>
+                        <i class="fa fa-eye"></i>
+                    </div>
+                    <div class="category">
+                        <a href="#">
+                            спорт
+                        </a>
+                    </div>
                 </div>
-                <div class="views">
-                    <span>4141</span>
-                    <i class="fa fa-eye"></i>
+                <div class="post-title">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident, sint!</p>
                 </div>
-                <div class="category">
-                    <a href="#">
-                        спорт
+                <div class="post-content">
+                    <img src="https://images.unsplash.com/photo-1593462475357-67ac85ec71a7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" alt="" class="main-image">
+                    <div class="text">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate debitis dignissimos fugit iusto laborum necessitatibus praesentium saepe soluta velit voluptatibus?</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa dolorum impedit itaque maxime molestiae molestias neque obcaecati possimus quos reprehenderit? Adipisci aliquid cum dicta dolor enim eos eveniet facere illo impedit maxime minima molestias nisi odit placeat quam, quas quasi repellendus sequi sint, soluta suscipit tempora, tenetur totam veritatis vitae voluptas voluptatibus voluptatum! Labore libero, officia? Ab aliquid amet aperiam asperiores atque autem blanditiis consequuntur corporis debitis doloribus earum illo illum impedit in incidunt labore libero magni maiores nobis odio pariatur ratione, rerum sunt vel vero voluptas voluptatum. Architecto at blanditiis eligendi harum labore nesciunt placeat quod, repellendus reprehenderit tempora?</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa dolorum impedit itaque maxime molestiae molestias neque obcaecati possimus quos reprehenderit? Adipisci aliquid cum dicta dolor enim eos eveniet facere illo impedit maxime minima molestias nisi odit placeat quam, quas quasi repellendus sequi sint, soluta suscipit tempora, tenetur totam veritatis vitae voluptas voluptatibus voluptatum! Labore libero, officia? Ab aliquid amet aperiam asperiores atque autem blanditiis consequuntur corporis debitis doloribus earum illo illum impedit in incidunt labore libero magni maiores nobis odio pariatur ratione, rerum sunt vel vero voluptas voluptatum. Architecto at blanditiis eligendi harum labore nesciunt placeat quod, repellendus reprehenderit tempora?</p>
+                    </div>
+                </div>
+                <!--         slider detail wrap       -->
+                {% if article_images %}
+                <div class="slider-detail">
+                    <!-- slide detail. insert this to add slide's -->
+                    {% for article_image in article_images %}
+                    <div class="slide-detail">
+                        <!-- slide image -->
+                        <img src="{{ article_image.image.url }}" alt="" class="slider-detail-image">
+                        <!-- slide image -->
+                        {% if article_image.title %}
+                        <!--     slide description      -->
+                        <div class="description">
+                            {{ article_image.title }}
+                        </div>
+                        {% endif %}
+                        <!--     slide description      -->
+                    </div>
+                    {% endfor %}
+                    <!-- slide detail. insert this to add slide's -->
+                </div>
+                <!--         slider detail wrap       -->
+                {% endif %}
+            </div>
+            <div class="last-posts">
+                <div class="heading">
+                    Читайте также:
+                </div>
+                <div class="element">
+                    <a href="">
+                        <img src="https://images.unsplash.com/photo-1593462475357-67ac85ec71a7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" alt="" class="">
+                        <div class="title">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing.
+                        </div>
                     </a>
                 </div>
             </div>
@@ -30,40 +78,17 @@
 
 
 
-            <!--         slider detail wrap       -->
-            {% if article_images %}
-            <div class="slider-detail">
-                <!-- slide detail. insert this to add slide's -->
-                {% for article_image in article_images %}
-                <div class="slide-detail">
-                    <!-- slide image -->
-                    <img src="{{ article_image.image.url }}" alt="" class="slider-detail-image">
-                    <!-- slide image -->
-                    {% if article_image.title %}
-                    <!--     slide description      -->
-                    <div class="description">
-                        {{ article_image.title }}
-                    </div>
-                    {% endif %}
-                    <!--     slide description      -->
-                </div>
-                {% endfor %}
-                <!-- slide detail. insert this to add slide's -->
-            </div>
-            <!--         slider detail wrap       -->
-            {% endif %}
-
         </div>
-        <div class="next-prev-button">
-            <a href="">
-                <i class="fa fa-chevron-left"></i>
-                Предыдущий пост
-            </a>
-            <a href="">
-                Следующий пост
-                <i class="fa fa-chevron-right"></i>
-            </a>
-        </div>
+<!--        <div class="next-prev-button">-->
+<!--            <a href="">-->
+<!--                <i class="fa fa-chevron-left"></i>-->
+<!--                Предыдущий пост-->
+<!--            </a>-->
+<!--            <a href="">-->
+<!--                Следующий пост-->
+<!--                <i class="fa fa-chevron-right"></i>-->
+<!--            </a>-->
+<!--        </div>-->
     </section>
 </div>
 {% endblock content %}

@@ -354,7 +354,63 @@ time, mark, audio, video {
 
 .analytics-detail-post {
   margin: 5vh 0;
-  margin-top: .4vh; }
+  margin-top: .4vh;
+  display: flex;
+  flex-wrap: wrap; }
+  .analytics-detail-post .post {
+    width: 100%;
+    max-width: 1005px;
+    margin: 4px; }
+    .analytics-detail-post .post .post-info {
+      padding: 2vh 5vw;
+      display: flex;
+      justify-content: space-between;
+      font-size: 1.5rem; }
+      .analytics-detail-post .post .post-info .category a {
+        color: black;
+        text-decoration: none; }
+    .analytics-detail-post .post .main-image {
+      max-width: 625px;
+      width: 100%;
+      border: solid 2px #7A7A7A;
+      float: left;
+      margin: 10px 16px;
+      margin-left: 0;
+      margin-top: 0; }
+    .analytics-detail-post .post .post-title {
+      font-size: 2rem;
+      color: black;
+      font-weight: 700; }
+    .analytics-detail-post .post .text {
+      font-size: 1.6rem; }
+      .analytics-detail-post .post .text p {
+        margin: 12px 0;
+        border-bottom: solid 2px #7A7A7A;
+        padding-bottom: 4px; }
+        .analytics-detail-post .post .text p:last-of-type {
+          border-bottom: none; }
+  .analytics-detail-post .last-posts {
+    position: sticky;
+    margin-top: 6px;
+    width: 100%;
+    max-width: 325px;
+    margin-left: 30px; }
+    .analytics-detail-post .last-posts .heading {
+      font-size: 1.6rem;
+      color: black;
+      font-weight: 700;
+      margin-bottom: 6px; }
+    .analytics-detail-post .last-posts .element img {
+      width: 100%;
+      border: none;
+      max-width: 325px; }
+    .analytics-detail-post .last-posts .element a {
+      text-decoration: none; }
+    .analytics-detail-post .last-posts .element .title {
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: black;
+      margin-top: 6px; }
 
 .return_back_button {
   display: flex;
@@ -1448,7 +1504,6 @@ time, mark, audio, video {
 .slider-detail {
   max-width: 750px;
   width: 100%;
-  margin: 0 auto;
   display: flex;
   align-items: center; }
   .slider-detail i {
@@ -1460,10 +1515,7 @@ time, mark, audio, video {
   .slider-detail .description {
     text-align: center;
     padding: 10px 20px;
-    font-size: 20px;
-    background-color: #acb3aa;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px; }
+    font-size: 20px; }
 
 .footer-style {
   padding: 5vh 2vw;
