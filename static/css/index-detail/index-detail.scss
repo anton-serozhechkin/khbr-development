@@ -11,6 +11,13 @@
       display: flex;
       justify-content: space-between;
       font-size:1.5rem;
+      flex-wrap: wrap;
+      .author {
+        a {
+          color:black;
+          text-decoration: none;
+        }
+      }
       .category {
         a {
           color:black;

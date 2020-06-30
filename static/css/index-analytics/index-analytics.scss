@@ -67,6 +67,19 @@
         //color:black;
         color:#464643;
       }
+      .event-info {
+        position: absolute;
+        bottom: 0;
+        ul {
+          list-style-type: none;
+          padding-left: 20px;
+          li {
+            color:black;
+            margin: 5px 0;
+            font-size: 1rem;
+          }
+        }
+      }
       .category {
         color:#C9C9C9;
         font-size: 16px;

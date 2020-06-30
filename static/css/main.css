@@ -336,6 +336,16 @@ time, mark, audio, video {
         font-size: 18px;
         font-weight: 500;
         color: #464643; }
+      .analytics-wrapper .analytics-item .insert .event-info {
+        position: absolute;
+        bottom: 0; }
+        .analytics-wrapper .analytics-item .insert .event-info ul {
+          list-style-type: none;
+          padding-left: 20px; }
+          .analytics-wrapper .analytics-item .insert .event-info ul li {
+            color: black;
+            margin: 5px 0;
+            font-size: 1rem; }
       .analytics-wrapper .analytics-item .insert .category {
         color: #C9C9C9;
         font-size: 16px;
@@ -365,7 +375,11 @@ time, mark, audio, video {
       padding: 2vh 5vw;
       display: flex;
       justify-content: space-between;
-      font-size: 1.5rem; }
+      font-size: 1.5rem;
+      flex-wrap: wrap; }
+      .analytics-detail-post .post .post-info .author a {
+        color: black;
+        text-decoration: none; }
       .analytics-detail-post .post .post-info .category a {
         color: black;
         text-decoration: none; }
