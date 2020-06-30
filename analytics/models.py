@@ -5,6 +5,8 @@ from django.contrib.auth.models import User
 from tinymce.models import HTMLField
 from django.core.mail import send_mail
 from khbr.settings import EMAIL_HOST_USER
+from django.template.loader import render_to_string
+from django.utils.html import strip_tags
 
 class Author(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='Пользователь')
@@ -62,16 +64,21 @@ class Article(models.Model):
         if self.created:
             subscribers = Subscribe.objects.values_list('email', flat=True)
             if subscribers and self.send_email == True:
-                with open('templates/mails/analytic.txt', 'r+', encoding='UTF-8') as f:
-                    old_file_content = f.readline() # read everything in the file
-                    new_email_content = old_file_content.format(self.title)
-                    send_mail(
-                            str(self.title),
-                            str(new_email_content),
-                            'khbr.info@gmail.com',
-                            subscribers,
-                            fail_silently=False
-                            )
+                #with open('templates/mails/analytic.html', 'r+', encoding='UTF-8') as f:
+                #old_file_content = f.readline() read everything in the file
+                #new_email_content = old_file_content.format(self.title)
+                html_message = render_to_string('../templates/mails/analytic.html', {'title': self.title,
+                                                                                    'short_description': self.short_description, 
+                                                                                    'category': self.category.name,
+                                                                                    'image': self.image})
+                send_mail(
+                        'Рассылка от KHBR - Аналитика',
+                        '',
+                        EMAIL_HOST_USER,
+                        subscribers,
+                        fail_silently=False,
+                        html_message=html_message
+                        )
 
             super(Article, self).save()
 
