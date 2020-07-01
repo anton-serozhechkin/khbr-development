@@ -409,7 +409,7 @@ time, mark, audio, video {
     position: sticky;
     margin-top: 6px;
     width: 100%;
-    max-width: 325px;
+    max-width: 225px;
     margin-left: 30px; }
     .analytics-detail-post .last-posts .heading {
       font-size: 1.6rem;
@@ -419,6 +419,7 @@ time, mark, audio, video {
     .analytics-detail-post .last-posts .element img {
       width: 100%;
       border: none;
+      height: 300px;
       max-width: 325px; }
     .analytics-detail-post .last-posts .element a {
       text-decoration: none; }
@@ -430,6 +431,7 @@ time, mark, audio, video {
 
 .return_back_button {
   display: flex;
+  justify-content: space-between;
   align-items: center; }
   .return_back_button a {
     border: solid 2px purple;

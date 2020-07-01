@@ -59,7 +59,7 @@
     position: sticky;
     margin-top: 6px;
     width: 100%;
-    max-width: 325px;
+    max-width: 225px;
     margin-left: 30px;
     .heading {
       font-size: 1.6rem;
@@ -71,6 +71,7 @@
       img {
         width: 100%;
         border: none;
+        height: 300px;
         max-width: 325px;
       }
       a {
@@ -89,6 +90,7 @@
 }
 .return_back_button {
   display: flex;
+  justify-content: space-between;
   align-items: center;
   a {
     border: solid 2px purple;

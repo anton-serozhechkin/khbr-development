@@ -3,12 +3,12 @@
 {% block content %}
 <div class="container">
     <section class="analytics-detail-style" id="analytics-detail-anchor">
-<!--        <div class="return_back_button">-->
-<!--            <a href="{% url 'analytics_index' %}">-->
-<!--                <i class="fa fa-chevron-left"></i>-->
-<!--                Вернуться назад-->
-<!--            </a>-->
-<!--        </div>-->
+        <div class="return_back_button">
+            <a href="{% url 'analytics_index' %}">
+                <i class="fa fa-chevron-left"></i>
+                Вернуться назад
+            </a>
+        </div>
         <div class="analytics-detail-post">
             <div class="post">
                 <div class="post-info">
@@ -95,18 +95,23 @@
             {% endif %}
         </div>
         <div class="next-prev-button">
-            {% if previous_article %}
+            <div class="left">
+
+                {% if previous_article %}
                 <a href="{% url 'article_detail' category_slug=previous_article.category.slug slug=previous_article.slug %}">
                     <i class="fa fa-chevron-left"></i>
                     Предыдущий пост
                 </a>
-            {% endif %}
-            {% if next_article %}
+                {% endif %}
+            </div>
+            <div class="right">
+                {% if next_article %}
                 <a href="{% url 'article_detail' category_slug=next_article.category.slug slug=next_article.slug %}">
                     Следующий пост
                     <i class="fa fa-chevron-right"></i>
                 </a>
-            {% endif %}
+                {% endif %}
+            </div>
         </div>
     </section>
 </div>

@@ -1,12 +1,12 @@
 {% extends 'base.html' %}
 {% block content %}
 <div class="container">
-    <!--    <div class="return_back_button">-->
-    <!--        <a href="{% url 'events' %}">-->
-    <!--            <i class="fa fa-chevron-left"></i>-->
-    <!--            Вернуться назад-->
-    <!--        </a>-->
-    <!--    </div>-->
+    <div class="return_back_button">
+        <a href="{% url 'events' %}">
+            <i class="fa fa-chevron-left"></i>
+            Вернуться назад
+        </a>
+    </div>
     <div class="analytics-detail-post">
 
         <div class="post">
@@ -83,47 +83,53 @@
             <!--         slider detail wrap       -->
         </div>
         {% if last_raitings or last_analytics %}
-            <div class="last-posts">
-                <div class="heading">
-                    Читайте также:
-                </div>
-                {% for raiting in last_raitings %}
-                <div class="element">
-                    <a href="{% url 'raiting_detail' slug=raiting.slug %}">
-                        <img src="{{ raiting.image.url }}" alt="" class="">
-                        <div class="title">
-                            {{ raiting.title }}
-                        </div>
-                    </a>
-                </div>
-                {% endfor %}
-                {% for article in last_analytics %}
-                <div class="element">
-                    <a href="{% url 'article_detail' category_slug=article.category.slug slug=article.slug %}">
-                        <img src="{{ article.image.url }}" alt="" class="">
-                        <div class="title">
-                            {{ article.title }}
-                        </div>
-                    </a>
-                </div>
-                {% endfor %}
+        <div class="last-posts">
+            <div class="heading">
+                Читайте также:
             </div>
-            {% endif %}
+            {% for raiting in last_raitings %}
+            <div class="element">
+                <a href="{% url 'raiting_detail' slug=raiting.slug %}">
+                    <img src="{{ raiting.image.url }}" alt="" class="">
+                    <div class="title">
+                        {{ raiting.title }}
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
+            {% for article in last_analytics %}
+            <div class="element">
+                <a href="{% url 'article_detail' category_slug=article.category.slug slug=article.slug %}">
+                    <img src="{{ article.image.url }}" alt="" class="">
+                    <div class="title">
+                        {{ article.title }}
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
     </div>
 
-     <div class="next-prev-button">
-         {% if previous_event %}
-         <a href="{% url 'event_detail' slug=previous_event.slug %}">
-             <i class="fa fa-chevron-left"></i>
-             Предыдущее событие
-         </a>
-         {% endif %}
-         {% if next_event %}
-         <a href="{% url 'event_detail' slug=next_event.slug %}">
-             Следующее событие
-             <i class="fa fa-chevron-right"></i>
-         </a>
-         {% endif %}
-     </div>
+    <div class="next-prev-button">
+        <div class="left">
+
+            {% if previous_event %}
+            <a href="{% url 'event_detail' slug=previous_event.slug %}">
+                <i class="fa fa-chevron-left"></i>
+                Предыдущее событие
+            </a>
+            {% endif %}
+
+        </div>
+        <div class="right">
+            {% if next_event %}
+            <a href="{% url 'event_detail' slug=next_event.slug %}">
+                Следующее событие
+                <i class="fa fa-chevron-right"></i>
+            </a>
+            {% endif %}
+        </div>
+    </div>
 </div>
 {% endblock content %}

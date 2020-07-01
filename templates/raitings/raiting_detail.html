@@ -2,13 +2,12 @@
 {% block content %}
 <div class="container">
     <section class="rating-detail">
-        <!--        -->
-        <!--        <div class="return_back_button">-->
-        <!--            <a href="{% url 'raitings' %}">-->
-        <!--                <i class="fa fa-chevron-left"></i>-->
-        <!--                Вернуться назад-->
-        <!--            </a>-->
-        <!--        </div>-->
+                <div class="return_back_button">
+                    <a href="{% url 'raitings' %}">
+                        <i class="fa fa-chevron-left"></i>
+                        Вернуться назад
+                    </a>
+                </div>
 
         <div class="analytics-detail-post">
 
@@ -96,18 +95,24 @@
         <!--         slider detail wrap       -->
 
                 <div class="next-prev-button">
-                    {% if previous_raiting %}
-                    <a href="{% url 'raiting_detail' slug=previous_raiting.slug %}">
-                        <i class="fa fa-chevron-left"></i>
-                        Предыдущий рейтинг
-                    </a>
-                    {% endif %}
-                    {% if next_raiting %}
-                    <a href="{% url 'raiting_detail' slug=next_raiting.slug %}">
-                        Следующий рейтинг
-                        <i class="fa fa-chevron-right"></i>
-                    </a>
-                    {% endif %}
+                    <div class="left">
+
+                        {% if previous_raiting %}
+                        <a href="{% url 'raiting_detail' slug=previous_raiting.slug %}">
+                            <i class="fa fa-chevron-left"></i>
+                            Предыдущий рейтинг
+                        </a>
+                        {% endif %}
+                    </div>
+                    <div class="right">
+
+                        {% if next_raiting %}
+                        <a href="{% url 'raiting_detail' slug=next_raiting.slug %}">
+                            Следующий рейтинг
+                            <i class="fa fa-chevron-right"></i>
+                        </a>
+                        {% endif %}
+                    </div>
                 </div>
     </section>
 </div>
