@@ -13,10 +13,12 @@
             <div class="post">
                 <div class="post-info">
                     <div class="date">
+                        <i class="fa fa-calendar" aria-hidden="true"></i>
                         {{ article.created|date:"d M Y" }}
                     </div>
                     <div class="author">
                         <a href="{% url 'authors_detail' slug=article.author.slug %}">
+                            <i class="fa fa-user-o" aria-hidden="true"></i>
                             {{ article.author }}
                         </a>
                     </div>
@@ -26,6 +28,7 @@
                     </div>
                     <div class="category">
                         <a href="{% url 'article_by_category' category_slug=article.category.slug %}">
+                            <i class="fa fa-bookmark" aria-hidden="true"></i>
                             {{ article.category }}
                         </a>
                     </div>

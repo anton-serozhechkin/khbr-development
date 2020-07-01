@@ -12,6 +12,9 @@
       justify-content: space-between;
       font-size:1.5rem;
       flex-wrap: wrap;
+      div {
+        margin: 0 4px;
+      }
       .author {
         a {
           color:black;
@@ -129,6 +132,15 @@
     font-weight: 500;
     color:black;
     transition: .2s linear;
+    &:first-of-type {
+      margin-left: auto;
+      margin-right: 8px;
+    }
+    &:last-of-type {
+      margin-left: 8px;
+      margin-right: auto;
+    }
+
     &:hover {
       background-color: purple;
       color:white;

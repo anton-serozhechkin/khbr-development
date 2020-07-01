@@ -377,6 +377,8 @@ time, mark, audio, video {
       justify-content: space-between;
       font-size: 1.5rem;
       flex-wrap: wrap; }
+      .analytics-detail-post .post .post-info div {
+        margin: 0 4px; }
       .analytics-detail-post .post .post-info .author a {
         color: black;
         text-decoration: none; }
@@ -466,6 +468,12 @@ time, mark, audio, video {
     font-weight: 500;
     color: black;
     transition: .2s linear; }
+    .next-prev-button a:first-of-type {
+      margin-left: auto;
+      margin-right: 8px; }
+    .next-prev-button a:last-of-type {
+      margin-left: 8px;
+      margin-right: auto; }
     .next-prev-button a:hover {
       background-color: purple;
       color: white;

@@ -15,10 +15,12 @@
             <div class="post">
                 <div class="post-info">
                     <div class="date">
+                        <i class="fa fa-calendar" aria-hidden="true"></i>
                         {{ data_rait.created|date:"d M Y" }}
                     </div>
                     <div class="author">
                         <a href="{% url 'authors_detail' slug=data_rait.author.slug %}">
+                            <i class="fa fa-user-o" aria-hidden="true"></i>
                             {{ data_rait.author }}
                         </a>
                     </div>
