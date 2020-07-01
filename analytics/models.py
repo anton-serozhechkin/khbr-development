@@ -6,7 +6,7 @@ from tinymce.models import HTMLField
 from django.core.mail import send_mail
 from khbr.settings import EMAIL_HOST_USER
 from django.template.loader import render_to_string
-from django.utils.html import strip_tags
+from pathlib import Path
 
 class Author(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='Пользователь')
@@ -64,13 +64,13 @@ class Article(models.Model):
         if self.created:
             subscribers = Subscribe.objects.values_list('email', flat=True)
             if subscribers and self.send_email == True:
-                #with open('templates/mails/analytic.html', 'r+', encoding='UTF-8') as f:
-                #old_file_content = f.readline() read everything in the file
-                #new_email_content = old_file_content.format(self.title)
+                image = Path(self.image.url).name
                 html_message = render_to_string('../templates/mails/analytic.html', {'title': self.title,
                                                                                     'short_description': self.short_description, 
                                                                                     'category': self.category.name,
-                                                                                    'image': self.image})
+                                                                                    'slug': self.slug,
+                                                                                    'category_slug': self.category.slug,
+                                                                                    'image': image})
                 send_mail(
                         'Рассылка от KHBR - Аналитика',
                         '',
