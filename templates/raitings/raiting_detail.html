@@ -2,68 +2,118 @@
 {% block content %}
 <div class="container">
     <section class="rating-detail">
-        <div class="return_back_button">
-            <a href="{% url 'raitings' %}">
-                <i class="fa fa-chevron-left"></i>
-                Вернуться назад
-            </a>
-        </div>
-        <div class="rating-detail-top">
-            <div class="rating-detail-top-left_side">
-                <h1 class="rating-detail-title">{{ data_rait.title }}</h1>
-                <div class="rating-detail-publication-image">
-                    <img src="{{ data_rait.image.url }}" alt="">
+                <div class="return_back_button">
+                    <a href="{% url 'raitings' %}">
+                        <i class="fa fa-chevron-left"></i>
+                        Вернуться назад
+                    </a>
                 </div>
-                <p class="rating-detail-short-text">{{ data_rait.content|safe }}</p>
-                 <div class="rating-detail-info">
-                     <span class="rating-detail-author">
+
+        <div class="analytics-detail-post">
+
+            <div class="post">
+                <div class="post-info">
+                    <div class="date">
+                        <i class="fa fa-calendar" aria-hidden="true"></i>
+                        {{ data_rait.created|date:"d M Y" }}
+                    </div>
+                    <div class="author">
                         <a href="{% url 'authors_detail' slug=data_rait.author.slug %}">
-                            <i class="fa fa-user"></i>
+                            <i class="fa fa-user-o" aria-hidden="true"></i>
                             {{ data_rait.author }}
                         </a>
-                    </span>
-                     <span class="rating-detail-date">{{ data_rait.created|date:"d M Y" }}</span>
-                     <div class="rating-detail-viewCount">
-                         <i class="fa fa-eye" aria-hidden="true"></i>
-                         <span>{{ data_rait.views }}</span>
-                     </div>
-                 </div>
-            </div>
-        </div>
-        <div class="rating-detail-publication-image">
-            <img src="" alt="" class="">
-        </div>
-        {% if raiting_images %}
-        <!--         slider detail wrap       -->
-        <div class="slider-detail">
-            <!-- slide detail. insert this to add slide's -->
-            {% for raiting_image in raiting_images %}
-            <div class="slide-detail">
-                <!-- slide image -->
-                <img src="{{ raiting_image.image.url }}" alt="" class="slider-detail-image">
-                <!-- slide image -->
-                <!--     slide description      -->
-                <div class="description">
-                    {{ raiting_image.title }}
+                    </div>
+                    <div class="views">
+                        <span>{{ data_rait.views }}</span>
+                        <i class="fa fa-eye"></i>
+                    </div>
+                    <div class="category">
+                        <a href="#">
+                            {{ data_rait.category }}
+                        </a>
+                    </div>
                 </div>
-                <!--     slide description      -->
+                <div class="post-title">
+                    <p>{{ data_rait.title }}</p>
+                </div>
+                <div class="post-content">
+                    <img src="{{ data_rait.image.url }}" alt="" class="main-image">
+                    <div class="text">
+                        {{ data_rait.content|safe }}
+                    </div>
+                </div>
+
+                {% if raiting_images %}
+                <!--         slider detail wrap       -->
+                <div class="slider-detail">
+                    <!-- slide detail. insert this to add slide's -->
+                    {% for raiting_image in raiting_images %}
+                    <div class="slide-detail">
+                        <!-- slide image -->
+                        <img src="{{ raiting_image.image.url }}" alt="" class="slider-detail-image">
+                        <!-- slide image -->
+                        <!--     slide description      -->
+                        <div class="description">
+                            {{ raiting_image.title }}
+                        </div>
+                        <!--     slide description      -->
+                    </div>
+                    {% endfor %}
+                    <!-- slide detail. insert this to add slide's -->
+                </div>
+                {% endif %}
             </div>
-            {% endfor %}
-            <!-- slide detail. insert this to add slide's -->
+            {% if last_events or last_analytics %}
+            <div class="last-posts">
+                <div class="heading">
+                    Читайте также:
+                </div>
+                {% for event in last_events %}
+                <div class="element">
+                    <a href="{% url 'event_detail' slug=event.slug %}">
+                        <img src="{{ event.image.url }}" alt="" class="">
+                        <div class="title">
+                            {{ event.title }}
+                        </div>
+                    </a>
+                </div>
+                {% endfor %}
+                {% for article in last_analytics %}
+                <div class="element">
+                    <a href="{% url 'article_detail' category_slug=article.category.slug slug=article.slug %}">
+                        <img src="{{ article.image.url }}" alt="" class="">
+                        <div class="title">
+                            {{ article.title }}
+                        </div>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+            {% endif %}
         </div>
-        {% endif %}
+
         <!--         slider detail wrap       -->
 
-        <div class="next-prev-button">
-            <a href="">
-                <i class="fa fa-chevron-left"></i>
-                Предыдущий рейтинг
-            </a>
-            <a href="">
-                Следующий рейтинг
-                <i class="fa fa-chevron-right"></i>
-            </a>
-        </div>
+                <div class="next-prev-button">
+                    <div class="left">
+
+                        {% if previous_raiting %}
+                        <a href="{% url 'raiting_detail' slug=previous_raiting.slug %}">
+                            <i class="fa fa-chevron-left"></i>
+                            Предыдущий рейтинг
+                        </a>
+                        {% endif %}
+                    </div>
+                    <div class="right">
+
+                        {% if next_raiting %}
+                        <a href="{% url 'raiting_detail' slug=next_raiting.slug %}">
+                            Следующий рейтинг
+                            <i class="fa fa-chevron-right"></i>
+                        </a>
+                        {% endif %}
+                    </div>
+                </div>
     </section>
 </div>
 {% endblock content %}

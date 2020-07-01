@@ -35,6 +35,7 @@ class Event(models.Model):
     def get_absolute_url(self):
         return reverse('event_detail', kwargs={'slug': self.slug})
 
+
     def save(self):
         if self.created:
             subscribers = Subscribe.objects.values_list('email', flat=True)

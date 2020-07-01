@@ -11,31 +11,22 @@
 </div>
 {% if list_rait %}
 <div class="container">
-    <section class="ratings-wrapper">
-        <div class="rating-post-box">
-            {% for raiting in list_rait %}
-            <div class="rating-post-title">
-                <a href="{% url 'raiting_detail' slug=raiting.slug %}" class="rating-post-title-link">
-                    {{ raiting.title }}
+    <section class="analytics-wrapper" id="analytics-wrapper-anchor">
+        {% for raiting in list_rait %}
+        <div class="analytics-item">
+            <div class="insert">
+                <a href="{% url 'raiting_detail' slug=raiting.slug %}">
+                    <img src="{{ raiting.image.url }}" alt="" class="item-image">
+                    <div class="title">
+                        {{ raiting.title }}
+                    </div>
+                    <div class="subtitle">
+                        {{ raiting.short_description|safe }}
+                    </div>
                 </a>
             </div>
-            <div class="rating-post-image">
-                <img src="{{ raiting.image.url }}" alt="">
-            </div>
-            <div class="rating-post-content">
-                <p>{{ raiting.short_description|safe }}</p>
-                <div class="analytics-box-info">
-                    <p class="analytics-box-author">
-                        <a href="{% url 'authors_detail' slug=raiting.author.slug %}">
-                            <i class="fa fa-user"></i>
-                            {{ raiting.author }}
-                        </a>
-                    </p>
-                    <p class="analytics-box-time">Дата создания: {{ raiting.created|date:"d M Y" }}</p>
-                </div>
-            </div>
-            {% endfor %}
         </div>
+        {% endfor %}
     </section>
 </div>
 {% else %}
