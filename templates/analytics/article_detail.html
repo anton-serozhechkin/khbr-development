@@ -25,7 +25,7 @@
                         <i class="fa fa-eye"></i>
                     </div>
                     <div class="category">
-                        <a href="#">
+                        <a href="{% url 'article_by_category' category_slug=article.category.slug %}">
                             {{ article.category }}
                         </a>
                     </div>
@@ -63,24 +63,33 @@
 
                 {% endif %}
             </div>
+            {% if last_raitings or last_events %}
             <div class="last-posts">
                 <div class="heading">
                     Читайте также:
                 </div>
+                {% for raiting in last_raitings %}
                 <div class="element">
-                    <a href="">
-                        <img src="https://images.unsplash.com/photo-1593462475357-67ac85ec71a7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" alt="" class="">
+                    <a href="{% url 'raiting_detail' slug=raiting.slug %}">
+                        <img src="{{ raiting.image.url }}" alt="" class="">
                         <div class="title">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing.
+                            {{ raiting.title }}
                         </div>
                     </a>
                 </div>
+                {% endfor %}
+                {% for event in last_events %}
+                <div class="element">
+                    <a href="{% url 'event_detail' slug=event.slug %}">
+                        <img src="{{ event.image.url }}" alt="" class="">
+                        <div class="title">
+                            {{ event.title }}
+                        </div>
+                    </a>
+                </div>
+                {% endfor %}
             </div>
-
-
-
-
-
+            {% endif %}
         </div>
 <!--        <div class="next-prev-button">-->
 <!--            <a href="">-->
