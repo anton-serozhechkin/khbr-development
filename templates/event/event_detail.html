@@ -111,15 +111,19 @@
             {% endif %}
     </div>
 
-    <!--        <div class="next-prev-button">-->
-    <!--            <a href="">-->
-    <!--                <i class="fa fa-chevron-left"></i>-->
-    <!--                Предыдущее событие-->
-    <!--            </a>-->
-    <!--            <a href="">-->
-    <!--                Следующее событие-->
-    <!--                <i class="fa fa-chevron-right"></i>-->
-    <!--            </a>-->
-    <!--        </div>-->
+     <div class="next-prev-button">
+         {% if previous_event %}
+         <a href="{% url 'event_detail' slug=previous_event.slug %}">
+             <i class="fa fa-chevron-left"></i>
+             Предыдущее событие
+         </a>
+         {% endif %}
+         {% if next_event %}
+         <a href="{% url 'event_detail' slug=next_event.slug %}">
+             Следующее событие
+             <i class="fa fa-chevron-right"></i>
+         </a>
+         {% endif %}
+     </div>
 </div>
 {% endblock content %}

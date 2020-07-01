@@ -17,4 +17,13 @@ def raiting_detail(request, slug):
     data_rait.save()
     last_events = Event.objects.filter(is_active=True)[0:1]
     last_analytics = Article.objects.filter(is_active=True)[0:1]
+    try:
+        next_raiting = data_rait.get_next_by_created()
+    except Exception:
+        next_raiting=None
+
+    try:
+        previous_raiting = data_rait.get_previous_by_created()
+    except Exception:
+        previous_raiting=None
     return render(request, 'raitings/raiting_detail.html', locals())

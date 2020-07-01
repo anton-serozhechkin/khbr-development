@@ -93,16 +93,20 @@
 
         <!--         slider detail wrap       -->
 
-        <!--        <div class="next-prev-button">-->
-        <!--            <a href="">-->
-        <!--                <i class="fa fa-chevron-left"></i>-->
-        <!--                Предыдущий рейтинг-->
-        <!--            </a>-->
-        <!--            <a href="">-->
-        <!--                Следующий рейтинг-->
-        <!--                <i class="fa fa-chevron-right"></i>-->
-        <!--            </a>-->
-        <!--        </div>-->
+                <div class="next-prev-button">
+                    {% if previous_raiting %}
+                    <a href="{% url 'raiting_detail' slug=previous_raiting.slug %}">
+                        <i class="fa fa-chevron-left"></i>
+                        Предыдущий рейтинг
+                    </a>
+                    {% endif %}
+                    {% if next_raiting %}
+                    <a href="{% url 'raiting_detail' slug=next_raiting.slug %}">
+                        Следующий рейтинг
+                        <i class="fa fa-chevron-right"></i>
+                    </a>
+                    {% endif %}
+                </div>
     </section>
 </div>
 {% endblock content %}

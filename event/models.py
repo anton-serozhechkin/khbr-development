@@ -3,11 +3,6 @@ from django.urls import reverse
 from django.utils import timezone
 from analytics.models import Author
 from tinymce.models import HTMLField
-from django.core.mail import send_mail
-from khbr.settings import EMAIL_HOST_USER
-from django.template.loader import render_to_string
-from pathlib import Path
-from analytics.models import Subscribe
 
 class Event(models.Model):
     title = models.CharField('Заголовок',max_length=120)
@@ -34,26 +29,6 @@ class Event(models.Model):
     
     def get_absolute_url(self):
         return reverse('event_detail', kwargs={'slug': self.slug})
-
-    def save(self):
-        if self.created:
-            subscribers = Subscribe.objects.values_list('email', flat=True)
-            if subscribers and self.send_email == True:
-                image = Path(self.image.url).name
-                html_message = render_to_string('../templates/mails/events.html', {'title': self.title,
-                                                                                    'short_description': self.short_description, 
-                                                                                    'slug': self.slug,
-                                                                                    'image': image})
-                send_mail(
-                        'Рассылка от KHBR - События',
-                        '',
-                        EMAIL_HOST_USER,
-                        subscribers,
-                        fail_silently=False,
-                        html_message=html_message
-                        )
-
-            super(Event, self).save()
 
 class EventImage(models.Model):
     event = models.ForeignKey(Event, on_delete=models.CASCADE, verbose_name='Выберите событие')

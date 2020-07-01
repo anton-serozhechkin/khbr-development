@@ -91,16 +91,20 @@
             </div>
             {% endif %}
         </div>
-<!--        <div class="next-prev-button">-->
-<!--            <a href="">-->
-<!--                <i class="fa fa-chevron-left"></i>-->
-<!--                Предыдущий пост-->
-<!--            </a>-->
-<!--            <a href="">-->
-<!--                Следующий пост-->
-<!--                <i class="fa fa-chevron-right"></i>-->
-<!--            </a>-->
-<!--        </div>-->
+        <div class="next-prev-button">
+            {% if previous_article %}
+                <a href="{% url 'article_detail' category_slug=previous_article.category.slug slug=previous_article.slug %}">
+                    <i class="fa fa-chevron-left"></i>
+                    Предыдущий пост
+                </a>
+            {% endif %}
+            {% if next_article %}
+                <a href="{% url 'article_detail' category_slug=next_article.category.slug slug=next_article.slug %}">
+                    Следующий пост
+                    <i class="fa fa-chevron-right"></i>
+                </a>
+            {% endif %}
+        </div>
     </section>
 </div>
 {% endblock content %}

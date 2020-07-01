@@ -15,4 +15,13 @@ def event_detail(request, slug):
     data_event.save()
     last_raitings = Raiting.objects.filter(is_active=True)[0:1]
     last_analytics = Article.objects.filter(is_active=True)[0:1]
+    try:
+        next_event = data_event.get_next_by_created()
+    except Exception:
+        next_event=None
+
+    try:
+        previous_event = data_event.get_previous_by_created()
+    except Exception:
+        previous_event=None
     return render(request, 'event/event_detail.html', locals())
