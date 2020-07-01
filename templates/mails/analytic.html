@@ -1,4 +1,5 @@
-<!doctype html>
+{% load staticfiles %}
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -17,7 +18,7 @@
 <table cellpadding="0" cellspacing="" width="100%" align="center" style="max-width: 700px;">
     <tr>
         <td colspan="" style="background:lightblue;padding: 20px 0; text-align: center">
-            <img src="../../static/img/logo.png" alt="" style="max-width: 320px;width: 100%;">
+            <img src="{{ request.get_host }}{% static 'img/logo.png' %}" alt="" style="max-width: 320px;width: 100%;">
         </td>
     </tr>
     <tr>
@@ -25,32 +26,32 @@
             <a href="" style="font-size: 32px;text-decoration: none;color:black;">
                 Аналитика
             </a>
-            <span style="font-size: 32px">:</span>
+            <span style="font-size: 32px">|</span>
             <a href="" style="font-size: 32px;text-decoration: none;color:black;">
-                Спорт
+                {{ category }}
             </a>
         </td>
     </tr>
     <tr>
         <td colspan="">
             <a href="">
-                <img src="../../static/img/index-banner-bgi.png" alt="" style="width: 100%;">
+                <img src="cid:{{ image }}" alt="" style="width: 100%;">
             </a>
         </td>
     </tr>
     <tr>
         <td colspan="">
             <p style="padding: 0 8px; font-size: 26px; text-align: center">
-                Title of post
+                {{ title }}
             </p>
             <p style="margin: 8px 0;padding: 0 8px; font-size: 20px;">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem cumque error hic inventore minus odio placeat quo sequi, sint sunt!
+                {{ short_description|safe }}
             </p>
         </td>
     </tr>
     <tr>
         <td colspan="" align="center" style="padding: 10px 0;">
-            <a href="" style="color:white;padding: 8px 20px;background: #1a73e8;">
+            <a href="//khbr.in.ua/analytics/{{ category_slug }}/{{ slug }}" style="color:white;padding: 8px 20px;background: #1a73e8;">
                 Подробнее..
             </a>
         </td>

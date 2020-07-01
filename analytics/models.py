@@ -3,6 +3,10 @@ from django.urls import reverse
 from django.utils import timezone
 from django.contrib.auth.models import User
 from tinymce.models import HTMLField
+from django.core.mail import send_mail
+from khbr.settings import EMAIL_HOST_USER
+from django.template.loader import render_to_string
+from pathlib import Path
 
 class Author(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='Пользователь')
@@ -48,6 +52,7 @@ class Article(models.Model):
     created = models.DateTimeField('Дата создания', default=timezone.now)
     is_active = models.BooleanField(default=True, verbose_name='Видимость для пользователя')
     views = models.PositiveIntegerField('Просмотров публикации', default=0)
+    send_email = models.BooleanField(default=True, verbose_name='Отправить на рассылку')
 
     def __str__(self):
         return self.title
@@ -55,6 +60,29 @@ class Article(models.Model):
     def get_absolute_url(self):
         return reverse('article_detail', kwargs={'category_slug': self.category.slug, 'slug': self.slug})
     
+    def save(self):
+        if self.created:
+            subscribers = Subscribe.objects.values_list('email', flat=True)
+            if subscribers and self.send_email == True:
+                image = Path(self.image.url).name
+                html_message = render_to_string('../templates/mails/analytic.html', {'title': self.title,
+                                                                                    'short_description': self.short_description, 
+                                                                                    'category': self.category.name,
+                                                                                    'slug': self.slug,
+                                                                                    'category_slug': self.category.slug,
+                                                                                    'image': image})
+                send_mail(
+                        'Рассылка от KHBR - Аналитика',
+                        '',
+                        EMAIL_HOST_USER,
+                        subscribers,
+                        fail_silently=False,
+                        html_message=html_message
+                        )
+
+            super(Article, self).save()
+
+
     class Meta:
         verbose_name = 'Пост'
         verbose_name_plural = 'Посты'

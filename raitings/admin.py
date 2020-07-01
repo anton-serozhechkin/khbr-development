@@ -19,7 +19,7 @@ class RaitingAdmin(admin.ModelAdmin):
         ('Дополнительные опции',
             {
             'classes': ('collapse', ),
-            'fields': ('author', 'image', 'is_active', 'created', 'views')
+            'fields': ('author', 'image', 'is_active', 'created', 'views', 'send_email')
             }
             )
     )
