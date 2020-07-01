@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -38,16 +38,16 @@
     <tr>
         <td colspan="">
             <p style="padding: 0 8px; font-size: 26px; text-align: center">
-                Title of post
+                {{ title }}
             </p>
             <p style="margin: 8px 0;padding: 0 8px; font-size: 20px;">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem cumque error hic inventore minus odio placeat quo sequi, sint sunt!
+                {{ short_description|safe }}
             </p>
         </td>
     </tr>
     <tr>
         <td colspan="" align="center" style="padding: 10px 0;">
-            <a href="" style="color:white;padding: 8px 20px;background: #1a73e8;">
+            <a href="//khbr.in.ua/events/{{ slug }}" style="color:white;padding: 8px 20px;background: #1a73e8;">
                 Подробнее..
             </a>
         </td>

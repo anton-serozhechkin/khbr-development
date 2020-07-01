@@ -153,3 +153,9 @@ LOGIN_REDIRECT_URL = '/admin'
 SITE_ID = 1
 
 #LOGIN_REDIRECT_URL = "/"
+
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'khbr.info@gmail.com'
+EMAIL_HOST_PASSWORD = 'khbr2019'
+EMAIL_PORT = 587
