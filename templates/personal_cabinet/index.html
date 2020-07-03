@@ -226,7 +226,7 @@
                             <!-- form inputs -->
                         </div>
                         <!-- submit button -->
-                        <button class="index-follow-button" type="submit">Подписаться</button>
+                        <button class="index-follow-button" type="submit">Сменить личные данные</button>
                         <!-- submit button -->
                     </form>
                     <!--         user modal form           -->
@@ -243,7 +243,8 @@
                     </p>
                 </div>
                 <div class="user_modal_form">
-                    <form action="">
+                    <form action="{% url 'change_password' %}" method="post">
+                        {% csrf_token %}
                         <div class="">
                             <label for="personal_user_password">
                                 Введите новый пароль:
@@ -256,9 +257,8 @@
                             </label>
                             <input type="text" name="personal_user_confirmationPassword" id="personal_user_confirmationPassword">
                         </div>
-                        <div class="">
-                            <input type="submit" value="Подвердить">
-                        </div>
+                        <button class="index-follow-button" type="submit">Сменить пароль</button>
+
                     </form>
                 </div>
             </div>

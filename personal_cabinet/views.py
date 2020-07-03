@@ -32,6 +32,12 @@ def personal_cabinet(request, private_data=None, change_password=None, unsubscri
 
     if str(request.build_absolute_uri).rsplit('/', 1)[-1] == "change_password'>>":
         change_password = True
+        if request.method == "POST":
+            if request.POST['personal_user_password'] and request.POST['personal_user_confirmationPassword']:
+                if request.POST['personal_user_password'] == request.POST['personal_user_confirmationPassword']:
+                    change_password_form = User.objects.get(username=request.user.username)
+                    change_password_form.set_password(request.POST['personal_user_password'])
+                    change_password_form.save()
 
     if str(request.build_absolute_uri).rsplit('/', 1)[-1] == "unsubscribe'>>":
         unsubscribe = True
