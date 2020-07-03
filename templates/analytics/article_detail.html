@@ -10,70 +10,108 @@
             </a>
         </div>
         <div class="analytics-detail-post">
-            <div class="analytics-detail-title">
-                <h1>{{ article.title }}</h1>
-            </div>
-            {% if article.image %}
-            <div class="analytics-detail-image">
-                <img src="{{ article.image.url }}" alt="">
-            </div>
-            {% endif %}
-            <div class="analytics-detail-info">
-                <a href="{% url 'article_by_category' category_slug=article.category.slug %}">
-                    <h3>
-                        {{ article.category }}
-                    </h3>
-                </a>
-                <div class="analytics-detail-infoBox">
-                    <p class="analytics-box-author">
+            <div class="post">
+                <div class="post-info">
+                    <div class="date">
+                        <i class="fa fa-calendar" aria-hidden="true"></i>
+                        {{ article.created|date:"d M Y" }}
+                    </div>
+                    <div class="author">
                         <a href="{% url 'authors_detail' slug=article.author.slug %}">
-                            <i class="fa fa-user"></i>
+                            <i class="fa fa-user-o" aria-hidden="true"></i>
                             {{ article.author }}
                         </a>
-                    </p>
-                    <p class="analytics-box-time">{{ article.created|date:"d M Y" }}</p>
-                    <div class="detail-viewCount">
-                        <i class="fa fa-eye" aria-hidden="true"></i>
+                    </div>
+                    <div class="views">
                         <span>{{ article.views }}</span>
+                        <i class="fa fa-eye"></i>
+                    </div>
+                    <div class="category">
+                        <a href="{% url 'article_by_category' category_slug=article.category.slug %}">
+                            <i class="fa fa-bookmark" aria-hidden="true"></i>
+                            {{ article.category }}
+                        </a>
                     </div>
                 </div>
-            </div>
-            <div class="analytics-detail-content-box">
-                {{ article.content|safe }}
-            </div>
-            <!--         slider detail wrap       -->
-            {% if article_images %}
-            <div class="slider-detail">
-                <!-- slide detail. insert this to add slide's -->
-                {% for article_image in article_images %}
-                <div class="slide-detail">
-                    <!-- slide image -->
-                    <img src="{{ article_image.image.url }}" alt="" class="slider-detail-image">
-                    <!-- slide image -->
-                    {% if article_image.title %}
-                    <!--     slide description      -->
-                    <div class="description">
-                        {{ article_image.title }}
+                <div class="post-title">
+                    <p>{{ article.title }}</p>
+                </div>
+                <div class="post-content">
+                    <img src="{{ article.image.url }}" alt="" class="main-image">
+                    <div class="text">
+                        {{ article.content|safe }}
                     </div>
-                    {% endif %}
-                    <!--     slide description      -->
+                </div>
+                <!--         slider detail wrap       -->
+                {% if article_images %}
+                <div class="slider-detail">
+                    <!-- slide detail. insert this to add slide's -->
+                    {% for article_image in article_images %}
+                    <div class="slide-detail">
+                        <!-- slide image -->
+                        <img src="{{ article_image.image.url }}" alt="" class="slider-detail-image">
+                        <!-- slide image -->
+                        {% if article_image.title %}
+                        <!--     slide description      -->
+                        <div class="description">
+                            {{ article_image.title }}
+                        </div>
+                        {% endif %}
+                        <!--     slide description      -->
+                    </div>
+                    {% endfor %}
+                    <!-- slide detail. insert this to add slide's -->
+                </div>
+                <!--         slider detail wrap       -->
+
+                {% endif %}
+            </div>
+            {% if last_raitings or last_events %}
+            <div class="last-posts">
+                <div class="heading">
+                    Читайте также:
+                </div>
+                {% for raiting in last_raitings %}
+                <div class="element">
+                    <a href="{% url 'raiting_detail' slug=raiting.slug %}">
+                        <img src="{{ raiting.image.url }}" alt="" class="">
+                        <div class="title">
+                            {{ raiting.title }}
+                        </div>
+                    </a>
                 </div>
                 {% endfor %}
-                <!-- slide detail. insert this to add slide's -->
+                {% for event in last_events %}
+                <div class="element">
+                    <a href="{% url 'event_detail' slug=event.slug %}">
+                        <img src="{{ event.image.url }}" alt="" class="">
+                        <div class="title">
+                            {{ event.title }}
+                        </div>
+                    </a>
+                </div>
+                {% endfor %}
             </div>
-            <!--         slider detail wrap       -->
             {% endif %}
-
         </div>
         <div class="next-prev-button">
-            <a href="">
-                <i class="fa fa-chevron-left"></i>
-                Предыдущий пост
-            </a>
-            <a href="">
-                Следующий пост
-                <i class="fa fa-chevron-right"></i>
-            </a>
+            <div class="left">
+
+                {% if previous_article %}
+                <a href="{% url 'article_detail' category_slug=previous_article.category.slug slug=previous_article.slug %}">
+                    <i class="fa fa-chevron-left"></i>
+                    Предыдущий пост
+                </a>
+                {% endif %}
+            </div>
+            <div class="right">
+                {% if next_article %}
+                <a href="{% url 'article_detail' category_slug=next_article.category.slug slug=next_article.slug %}">
+                    Следующий пост
+                    <i class="fa fa-chevron-right"></i>
+                </a>
+                {% endif %}
+            </div>
         </div>
     </section>
 </div>

@@ -37,6 +37,18 @@ def article_detail(request, category_slug, slug):
     article_images = ArticleImage.objects.filter(article__slug=slug)
     article.views += 1
     article.save()
+    last_raitings = Raiting.objects.filter(is_active=True)[0:1]
+    last_events = Event.objects.filter(is_active=True)[0:1]
+
+    try:
+        next_article = article.get_next_by_created()
+    except Exception:
+        next_article=None
+
+    try:
+        previous_article = article.get_previous_by_created()
+    except Exception:
+        previous_article=None
     return render(request, 'analytics/article_detail.html', locals())
 
 def article_by_category(request, category_slug):
