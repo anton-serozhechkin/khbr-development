@@ -54,16 +54,14 @@
                                             {{ answer.text }}
                                         </div>
                                         <div class="poll_result_percent">
-                                            {{ answer.percents }}
+                                            Количество проголосовавших:
+                                            {{ answer.counter }}
                                         </div>
                                     </div>
                                     <div class="line">
-                                        <div class="bg">
-                                        </div>
-                                        <div class="poll_result_statusBar"></div>
                                     </div>
-                                    <p>Вы уже прошли этот опрос</p>
                                 {% endfor %}
+                                <p>Вы уже прошли этот опрос</p>
                             </div>
                         </div>
                         <div class="statistics">
@@ -85,13 +83,11 @@
                                         {{ answer.text }}
                                     </div>
                                     <div class="poll_result_percent">
-                                        {{ answer.percents }}
+                                        Количество проголосовавших:
+                                        {{ answer.counter }}
                                     </div>
                                 </div>
                                 <div class="line">
-                                    <div class="bg">
-                                    </div>
-                                    <div class="poll_result_statusBar"></div>
                                 </div>
                             {% endfor %}
                         </div>
