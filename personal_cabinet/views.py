@@ -3,6 +3,8 @@ from django.contrib.auth.decorators import login_required
 from analytics.models import Subscribe, Article
 from event.models import Event
 from raitings.models import Raiting
+from django.contrib.auth.models import User
+
 
 @login_required(login_url='/user/signin/')
 def personal_cabinet(request, private_data=None, change_password=None, unsubscribe=None, subscribe=None, links=None, delete_account=None):
@@ -26,6 +28,7 @@ def personal_cabinet(request, private_data=None, change_password=None, unsubscri
         if request.method == "POST":
             Subscribe.objects.filter(email=request.user.email).delete()
             return redirect('subscribe')
+    
     if str(request.build_absolute_uri).rsplit('/', 1)[-1] == "subscribe'>>":
         subscribe = True
         if request.method == "POST":
@@ -39,5 +42,8 @@ def personal_cabinet(request, private_data=None, change_password=None, unsubscri
 
     if str(request.build_absolute_uri).rsplit('/', 1)[-1] == "delete_account'>>":
         delete_account = True
+        if request.method == "POST":
+            User.objects.filter(username=request.user.username).delete() 
+            return redirect('analytics')         
 
     return render(request, 'personal_cabinet/index.html', locals())

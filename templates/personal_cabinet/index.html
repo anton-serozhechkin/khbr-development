@@ -370,15 +370,17 @@
                     Вы уверены, что хотите удалить аккаунт?
                 </div>
                 <div class="user_modal_form">
-                    <form action="">
+                    <form action="{% url 'delete_account' %}" method="post">
+                        {% csrf_token %}
                         <div class="">
                             <p class="text text-center">
                                 Вы не сможете восстановить аккаунт, после его удаления
                             </p>
                         </div>
-                        <div class="delete_acc" style="text-align: center">
+                        <!--<div class="delete_acc" style="text-align: center">
                             <input type="submit" value="Удалить аккаунт">
-                        </div>
+                        </div>-->
+                        <button type="submit">Удалить аккаунт</button>
                     </form>
                 </div>
             </div>
