@@ -19,6 +19,16 @@ def personal_cabinet(request, private_data=None, change_password=None, unsubscri
 
     if str(request.build_absolute_uri).rsplit('/', 1)[-1] == "private_data'>>":
         private_data = True
+        if request.method == "POST":
+            if request.POST['personal_user_name']:
+                change_name = User.objects.get(username=request.user.username)
+                change_name.username = request.POST['personal_user_name']
+                change_name.save()
+            if request.POST['personal_user_email']:
+                change_email = User.objects.get(username=request.user.username)
+                change_email.email = request.POST['personal_user_email']
+                change_email.save()
+            return redirect('personal_cabinet')
 
     if str(request.build_absolute_uri).rsplit('/', 1)[-1] == "change_password'>>":
         change_password = True

@@ -209,7 +209,8 @@
                 <!--        modal header        -->
                 <div class="user_modal_form">
                     <!--         user modal form           -->
-                    <form action="">
+                    <form action="{% url 'private_data' %}" method="post">
+                        {% csrf_token %}
                         <div class="">
                             <!-- form inputs -->
                             <label for="personal_user_name">
@@ -221,13 +222,11 @@
                             <label for="personal_user_email">
                                 E-mail пользователя:
                             </label>
-                            <input type="text" name="personal_user_name" id="personal_user_email">
+                            <input type="text" name="personal_user_email" id="personal_user_email">
                             <!-- form inputs -->
                         </div>
                         <!-- submit button -->
-                        <div class="">
-                            <input type="submit" value="Сохранить">
-                        </div>
+                        <button class="index-follow-button" type="submit">Подписаться</button>
                         <!-- submit button -->
                     </form>
                     <!--         user modal form           -->
