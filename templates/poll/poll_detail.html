@@ -17,23 +17,28 @@
             </div>
             {% if user.is_authenticated %}
                 {% if not user_took_part %}
+                {% if error_message %}
+                    <p>
+                        <strong>
+                            {{ error_message }}
+                        </strong>
+                    </p>
+                {% endif %}
                     <form class="poll-form" id="poll-form" action="{% url 'poll_detail' slug=slug %}" method="post">
                         {% csrf_token %}
                         <div class="poll-form_title">
                             {{ poll.question|safe }}
                         </div>
                         <div class="poll-form_options">
-                            {% for answer in answers %}
+                            {% for choice in poll.answer_set.all %}
                                 <div class="option">
-                                    <input type="checkbox" class="poll-checkbox" name="answer-text" id="{{ answer.id }}">
-                                    <label for="{{ answer.id }}">
-                                        {{ answer.text }}
-                                    </label>
+                                    <input type="radio" class="poll-checkbox" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}" />
+                                    <label for="choice{{ forloop.counter }}">{{ choice.text }}</label><br />
                                 </div>
                             {% endfor %}
                         </div>
                         <div class="submit">
-                            <button type="submit" id="poll_result_button" value="Посмотреть результаты">
+                            <button type="submit" id="poll_result_button" value="Посмотреть результаты">Посмотреть результаты</button>
                         </div>
                     </form>
                 {% else %}

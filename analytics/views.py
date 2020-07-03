@@ -6,6 +6,7 @@ from event.models import Event
 from videooverview.models import VideoDownloading
 from .forms import SubscribeForm
 from django.db.models import Q
+from poll.models import Poll
 
 def main(request):
     if request.method == 'POST':
@@ -17,13 +18,14 @@ def main(request):
             return redirect('analytics')
     else:
         form = SubscribeForm()
-        last_art = Article.objects.filter(is_active=True).order_by('-created')[0:5]
+        last_art = Article.objects.filter(is_active=True).order_by('-created')[0:4]
         data_rait = Raiting.objects.filter(is_active=True).order_by('-created')[0:3]
         data_art_1_4 = Article.objects.filter(is_active=True)[0:3]
         data_video = VideoDownloading.objects.filter(is_active=True)[0:5]
         data_art_6_9 = Article.objects.filter(is_active=True)[5:8]
         data_event = Event.objects.filter(is_active=True)[0:3]
         integer_day = Article.objects.filter(integer_of_day=True).last()
+        polls = Poll.objects.filter(is_active=True).order_by('-created')[0:3]
     return render(request, 'analytics/index.html', locals())
 
 def article_index(request):
