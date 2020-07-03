@@ -802,7 +802,7 @@ time, mark, audio, video {
   .poll-container .poll_detail .img {
     margin: 5vh 0;
     width: 100%;
-    height: 525px;
+    max-width: 100%;
     border-radius: 1%; }
   .poll-container .poll_detail .content {
     width: 75%;
@@ -837,7 +837,8 @@ time, mark, audio, video {
     .poll-container .poll_detail .poll-form .submit {
       display: flex;
       justify-content: center; }
-      .poll-container .poll_detail .poll-form .submit input {
+      .poll-container .poll_detail .poll-form .submit button {
+        outline: none;
         color: white;
         background-color: darkgoldenrod;
         padding: 8px 16px;
@@ -846,7 +847,7 @@ time, mark, audio, video {
         font-size: 18px;
         font-weight: 500;
         display: none; }
-        .poll-container .poll_detail .poll-form .submit input:hover {
+        .poll-container .poll_detail .poll-form .submit button:hover {
           cursor: pointer; }
   .poll-container .poll_detail .poll-results {
     width: 75%;
@@ -996,6 +997,7 @@ time, mark, audio, video {
   text-align: center;
   font-size: 22px; }
   .auth_error a {
+    text-decoration: none;
     color: black; }
 
 .search-index .container {

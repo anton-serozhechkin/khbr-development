@@ -197,6 +197,14 @@
        </section>
    </div>
 <hr>
+
+<div class="page_title-box">
+    <div class="page_title-title">
+        <a href="{% url 'poll' %}" class="index-heading-link">
+            <h1>Опросы</h1>
+        </a>
+    </div>
+</div>
    {% if polls %}
     <div class="container">
         <section class="index-polls" id="index-polls">
@@ -220,6 +228,15 @@
         </div>
     {% endif %}
 <hr>
+
+
+<div class="page_title-box">
+    <div class="page_title-title">
+        <a href="{% url 'videooverviews' %}" class="index-heading-link">
+            <h1>Видеообзоры</h1>
+        </a>
+    </div>
+</div>
     {% if data_video %}
     <div class="container">
         <section class="index-video-style" id="index-video-anchor">
