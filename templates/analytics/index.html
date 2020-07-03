@@ -197,20 +197,28 @@
        </section>
    </div>
 <hr>
-<div class="container">
+   {% if polls %}
+    <div class="container">
         <section class="index-polls" id="index-polls">
             <div class="index-polls-wrapper slider">
+                {% for poll in polls %}
                 <div class="index-poll-box ">
-                    <a href="">
-                        <img src="https://images.unsplash.com/photo-1591794289635-13a402187d9d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" alt="" class="img">
+                    <a href="{% url 'poll_detail' slug=poll.slug %}">
+                        <img src="{{ poll.image.url }}" alt="" class="img">
                         <div class="title">
-                            <span>заголовок опроса</span>
+                            <span>{{ poll.title }}</span>
                         </div>
                     </a>
                 </div>
+                {% endfor %}
             </div>
         </section>
     </div>
+    {% else %}
+        <div class="nothing-found">
+            Пока ничего нет
+        </div>
+    {% endif %}
 <hr>
     {% if data_video %}
     <div class="container">
@@ -231,6 +239,10 @@
                 {% endfor %}
             </div>
         </section>
+    </div>
+    {% else %}
+    <div class="nothing-found">
+        Пока ничего нет
     </div>
     {% endif %}
 {% endblock content %}
