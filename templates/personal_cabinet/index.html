@@ -277,16 +277,21 @@
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto delectus dolor dolorum eius hic illo ipsum iste itaque officiis provident quia recusandae rerum, tenetur! Neque?
                 </div>
                 <div class="user_modal_form">
-                    <form action="">
+                    <form action="{% url 'subscribe' %}" method="post">
+                        {% csrf_token %}
+                        {% if error %}{{ error }} {% endif %}
                         <div class="">
                             <label for="personal_user_subscribe">
                                 Введите Ваш e-mail:
                             </label>
                             <input type="text" name="personal_user_subscribe" id="personal_user_subscribe">
                         </div>
+                        <button class="index-follow-button" type="submit">Подписаться</button>
+                        <!--
                         <div class="">
                             <input type="submit" value="Подписаться">
                         </div>
+                    -->
                     </form>
                 </div>
             </div>
@@ -304,15 +309,14 @@
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto delectus dolor dolorum eius hic illo ipsum iste itaque officiis provident quia recusandae rerum, tenetur! Neque?
                 </div>
                 <div class="user_modal_form">
-                    <form action="">
+                    <form action="{% url 'unsubscribe' %}" method="post">
+                        {% csrf_token %}
                         <div class="">
                             <p class="text">
                                 Вы уже подписаны на рассылку. Хотели бы отписаться?
                             </p>
                         </div>
-                        <div class="" style="text-align: center">
-                            <input type="submit" value="Отписаться">
-                        </div>
+                            <button class="index-follow-button" type="submit">Отписаться</button>
                     </form>
                 </div>
             </div>
@@ -351,21 +355,6 @@
                         </a>
                     </li>
                 </ul>
-                <div class="user_modal_form">
-                    <form action="">
-                        <div class="">
-                            <p class="text text-center">
-                                Вы можете отправить нам свое сообщение и вскоре мы Вам ответим!
-                            </p>
-                        </div>
-                        <div class="text-center">
-                            <textarea name="" id="" cols="35" rows="10"></textarea>
-                        </div>
-                        <div class="" style="text-align: center">
-                            <input type="submit" value="Отправить сообщение">
-                        </div>
-                    </form>
-                </div>
             </div>
             <!-- modal form for contact us -->
             {% endif %}
