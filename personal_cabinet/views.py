@@ -38,6 +38,10 @@ def personal_cabinet(request, private_data=None, change_password=None, unsubscri
                     change_password_form = User.objects.get(username=request.user.username)
                     change_password_form.set_password(request.POST['personal_user_password'])
                     change_password_form.save()
+                else:
+                    error = 'Пароли не совпадают. Попробуйте еще раз.'
+            else:
+                error = 'Заполните все поля формы и попробуйте еще раз.'
 
     if str(request.build_absolute_uri).rsplit('/', 1)[-1] == "unsubscribe'>>":
         unsubscribe = True
@@ -54,12 +58,6 @@ def personal_cabinet(request, private_data=None, change_password=None, unsubscri
                 Subscribe.objects.create(email=request.POST['personal_user_subscribe'])            
                 return redirect('unsubscribe')
     if str(request.build_absolute_uri).rsplit('/', 1)[-1] == "links'>>":
-        links = True
-
-    if str(request.build_absolute_uri).rsplit('/', 1)[-1] == "delete_account'>>":
-        delete_account = True
-        if request.method == "POST":
-            User.objects.filter(username=request.user.username).delete() 
-            return redirect('analytics')         
+        links = True        
 
     return render(request, 'personal_cabinet/index.html', locals())

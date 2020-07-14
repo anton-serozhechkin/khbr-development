@@ -9,5 +9,4 @@ urlpatterns = [
     re_path('subscribe', views.personal_cabinet, name='subscribe'),
     re_path('unsubscribe', views.personal_cabinet, name='unsubscribe'),
     re_path('links', views.personal_cabinet, name='links'),
-    re_path('delete_account', views.personal_cabinet, name='delete_account'),
 ]
