@@ -2,41 +2,7 @@
 {% load static %}
 {% block content %}
 <!--  user cabinet main block   -->
-<div class="user_cabinet_wrapper">
     <!--  container of website  -->
-    <div class="container ">
-        {% comment %}<div class="user_header">
-            <!--user header wrapper-->
-            <!--user header logo block-->
-            <div class="logo">
-                <!--user header logo link-->
-                <a href="">
-                    <!--     user header icon       -->
-                    <img src="{% static 'img/logo.png' %}" alt="">
-                    <!--     user header icon       -->
-                </a>
-                <!--user header logo link-->
-            </div>
-            <!--      user header links list      -->
-            <ul>
-                <!--user header links links item-->
-                <li>
-                    <a href="{% url 'analytics' %}">
-                        Вернуться на сайт
-                    </a>
-                </li>
-                <!--user header links links item-->
-                <li>
-                    <a href="{% url 'sign_out' %}">
-                        Выйти
-                    </a>
-                </li>
-            </ul>
-            <!--      user header links list      -->
-            <!--user header logo block-->
-        </div> {% endcomment %}
-        <!--user header wrapper-->
-    </div>
     <!--  container of website  -->
     <!-- user page main body -->
     <div class="user_main">
@@ -82,7 +48,7 @@
                 <!--       user main profile section         -->
 
                 <!--        central section on user page main body with popular posts        -->
-                {% if fuck %}
+                {% if news %}
                 <div class="popular-posts">
                     {% if last_articles %}
                     <!--         popular post wrap           -->
@@ -190,7 +156,6 @@
                         {% endif %}
                         <!--                        <li>Предложить новость</li>-->
                         <li><a href="{% url 'links' %}">Связаться с нами</a></li>
-                        <li><a href="{% url 'delete_account' %}">Удаление аккаунта</a></li>
                         <li><a href="{% url 'sign_out' %}">Выйти</a></li>
                     </ul>
                     <!-- settings list with links to modal -->
@@ -245,6 +210,9 @@
                 <div class="user_modal_form">
                     <form action="{% url 'change_password' %}" method="post">
                         {% csrf_token %}
+                        {% if error %}
+                            {{ error }}
+                        {% endif %}
                         <div class="">
                             <label for="personal_user_password">
                                 Введите новый пароль:
@@ -278,7 +246,9 @@
                 <div class="user_modal_form">
                     <form action="{% url 'subscribe' %}" method="post">
                         {% csrf_token %}
-                        {% if error %}{{ error }} {% endif %}
+                        {% if error %}
+                            {{ error }}
+                        {% endif %}
                         <div class="">
                             <label for="personal_user_subscribe">
                                 Введите Ваш e-mail:
@@ -357,34 +327,6 @@
             </div>
             <!-- modal form for contact us -->
             {% endif %}
-            {% if delete_account %}
-            <!-- modal form for delete account -->
-            <div class="user_modal active">
-                <div class="user_modal_header">
-                    <p>
-                        Удаление аккаунта
-                    </p>
-                </div>
-                <div class="user_modal_description text-center">
-                    Вы уверены, что хотите удалить аккаунт?
-                </div>
-                <div class="user_modal_form">
-                    <form action="{% url 'delete_account' %}" method="post">
-                        {% csrf_token %}
-                        <div class="">
-                            <p class="text text-center">
-                                Вы не сможете восстановить аккаунт, после его удаления
-                            </p>
-                        </div>
-                        <!--<div class="delete_acc" style="text-align: center">
-                            <input type="submit" value="Удалить аккаунт">
-                        </div>-->
-                        <button type="submit">Удалить аккаунт</button>
-                    </form>
-                </div>
-            </div>
-            <!-- modal form for delete account -->
-            {% endif %}
             <!--      user main body wrapper      -->
 
         </div>
@@ -393,6 +335,5 @@
     </div>
     <!-- user page main body -->
 
-</div>
 <!--  user cabinet main block   -->
 {% endblock %}
