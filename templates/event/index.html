@@ -4,41 +4,54 @@
     <div class="page_title-top_line">
     </div>
     <div class="page_title-title">
-        <h1>События</h1>
+        <h1>
+            События
+        </h1>
     </div>
     <div class="page_title-bottom_line">
     </div>
 </div>
+{% if list_event %}
 <div class="container">
-
-    <div class="event-wrapper">
-        <div class="event-post-box">
-            {% for event in list_event %}
-            <div class="event-post-content">
-                <div class="event-post-title">
-                    <a href="{% url 'event_detail' slug=event.slug %}">
+    <section class="analytics-wrapper" id="analytics-wrapper-anchor">
+        {% for event in list_event %}
+        <div class="analytics-item">
+            <div class="insert">
+                <a href="{% url 'event_detail' slug=event.slug %}">
+                    <img src="{{ event.image.url }}" alt="" class="item-image">
+                    <div class="title">
                         {{ event.title }}
-                    </a>
-                </div>
-                {% if event.image %}
-                <div class="event-post-image">
-                    <img src="{{ event.image.url }}" alt="">
-                </div>
-                {% endif %}
-
-                <div class="event-post-content-text">
-                    {{ event.short_description|safe }}
-                </div>
-                <div class="event-post-content-info">
-                    <p class="event-post-content-place"><i class="fa fa-map-marker" aria-hidden="true"></i>Где? - {{ event.place }}</p>
-                    <p class="event-post-content-date"><i class="fa fa-calendar" aria-hidden="true"></i>Когда? - {{ event.day }}</p>
-                    <p class="event-post-content-start"><i class="fa fa-clock-o" aria-hidden="true"></i>Во сколько начало? - {{ event.start_time }}</p>
-                </div>
+                    </div>
+                    <div class="subtitle">
+                        {{ event.short_description|safe }}
+                    </div>
+                    <div class="event-info">
+                        <ul>
+                            <li>
+                                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                Где? - {{ event.place }}
+                            </li>
+                            <li>
+                                <i class="fa fa-clock-o" aria-hidden="true"></i>
+                                Во сколько начало? - {{ event.start_time }}
+                            </li>
+                            <li>
+                                <i class="fa fa-calendar" aria-hidden="true"></i>
+                                Когда? - {{ event.day|date:"d M Y" }}
+                            </li>
+                        </ul>
+                    </div>
+                </a>
             </div>
-            {% endfor %}
         </div>
-    </div>
+        {% endfor %}
+    </section>
 </div>
+{% else %}
+    <div class="nothing-found">
+        Ничего не найдено
+    </div>
+{% endif %}
 <!--    <section class="pages-carousel">-->
 <!--        <div class="pages-carousel-button" id="prev">-->
 

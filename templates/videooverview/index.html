@@ -9,7 +9,8 @@
     </div>
     <div class="page_title-bottom_line">
     </div>
-</div>    
+</div>
+    {% if data_video %}
     <div class="container">
         <div class="video-wrapper">
             {% for video in data_video %}
@@ -19,7 +20,7 @@
                     frameborder="0" allow="accelerometer; autoplay;
                     encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen>
-                </iframe>           
+                </iframe>
                 </div>
                 <div class="video-index-box-title">
                     <h2>
@@ -27,16 +28,6 @@
                             {{ video.title }}
                         </a>
                     </h2>
-                </div>
-                <div class="video-box-info">
-                    <p class="video-box-author">
-                        <i class="fa fa-user"></i>
-                        {{ video.author }}
-                    </p>
-                    <p class="video-box-time">
-                        <i class="fa fa-calendar"></i>
-                        {{ video.created }}
-                    </p>
                 </div>
 
                 <div class="video-index-box-description">
@@ -46,6 +37,11 @@
             {% endfor %}
         </div>
     </div>
+    {% else %}
+<div class="nothing-found">
+    Ничего не найдено
+</div>
+    {% endif %}
 <!--    <section class="pages-carousel">-->
 <!--        <div class="pages-carousel-button" id="prev">-->
 

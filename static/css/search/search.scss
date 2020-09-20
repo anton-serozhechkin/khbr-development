@@ -14,6 +14,7 @@
       }
       .result {
         display: flex;
+        padding: 20px 0;
         width: 85%;
         flex-wrap: wrap;
         margin: 35px auto;
@@ -23,9 +24,10 @@
           box-shadow: 1px 1px 20px 10px #D4D4D4;
         }
         .img {
-          flex: 1;
+          width: 450px;
           img {
-            max-width: 325px;
+            width: 450px;
+            height: 250px;
             border-bottom-left-radius: 15px;
             border-top-left-radius: 15px;
           }
@@ -36,16 +38,22 @@
           display: flex;
           flex: 2;
           flex-direction: column;
+          .content-header {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+          }
           .category {
             font-size: 1.2rem;
             color:#4e4921;
             text-transform: uppercase;
           }
           .title {
-            margin-top: 16px;
             color:black;
             font-size: 1.6rem;
             font-weight: 700;
+            text-align: center;
           }
           .description {
             font-size: 1.2rem;
@@ -69,17 +77,71 @@
       }
     }
   }
+  iframe {
+    width: 100%;
+    max-width: 455px;
+  }
+   .result-video {
+     .video {
+       display: flex;
+       flex-wrap: wrap;
+     }
+     iframe {
+       flex: 1;
+     }
+      .info {
+        flex: 1;
+        .title {
+          text-align: center;
+          width: 100%;
+        }
+        .description {
+          margin-left: 15px;
+        }
+      }
+  }
 }
 .search-nothing-result {
   text-align: center;
+  margin: 50px 0;
   .title {
-    text-transform: uppercase;
+    font-size: 2rem;
     font-weight: 700;
-    font-size: 1.8rem;
+    text-transform: uppercase;
   }
   .subtitle {
-    margin: 12px 0;
-    color:#9aa39e;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
+    font-weight: 300;
+    color:#62615a;
+  }
+  .header-search {
+    width: 100%;
+    max-width: 265px;
+    margin: 35px auto;
+  }
+}
+
+.header-search {
+  .search-wrapper {
+    border: solid 2px #16690d;
+    input {
+      border: none;
+      outline: none;
+      padding: 12px 18px;
+      &:focus::placeholder {
+        opacity: 0;
+      }
+    }
+    input[type='search']::-webkit-search-decoration,
+    input[type='search']::-webkit-search-cancel-button,
+    input[type='search']::-webkit-search-results-button,
+    input[type='search']::-webkit-search-results-decoration {
+      display: none;
+    }
+    i {
+      padding-right: 8px;
+      color:#36488f;
+      font-size: 18px;
+    }
   }
 }

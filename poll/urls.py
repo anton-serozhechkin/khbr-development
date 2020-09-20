@@ -4,5 +4,5 @@ from .views import *
 
 urlpatterns = [
     path('', main, name='poll'),
-    path('rrr/', poll_detail, name='poll_detail'),
+    re_path('(?P<slug>[\w-]+)', poll_detail, name='poll_detail'),
 ]

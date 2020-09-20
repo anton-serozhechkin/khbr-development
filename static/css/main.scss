@@ -13,5 +13,16 @@
 @import "poll/poll";
 @import "search/search";
 @import "category/category";
-
+@import "authors/authors";
+@import "user_cabinet/user_cabinet";
+@import "errors/errors";
+@import "detail-slider/slider-detail";
 @import "footer/footer";
+
+.nothing-found {
+  text-align: center;
+  font-size: 2rem;
+  color:black;
+  font-weight: 500;
+  margin: 60px 0;
+}

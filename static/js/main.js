@@ -22,6 +22,21 @@ function poll_slider() {
         }
     }
 }
+function detail_slider() {
+    let slider = document.querySelector('.slider-detail')
+    if(slider) {
+        let count = 4;
+        let slideArray = document.getElementsByClassName('slide-detail')
+        console.log(slideArray.length)
+            jQuery('.slider-detail').slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                prevArrow: ('<i class="fa fa-chevron-left" aria-hidden="true">'),
+                nextArrow: ('<i class="fa fa-chevron-right" aria-hidden="true">'),
+                autoplay: true
+            });
+    }
+}
 function currency() {
     let API = 'https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5',
         request = new XMLHttpRequest();
@@ -59,12 +74,6 @@ function poll() {
                 }
             })
         }
-        resultButton.addEventListener('click',function () {
-            event.preventDefault()
-            pollForm.style.display = 'none'
-            pollResults.style.display = 'block'
-        })
-
     }
 }
 function poll_statusBar() {
@@ -78,6 +87,18 @@ function poll_statusBar() {
     }
 
 }
+
+$('body').on('click', '.password-control', function(){
+    if ($('#password-input').attr('type') == 'password'){
+        $(this).addClass('view');
+        $('#password-input').attr('type', 'text');
+    } else {
+        $(this).removeClass('view');
+        $('#password-input').attr('type', 'password');
+    }
+    return false;
+});
+detail_slider();
 poll_slider();
 currency()
 poll();

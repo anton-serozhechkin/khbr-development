@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+    <div class="container-authors">
+        <div class="author-info">
+            <div class="left">
+                {% if author.avatar %}
+                    <img src="{{ author.avatar.url }}" alt="">
+                {% else %}
+                    <img src="{% static 'img/User_icon-cp.png' %}" alt="">
+                {% endif %}
+            </div>
+            <div class="right">
+                <div class="name">
+                    {{ author.lastname }} {{ author.firstname }}
+                </div>
+                <div class="contact">
+                    <p>{{ author.user.email }}</p>
+                    {% if author.user.is_staff %}
+                        Редактор
+                    {% else %}
+                        Администратор
+                    {% endif %}
+                    <p></p>
+                </div>
+                <div class="info">
+                    <p>{{ author.bio|safe }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

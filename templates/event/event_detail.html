@@ -1,28 +1,135 @@
 {% extends 'base.html' %}
 {% block content %}
 <div class="container">
-    <section class="event-detail">
-        <div class="event-detail-detail-top">
-            <h1 class="event-detail-title">{{ data_event.title }}</h1>
-        </div>
-        {% if data_event.image %}<!--над дивом с фоткой -->
-        <div class="event-detail-publication-image">
-            <img src="{{data_event.image.url }}" alt="">
-        </div>
-        {% endif %}<!--под дивом с фоткой -->
+    <div class="return_back_button">
+        <a href="{% url 'events' %}">
+            <i class="fa fa-chevron-left"></i>
+            Вернуться назад
+        </a>
+    </div>
+    <div class="analytics-detail-post">
 
-        <div class="event-detail-info">
-            <p class="event-detail-short-text"><span><i class="fa fa-calendar" aria-hidden="true"></i>{{ data_event.day }}</span></p>
-            <p class="event-detail-short-text"><span><i class="fa fa-map-marker" aria-hidden="true"></i>{{ data_event.place }}</span></p>
+        <div class="post">
+            <div class="post-info">
+                <div class="date">
+                    <i class="fa fa-calendar" aria-hidden="true"></i>
+                    {{ data_event.day|date:"d M Y" }}
+                </div>
+                <div class="author">
+                    <a href="{% url 'authors_detail' slug=data_event.author.slug %}">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                        Автор - {{ data_event.author }}
+                    </a>
+                </div>
+                <div class="place">
+                    <i class="fa fa-map-marker" aria-hidden="true"></i>
+                    {{ data_event.place }}
+                </div>
+                <div class="category">
+                    <a href="#">
+                        {{ data_rait.category }}
+                    </a>
+                </div>
+                {% if data_event.start_time %}
+                <div class="start-time">
+                    <i class="fa fa-clock-o" aria-hidden="true"></i>
+                    Начало: {{ data_event.start_time }}
+                </div>
+                {% endif %}
+                {% if data_event.end_time %}
+                <div class="end-time">
+                    <i class="fa fa-ban" aria-hidden="true"></i>
+                    Конец: {{ data_event.end_time }}
+                </div>
+                {% endif %}
 
-        <p class="event-detail-short-text"><span><i class="fa fa-clock-o" aria-hidden="true"></i>Начало: {{ data_event.start_time}}</span></p>
-        <p class="event-detail-short-text"><span><i class="fa fa-ban" aria-hidden="true"></i>Конец: {{ data_event.end_time}}</span></p>
-            <div class="detail-viewCount">
-                <i class="fa fa-eye" aria-hidden="true"></i>
-                <span>{{ data_event.views }}</span>
+                <div class="views">
+                    <i class="fa fa-eye" aria-hidden="true"></i>
+                    {{ data_event.views }}
+                </div>
             </div>
+
+            <div class="post-title">
+                <p>{{ data_event.title }}</p>
+            </div>
+            <div class="post-content">
+                <img src="{{ data_event.image.url }}" alt="" class="main-image">
+                <div class="text">
+                    {{ data_event.content|safe }}
+                </div>
+            </div>
+
+            <!--         slider detail wrap       -->
+            {% if event_images %}
+            <div class="slider-detail">
+                {% for event_image in event_images %}
+                <!-- slide detail. insert this to add slide's -->
+                <div class="slide-detail">
+                    <!-- slide image -->
+                    <img src="{{ event_image.image.url }}" alt="" class="slider-detail-image">
+                    <!-- slide image -->
+                    <!--     slide description      -->
+                    {% if event_image.title %}
+                    <div class="description">
+                        {{ event_image.title }}
+                    </div>
+                    {% endif %}
+                    <!--     slide description      -->
+                </div>
+                <!-- slide detail. insert this to add slide's -->
+                {% endfor %}
+            </div>
+            {% endif %}
+            <!--         slider detail wrap       -->
         </div>
-        <p class="event-detail-paragraph">{{ data_event.content|safe }}</p>
-    </section>
+        {% if last_raitings or last_analytics %}
+        <div class="last-posts">
+            <div class="heading">
+                Читайте также:
+            </div>
+            {% for raiting in last_raitings %}
+            <div class="element">
+                <a href="{% url 'raiting_detail' slug=raiting.slug %}">
+                    <img src="{{ raiting.image.url }}" alt="" class="">
+                    <div class="title">
+                        {{ raiting.title }}
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
+            {% for article in last_analytics %}
+            <div class="element">
+                <a href="{% url 'article_detail' category_slug=article.category.slug slug=article.slug %}">
+                    <img src="{{ article.image.url }}" alt="" class="">
+                    <div class="title">
+                        {{ article.title }}
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+
+    <div class="next-prev-button">
+        <div class="left">
+
+            {% if previous_event %}
+            <a href="{% url 'event_detail' slug=previous_event.slug %}">
+                <i class="fa fa-chevron-left"></i>
+                Предыдущее событие
+            </a>
+            {% endif %}
+
+        </div>
+        <div class="right">
+            {% if next_event %}
+            <a href="{% url 'event_detail' slug=next_event.slug %}">
+                Следующее событие
+                <i class="fa fa-chevron-right"></i>
+            </a>
+            {% endif %}
+        </div>
+    </div>
 </div>
 {% endblock content %}

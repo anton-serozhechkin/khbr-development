@@ -1,0 +1,339 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!--  user cabinet main block   -->
+    <!--  container of website  -->
+    <!--  container of website  -->
+    <!-- user page main body -->
+    <div class="user_main">
+        <!--    website container    -->
+        <div class="container">
+            <!--      user main body wrapper      -->
+            <div class="wrapper">
+                <!--       user main profile section         -->
+                <div class="profile">
+                    <!--          user profile icon          -->
+                    <div class="img">
+                        <img src="{% static 'img/User_icon-cp.png' %}" alt="">
+                    </div>
+                    <!--          user profile icon          -->
+                    <!--user info section -->
+                    <div class="info">
+                        <!--user info elem-->
+                        <div class="name">
+                            {{ request.user.username }}
+                        </div>
+                        <!--user info elem-->
+                        {% if request.user.email %}
+                        <div class="mail">
+                            {{ request.user.email }}
+                        </div>
+                        {% endif %}
+                        <div class="role">
+                            {% if request.user.is_superuser %}
+                                Администратор
+                            {% elif request.user.is_staff %}
+                                Сотрудник
+                            {% else %}
+                                Пользователь
+                            {% endif %}
+                        </div>
+                        <div class="last_signIn">
+                            Дата последнего входа:
+                            {{ request.user.last_login }}
+                        </div>
+                    </div>
+                    <!--user info section -->
+                </div>
+                <!--       user main profile section         -->
+
+                <!--        central section on user page main body with popular posts        -->
+                {% if news %}
+                <div class="popular-posts">
+                    {% if last_articles %}
+                    <!--         popular post wrap           -->
+                    {% for post in last_articles %}
+                    <div class="post">
+                        <!--info section-->
+                        <div class="right">
+                            <!--title of popular post-->
+                            <div class="title">
+                                <!--category of post-->
+                                <a href="{% url 'analytics' %}">Аналитика</a>
+                                <!--category of post-->
+                                <p>|</p>
+                                <!--subcategory of popular post. -->
+                                <a href="{% url 'article_by_category' category_slug=post.category.slug %}">{{ post.category }}</a>
+                                <!--subcategory of popular post. -->
+                            </div>
+                            <!--title of popular post-->
+                            <!--description of post-->
+                            <div class="description">
+                                <!--link to detail of post-->
+                                <a href="{% url 'article_detail' category_slug=post.category.slug slug=post.slug %}">
+                                    {{ post.title }}
+                                </a>
+                                <!--link to detail of post-->
+                            </div>
+                            <!--description of post-->
+
+                        </div>
+                        <!--info section-->
+                    </div>
+                    {% endfor %}
+                    {% endif %}
+                    {% if last_events %}
+                    {% for event in last_events %}
+                    <div class="post">
+                        <!--info section-->
+                        <div class="right">
+                            <!--title of popular post-->
+                            <div class="title">
+                                <!--category of post-->
+                                <a href="{% url 'events' %}">События</a>
+                                <!--category of post-->
+                            </div>
+                            <!--title of popular post-->
+                            <!--description of post-->
+                            <div class="description">
+                                <!--link to detail of post-->
+                                <a href="{% url 'event_detail' slug=event.slug %}">
+                                    {{ event.title }}
+                                </a>
+                                <!--link to detail of post-->
+                            </div>
+                            <!--description of post-->
+
+                        </div>
+                        <!--info section-->
+                    </div>
+                    {% endfor %}
+                    {% endif %}
+                    {% if last_raitings %}
+                    {% for raiting in last_raitings %}
+                    <div class="post">
+                        <!--info section-->
+                        <div class="right">
+                            <!--title of popular post-->
+                            <div class="title">
+                                <!--category of post-->
+                                <a href="{% url 'raitings' %}">Рейтинги</a>
+                                <!--category of post-->
+                            </div>
+                            <!--title of popular post-->
+                            <!--description of post-->
+                            <div class="description">
+                                <!--link to detail of post-->
+                                <a href="{% url 'raiting_detail' slug=raiting.slug %}">
+                                    {{ raiting.title }}
+                                </a>
+                                <!--link to detail of post-->
+                            </div>
+                            <!--description of post-->
+
+                        </div>
+                        <!--info section-->
+                    </div>
+                    {% endfor %}
+                    {% endif %}
+                    <!--         popular post wrap           -->
+                </div>
+                {% endif %}
+                <!--        central section on user page main body with popular posts        -->
+                <!--      settings section of user main body      -->
+                <div class="settings">
+                    <!-- settings list with links to modal -->
+                    <ul>
+                        <!-- list elem -->
+                        <li><a href="{% url 'personal_cabinet' %}">Последние новости</a></li>
+                        <li><a href="{% url 'private_data' %}">Личные данные</a></li>
+                        <!-- list elem -->
+                        <li><a href="{% url 'change_password' %}">Смена пароля</a></li>
+                        {% if already_subscriber %}
+                        <li><a href="{% url 'unsubscribe' %}">Отписаться от рассылки</a></li>
+                        {% else %}
+                        <li><a href="{% url 'subscribe' %}">Подписка на рассылку</a></li>
+                        {% endif %}
+                        <!--                        <li>Предложить новость</li>-->
+                        <li><a href="{% url 'links' %}">Связаться с нами</a></li>
+                        <li><a href="{% url 'sign_out' %}">Выйти</a></li>
+                    </ul>
+                    <!-- settings list with links to modal -->
+                </div>
+                <!--      settings section of user main body      -->
+            </div>
+            {% if private_data %}
+            <!-- modal form for change user personal data -->
+            <div class="user_modal active">
+                <!--        modal header        -->
+                <div class="user_modal_header">
+                    <p>
+                        Личные данные
+                    </p>
+                </div>
+                <!--        modal header        -->
+                <div class="user_modal_form">
+                    <!--         user modal form           -->
+                    <form action="{% url 'private_data' %}" method="post">
+                        {% csrf_token %}
+                        <div class="">
+                            <!-- form inputs -->
+                            <label for="personal_user_name">
+                                Имя пользователя:
+                            </label>
+                            <input type="text" name="personal_user_name" id="personal_user_name">
+                        </div>
+                        <div class="">
+                            <label for="personal_user_email">
+                                E-mail пользователя:
+                            </label>
+                            <input type="text" name="personal_user_email" id="personal_user_email">
+                            <!-- form inputs -->
+                        </div>
+                        <!-- submit button -->
+                        <button class="index-follow-button" type="submit">Сменить личные данные</button>
+                        <!-- submit button -->
+                    </form>
+                    <!--         user modal form           -->
+                </div>
+            </div>
+            <!-- modal form for change user personal data -->
+            {% endif %}
+            {% if change_password %}
+            <!-- modal form for change user password -->
+            <div class="user_modal active">
+                <div class="user_modal_header">
+                    <p>
+                        Смена пароля
+                    </p>
+                </div>
+                <div class="user_modal_form">
+                    <form action="{% url 'change_password' %}" method="post">
+                        {% csrf_token %}
+                        {% if error %}
+                            {{ error }}
+                        {% endif %}
+                        <div class="">
+                            <label for="personal_user_password">
+                                Введите новый пароль:
+                            </label>
+                            <input type="text" name="personal_user_password" id="personal_user_password">
+                        </div>
+                        <div class="">
+                            <label for="personal_user_confirmationPassword">
+                                Подтвердите новый пароль:
+                            </label>
+                            <input type="text" name="personal_user_confirmationPassword" id="personal_user_confirmationPassword">
+                        </div>
+                        <button class="index-follow-button" type="submit">Сменить пароль</button>
+
+                    </form>
+                </div>
+            </div>
+            <!-- modal form for change user password -->
+            {% endif %}
+            {% if subscribe %}
+            <!-- modal form for subscribe -->
+            <div class="user_modal active">
+                <div class="user_modal_header">
+                    <p>
+                        Подписка на рассылку
+                    </p>
+                </div>
+                <div class="user_modal_description">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto delectus dolor dolorum eius hic illo ipsum iste itaque officiis provident quia recusandae rerum, tenetur! Neque?
+                </div>
+                <div class="user_modal_form">
+                    <form action="{% url 'subscribe' %}" method="post">
+                        {% csrf_token %}
+                        {% if error %}
+                            {{ error }}
+                        {% endif %}
+                        <div class="">
+                            <label for="personal_user_subscribe">
+                                Введите Ваш e-mail:
+                            </label>
+                            <input type="text" name="personal_user_subscribe" id="personal_user_subscribe">
+                        </div>
+                        <button class="index-follow-button" type="submit">Подписаться</button>
+                        <!--
+                        <div class="">
+                            <input type="submit" value="Подписаться">
+                        </div>
+                    -->
+                    </form>
+                </div>
+            </div>
+            {% endif %}
+            <!-- modal form for subscribe -->
+            {% if unsubscribe %}
+            <!-- modal form for cancel subscribe -->
+            <div class="user_modal active">
+                <div class="user_modal_header">
+                    <p>
+                        Отписаться от рассылки
+                    </p>
+                </div>
+                <div class="user_modal_description">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto delectus dolor dolorum eius hic illo ipsum iste itaque officiis provident quia recusandae rerum, tenetur! Neque?
+                </div>
+                <div class="user_modal_form">
+                    <form action="{% url 'unsubscribe' %}" method="post">
+                        {% csrf_token %}
+                        <div class="">
+                            <p class="text">
+                                Вы уже подписаны на рассылку. Хотели бы отписаться?
+                            </p>
+                        </div>
+                            <button class="index-follow-button" type="submit">Отписаться</button>
+                    </form>
+                </div>
+            </div>
+            <!-- modal form for cancel subscribe -->
+            {% endif %}
+            {% if links %}
+            <!-- modal form for contact us -->
+            <div class="user_modal active">
+                <div class="user_modal_header">
+                    <p>
+                        Связь с нами
+                    </p>
+                </div>
+                <div class="user_modal_description text-center">
+                    Мы в соц.сетях:
+                </div>
+                <ul class="social-list">
+                    <li>
+                        <a href="//www.instagram.com/kh_business_review/">
+                            <i class="fa fa-instagram" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="//www.facebook.com/KhBusinessReview/">
+                            <i class="fa fa-facebook" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="//www.linkedin.com/showcase/khbr/about/?viewAsMember=true">
+                            <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="//t.me/KH_business">
+                            <i class="fa fa-telegram" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- modal form for contact us -->
+            {% endif %}
+            <!--      user main body wrapper      -->
+
+        </div>
+        <!--    website container    -->
+
+    </div>
+    <!-- user page main body -->
+
+<!--  user cabinet main block   -->
+{% endblock %}

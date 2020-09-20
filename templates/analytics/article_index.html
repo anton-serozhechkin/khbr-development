@@ -10,39 +10,36 @@
         <div class="page_title-bottom_line">
         </div>
     </div>
+    {% if data_art %}
   <div class="container">
       <section class="analytics-wrapper" id="analytics-wrapper-anchor">
-          {% for article in data_art %}
-          <div class="analytics_post-box wow fadeInLeft">
-              <div class="analytics-box-title">
-                  <a href="{% url 'article_detail' slug=article.slug %}">
-                      <h2>
-                          {{ article.title }}
-                      </h2>
-                  </a>
-              </div>
-              <div class="analytics-box-content">
-                  {% if article.image %}
-                  <div class="analytics-box-image">
-                      <img src="{{ article.image.url }}" alt="">
-                  </div>
-                  {% endif %}
-                  <div class="analytics-box-text">
-                      <div class="analytics-box-text-content">
-                          <a href="#" class="analytics-box-text-content-link">
-                              {{ article.short_description|safe }}
-                          </a>
-                      </div>
-                      <div class="analytics-box-info">
-                          <p class="analytics-box-author">{{ article.author }}</p>
-                          <p class="analytics-box-time">{{ article.created }}</p>
-                      </div>
-                  </div>
-              </div>
+          {% for post in data_art %}
+          <div class="analytics-item">
+                <div class="insert">
+                    <a href="{% url 'article_detail' category_slug=post.category.slug slug=post.slug %}">
+                        <img src="{{ post.image.url }}" alt="" class="item-image">
+                        <div class="title">
+                            {{ post.title }}
+                        </div>
+                        <div class="subtitle">
+                            {{ post.short_description|safe }}
+                        </div>
+                    </a>
+                    <div class="category">
+                        <a href="{% url 'article_by_category' category_slug=post.category.slug %}">
+                            {{ post.category }}
+                        </a>
+                    </div>
+                </div>
           </div>
           {% endfor %}
       </section>
   </div>
+  {% else %}
+<div class="nothing-found">
+    Ничего не найдено
+</div>
+  {% endif %}
 <!--    <section class="pages-carousel">-->
 <!--        <div class="pages-carousel-button" id="prev">-->
 

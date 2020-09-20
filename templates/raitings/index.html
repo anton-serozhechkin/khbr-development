@@ -9,31 +9,31 @@
     <div class="page_title-bottom_line">
     </div>
 </div>
+{% if list_rait %}
 <div class="container">
-    <section class="ratings-wrapper">
-        <div class="rating-post-box">
-            {% for raiting in list_rait %}
-            <div class="rating-post-title">
-                <a href="{% url 'raiting_detail' slug=raiting.slug %}" class="rating-post-title-link">
-                    {{ raiting.title }}
+    <section class="analytics-wrapper" id="analytics-wrapper-anchor">
+        {% for raiting in list_rait %}
+        <div class="analytics-item">
+            <div class="insert">
+                <a href="{% url 'raiting_detail' slug=raiting.slug %}">
+                    <img src="{{ raiting.image.url }}" alt="" class="item-image">
+                    <div class="title">
+                        {{ raiting.title }}
+                    </div>
+                    <div class="subtitle">
+                        {{ raiting.short_description|safe }}
+                    </div>
                 </a>
             </div>
-            {% if raiting.image %}
-            <div class="rating-post-image">
-                <img src="{{ raiting.image.url }}" alt="">
-            </div>
-            {% endif %}
-            <div class="rating-post-content">
-                <p>{{ raiting.short_description|safe }}</p>
-                <div class="analytics-box-info">
-                    <p class="analytics-box-author">{{ raiting.author }}</p>
-                    <p class="analytics-box-time">{{ raiting.created }}</p>
-                </div>
-            </div>
-            {% endfor %}
         </div>
+        {% endfor %}
     </section>
 </div>
+{% else %}
+<div class="nothing-found">
+    Ничего не найдено
+</div>
+{% endif %}
 <!--<section class="pages-carousel">-->
 <!--    <div class="pages-carousel-button" id="prev">-->
 

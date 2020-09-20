@@ -6,8 +6,9 @@
   .rating-post-box {
     width: 100%;
       .rating-post-title {
-        text-align: left;
+        text-align: center;
         font-size: 2em;
+        margin: 25px 0;
         a {
           color:#303738;
           text-decoration: none;
@@ -48,5 +49,11 @@
         color:#7A7A7A;
       }
     }
+  }
+}
+.analytics-box-author {
+  a {
+    color:black;
+    text-decoration: none;
   }
 }

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Raiting
+from .models import *
 
 class RaitingAdmin(admin.ModelAdmin):
     list_display = ('title', 'created', 'is_active', )
@@ -19,8 +19,13 @@ class RaitingAdmin(admin.ModelAdmin):
         ('Дополнительные опции',
             {
             'classes': ('collapse', ),
-            'fields': ('author', 'image', 'is_active', 'created', 'views')
+            'fields': ('author', 'image', 'is_active', 'created', 'views', 'send_email')
             }
             )
     )
+
+class RaitingImageAdmin(admin.ModelAdmin):
+    search_fields = ('author__user__username', )
+
+admin.site.register(RaitingImage, RaitingImageAdmin)
 admin.site.register(Raiting, RaitingAdmin)

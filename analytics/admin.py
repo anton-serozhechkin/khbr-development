@@ -3,9 +3,10 @@ from .models import *
 
 
 class AuthorAdmin(admin.ModelAdmin):
-    list_display = ('user', 'bio', )
-    list_filter = ('user', )
+    prepopulated_fields = {'slug': ('user', )}
 
+class ArticleImageAdmin(admin.ModelAdmin):
+    search_fields = ('author__user__username', )
 
 class SubscribeAdmin(admin.ModelAdmin):
     list_display = ('email', 'created', )
@@ -43,11 +44,11 @@ class ArticleAdmin(admin.ModelAdmin):
         ('Дополнительные опции',
             {
             'classes': ('collapse', ),
-            'fields': ('author', 'integer_of_day', 'image', 'is_active', 'created', 'views')
+            'fields': ('author', 'integer_of_day', 'image', 'is_active', 'created', 'views', 'send_email')
             }
             )
     )
-
+admin.site.register(ArticleImage, ArticleImageAdmin)
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(Article, ArticleAdmin)
 admin.site.register(Links, LinksAdmin)

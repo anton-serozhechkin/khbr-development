@@ -1,26 +1,84 @@
 {% load staticfiles %}
 <div class="container">
-    <i class="fa fa-bars" aria-hidden="true" id="header-navbars-id" style="display: none;"></i>
+    <header class="header-style" id="header-anchor">
+        <!--  main header block  -->
+        <div class="header-center">
+            <!--      header central block       -->
+            <div class="mobile-bar">
+                <!-- mobile navbar item. happend when user use mobile device  -->
+                <i class="fa fa-bars" aria-hidden="true" id="barsButton"></i>
+                <!-- mobile navbar item. happend when user use mobile device  -->
+            </div>
+            <!--        header logo block        -->
+            <div class="header-logo">
+                <a href="{% url 'analytics' %}">
+                    <!--            header logo link        -->
+                    <img src="{% static 'img/logo.png' %}" class="wow fadeIn" alt="">
+                    <!--        header logo icon        -->
+                </a>
+            </div>
+            <!--        header logo block        -->
+        </div>
 
-<header class="header-style" id="header-anchor">
-       <div class="header-logo">
-           <a href="{% url 'analytics' %}">
-               <img src="{% static 'img/logo.png' %}" class="wow fadeIn"alt="">
-           </a>
-       </div>
+        <div class="header-search">
+            <!--       header search block     -->
+            <div class="search-wrapper">
+                <!-- search wrap-->
+                <!--     search form       -->
+                <form action="{% url 'search_results' %}">
+                    <!--  search  input  -->
+                    <input type="search" name="q" placeholder="Поиск...">
+                    <!--  search  input  -->
+                    <!--  search icon into input  -->
+                    <i class="fa fa-search"></i>
+                    <!--  search icon into input  -->
+                </form>
+                <!--     search form       -->
 
-    <ul class="header-navigation" id="header-navigation-id">
+            </div>
+            <!-- search wrap-->
+            <div class="user-icon">
+                {% if user.is_authenticated %}
+                    <a href="{% url 'personal_cabinet' %}" class="header-navigation-item header-navigation-sign wow fadeIn" title="Личный кабинет">
+                {% else %}
+                    <a href="{% url 'signup' %}" class="header-navigation-item header-navigation-sign wow fadeIn" title="Зарегистрироваться">
+                {% endif %}
+                <i class="fa fa-user-circle" aria-hidden="true"></i>
+                    </a>
+                </a>
+            </div>
+        </div>
+        <!--       header search block     -->
+
+    </header>
+    <!--  main header block  -->
+
+    <!--  header navigation block  -->
+    <section class="navigation">
+        <!--   header navigation wrapper list     -->
+        <ul class="header-navigation" id="header-navigation-id">
+            <!--        header navigation item        -->
             <li class="submenu-item">
                 <a href="{% url 'analytics_index' %}" class="header-navigation-item wow fadeIn ">Аналитика
+                    <!--header navigation item link-->
                     <i class="fa fa-angle-down" aria-hidden="true"></i>
-<!--         show if category there is           -->
+                    <!--         show if category there is           -->
                 </a>
+                <!--header navigation item link-->
+                <!--        header navigation submenu. show if category there is        -->
                 <ul class="header-navigation-submenu">
-                    <li><a href="#">item1</a></li>
-                    <li><a href="#">item2</a></li>
-                    <li><a href="#">item3</a></li>
-                    <li><a href="#">item4</a></li>
+                    {% for category in categories %}
+                    <!--  submenu item  -->
+                    <li>
+                        <a href="{% url 'article_by_category' category_slug=category.slug %}">
+                        {{ category.name }}
+                        </a>
+                    </li>
+                    <!--  submenu item  -->
+                    {% endfor %}
                 </ul>
+                <!--        header navigation submenu. show if category there is        -->
+                <!--        header navigation item        -->
             </li>
             <li>
                 <a href="{% url 'events' %}" class="header-navigation-item wow fadeIn">События</a>
@@ -32,25 +90,11 @@
                 <a href="{% url 'videooverviews' %}" class="header-navigation-item wow fadeIn">Видео</a>
             </li>
             <li>
-                <a href="" class="header-navigation-item wow fadeIn">Опросы</a>
+                <a href="{% url 'poll' %}" class="header-navigation-item wow fadeIn">Опросы</a>
             </li>
-           {% comment %}<a href="{% url 'signin' %}" class="header-navigation-item header-navigation-sign wow fadeIn">
-               <i class="fa fa-user-circle" aria-hidden="true"></i>
-           </a>{% endcomment %}
-       </ul>
-    <div class="header-search">
-        <div class="search-wrapper">
-            <form action="">
-                <input type="search" placeholder="Поиск...">
-                <a href="#"><i class="fa fa-search"></i></a>
-            </form>
-        </div>
-    </div>
-</header>
+        </ul>
+        <!--   header navigation wrapper list    -->
+    </section>
+    <!--  header navigation block  -->
+
 </div>
-
-<!--<div class="search__menu">
-    <a href=""> <i class="fa fa-search search__icon" aria-hidden="true"></i> </a>
-    <input type="search">
-</div>-->
-

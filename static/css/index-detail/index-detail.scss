@@ -1,66 +1,164 @@
 .analytics-detail-post {
   margin: 5vh 0;
-  .analytics-detail-title {
-    font-size: 2.4em;
-    color:#303738;
-    margin: 2vh 0;
-    text-align: center;
-    &:hover {
-      color:#63808b;
-      transition: .4s;
-      cursor: pointer;
-    }
-  }
-  .analytics-detail-image {
-    img {
-      width: 100%;
-      height: 65vh;
-      border-radius: 10px;
-    }
-  }
-
-  .analytics-detail-info {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    margin: 2vh 0;
-    a {
-      text-decoration: none;
-      color:#303738;
-      font-size: 1.4em;
-      &:hover {
-        color:#63808b;
-      }
-      &:focus {
-        color:#8b5d65;
-      }
-    }
-    .analytics-detail-infoBox {
+  margin-top: .4vh;
+  display: flex;
+  flex-wrap: wrap;
+  .post {
+    width: 100%;
+    max-width: 1005px;
+    .post-info {
+      padding: 2vh 5vw;
       display: flex;
-      align-items: center;
-      flex-flow: row wrap;
-      p {
-        font-size: 1em;
-        margin: 0 1vw;
-        color:#7A7A7A;
+      justify-content: space-between;
+      font-size:1.5rem;
+      flex-wrap: wrap;
+      div {
+        margin: 0 4px;
       }
-      .detail-viewCount {
-        font-size: 1em;
-        margin: 0 1vw;
-        color:#7A7A7A;
+      .author {
+        a {
+          color:black;
+          text-decoration: none;
+        }
+      }
+      .category {
+        a {
+          color:black;
+          text-decoration: none;
+        }
+      }
+    }
+    .main-image {
+      max-width: 625px;
+      width: 100%;
+      border: solid 2px #7A7A7A;
+      float: left;
+      margin: 10px 16px;
+      margin-left: 0;
+      margin-top: 0;
+    }
+    .post-title {
+      font-size: 2rem;
+      color:black;
+      font-weight: 700;
+    }
+    .text {
+      font-size: 1.6rem;
+      p {
+        margin: 12px 0;
+        border-bottom: solid 2px #7A7A7A;
+        padding-bottom: 4px;
+        &:last-of-type {
+          border-bottom: none;
+        }
+      }
+    }
+    margin: 4px;
+  }
+  .last-posts {
+    position: sticky;
+    margin-top: 6px;
+    width: 100%;
+    max-width: 225px;
+    margin-left: 30px;
+    .heading {
+      font-size: 1.6rem;
+      color:black;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .element {
+      img {
+        width: 100%;
+        border: none;
+        height: 300px;
+        max-width: 325px;
+      }
+      a {
+        text-decoration: none;
+      }
+      .title {
+        font-size: 1.2rem;
+        font-weight: 500;
+        color:black;
+        margin-top: 6px;
       }
     }
   }
-  .analytics-detail-content-box {
-    font-size: 1.6em;
-    margin: 2vh 0;
-    display: flex;
-    flex-flow: row wrap;
 
-      &:hover {
-        text-shadow: 1px 1px 1px #C9C9C9;
-        cursor: pointer;
+
+}
+.return_back_button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  a {
+    border: solid 2px purple;
+    padding: 6px 10px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: 500;
+    color:black;
+    transition: .2s linear;
+    &:hover {
+      background-color: purple;
+      color:white;
+      transition: .2s linear;
+      transform: scale(1.1);
+      i {
+        color:white;
+        border: solid 2px purple;
       }
+    }
+    i {
+      color:slategray;
+      border-radius: 100%;
+      border: solid 2px slategray;
+      padding: 4px 8px;
+    }
+  }
+}
+
+.next-prev-button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  a {
+    border: solid 2px purple;
+    padding: 6px 10px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: 500;
+    color:black;
+    transition: .2s linear;
+    &:first-of-type {
+      margin-left: auto;
+      margin-right: 8px;
+    }
+    &:last-of-type {
+      margin-left: 8px;
+      margin-right: auto;
+    }
+
+    &:hover {
+      background-color: purple;
+      color:white;
+      transition: .2s linear;
+      transform: scale(1.1);
+      i {
+        color:white;
+        border: solid 2px purple;
+      }
+    }
+    i {
+      color:slategray;
+      border-radius: 100%;
+      border: solid 2px slategray;
+      padding: 4px 8px;
+    }
   }
 }
 
